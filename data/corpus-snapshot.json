@@ -1,19 +1,31 @@
 {
-  "snapshot_utc": "2026-09-24T22:31:05.256750+00:00",
-  "candidate_posts": 1104,
-  "candidate_posts_with_mp4": 1022,
-  "mp4_attachments": 1044,
+  "snapshot_utc": "2026-09-25T15:21:07.007119+00:00",
+  "candidate_posts": 1242,
+  "candidate_posts_with_mp4": 1156,
+  "mp4_attachments": 1180,
   "hypit_status": {
-    "tile_ok": 1044
+    "tile_ok": 1180
   },
-  "sha256_distinct": 1008,
-  "sha256_duplicate_groups": 31,
-  "sha256_duplicate_extra_attachments": 36,
-  "curated_cases": 152,
+  "sha256_distinct": 1138,
+  "sha256_duplicate_groups": 35,
+  "sha256_duplicate_extra_attachments": 42,
+  "curated_cases": 160,
   "curated_case_hypit_status": {
-    "tile_ok": 152
+    "tile_ok": 160
   },
-  "search_queries_saved": 43,
-  "search_queries_ok_or_cached": 43,
-  "search_results_returned": 1463
+  "search_queries_saved": 49,
+  "search_queries_ok_or_cached": 48,
+  "search_results_returned": 1652,
+  "refresh_successful_queries": 5,
+  "refresh_results_returned": 189,
+  "refresh_rate_limited_queries": 1,
+  "last_successful_refresh_query": "update_20260925_japanese_latest",
+  "last_successful_refresh_utc": "2026-09-25T14:47:37.645332+00:00",
+  "domain_style_classified_files": 1138,
+  "classifier_opus_made_labels": {
+    "yes": 767,
+    "likely": 126,
+    "no": 245
+  },
+  "classifier_errors": 0
 }
