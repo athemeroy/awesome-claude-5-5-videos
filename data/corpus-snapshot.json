@@ -1,0 +1,19 @@
+{
+  "snapshot_utc": "2026-09-24T22:31:05.256750+00:00",
+  "candidate_posts": 1104,
+  "candidate_posts_with_mp4": 1022,
+  "mp4_attachments": 1044,
+  "hypit_status": {
+    "tile_ok": 1044
+  },
+  "sha256_distinct": 1008,
+  "sha256_duplicate_groups": 31,
+  "sha256_duplicate_extra_attachments": 36,
+  "curated_cases": 152,
+  "curated_case_hypit_status": {
+    "tile_ok": 152
+  },
+  "search_queries_saved": 43,
+  "search_queries_ok_or_cached": 43,
+  "search_results_returned": 1463
+}

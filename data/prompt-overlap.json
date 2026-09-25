@@ -1,0 +1,30 @@
+{
+  "method": "lowercase English alphanumeric and apostrophe tokens; unique contiguous word n-grams",
+  "original": {
+    "url": "https://x.com/donaldjewkes/status/2102801469976248500",
+    "created_at": "Wed Sep 23 16:45:13 +0000 2026",
+    "characters": 9554,
+    "words": 1750
+  },
+  "later": {
+    "url": "https://x.com/anjmaxx/status/2103174007319413155",
+    "created_at": "Thu Sep 24 17:25:33 +0000 2026",
+    "characters": 5594,
+    "words": 1015
+  },
+  "ngrams": {
+    "5": {
+      "original_unique": 1739,
+      "later_unique": 1008,
+      "shared_unique": 877,
+      "fraction_of_later_unique_shared": 0.87
+    },
+    "12": {
+      "original_unique": 1739,
+      "later_unique": 1004,
+      "shared_unique": 789,
+      "fraction_of_later_unique_shared": 0.7859
+    }
+  },
+  "interpretation_limit": "Shared wording alone cannot establish who read or copied what, or which steps were executed."
+}

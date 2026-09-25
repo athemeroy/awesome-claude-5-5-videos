@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.mp4
+*.mov
+*.mkv
+*.mp3
+*.wav
+*.zip
+__pycache__/
+.env
+.env.*
