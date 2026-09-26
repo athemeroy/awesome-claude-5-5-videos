@@ -4,31 +4,31 @@
 
 A curated, source-linked guide to videos people made **with** Claude Opus 5.5. It focuses on what the model actually did: writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project, not affiliated with Anthropic, X, Hypit, or the Awesome directory.
 
-> **Refresh:** X searches ran through September 25, 2026, 22:47 China Standard Time; this snapshot was reconciled at 23:21. Across 49 recorded queries, 48 succeeded and one Chinese query was rate-limited. The corpus has 1,242 unique candidate posts, 1,156 with MP4, and 1,180 attachments. Hypit 0.2.3 probed and sampled nine frames from all 1,180; SHA-256 found 1,138 distinct files. We reviewed 160 source-linked cases. Search limits, reposts, and unrelated results mean these numbers are **not** a count of original Opus videos or all of X. See the [search receipts summary](docs/search-coverage.zh-CN.md) and [frozen snapshot](data/corpus-snapshot.json).
+> **Refresh:** X searches ran through September 26, 2026, 21:05 China Standard Time; this snapshot was reconciled at 21:53. Across 56 recorded queries, 55 succeeded and one query had been rate-limited in an earlier batch. The corpus has 1,511 unique candidate posts, 1,419 with MP4, and 1,449 attachments. Hypit 0.2.3 probed and sampled nine frames from all 1,449; SHA-256 found 1,401 distinct files. We reviewed 168 source-linked cases. Search limits, reposts, and unrelated results mean these numbers are **not** a count of original Opus videos or all of X. See the [search receipts summary](docs/search-coverage.zh-CN.md) and [frozen snapshot](data/corpus-snapshot.json).
 
 ![Four common production routes from an Opus request to video pixels](assets/opus55-video-paths.png)
 
 ## What people made, and how it looks
 
-> Refresh, Sep 25 2026: a vision model (Gemini 3.8 Flash) classified the nine-frame samples and post text for all 1,138 byte-distinct MP4s. It labeled 767 “yes” and 126 “likely” for Opus involvement. Those 893 labels are classifier judgments, not verified authorship; one label per video can also miss mixed domains or styles. The classifier sorts by topic and look. It does **not** predict virality. Data: [`data/domain-style.csv`](data/domain-style.csv). The [published X Article](https://x.com/WangYeruo/article/2103278277536485482) and [47-second video summary](https://x.com/WangYeruo/status/2103279925960876265) preserve their original September 25 morning snapshot.
+> Refresh, Sep 26 2026: a vision model (Gemini 3.8 Flash) classified the nine-frame samples and post text for all 1,401 byte-distinct MP4s. It labeled 980 “yes” and 139 “likely” for Opus involvement. Those 1,119 labels are classifier judgments, not verified authorship; one label per video can also miss mixed domains or styles. The classifier sorts by topic and look. It does **not** predict virality. Data: [`data/domain-style.csv`](data/domain-style.csv). The [published X Article](https://x.com/WangYeruo/article/2103278277536485482) and [47-second video summary](https://x.com/WangYeruo/status/2103279925960876265) preserve their original September 25 morning snapshot.
 
 ![Jars of videos by domain](assets/domains-jars.png)
 
-The counts below cover only the 893 files labeled “yes” or “likely” for Opus involvement; each file contributes one primary domain and style.
+The counts below cover only the 1,119 files labeled “yes” or “likely” for Opus involvement; each file contributes one primary domain and style.
 
 | Domain | Videos | Example |
 |---|---:|---|
-| Games & interactive demos | 207 | [@MengTo, Japanese canal boat ride](https://x.com/MengTo/status/2102760783344189761) |
-| AI about AI | 167 | [@kevin_t_ngo, a girl asks Claude what it loves](https://x.com/kevin_t_ngo/status/2102437977435893771) |
-| Ads & launches | 138 | [@deedydas, startup launch video](https://x.com/deedydas/status/2102787937482252537) |
-| Explainers | 116 | [@RyanSael, camera focus lab](https://x.com/RyanSael/status/2102591147927654847) |
-| Short stories | 97 | [@AndrewOnXYZ, Mars rover short](https://x.com/AndrewOnXYZ/status/2102512879258009818) |
-| Music videos | 67 | [@other__reality](https://x.com/other__reality/status/2102514581684052169) |
-| Art | 36 | [@majidmanzarpour, pixel wizard](https://x.com/majidmanzarpour/status/2102476258948927543) |
-| History & culture | 34 | [@paji_a, Sekigahara 3D map](https://x.com/paji_a/status/2102581158487945540) |
-| Humor, data viz & other | 31 | |
+| Games & interactive demos | 230 | [@MengTo, Japanese canal boat ride](https://x.com/MengTo/status/2102760783344189761) · [@JaydenDavisNC, Splatoon gameplay](https://x.com/JaydenDavisNC/status/2103357848961036304) |
+| Ads & launches | 215 | [@deedydas, startup launch video](https://x.com/deedydas/status/2102787937482252537) · [@shushant_l, motion-ad skill video](https://x.com/shushant_l/status/2103829449359966629) |
+| AI about AI | 201 | [@kevin_t_ngo, a girl asks Claude what it loves](https://x.com/kevin_t_ngo/status/2102437977435893771) |
+| Explainers | 147 | [@RyanSael, camera focus lab](https://x.com/RyanSael/status/2102591147927654847) · [@dotey, Transformer explainer](https://x.com/dotey/status/2103683057689522564) |
+| Short stories | 112 | [@AndrewOnXYZ, Mars rover short](https://x.com/AndrewOnXYZ/status/2102512879258009818) |
+| Music videos | 77 | [@other__reality](https://x.com/other__reality/status/2102514581684052169) |
+| History & culture | 49 | [@paji_a, Sekigahara 3D map](https://x.com/paji_a/status/2102581158487945540) |
+| Art | 42 | [@majidmanzarpour, pixel wizard](https://x.com/majidmanzarpour/status/2102476258948927543) · [@AxtonLiu, living rice paper](https://x.com/AxtonLiu/status/2103288413969621231) |
+| Humor, data viz & other | 46 | |
 
-Styles: 3D 297 · motion graphics / UI 222 · flat cartoon 141 · pixel art 52 · hand-drawn 38 · paper cut-out 35 · ink, sand & paint 31 · generative 20 · anime 19 · math diagrams 15 · photoreal 14 · live action 5 · retro terminal / ASCII 4. Games skew 3D; ads and explainers lean toward motion graphics; stories and music videos often use flat cartoons. Each file has one main domain and style, with an optional second style.
+Styles: motion graphics / UI 350 · 3D 324 · flat cartoon 162 · pixel art 58 · hand-drawn 52 · paper cut-out 39 · ink, sand & paint 37 · generative 23 · anime 21 · math diagrams 21 · photoreal 17 · live action 11 · retro terminal / ASCII 4. Motion graphics surged past 3D rendering to become the #1 most prevalent visual style, driven by the explosion of SaaS product ads, skill-generated showreels, and UI animations.
 
 One Top result on Western civilization had 42,836 likes when collected. Its 136.5-second MP4 was byte-identical to a later repost captioned as an Opus 5.5 video, while the earlier [post](https://x.com/IterIntellectus/status/2103212539895017864) only says “Claude.” We kept both posts in the candidate corpus but left the video out of the reviewed Opus case index because the original model version is unclear. Engagement is not evidence of authorship.
 
@@ -42,6 +42,7 @@ One Top result on Western civilization had 42,836 likes when collected. Its 136.
 - [Existing footage, audio, or project transformation](#existing-footage-audio-or-project-transformation)
 - [External video-model pipelines](#external-video-model-pipelines)
 - [Apps and games shown through capture](#apps-and-games-shown-through-capture)
+- [New cases from the September 26 refresh](#new-cases-from-the-september-26-refresh)
 - [New cases from the September 25 refresh](#new-cases-from-the-september-25-refresh)
 - [Dataset and method](#dataset-and-method)
 - [Contributing and license](#contributing-and-license)
@@ -54,7 +55,7 @@ Anthropic's [Opus 5.5 model description](https://platform.claude.com/docs/en/mod
 **Prompt shown:** A creator published a prompt or a detailed workflow. A request to call a service does not prove that it was called.
 **Creator account:** The workflow comes from the creator's post or reply; our independent observation is limited to the accessible MP4 and nine sampled frames.
 
-This home page deliberately selects examples with distinct production paths. The 160-case audit table includes comparisons and less certain cases and should not be interpreted as a prevalence survey.
+This home page deliberately selects examples with distinct production paths. The 168-case audit table includes comparisons and less certain cases and should not be interpreted as a prevalence survey.
 
 ## Code-drawn 2D and motion graphics
 
@@ -95,6 +96,19 @@ This home page deliberately selects examples with distinct production paths. The
 - [Interactive island - @Acemation_](https://x.com/Acemation_/status/2103150350211354966) - A captured navigable environment rather than a finished linear film; costs and development time are creator reports. **Creator account.**
 - [Game demonstration - @NiloTechInc](https://x.com/NiloTechInc/status/2102741813719138661) - The creator credits human-made character, animation, and clothing assets alongside Opus-assisted game development. **Creator account.**
 
+## New cases from the September 26 refresh
+
+| Case | What the creator reports and what the X preview shows |
+|---|---|
+| [15-second résumé reel - @stephanlivera](https://x.com/stephanlivera/status/2103315922098470926) | Viral resume-style motion design reel (14k+ likes) demonstrating the brief contagion behind identical 15-second showreels. |
+| [Deconstructed motion workflow - @rexan_wong](https://x.com/rexan_wong/status/2103707054108299437) | Detailed 6-stage engineering and directorial pipeline (reference video, HyperFrames/Remotion, 21st.dev UI components, storyboard approvals, director notes) deconstructing the "one-prompt" myth. |
+| [Four-tool multimodal animation - @sankakuten91256](https://x.com/sankakuten91256/status/2103483923783373039) | Multimodal pipeline orchestrating GPT Images (frames), Grok (green screen dance video), Opus 5.5 (motion graphics background/code), and Astra (audio replacement). |
+| [Runway MCP documentary - @gavinpurcell](https://x.com/gavinpurcell/status/2103304514329854102) | Claude Agent (Fig) hooked to Runway MCP to script, prompt, and direct a 5-minute Netflix-style documentary, using Opus as an agentic coordinator for external diffusion models. |
+| [Splatoon gameplay capture - @JaydenDavisNC](https://x.com/JaydenDavisNC/status/2103357848961036304) | A playable browser game written from scratch by Opus 5.5, captured during live gameplay; illustrates the app/game capture production route. |
+| [Living rice paper ink wash - @AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231) | Open-ended creative brief rendered as progressive procedural stroke-by-stroke Canvas Chinese painting; highlights the aesthetic ceiling of 2D code art. |
+| [motion-ad skill product spot - @shushant_l](https://x.com/shushant_l/status/2103829449359966629) | 15-second commercial motion ad produced via Danny Postma's portable Claude Code `motion-ad` skill, demonstrating the shift from ad-hoc prompts to packaged tools. |
+| [Transformer explainer - @dotey](https://x.com/dotey/status/2103683057689522564) | 12-minute technical deep-dive into Transformer attention mechanisms produced with Claude Code and web toolchain capabilities. |
+
 ## New cases from the September 25 refresh
 
 | Case | What the creator reports and what the X preview shows |
@@ -110,7 +124,7 @@ This home page deliberately selects examples with distinct production paths. The
 
 ## Dataset and method
 
-The [case index](data/cases.csv) and [field definitions](docs/case-index-guide.zh-CN.md) cover all 160 reviewed examples.
+The [case index](data/cases.csv) and [field definitions](docs/case-index-guide.zh-CN.md) cover all 168 reviewed examples.
 
 Read the [full Chinese research report](docs/report.zh-CN.md), [Article version](docs/x-article.zh-CN.md), [prompt/workflow matrix](docs/prompt-matrix.zh-CN.md), and [reusable prompt templates](docs/prompt-playbook.zh-CN.md).
 

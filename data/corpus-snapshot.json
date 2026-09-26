@@ -1,31 +1,31 @@
 {
-  "snapshot_utc": "2026-09-25T15:21:07.007119+00:00",
-  "candidate_posts": 1242,
-  "candidate_posts_with_mp4": 1156,
-  "mp4_attachments": 1180,
+  "snapshot_utc": "2026-09-26T13:53:20.929497+00:00",
+  "candidate_posts": 1511,
+  "candidate_posts_with_mp4": 1419,
+  "mp4_attachments": 1449,
   "hypit_status": {
-    "tile_ok": 1180
+    "tile_ok": 1449
   },
-  "sha256_distinct": 1138,
-  "sha256_duplicate_groups": 35,
-  "sha256_duplicate_extra_attachments": 42,
-  "curated_cases": 160,
+  "sha256_distinct": 1401,
+  "sha256_duplicate_groups": 39,
+  "sha256_duplicate_extra_attachments": 48,
+  "curated_cases": 168,
   "curated_case_hypit_status": {
-    "tile_ok": 160
+    "tile_ok": 168
   },
-  "search_queries_saved": 49,
-  "search_queries_ok_or_cached": 48,
-  "search_results_returned": 1652,
-  "refresh_successful_queries": 5,
-  "refresh_results_returned": 189,
+  "search_queries_saved": 56,
+  "search_queries_ok_or_cached": 55,
+  "search_results_returned": 2013,
+  "refresh_successful_queries": 12,
+  "refresh_results_returned": 550,
   "refresh_rate_limited_queries": 1,
-  "last_successful_refresh_query": "update_20260925_japanese_latest",
-  "last_successful_refresh_utc": "2026-09-25T14:47:37.645332+00:00",
-  "domain_style_classified_files": 1138,
+  "last_successful_refresh_query": "update_20260926_japanese_latest",
+  "last_successful_refresh_utc": "2026-09-26T13:04:47.934068+00:00",
+  "domain_style_classified_files": 1401,
   "classifier_opus_made_labels": {
-    "yes": 767,
-    "likely": 126,
-    "no": 245
+    "yes": 980,
+    "likely": 139,
+    "no": 282
   },
   "classifier_errors": 0
 }
