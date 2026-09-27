@@ -7,29 +7,11 @@
 ## 从这里开始
 
 - **按任务选制作方法：**[视觉效果制作适配指南](docs/visual-effects-fit.zh-CN.md)说明工具、素材、验收和常见边界。
-- **先看我们做的片：**[九支已发布视频](#我们自己做的视频)附制作输入、分工和返工说明。
 - **看图找原帖：**[168 条带截图的案例目录](docs/cases-index.zh-CN.md)把公开原帖、片长与证据边界放在一起。
 - **交叉看内容与画风：**[领域 × 画风二维图谱](docs/domain-style-atlas.zh-CN.md)列格子计数，附带截图案例和标明日期的互动量。
 - **对照证据：**[14 条成对案例](docs/evidence-examples.zh-CN.md)与[可复算统计页](docs/statistics.zh-CN.md)分开呈现制作路径和样本数字。
 - **看新增作品：**[冻结检索截点后的七条案例](docs/new-cases-2026-09-27.zh-CN.md)另行标注日期，不改写原统计。
 - **复用现成工程：**查看[开源制作工程](#可复用的开源制作工程)，并核对许可和每个样片标注的模型。
-
-## 我们自己做的视频
-
-维护者 [@WangYeruo](https://x.com/WangYeruo) 已公开**页读／Thusfar 四个主题的中英双版宣传片，共八支**，以及一支[47 秒研究摘要动画](https://x.com/WangYeruo/status/2103279925960876265)。这组亲手制作的片子可以直接对照下文的制作路径。摘要动画讲的是 **9 月 25 日早上的研究截点**；目前的计数请看下文及冻结快照。
-
-<a href="https://x.com/WangYeruo/status/2103279925960876265"><img src="assets/our-videos/opus-world-en.webp" width="440" alt="我们制作的 47 秒研究摘要动画截图"></a>
-
-*47 秒研究摘要动画展示的是 9 月 25 日早上的旧截点；点击画面进入已发布的 X 视频帖。*
-
-| 主题 | 中文片 | 英文片 | 输入与制作分工 |
-|---|---|---|---|
-| 核心理念 | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-zh.webp" width="170" alt="页读核心理念中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-en.webp" width="170" alt="Thusfar 核心理念英文片截图"></a> | 已有阅读 App 代码和产品文案 → Opus 写 Remotion 画面 |
-| 功能 | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-zh.webp" width="170" alt="页读功能中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-en.webp" width="170" alt="Thusfar 功能英文片截图"></a> | 产品功能与界面 → 动效短片 |
-| 技术原理 | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-zh.webp" width="170" alt="页读技术原理中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-en.webp" width="170" alt="Thusfar 技术原理英文片截图"></a> | 防剧透架构 → 图解片 |
-| 竖版预告 | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-zh.webp" width="112" alt="页读竖版预告中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-en.webp" width="112" alt="Thusfar 竖版预告英文片截图"></a> | 产品信息 → 竖版预告 |
-
-[制作说明](https://x.com/WangYeruo/status/2103110282444771733)披露：Claude Code 中的 Opus 5.5 读取已有应用代码库，用 Remotion 写画面、转场、配乐和音效；旁白由 Gemini 3.8 Flash TTS 提供，人工返工三四轮。我们已探测八个可取得的 X 预览 MP4 并分别取样九帧，但没有独立审计当次模型会话、源工程或订阅后台。四条帖子在 168 条人工案例中合为**一条来源案例**，不能把八个文件算作八个独立案例。冻结分类表对这八个已知第一方文件标出四个 `yes`、四个 `no`，也说明分类器标签不能单独判定模型实际参与。
 
 **更新截点：X 最后一次成功检索为 2026 年 9 月 26 日 21:05（北京时间），文件快照整理于 21:53。**共保存 56 组查询回执，55 次成功，另有一次中文检索遇到限流。语料有 1,511 条去重候选帖，其中 1,419 条有 MP4、共 1,449 个附件；Hypit 0.2.3 已对全部附件做媒体探测和九帧取样，SHA-256 去重后有 1,401 个不同文件。人工回读并整理了 168 条来源案例。候选含比较、转载和检索噪音，因此这些数字都不是 X 全站原创影片数，也不是各制作路径的占比。[检索覆盖与失败记录](docs/search-coverage.zh-CN.md)和[冻结快照](data/corpus-snapshot.json)保留了边界。
 
@@ -37,7 +19,7 @@
 
 ## 大家做了什么、长什么样
 
-> 9 月 26 日增量更新：视觉模型 Gemini 3.8 Flash 根据九帧和帖文，对 1,401 个不同 MP4 作了领域／画风分类；它把 980 条判为“yes”、139 条判为“likely”与 Opus 有关。1,119 是**分类器判断**，不是经过逐项验证的原创数。每个视频仅取一个主领域和主画风，分类器用于整理主题与外观，**没有预测爆款概率**。数据见 [`data/domain-style.csv`](data/domain-style.csv)。已发布的 [X 长文](https://x.com/WangYeruo/article/2103278277536485482)与[47 秒视频版](https://x.com/WangYeruo/status/2103279925960876265)保留早上那一版截点。
+> 9 月 26 日增量更新：视觉模型 Gemini 3.8 Flash 根据九帧和帖文，对 1,401 个不同 MP4 作了领域／画风分类；它把 980 条判为“yes”、139 条判为“likely”与 Opus 有关。1,119 是**分类器判断**，不是经过逐项验证的原创数。每个视频仅取一个主领域和主画风，分类器用于整理主题与外观，**没有预测爆款概率**。数据见 [`data/domain-style.csv`](data/domain-style.csv)。
 
 ![2026 年 9 月 26 日冻结文件样本的领域分类计数，区分 yes 与 likely 标签](assets/domain-labels.svg)
 

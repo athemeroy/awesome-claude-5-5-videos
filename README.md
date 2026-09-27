@@ -6,29 +6,11 @@ A curated, source-linked guide to videos people made **with** Claude Opus 5.5. I
 
 ## Start here
 
-- **Watch first:** see [our own nine published videos](#videos-we-made) and how we made them.
 - **Browse by picture:** open the [168-case visual directory](docs/cases-index.zh-CN.md); every reviewed case has a small frame from its sampled X preview.
 - **Explore the grid:** use the [domain × visual-style atlas](docs/domain-style-atlas.md) to compare cell counts and open pictured cases, with dated engagement observations.
 - **Compare evidence:** read [14 paired cases](docs/evidence-examples.md) across seven production paths and the [reproducible statistical profile](docs/statistics.md).
 - **Find the latest additions:** read [seven cases published after the frozen search cutoff](docs/new-cases-2026-09-27.md).
 - **Choose a production route:** use the [visual-effects production guide](docs/visual-effects-fit.md) to match a task with tools, inputs, checks, and likely limits.
-
-## Videos we made
-
-The maintainer [@WangYeruo](https://x.com/WangYeruo) made **eight Thusfar / 页读 product films** in four Chinese–English pairs, plus a [47-second research-summary animation](https://x.com/WangYeruo/status/2103279925960876265). These are first-party examples of the workflows discussed here. The summary video depicts the **September 25 morning** research snapshot; the current counts are below.
-
-<a href="https://x.com/WangYeruo/status/2103279925960876265"><img src="assets/our-videos/opus-world-en.webp" width="440" alt="Frame from our 47-second visual research summary"></a>
-
-*Our 47-second summary animation depicts the September 25 morning snapshot; click for the published X video.*
-
-| Theme | Chinese film | English film | Input and role |
-|---|---|---|---|
-| Core idea | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-zh.webp" width="170" alt="Chinese Thusfar core-idea film frame"></a> | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-en.webp" width="170" alt="English Thusfar core-idea film frame"></a> | Existing reading-app code and copy → Opus-authored Remotion visuals |
-| Features | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-zh.webp" width="170" alt="Chinese Thusfar features film frame"></a> | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-en.webp" width="170" alt="English Thusfar features film frame"></a> | Product features and interface → motion graphics |
-| How it works | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-zh.webp" width="170" alt="Chinese Thusfar technical-explainer film frame"></a> | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-en.webp" width="170" alt="English Thusfar technical-explainer film frame"></a> | Spoiler-control architecture → explainer graphics |
-| Vertical trailer | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-zh.webp" width="112" alt="Chinese Thusfar vertical-trailer frame"></a> | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-en.webp" width="112" alt="English Thusfar vertical-trailer frame"></a> | Product message → vertical short |
-
-The [production note](https://x.com/WangYeruo/status/2103110282444771733) says Opus 5.5 in Claude Code used the existing app codebase and Remotion for visuals, transitions, music, and effects; Gemini 3.8 Flash TTS supplied narration. The group took three or four rounds of human revisions according to that note. We measured and sampled all eight accessible X preview MP4s, but did not independently audit the original model sessions, project files, or subscription dashboard. The four posts form **one reviewed source case** in the 168-case directory, not eight separate case rows. In the frozen visual classification, four of these known first-party files were labeled `yes` and four `no`—a useful reminder that a classifier label alone cannot settle model involvement.
 
 > **Refresh:** X searches ran through September 26, 2026, 21:05 China Standard Time; this snapshot was reconciled at 21:53. Across 56 recorded queries, 55 succeeded and one query had been rate-limited in an earlier batch. The corpus has 1,511 unique candidate posts, 1,419 with MP4, and 1,449 attachments. Hypit 0.2.3 probed and sampled nine frames from all 1,449; SHA-256 found 1,401 distinct files. We reviewed 168 source-linked cases. Search limits, reposts, and unrelated results mean these numbers are **not** a count of original Opus videos or all of X. See the [search receipts summary](docs/search-coverage.zh-CN.md) and [frozen snapshot](data/corpus-snapshot.json).
 
@@ -36,7 +18,7 @@ The [production note](https://x.com/WangYeruo/status/2103110282444771733) says O
 
 ## What people made, and how it looks
 
-> Refresh, Sep 26 2026: a vision model (Gemini 3.8 Flash) classified the nine-frame samples and post text for all 1,401 byte-distinct MP4s. It labeled 980 “yes” and 139 “likely” for Opus involvement. Those 1,119 labels are classifier judgments, not verified authorship; one label per video can also miss mixed domains or styles. The classifier sorts by topic and look. It does **not** predict virality. Data: [`data/domain-style.csv`](data/domain-style.csv). The [published X Article](https://x.com/WangYeruo/article/2103278277536485482) and [47-second video summary](https://x.com/WangYeruo/status/2103279925960876265) preserve their original September 25 morning snapshot.
+> Refresh, Sep 26 2026: a vision model (Gemini 3.8 Flash) classified the nine-frame samples and post text for all 1,401 byte-distinct MP4s. It labeled 980 “yes” and 139 “likely” for Opus involvement. Those 1,119 labels are classifier judgments, not verified authorship; one label per video can also miss mixed domains or styles. The classifier sorts by topic and look. It does **not** predict virality. Data: [`data/domain-style.csv`](data/domain-style.csv).
 
 ![Classifier-assigned domain counts for the frozen September 26 file sample, with yes and likely labels shown separately](assets/domain-labels.svg)
 

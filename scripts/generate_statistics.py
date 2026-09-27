@@ -83,12 +83,6 @@ EXAMPLES = (
         "匹配的公开 WebGL 工程可佐证渲染路径；X 预览不能还原完整模型对话。",
     ),
     (
-        "https://x.com/WangYeruo/status/2103108551799632050",
-        "Thusfar product films", "页读／Thusfar 产品短片",
-        "The creator discloses an existing codebase, external TTS, and revisions; a visible ad is not evidence of a blank-input one-shot.",
-        "作者披露既有代码库、外部 TTS 和多轮返工；可见广告不能证明空白输入一次成片。",
-    ),
-    (
         "https://x.com/ng169onX/status/2103183904563998809",
         "VAE explainer", "VAE 数学讲解",
         "The sampled frames show diagrams, while the training run, mathematical accuracy, and audio still require separate checks.",

@@ -79,7 +79,6 @@
 | 原帖 | 它说明的证据边界 |
 |---|---|
 | <a href="https://x.com/Aurelien_Gz/status/2102786378282987591"><img src="../assets/case-thumbnails/2102786378282987591.webp" width="160" alt="X 预览取样截图"></a><br>@Aurelien_Gz · Clearwater 水面 | 匹配的公开 WebGL 工程可佐证渲染路径；X 预览不能还原完整模型对话。 |
-| <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="../assets/case-thumbnails/2103108551799632050.webp" width="160" alt="X 预览取样截图"></a><br>@WangYeruo · 页读／Thusfar 产品短片 | 作者披露既有代码库、外部 TTS 和多轮返工；可见广告不能证明空白输入一次成片。 |
 | <a href="https://x.com/ng169onX/status/2103183904563998809"><img src="../assets/case-thumbnails/2103183904563998809.webp" width="160" alt="X 预览取样截图"></a><br>@ng169onX · VAE 数学讲解 | 九帧可见图解；训练过程、数学准确性和声音仍需另行核验。 |
 | <a href="https://x.com/jantijssen/status/2102861462461124755"><img src="../assets/case-thumbnails/2102861462461124755.webp" width="160" alt="X 预览取样截图"></a><br>@jantijssen · 外部工具制作的音乐视频 | 作者把歌曲、视频片段和剪辑交给不同工具；分类器标为 `no`，应分别看模型分工与标签。 |
 | <a href="https://x.com/leogao25/status/2102544078927741369"><img src="../assets/case-thumbnails/2102544078927741369.webp" width="160" alt="X 预览取样截图"></a><br>@leogao25 · 双模型对照片 | 帖子 MP4 并列展示两种输出，不等于验收任一模型的完整生产过程。 |
