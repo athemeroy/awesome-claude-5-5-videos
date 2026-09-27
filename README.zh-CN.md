@@ -7,9 +7,29 @@
 ## 从这里开始
 
 - **按任务选制作方法：**[视觉效果制作适配指南](docs/visual-effects-fit.zh-CN.md)说明工具、素材、验收和常见边界。
-- **按制作路径找原帖：**[168 条案例浏览页](docs/cases-index.zh-CN.md)把公开原帖、片长与证据边界放在一起。
+- **先看我们做的片：**[九支已发布视频](#我们自己做的视频)附制作输入、分工和返工说明。
+- **看图找原帖：**[168 条带截图的案例目录](docs/cases-index.zh-CN.md)把公开原帖、片长与证据边界放在一起。
+- **交叉看内容与画风：**[领域 × 画风二维图谱](docs/domain-style-atlas.zh-CN.md)列格子计数，附带截图案例和标明日期的互动量。
+- **对照证据：**[14 条成对案例](docs/evidence-examples.zh-CN.md)与[可复算统计页](docs/statistics.zh-CN.md)分开呈现制作路径和样本数字。
+- **看新增作品：**[冻结检索截点后的七条案例](docs/new-cases-2026-09-27.zh-CN.md)另行标注日期，不改写原统计。
 - **复用现成工程：**查看[开源制作工程](#可复用的开源制作工程)，并核对许可和每个样片标注的模型。
-- **核对统计口径：**[研究材料](#研究材料)包含底表、检索边界和冻结计数。
+
+## 我们自己做的视频
+
+维护者 [@WangYeruo](https://x.com/WangYeruo) 已公开**页读／Thusfar 四个主题的中英双版宣传片，共八支**，以及一支[47 秒研究摘要动画](https://x.com/WangYeruo/status/2103279925960876265)。这组亲手制作的片子可以直接对照下文的制作路径。摘要动画讲的是 **9 月 25 日早上的研究截点**；目前的计数请看下文及冻结快照。
+
+<a href="https://x.com/WangYeruo/status/2103279925960876265"><img src="assets/our-videos/opus-world-en.webp" width="440" alt="我们制作的 47 秒研究摘要动画截图"></a>
+
+*47 秒研究摘要动画展示的是 9 月 25 日早上的旧截点；点击画面进入已发布的 X 视频帖。*
+
+| 主题 | 中文片 | 英文片 | 输入与制作分工 |
+|---|---|---|---|
+| 核心理念 | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-zh.webp" width="170" alt="页读核心理念中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-en.webp" width="170" alt="Thusfar 核心理念英文片截图"></a> | 已有阅读 App 代码和产品文案 → Opus 写 Remotion 画面 |
+| 功能 | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-zh.webp" width="170" alt="页读功能中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-en.webp" width="170" alt="Thusfar 功能英文片截图"></a> | 产品功能与界面 → 动效短片 |
+| 技术原理 | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-zh.webp" width="170" alt="页读技术原理中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-en.webp" width="170" alt="Thusfar 技术原理英文片截图"></a> | 防剧透架构 → 图解片 |
+| 竖版预告 | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-zh.webp" width="112" alt="页读竖版预告中文片截图"></a> | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-en.webp" width="112" alt="Thusfar 竖版预告英文片截图"></a> | 产品信息 → 竖版预告 |
+
+[制作说明](https://x.com/WangYeruo/status/2103110282444771733)披露：Claude Code 中的 Opus 5.5 读取已有应用代码库，用 Remotion 写画面、转场、配乐和音效；旁白由 Gemini 3.8 Flash TTS 提供，人工返工三四轮。我们已探测八个可取得的 X 预览 MP4 并分别取样九帧，但没有独立审计当次模型会话、源工程或订阅后台。四条帖子在 168 条人工案例中合为**一条来源案例**，不能把八个文件算作八个独立案例。冻结分类表对这八个已知第一方文件标出四个 `yes`、四个 `no`，也说明分类器标签不能单独判定模型实际参与。
 
 **更新截点：X 最后一次成功检索为 2026 年 9 月 26 日 21:05（北京时间），文件快照整理于 21:53。**共保存 56 组查询回执，55 次成功，另有一次中文检索遇到限流。语料有 1,511 条去重候选帖，其中 1,419 条有 MP4、共 1,449 个附件；Hypit 0.2.3 已对全部附件做媒体探测和九帧取样，SHA-256 去重后有 1,401 个不同文件。人工回读并整理了 168 条来源案例。候选含比较、转载和检索噪音，因此这些数字都不是 X 全站原创影片数，也不是各制作路径的占比。[检索覆盖与失败记录](docs/search-coverage.zh-CN.md)和[冻结快照](data/corpus-snapshot.json)保留了边界。
 
@@ -19,73 +39,52 @@
 
 > 9 月 26 日增量更新：视觉模型 Gemini 3.8 Flash 根据九帧和帖文，对 1,401 个不同 MP4 作了领域／画风分类；它把 980 条判为“yes”、139 条判为“likely”与 Opus 有关。1,119 是**分类器判断**，不是经过逐项验证的原创数。每个视频仅取一个主领域和主画风，分类器用于整理主题与外观，**没有预测爆款概率**。数据见 [`data/domain-style.csv`](data/domain-style.csv)。已发布的 [X 长文](https://x.com/WangYeruo/article/2103278277536485482)与[47 秒视频版](https://x.com/WangYeruo/status/2103279925960876265)保留早上那一版截点。
 
-![按领域分装的视频罐](assets/domains-jars.png)
+![2026 年 9 月 26 日冻结文件样本的领域分类计数，区分 yes 与 likely 标签](assets/domain-labels.svg)
 
-下表统计被判为 Opus 相关的 1,119 个“yes／likely”文件；每个文件只计一个主领域和主画风。
+上图只统计分类器判为 `yes` 或 `likely` 的 1,119 个文件，每个文件只进入一个主领域。主画风中，动态图形／界面 350 个、三维渲染 324 个。[领域 × 画风二维图谱](docs/domain-style-atlas.zh-CN.md)列出所有非空格子的文件数，并在已有人工深读案例的格子里附截图和原帖。格内互动量是标明日期的历史观测值，不能叫“最终热度”或作品质量。
 
-| 领域 | 数量 | 例子 |
-|---|---:|---|
-| 游戏和交互 demo | 230 | [@MengTo 日式水乡泛舟](https://x.com/MengTo/status/2102760783344189761) · [@JaydenDavisNC 喷射战士试玩录屏](https://x.com/JaydenDavisNC/status/2103357848961036304) |
-| 广告和发布片 | 215 | [@deedydas 创业公司发布片](https://x.com/deedydas/status/2102787937482252537) · [@shushant_l motion-ad 技能商用短片](https://x.com/shushant_l/status/2103829449359966629) |
-| AI 讲 AI 自己 | 201 | [@kevin_t_ngo 小女孩问 Claude 爱什么](https://x.com/kevin_t_ngo/status/2102437977435893771) |
-| 科普讲解 | 147 | [@RyanSael 相机对焦模拟](https://x.com/RyanSael/status/2102591147927654847) · [@dotey Transformer 深入浅出解析](https://x.com/dotey/status/2103683057689522564) |
-| 故事短片 | 112 | [@AndrewOnXYZ 火星车短片](https://x.com/AndrewOnXYZ/status/2102512879258009818) |
-| MV | 77 | [@other__reality](https://x.com/other__reality/status/2102514581684052169) |
-| 历史人文 | 49 | [@paji_a 关原之战 3D 沙盘](https://x.com/paji_a/status/2102581158487945540) |
-| 艺术 | 42 | [@majidmanzarpour 像素巫师](https://x.com/majidmanzarpour/status/2102476258948927543) · [@AxtonLiu 宣纸水墨画](https://x.com/AxtonLiu/status/2103288413969621231) |
-| 梗、数据可视化和其他 | 46 | |
-
-画风：动态图形/界面 350、3D 渲染 324、扁平卡通 162、像素 58、手绘 52、纸片拼贴 39、水墨沙画油彩 37、生成艺术 23、动漫 21、数学图解 21、写实 17、真人 11、复古终端/ASCII 4。在这一次分类快照中，动态图形／界面数量最多，3D 渲染其次；单次快照不能证明增长趋势或解释成因。
+**分类阈值敏感性：**仅计 `yes` 文件时，广告／发布片 191 个，略多于游戏／交互的 187 个；纳入 `likely` 后，游戏变成 230 个，广告为 215 个。头名随分类阈值变化，不能解释为作品流行趋势。[可复算统计页](docs/statistics.zh-CN.md)列明分母、片长和交叉表。
 
 有条文明 Top 结果在采集时获 42,836 个赞，但 136.5 秒 MP4 与一条后来标注“Opus 5.5”的[转帖](https://x.com/_IamAlam/status/2103494816055345491)逐字节相同；较早的[原帖](https://x.com/IterIntellectus/status/2103212539895017864)只说“Claude”，没有给出版本。我们保留两条候选记录，但没有将该片列为已核实案例。互动量不能证明作者身份或模型版本。
 
-## 先看六种路径
+## 七种制作路径，先看画面
 
-| 路径 | 代表案例 | 读它时要问什么 |
+每张小图都链接原作者帖子。这七例是有目的地选出的制作路径样本，不是质量排名或各路径的总体比例。[14 条成对证据案例](docs/evidence-examples.zh-CN.md)比较外观相近却输入、工具不同的作品；[168 条案例目录](docs/cases-index.zh-CN.md)则让每条深读案例都有一张可见截图。
+
+| 路径 | 看一个案例 | 需要核对什么 |
 |---|---|---|
-| **程序逐帧绘图** | [蚂蚁群落片与匹配源码](https://x.com/hanifproduktif/status/2102742924148830211)、[纸雕夜景与制作工程](https://x.com/makwired/status/2103008945220567166) | 画面是 Canvas／SVG／浏览器程序输出的吗？音轨或素材是否另有来源？ |
-| **知识讲解** | [Manim 导数课](https://x.com/LinearUncle/status/2103128559174971663)、[VAE 数学片](https://x.com/ng169onX/status/2103183904563998809) | 旁白谁生成？公式与知识有没有独立核对？ |
-| **三维与实时图形** | [Clearwater 与 WebGL 源码](https://x.com/Aurelien_Gz/status/2102786378282987591)、[建筑爆炸图](https://x.com/zdkiel_labs/status/2102722754172850310) | 是实时程序录屏、Blender 渲染，还是外部视频模型？ |
-| **现有素材改编** | [83 秒真人口播线稿重制](https://x.com/AxtonLiu/status/2102827887732932956)、[13 条 take 挑剪](https://x.com/gregpr07/status/2102984873351037161)、[长委托 MV](https://x.com/donaldjewkes/status/2102801274173587569) | 原视频、音乐、产品代码库与人工表演贡献了什么？ |
-| **外部视频模型编排** | [Opus＋Seedance](https://x.com/abxxai/status/2102775755646337530)、[多模型无限放大拼贴](https://x.com/koldo2k/status/2103129343253778767) | Opus 是写分镜／调度，还是实际出画面像素？ |
-| **应用或游戏录屏** | [捡罐模拟器与在线演示](https://x.com/masaya_1980/status/2103115017755500561)、[交互海岛](https://x.com/Acemation_/status/2103150350211354966) | 交付物是 MP4 电影，还是可玩的程序及其录屏？ |
+| 程序二维逐帧绘图 | <a href="https://x.com/hanifproduktif/status/2102742924148830211"><img src="assets/case-thumbnails/2102742924148830211.webp" width="180" alt="蚂蚁群落动画截图"></a><br>[蚂蚁群落与对应源码](https://x.com/hanifproduktif/status/2102742924148830211) | 公开工程的场景、时序、素材是否与成片对应？ |
+| 知识讲解 | <a href="https://x.com/LinearUncle/status/2103128559174971663"><img src="assets/case-thumbnails/2103128559174971663.webp" width="180" alt="Manim 导数课截图"></a><br>[Manim 导数课](https://x.com/LinearUncle/status/2103128559174971663) | 公式、事实、旁白与既有教材是否逐项核对？ |
+| 三维与实时图形 | <a href="https://x.com/Aurelien_Gz/status/2102786378282987591"><img src="assets/case-thumbnails/2102786378282987591.webp" width="180" alt="Clearwater 浅水场景截图"></a><br>[Clearwater 与 WebGL 工程](https://x.com/Aurelien_Gz/status/2102786378282987591) | 这是实时程序录屏、三维渲染还是外部视频模型？ |
+| 现有素材改编 | <a href="https://x.com/AxtonLiu/status/2102827887732932956"><img src="assets/case-thumbnails/2102827887732932956.webp" width="180" alt="真人口播线稿重制截图"></a><br>[真人口播线稿重制](https://x.com/AxtonLiu/status/2102827887732932956) | 原表演、音轨或产品文件提供了什么？ |
+| 外部视频模型编排 | <a href="https://x.com/abxxai/status/2102775755646337530"><img src="assets/case-thumbnails/2102775755646337530.webp" width="180" alt="Opus 与 Seedance 合作样片截图"></a><br>[Opus＋Seedance](https://x.com/abxxai/status/2102775755646337530) | Opus 负责分镜调度，还是输出运动画面像素？ |
+| 应用与游戏录屏 | <a href="https://x.com/masaya_1980/status/2103115017755500561"><img src="assets/case-thumbnails/2103115017755500561.webp" width="180" alt="捡罐模拟器截图"></a><br>[捡罐模拟器](https://x.com/masaya_1980/status/2103115017755500561) | 交付物是否为可玩的程序，视频只是录屏？ |
+| 混合或路径未确定 | <a href="https://x.com/leogao25/status/2102544078927741369"><img src="assets/case-thumbnails/2102544078927741369.webp" width="180" alt="双模型物理机关对比截图"></a><br>[双模型物理机关对比](https://x.com/leogao25/status/2102544078927741369) | 输入、预算与评价方法是否可比？ |
 
-上方的制作适配指南回答某类视觉任务**该让 Opus 负责什么、用什么工具、怎样验收、什么时候换专门工具**。它给出七类任务的决策表、关键帧→短动作样片→整片的验收步骤，以及记录返工和成本的方法。这里的“适合”是工程判断，不是模型成功率或对其他模型的排名。
+[Opus 5.5 模型说明](https://platform.claude.com/docs/en/models/opus-5-5/overview)列出文本／图像输入与文本输出。成片可能由它写的代码、它控制的程序、它剪辑的既有视频，或它调度的外部模型制作；只看截图无法判断制作链。我们区分作者披露、匹配的公开工程或提示词，以及对 X 预览片的独立取样观察。[制作适配指南](docs/visual-effects-fit.zh-CN.md)给出任务与验收建议，不把这些例子当成模型成功率实验。
 
 ## 可复用的开源制作工程
 
-- **[Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)**（2026-09-27 核查）：[@lemomo_ai 的原帖](https://x.com/lemomo_ai/status/2103811634565415152)介绍了作者从更多作品中整理出的 39 种影片风格。[公开图鉴](https://lemomo-ai.github.io/lemo-opuscar/)展示风格并提供样片与 `STYLE.md` 链接；仓库还提供[导演指南](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md)、[技术指南](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md)和可检查的[样片代码](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js)，记录了开工前统一确认需求、用户选择时再审分镜，以及确定性逐帧渲染、共用时间线和音频检查。作者称影片以 Canvas／WebGL 代码绘帧，没有调用视频生成模型；仓库可核对制作方法，不能单独审计每部影片的模型调用、所有链接的播放结果和最终质量。[许可文件](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE)将代码列为 MIT，指南、风格说明和影片列为 CC BY 4.0，第三方素材另按各自许可。
-- **[Papermotion](https://github.com/francozanardi/papermotion)**（2026-09-27 核查）：纸片风动画的可复用引擎与模板，公开确定性物理、角色 rig、离线渲染、帧抓取、contact sheet 和音频检查命令。其当前 README 将 *snow*、*demo*、*rooftops*、*sea* 标为 Opus 5.5，将 *light*、*embers* 标为 GPT 6 Astra；应按逐片标注理解，不能把整个工程的样片都算作 Opus 作品。预置系统也是后续短片的投入。
-
-这两项是 9 月 26 日冻结语料之外补充核查的开源资源，**不计入**上面的 1,401 个文件或 168 条深读案例，也不改变历史检索数字。
-
-## 9 月 26 日新增案例
-
-| 作品 | 为什么值得看、有哪些边界 |
+| 预览与工程 | 能复用什么，截图展示什么 |
 |---|---|
-| [15 秒简历 showreel - @stephanlivera](https://x.com/stephanlivera/status/2103315922098470926) | 作者公开了简短的动态设计任务说明；X 预览约 15 秒。未公开源工程和修改过程，不能据此推断一次提示可稳定产出同类成片。 |
-| [专业动效工作流拆解 - @rexan_wong](https://x.com/rexan_wong/status/2103707054108299437) | 作者提出参考片、HyperFrames／Remotion、界面组件、分镜审核和导演式修改相结合的方法；X 预览约 11 秒。帖文是流程建议，不能当作每一步的执行日志。 |
-| [四工具多模态舞蹈动效 - @sankakuten91256](https://x.com/sankakuten91256/status/2103483923783373039) | 作者披露 GPT Images 做原始画面、Grok 做绿幕舞蹈、Opus 写动效、Astra 换音；X 预览约 15 秒。集成代码未公开。 |
-| [Runway MCP 纪录片 - @gavinpurcell](https://x.com/gavinpurcell/status/2103304514329854102) | 作者称 Claude 代理通过 Runway MCP 编排纪录片；X 预览超过五分钟。工具调用记录和逐镜画面来源尚未独立核对。 |
-| [Splatoon 游戏录屏 - @JaydenDavisNC](https://x.com/JaydenDavisNC/status/2103357848961036304) | 作者称 Opus 编写了浏览器游戏，并提供公开试玩链接；X 预览可见游戏录屏。开发过程未独立核对。 |
-| [会呼吸的宣纸水墨画 - @AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231) | 作者描述开放式任务和 Canvas 绘制；九帧样张可见约 39 秒预览中的绘画过程。源码及中间修改未公开。 |
-| [motion-ad 技能商用短片 - @shushant_l](https://x.com/shushant_l/status/2103829449359966629) | 作者称用预置 `motion-ad` 技能制作了约 15 秒产品广告；预览可见产品界面与字卡。实际调用与修改过程未独立核对。 |
-| [Transformer 教学讲解片 - @dotey](https://x.com/dotey/status/2103683057689522564) | 作者称 Claude Code 使用 JavaScript 与联网工具制作讲解片；X 预览约 12.2 分钟并展示图解。数学内容需要单独复核。 |
+| <a href="https://lemomo-ai.github.io/lemo-opuscar/"><img src="assets/resource-thumbnails/lemo-opuscar.webp" width="210" alt="Lemo-Opuscar 官方封面的多种影片风格拼贴"></a><br>[Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) · [作者原帖](https://x.com/lemomo_ai/status/2103811634565415152) | 官方封面预览[39 种风格图鉴](https://lemomo-ai.github.io/lemo-opuscar/)；每种风格附样片与 `STYLE.md`。[导演指南](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md)、[技术指南](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md)和[样片代码](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js)公开需求确认、分镜、确定性逐帧渲染、共用时间线与音频检查。作者称用 Canvas／WebGL 绘帧，没有调用视频生成模型；仓库本身无法逐片审计模型调用和成片质量。[许可文件](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE)将代码列为 MIT，指南、风格说明和影片列为 CC BY 4.0，第三方素材另按各自许可。 |
+| <a href="https://github.com/francozanardi/papermotion#first-snow-snow"><img src="assets/resource-thumbnails/papermotion.webp" width="210" alt="Papermotion 标为 Opus 5.5 的 snow 短片雪景"></a><br>[Papermotion](https://github.com/francozanardi/papermotion) | 可复用的纸片风动画引擎，含确定性物理、角色 rig、离线渲染、帧抓取、contact sheet 和音频检查。截图取自 README 标为 Opus 5.5 的 *snow*；*demo*、*rooftops*、*sea* 也标为 Opus 5.5，*light*、*embers* 则标为 GPT 6 Astra。应按逐片标注理解来源。 |
+| <a href="https://x.com/servasyy/status/2104039075175182487"><img src="assets/new-case-thumbnails/2104039075175182487.webp" width="210" alt="作者使用 ClaudeAnimationBase 制作的角色动画截图"></a><br>[ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) · [作者示例](https://x.com/servasyy/status/2104039075175182487) | 公开的 p5.js／p5.brush 动画底座，提供角色表情、分镜、contact sheet 和渲染流程。截图是 @servasyy 利用该底座制作的个人故事；开源底座是可复用输入，不能代表成片每个镜头的精确源码。 |
+| <a href="https://x.com/makevoid/status/2103869704955900023"><img src="assets/new-case-thumbnails/2103869704955900023.webp" width="210" alt="makevoid 的动态图形音乐视频截图"></a><br>[Motion Graphics Music Video skill](https://github.com/makevoid/motion-graphics-music-video-skill) · [作者示例](https://x.com/makevoid/status/2103869704955900023) | Claude Code 插件与 Ruby 工具包，根据提供的歌曲和创意要求规划、组装音乐视频动态图形。其 p5.js 流程可调用外部 Fal 图像、视频和音频模型；截图来自多工具制作示例，不代表全部运动画面像素都由 Opus 生成。 |
 
-## 9 月 25 日新增案例
+四个资源于 2026-09-27 核查；后两个作者示例也收录在[新案例证据页](docs/new-cases-2026-09-27.zh-CN.md)。它们都在 9 月 26 日冻结语料之外，**不计入**上面的 1,401 个文件或 168 条深读案例。预览图来源和权利说明见 [THIRD_PARTY.md](THIRD_PARTY.md)。
 
-| 作品 | 为什么值得看、有哪些边界 |
+## 冻结截点之后的新案例
+
+9 月 26 日 21:05（北京时间）检索截止后，又出现七条有视频的原作者帖子；[单独的增量案例页](docs/new-cases-2026-09-27.zh-CN.md)给每条附一张取样截图和证据边界。它们**没有计入**上面的 1,401 个文件或 168 条案例。建议先看这三条：
+
+| 截图与原帖 | 为什么值得看 |
 |---|---|
-| [15 秒简历 showreel - @ajith_io](https://x.com/ajith_io/status/2103449416325890146) | 作者公开了简短的 motion-design 提示词；九帧显示动态图形和片尾字卡。没有公开源工程，同一时段也出现多个相近的提示词变体。 |
-| [中秋剪纸拼贴 - @NFT_Chen](https://x.com/NFT_Chen/status/2103380404791333144) | 作者说给了脚本和音乐，Nano Banana Pro 生成背景与纸纹，再用 p5.js／p5.brush 做动效、Node 合成音效。39.3 秒样片展现一只猫给月亮补缺口。 |
-| [2076 年机器人故事 - @Hesamation](https://x.com/Hesamation/status/2103457566978162901) | 作者称故事、动画、音乐和音效都由 Opus 5.5 制作，视频用 JavaScript 编码。87.6 秒九帧呈现机器人在空城中的短篇叙事；音频与源码未独立核查。 |
-| [手绘感动画 - @mablesjoseph](https://x.com/mablesjoseph/status/2103465246014746943) | 作者称用代码画笔触并合成音效，同时公开说不是 one-shot：163 次调用、约 6 小时 45 分、约 1.5 小时人工参与。这些 token、费用和时间数字均为自述。 |
-| [白俄罗斯鸡尾酒教程 - @Sarut0biSasuke](https://x.com/Sarut0biSasuke/status/2103418429248069973) | 作者公开完整 prompt，并称提供手绘参考图后，一次提示生成 HTML／SVG／JavaScript 动画。Hypit 测得 X 预览为 30 秒；1080p 母版与酒谱准确性未核。 |
-| [阿拉伯语配音动漫试播集 - @sbalhatlani](https://x.com/sbalhatlani/status/2103475507471806929) | 作者称 8 分 33 秒试播集有 211 个镜头、300 多张生成图、11 个角色、70 条阿拉伯语配音和 16 段音乐。Hypit 实测 X 预览 513.3 秒；制作统计和音质仍是作者口径。 |
-| [Claude Code 会话回顾片 - @shneural](https://x.com/shneural/status/2103472385563459833) | 作者称 Opus 把 Claude Code 工作过程制成 56.3 秒视频，涉及 Python、Blender、音乐和 900 帧渲染；92 分钟、API 标价等价 81 美元均未拿到日志或账单核验。 |
-| [JEV＋Opus 实时视觉器 - @TheViableEdge](https://x.com/TheViableEdge/status/2103494684374900862) | 作者称用 Opus 5.5 与 JEV 做实时图表、动效和主题切换，考虑用作社媒短片叠层。56.5 秒内容是工具演示录屏；JEV 的具体分工未披露，也没展示完整短片。 |
+| <a href="https://x.com/JurgenPloeger/status/2104131805175844923"><img src="assets/new-case-thumbnails/2104131805175844923.webp" width="210" alt="手工原片与 Opus 代码重建片的画面对照"></a><br>[手工发布片与代码重建片](https://x.com/JurgenPloeger/status/2104131805175844923) | 作者提供旧片和 Figma 文件，再逐轮调整重建片节奏；对照让现有输入可见。 |
+| <a href="https://x.com/servasyy/status/2104039075175182487"><img src="assets/new-case-thumbnails/2104039075175182487.webp" width="210" alt="方块角色演绎个人故事的动画截图"></a><br>[复用 ClaudeAnimationBase 的个人故事](https://x.com/servasyy/status/2104039075175182487) | 已有开源动画底座和作者的人生素材，都是制作路径的重要输入。 |
+| <a href="https://x.com/arambarnett/status/2104011150471917838"><img src="assets/new-case-thumbnails/2104011150471917838.webp" width="210" alt="数字与图表组成的动态图解截图"></a><br>[带数据槽校验的数字短片](https://x.com/arambarnett/status/2104011150471917838) | 作者描述禁止模型随意填写屏幕数字的约束；约束代码尚未公开。 |
 
-首页英文版的[精选案例](README.md#code-drawn-2d-and-motion-graphics)只挑制作路径和证据有代表性的作品。需要自行分析全部深读案例，可下载[168 条案例底表](data/cases.csv)并查看[字段说明](docs/case-index-guide.zh-CN.md)。
+9 月 25–26 日补入的旧案例都在[带图案例目录](docs/cases-index.zh-CN.md)，可按制作路径查看 168 条人工深读原帖。
 
 ## 研究材料
 
@@ -93,6 +92,6 @@
 - [88 例提示词与制作条件矩阵](docs/prompt-matrix.zh-CN.md)、[七类可复用提示词模板](docs/prompt-playbook.zh-CN.md)。
 - [方法和证据等级](docs/methodology.zh-CN.md)、[56 组查询回执](docs/search-coverage.zh-CN.md)、[MP4 文件属性](docs/media-profile.zh-CN.md)、[冻结计数](data/corpus-snapshot.json)。
 
-本仓库不转载创作者的 MP4、音乐或完整第三方提示词，也不分发原始抓取记录与本地九帧图。案例说明区分**创作者披露**、**公开工程佐证**和**Hypit 对预览 MP4 的独立观察**。九帧无法验收全片运动、音质、知识正确性或隐藏调用。
+本仓库不转载创作者的 MP4、音乐或完整第三方提示词，也不分发原始抓取记录与九帧总览图。页面只用单张低分辨率取样截图帮助辨认画风，每张都回链创作者原帖；截图仍属原权利人，不受本仓库 CC BY 许可覆盖。案例说明区分**创作者披露**、**公开工程佐证**和**Hypit 对预览 MP4 的独立观察**。九帧无法验收全片运动、音质、知识正确性或隐藏调用。
 
 欢迎按 [CONTRIBUTING.md](CONTRIBUTING.md) 提交原作者帖子、可复用开源工程、提示词来源或更正。原创文字、标注和图示按 [CC BY 4.0](LICENSE) 开放；第三方内容权利仍归原权利人，详见 [THIRD_PARTY.md](THIRD_PARTY.md)。

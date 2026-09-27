@@ -1,4 +1,4 @@
-name: Check case index
+name: Check generated pages and stills
 
 on:
   push:
@@ -16,3 +16,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/generate_cases.py --check
+      - run: python3 scripts/generate_statistics.py --check
+      - run: python3 scripts/generate_domain_style_atlas.py --check
+      - run: python3 scripts/generate_case_thumbnails.py --check
+      - run: python3 scripts/generate_our_video_stills.py --check
+      - run: python3 scripts/generate_new_case_thumbnails.py --check

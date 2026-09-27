@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import csv
 import difflib
+import html
 import re
 import sys
 from collections import defaultdict
@@ -19,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "cases.csv"
 OUTPUT = ROOT / "docs" / "cases-index.zh-CN.md"
+THUMBNAIL_DIR = ROOT / "assets" / "case-thumbnails"
 
 # Presentation order and display names; case data and counts come from SOURCE.
 PATHS = (
@@ -73,6 +75,8 @@ def read_cases() -> dict[str, list[dict[str, str]]]:
                 raise ValueError(f"Unknown primary_path on CSV line {line_number}")
             if row["hypit_status"] != "tile_ok":
                 raise ValueError(f"Case lacks nine-frame sampling on CSV line {line_number}")
+            if not (THUMBNAIL_DIR / f"{post_id}.webp").is_file():
+                raise ValueError(f"Case lacks a representative still on CSV line {line_number}")
             try:
                 duration = float(row["duration_s"])
             except ValueError as exc:
@@ -132,12 +136,21 @@ def render(groups: dict[str, list[dict[str, str]]]) -> str:
         "verify full-motion or audio quality or hidden model calls. Read the "
         "[CSV](../data/cases.csv) for creator disclosures and detailed review limits.",
         "",
+        "Each small still is a single frame from the accessible X preview, "
+        "selected to help identify the visible style. Click the adjacent case "
+        "name or still to open the creator's original post. The frame is a "
+        "commentary excerpt, not a licensed video, master-quality sample, or "
+        "measure of animation quality; rights remain with its source creator.",
+        "",
         f"本目录收录 **{total} 条人工深读案例**，标题直达 X 原帖。它不是全站作品数量或质量排名；"
         "时长来自可取得的 X 预览 MP4，不一定是作者母版；少数旧观察文字的片长另有差异，原因尚未逐项复核。"
         "末列取自 CSV 的 `hypit_observation`，"
         "只在开头片长构成独立短语时省去。它描述取样预览；其中的制作归因仍须按作者披露理解。"
         "九帧不能验收全片运动、声音或隐藏模型调用。"
         "作者披露及逐案审读边界见[原始 CSV](../data/cases.csv)。",
+        "",
+        "每张小图仅截取可取得的 X 预览视频一帧，用来辨认画面风格；点击图片或案例标题可看作者原帖。"
+        "它并非获授权的完整视频、母版画质样本或动画质量评分；原画面权利仍属于创作者。",
         "",
         "## Browse by production path / 按制作路径浏览",
         "",
@@ -154,8 +167,8 @@ def render(groups: dict[str, list[dict[str, str]]]) -> str:
                 "",
                 f"{chinese} · `primary_path={key}`",
                 "",
-                "| Case / 原帖 | Preview (s) / 秒 | Nine-frame note / 九帧记录 |",
-                "|---|---:|---|",
+                "| Still / 截图 | Case / 原帖 | Preview (s) / 秒 | Nine-frame note / 九帧记录 |",
+                "|---|---|---:|---|",
             ]
         )
         for row in rows:
@@ -163,8 +176,14 @@ def render(groups: dict[str, list[dict[str, str]]]) -> str:
             observation = table_text(
                 observation_without_duplicate_duration(row["hypit_observation"])
             )
+            post_id = row["source_url"].rsplit("/", 1)[-1]
+            still = (
+                f'<a href="{html.escape(row["source_url"], quote=True)}">'
+                f'<img src="../assets/case-thumbnails/{post_id}.webp" width="160" '
+                f'loading="lazy" alt="X preview still for {html.escape(row["label"], quote=True)}"></a>'
+            )
             lines.append(
-                f'| [{label}]({row["source_url"]}) | {row["duration_s"]} | {observation} |'
+                f'| {still} | [{label}]({row["source_url"]}) | {row["duration_s"]} | {observation} |'
             )
         lines.append("")
     return "\n".join(lines)

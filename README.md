@@ -2,12 +2,33 @@
 
 [中文说明](README.zh-CN.md)
 
-A curated, source-linked guide to videos people made **with** Claude Opus 5.5. It focuses on what the model actually did: writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project, not affiliated with Anthropic, X, Hypit, or the Awesome directory.
+A curated, source-linked guide to videos people made **with** Claude Opus 5.5. It focuses on what the model actually did: writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project, not affiliated with Anthropic or X. We use Hypit to inspect accessible video previews.
 
 ## Start here
 
+- **Watch first:** see [our own nine published videos](#videos-we-made) and how we made them.
+- **Browse by picture:** open the [168-case visual directory](docs/cases-index.zh-CN.md); every reviewed case has a small frame from its sampled X preview.
+- **Explore the grid:** use the [domain × visual-style atlas](docs/domain-style-atlas.md) to compare cell counts and open pictured cases, with dated engagement observations.
+- **Compare evidence:** read [14 paired cases](docs/evidence-examples.md) across seven production paths and the [reproducible statistical profile](docs/statistics.md).
+- **Find the latest additions:** read [seven cases published after the frozen search cutoff](docs/new-cases-2026-09-27.md).
 - **Choose a production route:** use the [visual-effects production guide](docs/visual-effects-fit.md) to match a task with tools, inputs, checks, and likely limits.
-- **Browse the evidence:** open the [168-case browser](docs/cases-index.zh-CN.md) to scan original posts by production path; the case notes distinguish creator reports from sampled-video observations.
+
+## Videos we made
+
+The maintainer [@WangYeruo](https://x.com/WangYeruo) made **eight Thusfar / 页读 product films** in four Chinese–English pairs, plus a [47-second research-summary animation](https://x.com/WangYeruo/status/2103279925960876265). These are first-party examples of the workflows discussed here. The summary video depicts the **September 25 morning** research snapshot; the current counts are below.
+
+<a href="https://x.com/WangYeruo/status/2103279925960876265"><img src="assets/our-videos/opus-world-en.webp" width="440" alt="Frame from our 47-second visual research summary"></a>
+
+*Our 47-second summary animation depicts the September 25 morning snapshot; click for the published X video.*
+
+| Theme | Chinese film | English film | Input and role |
+|---|---|---|---|
+| Core idea | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-zh.webp" width="170" alt="Chinese Thusfar core-idea film frame"></a> | <a href="https://x.com/WangYeruo/status/2103108551799632050"><img src="assets/our-videos/core-en.webp" width="170" alt="English Thusfar core-idea film frame"></a> | Existing reading-app code and copy → Opus-authored Remotion visuals |
+| Features | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-zh.webp" width="170" alt="Chinese Thusfar features film frame"></a> | <a href="https://x.com/WangYeruo/status/2103109243377504468"><img src="assets/our-videos/features-en.webp" width="170" alt="English Thusfar features film frame"></a> | Product features and interface → motion graphics |
+| How it works | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-zh.webp" width="170" alt="Chinese Thusfar technical-explainer film frame"></a> | <a href="https://x.com/WangYeruo/status/2103109979905675371"><img src="assets/our-videos/technology-en.webp" width="170" alt="English Thusfar technical-explainer film frame"></a> | Spoiler-control architecture → explainer graphics |
+| Vertical trailer | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-zh.webp" width="112" alt="Chinese Thusfar vertical-trailer frame"></a> | <a href="https://x.com/WangYeruo/status/2103110282444771733"><img src="assets/our-videos/teaser-en.webp" width="112" alt="English Thusfar vertical-trailer frame"></a> | Product message → vertical short |
+
+The [production note](https://x.com/WangYeruo/status/2103110282444771733) says Opus 5.5 in Claude Code used the existing app codebase and Remotion for visuals, transitions, music, and effects; Gemini 3.8 Flash TTS supplied narration. The group took three or four rounds of human revisions according to that note. We measured and sampled all eight accessible X preview MP4s, but did not independently audit the original model sessions, project files, or subscription dashboard. The four posts form **one reviewed source case** in the 168-case directory, not eight separate case rows. In the frozen visual classification, four of these known first-party files were labeled `yes` and four `no`—a useful reminder that a classifier label alone cannot settle model involvement.
 
 > **Refresh:** X searches ran through September 26, 2026, 21:05 China Standard Time; this snapshot was reconciled at 21:53. Across 56 recorded queries, 55 succeeded and one query had been rate-limited in an earlier batch. The corpus has 1,511 unique candidate posts, 1,419 with MP4, and 1,449 attachments. Hypit 0.2.3 probed and sampled nine frames from all 1,449; SHA-256 found 1,401 distinct files. We reviewed 168 source-linked cases. Search limits, reposts, and unrelated results mean these numbers are **not** a count of original Opus videos or all of X. See the [search receipts summary](docs/search-coverage.zh-CN.md) and [frozen snapshot](data/corpus-snapshot.json).
 
@@ -17,125 +38,52 @@ A curated, source-linked guide to videos people made **with** Claude Opus 5.5. I
 
 > Refresh, Sep 26 2026: a vision model (Gemini 3.8 Flash) classified the nine-frame samples and post text for all 1,401 byte-distinct MP4s. It labeled 980 “yes” and 139 “likely” for Opus involvement. Those 1,119 labels are classifier judgments, not verified authorship; one label per video can also miss mixed domains or styles. The classifier sorts by topic and look. It does **not** predict virality. Data: [`data/domain-style.csv`](data/domain-style.csv). The [published X Article](https://x.com/WangYeruo/article/2103278277536485482) and [47-second video summary](https://x.com/WangYeruo/status/2103279925960876265) preserve their original September 25 morning snapshot.
 
-![Jars of videos by domain](assets/domains-jars.png)
+![Classifier-assigned domain counts for the frozen September 26 file sample, with yes and likely labels shown separately](assets/domain-labels.svg)
 
-The counts below cover only the 1,119 files labeled “yes” or “likely” for Opus involvement; each file contributes one primary domain and style.
+The chart counts only the 1,119 files tagged `yes` or `likely`, with one primary domain per file. The largest two main styles are motion graphics / UI (350) and 3D render (324). Explore the full **domain × visual-style matrix** in the [visual atlas](docs/domain-style-atlas.md): every nonempty cell reports its file count, and cells with reviewed examples lead to stills and original posts. Its popularity figures are dated observations, not final engagement or a measure of production quality.
 
-| Domain | Videos | Example |
-|---|---:|---|
-| Games & interactive demos | 230 | [@MengTo, Japanese canal boat ride](https://x.com/MengTo/status/2102760783344189761) · [@JaydenDavisNC, Splatoon gameplay](https://x.com/JaydenDavisNC/status/2103357848961036304) |
-| Ads & launches | 215 | [@deedydas, startup launch video](https://x.com/deedydas/status/2102787937482252537) · [@shushant_l, motion-ad skill video](https://x.com/shushant_l/status/2103829449359966629) |
-| AI about AI | 201 | [@kevin_t_ngo, a girl asks Claude what it loves](https://x.com/kevin_t_ngo/status/2102437977435893771) |
-| Explainers | 147 | [@RyanSael, camera focus lab](https://x.com/RyanSael/status/2102591147927654847) · [@dotey, Transformer explainer](https://x.com/dotey/status/2103683057689522564) |
-| Short stories | 112 | [@AndrewOnXYZ, Mars rover short](https://x.com/AndrewOnXYZ/status/2102512879258009818) |
-| Music videos | 77 | [@other__reality](https://x.com/other__reality/status/2102514581684052169) |
-| History & culture | 49 | [@paji_a, Sekigahara 3D map](https://x.com/paji_a/status/2102581158487945540) |
-| Art | 42 | [@majidmanzarpour, pixel wizard](https://x.com/majidmanzarpour/status/2102476258948927543) · [@AxtonLiu, living rice paper](https://x.com/AxtonLiu/status/2103288413969621231) |
-| Humor, data viz & other | 46 | |
-
-Styles: motion graphics / UI 350 · 3D 324 · flat cartoon 162 · pixel art 58 · hand-drawn 52 · paper cut-out 39 · ink, sand & paint 37 · generative 23 · anime 21 · math diagrams 21 · photoreal 17 · live action 11 · retro terminal / ASCII 4. In this one classified snapshot, motion graphics / UI has the largest count, followed by 3D. The snapshot does not establish a time trend or explain why either style appears.
+**Classifier-threshold check:** among `yes` files only, ads and launches (191) narrowly exceed games and interactive demos (187). Adding `likely` reverses that order to games (230) and ads (215). The lead depends on the classifier threshold, not a measured change in what people made. The [reproducible statistical profile](docs/statistics.md) shows denominators, durations, and cross-tabs.
 
 One Top result on Western civilization had 42,836 likes when collected. Its 136.5-second MP4 was byte-identical to a later repost captioned as an Opus 5.5 video, while the earlier [post](https://x.com/IterIntellectus/status/2103212539895017864) only says “Claude.” We kept both posts in the candidate corpus but left the video out of the reviewed Opus case index because the original model version is unclear. Engagement is not evidence of authorship.
 
-## Contents
+## Seven production paths, with frames
 
-- [What people made, and how it looks](#what-people-made-and-how-it-looks)
-- [How to read the list](#how-to-read-the-list)
-- [Code-drawn 2D and motion graphics](#code-drawn-2d-and-motion-graphics)
-- [Educational explainers](#educational-explainers)
-- [3D and real-time graphics](#3d-and-real-time-graphics)
-- [Existing footage, audio, or project transformation](#existing-footage-audio-or-project-transformation)
-- [External video-model pipelines](#external-video-model-pipelines)
-- [Apps and games shown through capture](#apps-and-games-shown-through-capture)
-- [Reusable open-source production systems](#reusable-open-source-production-systems)
-- [New cases from the September 26 refresh](#new-cases-from-the-september-26-refresh)
-- [New cases from the September 25 refresh](#new-cases-from-the-september-25-refresh)
-- [Dataset and method](#dataset-and-method)
-- [Contributing and license](#contributing-and-license)
+Each picture links to the creator's original post. These are deliberately chosen examples, not the most common or highest-quality outcomes. The [14 paired evidence cases](docs/evidence-examples.md) show why a similar look can come from different inputs and tools; the [168-case visual directory](docs/cases-index.zh-CN.md) shows one sampled frame for every reviewed case.
 
-## How to read the list
+| Production path | Watch an example | What to check |
+|---|---|---|
+| Code-drawn 2D | <a href="https://x.com/hanifproduktif/status/2102742924148830211"><img src="assets/case-thumbnails/2102742924148830211.webp" width="180" alt="Ant colony animation preview"></a><br>[Ant colony and matching source](https://x.com/hanifproduktif/status/2102742924148830211) | Does the public code match the scenes, timing, and assets? |
+| Educational explainer | <a href="https://x.com/LinearUncle/status/2103128559174971663"><img src="assets/case-thumbnails/2103128559174971663.webp" width="180" alt="Calculus lesson preview"></a><br>[Manim calculus lesson](https://x.com/LinearUncle/status/2103128559174971663) | Were the facts, formulas, narration, and supplied material checked? |
+| 3D or real-time graphics | <a href="https://x.com/Aurelien_Gz/status/2102786378282987591"><img src="assets/case-thumbnails/2102786378282987591.webp" width="180" alt="Clearwater shallow-water preview"></a><br>[Clearwater and WebGL source](https://x.com/Aurelien_Gz/status/2102786378282987591) | Is this a program capture, a rendered scene, or video-model output? |
+| Existing-source transformation | <a href="https://x.com/AxtonLiu/status/2102827887732932956"><img src="assets/case-thumbnails/2102827887732932956.webp" width="180" alt="Talking-head line-art remake preview"></a><br>[Talking-head line-art remake](https://x.com/AxtonLiu/status/2102827887732932956) | What did the supplied performance, audio, or product files contribute? |
+| External video-model pipeline | <a href="https://x.com/abxxai/status/2102775755646337530"><img src="assets/case-thumbnails/2102775755646337530.webp" width="180" alt="Opus and Seedance video preview"></a><br>[Opus plus Seedance](https://x.com/abxxai/status/2102775755646337530) | Which tool supplied the moving pixels, and what did Opus direct? |
+| App or game capture | <a href="https://x.com/masaya_1980/status/2103115017755500561"><img src="assets/case-thumbnails/2103115017755500561.webp" width="180" alt="Can-collection simulation preview"></a><br>[Can-collection simulation](https://x.com/masaya_1980/status/2103115017755500561) | Is the deliverable a playable program, with video as its recording? |
+| Mixed or not established | <a href="https://x.com/leogao25/status/2102544078927741369"><img src="assets/case-thumbnails/2102544078927741369.webp" width="180" alt="Split-screen physics comparison preview"></a><br>[Two-model physics comparison](https://x.com/leogao25/status/2102544078927741369) | Are the inputs, budgets, and scoring procedure comparable? |
 
-Anthropic's [Opus 5.5 model description](https://platform.claude.com/docs/en/models/opus-5-5/overview) specifies text and image input with text output. An MP4 can come from code the model wrote, a program it controlled, source material it edited, or another video model it called. Each entry links to the original X post. The evidence labels below describe what is public, **not** a rating of artistic quality:
-
-**Code matched:** A creator-linked public project has scenes, text, timing, or output corresponding to the sampled X video. This still does not reveal the full Claude conversation.
-**Prompt shown:** A creator published a prompt or a detailed workflow. A request to call a service does not prove that it was called.
-**Creator account:** The workflow comes from the creator's post or reply; our independent observation is limited to the accessible MP4 and nine sampled frames.
-
-This home page deliberately selects examples with distinct production paths. The 168-case audit table includes comparisons and less certain cases and should not be interpreted as a prevalence survey.
-
-The production guide above addresses **what to assign Opus, which renderer and assets to use, how to check a result, and when to switch tools**. Its task-family judgments are workflow advice, not measured success rates or a model ranking.
-
-## Code-drawn 2D and motion graphics
-
-- [Ant colony - @hanifproduktif](https://x.com/hanifproduktif/status/2102742924148830211) - A 32-second animation with a [matching Node Canvas source project](https://github.com/buildwithhanif/claude-animation-skill), character rig, frame checks, and FFmpeg workflow. **Code matched.**
-- [Shaml paper-lightbox scene - @makwired](https://x.com/makwired/status/2103008945220567166) - The [matching project](https://github.com/klsoen/opus-js-animations) documents code-drawn frames, a pre-existing spoken-word recording, and several human revisions. **Code matched.**
-- [Pixel platformer - @riku720720](https://x.com/riku720720/status/2102515055116063144) - A single-HTML Canvas animation guided by a [detailed 160×90 pixel, palette, and timing specification](https://x.com/riku720720/status/2102515058010132554). **Prompt shown.**
-- [39-scene Clawd music video - @Aadidev0](https://x.com/Aadidev0/status/2102692569792835994) - The [creator's production account](https://x.com/Aadidev0/status/2102693243662024855) describes a reference repository, Canvas scenes, browser frame rendering, Node audio, and FFmpeg; the measured 164-second MP4 fits the stated 3,936 frames at 24 fps. **Creator account.**
-- [Anime battle trailer - @ishuagra02](https://x.com/ishuagra02/status/2103247844542922825) - A [short public creative brief](https://x.com/ishuagra02/status/2103247960272433307) led to a 100.8-second accessible MP4. JavaScript frame generation, cost, and run time remain creator claims without published source or billing logs. **Prompt shown.**
-
-## Educational explainers
-
-- [Calculus lesson - @LinearUncle](https://x.com/LinearUncle/status/2103128559174971663) - The creator names Manim for visuals and edge-tts for narration. Subject accuracy and pronunciation require separate review. **Creator account.**
-- [Six-minute English lesson - @0x0funky](https://x.com/0x0funky/status/2102736587708854585) - A lesson built from prepared course content with Remotion, React/SVG, and local CosyVoice according to the creator's reply. **Creator account.**
-- [VAE explainer - @ng169onX](https://x.com/ng169onX/status/2103183904563998809) - A 334.5-second sampled MP4 with formulas and diagrams; the claimed MNIST training and Qwen3-TTS voice work need separate verification. **Creator account.**
-
-## 3D and real-time graphics
-
-- [Clearwater - @Aurelien_Gz](https://x.com/Aurelien_Gz/status/2102786378282987591) - Photographic-looking shallow water whose [public WebGL2 project](https://github.com/Aureliengmz/clearwater) documents waves, refraction, and caustics. The X video is a real-time graphics capture. **Code matched.**
-- [Pelican bicycle scene - @AxtonLiu](https://x.com/AxtonLiu/status/2103119648271290566) - A 38.059-second file consistent with the creator's 1,140-frame/30-fps account; the ray-marching and zero-external-asset claims have no public source attached. **Creator account.**
-- [Architectural exploded view - @zdkiel_labs](https://x.com/zdkiel_labs/status/2102722754172850310) - Started from one supplied image, then involved [six human answers and a Blender bridge](https://x.com/zdkiel_labs/status/2102724195549659613) according to the creator. **Creator account.**
-
-## Existing footage, audio, or project transformation
-
-- [Talking-head line-art remake - @AxtonLiu](https://x.com/AxtonLiu/status/2102827887732932956) - The request supplied an 83-second human performance and kept its audio, captions, and duration while redrawing the main image. **Prompt shown.**
-- [Thirteen-take talking-head edit - @gregpr07](https://x.com/gregpr07/status/2102984873351037161) - The creator says Opus and video-use selected and edited supplied takes; the 18-second result visibly includes the speaker and a candidate-take grid. **Creator account.**
-- [Twelve-hour music-video commission - @donaldjewkes](https://x.com/donaldjewkes/status/2102801274173587569) - The [roughly 9,500-character public prompt](https://x.com/donaldjewkes/status/2102801469976248500) supplied a video, song, code, and project files and requested several possible services. It proves the brief's inputs, not every hidden tool call. **Prompt shown.**
-- [Session-story skill - @jake11moran](https://x.com/jake11moran/status/2103247490237825416) - A short trigger reportedly uses a prepared HyperFrames skill and local Claude Code history as story material; the sampled X MP4 runs 52.7 seconds. **Creator account.**
-
-## External video-model pipelines
-
-- [Opus plus Seedance - @abxxai](https://x.com/abxxai/status/2102775755646337530) - The creator explicitly assigns Opus and Seedance 2.5 separate roles. **Creator account.**
-- [Infinite-zoom collage - @koldo2k](https://x.com/koldo2k/status/2103129343253778767) - The [full public brief](https://x.com/koldo2k/status/2103129347791986942) assigns scenery, cutouts, animated figures, and music to several external models while Opus coordinates shots and transitions. **Prompt shown.**
-- [Blender blocking into Seedance - @OriSilver](https://x.com/OriSilver/status/2102817977812824335) - The split-screen post pairs low-poly camera blocking with final-looking shots; the creator describes Blender as a control draft for Seedance. **Creator account.**
-
-## Apps and games shown through capture
-
-- [Can-collection simulation - @masaya_1980](https://x.com/masaya_1980/status/2103115017755500561) - A [live browser demo](https://www.kakeru-d.jp/lab/akikan/) and [making-of post](https://www.kakeru-d.jp/blog/claude-animation-akikan/) show a program, human design approval, revisions, and frame export. **Public project and creator account.**
-- [Interactive island - @Acemation_](https://x.com/Acemation_/status/2103150350211354966) - A captured navigable environment rather than a finished linear film; costs and development time are creator reports. **Creator account.**
-- [Game demonstration - @NiloTechInc](https://x.com/NiloTechInc/status/2102741813719138661) - The creator credits human-made character, animation, and clothing assets alongside Opus-assisted game development. **Creator account.**
+Anthropic's [Opus 5.5 model description](https://platform.claude.com/docs/en/models/opus-5-5/overview) specifies text and image input with text output. A video can instead come from code it wrote, a program it controlled, existing footage it edited, or another model it directed. A frame alone cannot prove the production path. We distinguish creator disclosures, publicly matching projects or prompts, and direct observations of sampled X previews. The [production guide](docs/visual-effects-fit.md) explains suitable tasks and checks as engineering advice, not measured model success rates.
 
 ## Reusable open-source production systems
 
-- [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) (checked Sep 27, 2026) - In the [original post](https://x.com/lemomo_ai/status/2103811634565415152), @lemomo_ai introduces a selection of 39 film styles from a larger personal body of work. The [gallery](https://lemomo-ai.github.io/lemo-opuscar/) presents the styles with sample-film and `STYLE.md` links. A [director guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md), [technique guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md), and inspectable [sample scene code](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js) document an initial brief, optional user-requested storyboard approval, deterministic frame rendering, shared timing, and sound checks. The creator says Canvas/WebGL code draws the films without a video-generation model. The published project documents a production method; it does not independently audit every film's model calls, all linked playback results, or finished quality. Its [license](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE) assigns MIT to code and CC BY 4.0 to guides, style files, and films, with third-party assets retaining their own terms.
-- [Papermotion](https://github.com/francozanardi/papermotion) (checked Sep 27, 2026) - A reusable paper-cut animation engine and template with deterministic physics, character rigs, offline rendering, frame grabs, contact sheets, and sound checks. Its current README attributes *snow*, *demo*, *rooftops*, and *sea* to Opus 5.5, while *light* and *embers* are labeled GPT 6 Astra. The engine is a reusable input to later films; its examples should be read by their individual model labels.
-
-These later-checked open-source resources sit outside the September 26 frozen corpus. They do **not** increase the 1,401-file or 168-case counts above.
-
-## New cases from the September 26 refresh
-
-| Case | What the creator reports and what the X preview shows |
+| Preview and project | What can be reused and what the preview shows |
 |---|---|
-| [15-second résumé reel - @stephanlivera](https://x.com/stephanlivera/status/2103315922098470926) | The creator shares a short showreel brief; the sampled X preview runs 15 seconds. No source project or revision history was published. |
-| [Deconstructed motion workflow - @rexan_wong](https://x.com/rexan_wong/status/2103707054108299437) | The creator proposes a workflow with references, HyperFrames/Remotion, UI components, storyboard review, and direction. An 11-second X preview is available; the post is guidance rather than an execution log for every step. |
-| [Four-tool multimodal animation - @sankakuten91256](https://x.com/sankakuten91256/status/2103483923783373039) | The creator describes GPT Images for source frames, Grok for green-screen dance, Opus for motion graphics, and Astra for audio replacement. The X preview runs 15 seconds; integration code is not public. |
-| [Runway MCP documentary - @gavinpurcell](https://x.com/gavinpurcell/status/2103304514329854102) | The creator says a Claude agent coordinated Runway through MCP for a documentary. The X preview runs over five minutes; the tool calls and origin of individual shots were not independently checked. |
-| [Splatoon gameplay capture - @JaydenDavisNC](https://x.com/JaydenDavisNC/status/2103357848961036304) | The creator says Opus wrote the browser game and links a playable demo. The X preview shows game capture; the development history was not independently checked. |
-| [Living rice paper ink wash - @AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231) | The creator describes an open-ended brief and Canvas rendering. Nine sampled frames show a painting developing over a 39-second preview; source code and intermediate revisions are not public. |
-| [motion-ad skill product spot - @shushant_l](https://x.com/shushant_l/status/2103829449359966629) | The creator attributes a 15-second product ad to the prepared `motion-ad` skill. The preview shows product UI and title cards; its invocation and revision history were not independently checked. |
-| [Transformer explainer - @dotey](https://x.com/dotey/status/2103683057689522564) | The creator says Claude Code used JavaScript and web tools for the explainer. The X preview runs 12.2 minutes and shows diagrams; the mathematical content needs its own review. |
+| <a href="https://lemomo-ai.github.io/lemo-opuscar/"><img src="assets/resource-thumbnails/lemo-opuscar.webp" width="210" alt="Lemo-Opuscar official cover showing a collage of film styles"></a><br>[Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) · [original post](https://x.com/lemomo_ai/status/2103811634565415152) | The official cover previews a [gallery of 39 styles](https://lemomo-ai.github.io/lemo-opuscar/), each with sample films and `STYLE.md` links. The [director guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md), [technique guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md), and [sample scene code](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js) make the brief, storyboard, deterministic frame rendering, shared timing, and sound checks inspectable. The creator says Canvas/WebGL code draws the films without a video-generation model; the repository alone cannot audit every model call or finished film. Its [license](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE) assigns MIT to code and CC BY 4.0 to guides, style files, and films, subject to third-party asset terms. |
+| <a href="https://github.com/francozanardi/papermotion#first-snow-snow"><img src="assets/resource-thumbnails/papermotion.webp" width="210" alt="Snowy paper-cut scene from Papermotion's Opus 5.5 snow film"></a><br>[Papermotion](https://github.com/francozanardi/papermotion) | A reusable paper-cut animation engine with deterministic physics, character rigs, offline rendering, frame grabs, contact sheets, and sound checks. The still comes from its *snow* film, which the README labels Opus 5.5. The README also labels *demo*, *rooftops*, and *sea* Opus 5.5; *light* and *embers* are labeled GPT 6 Astra. Read each sample's model label separately. |
+| <a href="https://x.com/servasyy/status/2104039075175182487"><img src="assets/new-case-thumbnails/2104039075175182487.webp" width="210" alt="Character animation by a creator using ClaudeAnimationBase"></a><br>[ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) · [creator example](https://x.com/servasyy/status/2104039075175182487) | A public p5.js and p5.brush animation starter with character expressions, storyboard and contact-sheet steps, and a render workflow. The preview shows @servasyy's personal-story film made with this base; the public starter is reusable input, not the exact source for every shot in the finished film. |
+| <a href="https://x.com/makevoid/status/2103869704955900023"><img src="assets/new-case-thumbnails/2103869704955900023.webp" width="210" alt="Motion-graphics music-video preview by makevoid"></a><br>[Motion Graphics Music Video skill](https://github.com/makevoid/motion-graphics-music-video-skill) · [creator example](https://x.com/makevoid/status/2103869704955900023) | A Claude Code plugin and Ruby toolkit for planning and assembling music-video motion graphics from a supplied song and brief. Its p5.js workflow can call external Fal image, video, and audio models; the preview is a multi-tool creator example, not evidence that Opus supplied all moving pixels. |
 
-## New cases from the September 25 refresh
+These resources were checked on September 27, 2026. The two creator examples above are also described on the [new-case evidence page](docs/new-cases-2026-09-27.md). All four resources sit outside the September 26 frozen corpus and do **not** increase the 1,401-file or 168-case counts. Preview-image provenance and rights are recorded in [THIRD_PARTY.md](THIRD_PARTY.md).
 
-| Case | What the creator reports and what the X preview shows |
+## New since the frozen search cutoff
+
+Seven creator posts published after **September 26, 21:05 China Standard Time** have a separate [dated evidence page](docs/new-cases-2026-09-27.md), each with a sampled-frame preview and a note on what remains unverified. They are **outside** the 1,401-file / 168-case snapshot. Three useful starting points:
+
+| Frame and original post | Why this case matters |
 |---|---|
-| [15-second résumé reel - @ajith_io](https://x.com/ajith_io/status/2103449416325890146) | The post includes the short “show me your motion design” prompt. Hypit sampled a 15.1-second graphic reel; no source project was published. Similar prompt variants appeared in the same search window. |
-| [Mid-Autumn cutout collage - @NFT_Chen](https://x.com/NFT_Chen/status/2103380404791333144) | The creator says they supplied a script and song, generated background and paper textures with Nano Banana Pro, animated them using JavaScript / p5.js / p5.brush, and synthesized effects in Node. The 39.3-second preview shows a cat trying to fill a gap in the moon. |
-| [Post-human robot story - @Hesamation](https://x.com/Hesamation/status/2103457566978162901) | The creator attributes the story, animation, sound effects, and music to Opus 5.5 and says the video was coded in JavaScript. The 87.6-second X preview shows a robot moving through an empty city. Audio and source code were not independently checked. |
-| [Watercolor-style short - @mablesjoseph](https://x.com/mablesjoseph/status/2103465246014746943) | The creator says the 45-second animation uses code-drawn brushstrokes and sound, but explicitly says it was not a one-shot: 163 model calls and about 6¾ hours elapsed. The usage and cost figures are self-reported. |
-| [White Russian recipe animation - @Sarut0biSasuke](https://x.com/Sarut0biSasuke/status/2103418429248069973) | A published prompt and hand-drawn reference led, according to the creator, to a single HTML / SVG / JavaScript animation in about 25 minutes. Hypit measured a 30-second X preview; the claimed 1080p master was not available for inspection. |
-| [Arabic-dubbed anime pilot - @sbalhatlani](https://x.com/sbalhatlani/status/2103475507471806929) | The creator reports an 8:33 episode built with Claude Code, 211 planned shots, more than 300 generated images, 11 characters, 70 Arabic voice lines, and 16 music cues. Hypit measured 513.3 seconds; production counts and audio quality remain creator claims. |
-| [Claude Code session recap - @shneural](https://x.com/shneural/status/2103472385563459833) | The creator says Opus turned its coding session into a 56.3-second video, using a Python engine, Blender, music, and 900 rendered frames. The post reports 92 minutes and $81 at API list prices; the logs and bill were not published. |
-| [Jev + Opus live visualizer - @TheViableEdge](https://x.com/TheViableEdge/status/2103494684374900862) | The creator says Opus 5.5 and Jev built a live visualizer for charts, effects, and themes, with possible use as a social-video overlay. The 56.5-second clip is a tool demo; the post does not show a finished short or explain Jev's exact role. |
+| <a href="https://x.com/JurgenPloeger/status/2104131805175844923"><img src="assets/new-case-thumbnails/2104131805175844923.webp" width="210" alt="Handmade original and Opus remake shown together"></a><br>[Handmade launch film versus code remake](https://x.com/JurgenPloeger/status/2104131805175844923) | The creator supplied the original film and Figma files, then revised the remake's pacing. The comparison makes those inputs visible. |
+| <a href="https://x.com/servasyy/status/2104039075175182487"><img src="assets/new-case-thumbnails/2104039075175182487.webp" width="210" alt="Square character in a personal-story animation"></a><br>[Personal story using ClaudeAnimationBase](https://x.com/servasyy/status/2104039075175182487) | A reusable open-source animation base and autobiographical material are part of the production path. |
+| <a href="https://x.com/arambarnett/status/2104011150471917838"><img src="assets/new-case-thumbnails/2104011150471917838.webp" width="210" alt="Data-driven motion video with figures and charts"></a><br>[Video with checked data slots](https://x.com/arambarnett/status/2104011150471917838) | The creator describes a guard that prevents the model from inventing on-screen figures; the guard's code is not public. |
+
+The September 25–26 additions remain in the [visual case directory](docs/cases-index.zh-CN.md), with all 168 reviewed original posts and one frame each.
 
 ## Dataset and method
 
@@ -145,7 +93,7 @@ Read the [full Chinese research report](docs/report.zh-CN.md), [Article version]
 
 The [search coverage](docs/search-coverage.zh-CN.md), [media profile](docs/media-profile.zh-CN.md), [methodology](docs/methodology.zh-CN.md), and [frozen counts](data/corpus-snapshot.json) explain the collection boundaries.
 
-The original X MP4s, raw search results, private paths, and individual contact sheets are **not** distributed here. The public table links to creators and distinguishes their disclosures from what Hypit independently observed. Nine sampled frames cannot establish full-motion quality, audio quality, knowledge accuracy, hidden model calls, or the highest-resolution master.
+The original X MP4s, raw search results, private paths, and nine-frame contact sheets are **not** distributed here. Small single-frame previews link to the creators' posts and remain the creators' material; they are outside this repository's CC BY license. Case notes distinguish creator disclosures from what Hypit independently observed. Nine sampled frames cannot establish full-motion quality, audio quality, knowledge accuracy, hidden model calls, or the highest-resolution master.
 
 ## Contributing and license
 
