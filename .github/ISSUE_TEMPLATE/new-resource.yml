@@ -1,0 +1,48 @@
+name: Reusable project or resource
+description: Suggest a public project, tool, or production guide related to Opus 5.5 video work.
+title: "Resource: "
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Original public project or guide URL
+      description: Link the maintainer's own repository or publication.
+      placeholder: https://github.com/creator/project
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Creator and related original post or demo
+      description: Name the maintainer and link their announcement or a representative example, if available.
+    validations:
+      required: true
+  - type: textarea
+    id: reuse
+    attributes:
+      label: What can readers reuse?
+      description: Point to concrete files, commands, templates, or techniques and explain which production task they help with.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Model roles and evidence
+      description: State what the creator claims, what public code or examples show, and which specific examples are attributed to Opus 5.5. Mark claims you could not independently check.
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License and third-party assets
+      description: Link the license or say "not stated"; note separately licensed demos, music, images, fonts, or model weights.
+    validations:
+      required: true
+  - type: input
+    id: checked-on
+    attributes:
+      label: Date checked
+      description: Use YYYY-MM-DD so later readers can distinguish this resource from the frozen September 26 dataset.
+      placeholder: "2026-09-27"
+    validations:
+      required: true

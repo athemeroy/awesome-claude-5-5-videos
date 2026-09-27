@@ -1,0 +1,2 @@
+# The published case CSV intentionally uses CRLF line endings.
+data/cases.csv whitespace=cr-at-eol

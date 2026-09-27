@@ -4,6 +4,11 @@
 
 A curated, source-linked guide to videos people made **with** Claude Opus 5.5. It focuses on what the model actually did: writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project, not affiliated with Anthropic, X, Hypit, or the Awesome directory.
 
+## Start here
+
+- **Choose a production route:** use the [visual-effects production guide](docs/visual-effects-fit.md) to match a task with tools, inputs, checks, and likely limits.
+- **Browse the evidence:** open the [168-case browser](docs/cases-index.zh-CN.md) to scan original posts by production path; the case notes distinguish creator reports from sampled-video observations.
+
 > **Refresh:** X searches ran through September 26, 2026, 21:05 China Standard Time; this snapshot was reconciled at 21:53. Across 56 recorded queries, 55 succeeded and one query had been rate-limited in an earlier batch. The corpus has 1,511 unique candidate posts, 1,419 with MP4, and 1,449 attachments. Hypit 0.2.3 probed and sampled nine frames from all 1,449; SHA-256 found 1,401 distinct files. We reviewed 168 source-linked cases. Search limits, reposts, and unrelated results mean these numbers are **not** a count of original Opus videos or all of X. See the [search receipts summary](docs/search-coverage.zh-CN.md) and [frozen snapshot](data/corpus-snapshot.json).
 
 ![Four common production routes from an Opus request to video pixels](assets/opus55-video-paths.png)
@@ -28,7 +33,7 @@ The counts below cover only the 1,119 files labeled “yes” or “likely” fo
 | Art | 42 | [@majidmanzarpour, pixel wizard](https://x.com/majidmanzarpour/status/2102476258948927543) · [@AxtonLiu, living rice paper](https://x.com/AxtonLiu/status/2103288413969621231) |
 | Humor, data viz & other | 46 | |
 
-Styles: motion graphics / UI 350 · 3D 324 · flat cartoon 162 · pixel art 58 · hand-drawn 52 · paper cut-out 39 · ink, sand & paint 37 · generative 23 · anime 21 · math diagrams 21 · photoreal 17 · live action 11 · retro terminal / ASCII 4. Motion graphics surged past 3D rendering to become the #1 most prevalent visual style, driven by the explosion of SaaS product ads, skill-generated showreels, and UI animations.
+Styles: motion graphics / UI 350 · 3D 324 · flat cartoon 162 · pixel art 58 · hand-drawn 52 · paper cut-out 39 · ink, sand & paint 37 · generative 23 · anime 21 · math diagrams 21 · photoreal 17 · live action 11 · retro terminal / ASCII 4. In this one classified snapshot, motion graphics / UI has the largest count, followed by 3D. The snapshot does not establish a time trend or explain why either style appears.
 
 One Top result on Western civilization had 42,836 likes when collected. Its 136.5-second MP4 was byte-identical to a later repost captioned as an Opus 5.5 video, while the earlier [post](https://x.com/IterIntellectus/status/2103212539895017864) only says “Claude.” We kept both posts in the candidate corpus but left the video out of the reviewed Opus case index because the original model version is unclear. Engagement is not evidence of authorship.
 
@@ -58,7 +63,7 @@ Anthropic's [Opus 5.5 model description](https://platform.claude.com/docs/en/mod
 
 This home page deliberately selects examples with distinct production paths. The 168-case audit table includes comparisons and less certain cases and should not be interpreted as a prevalence survey.
 
-For a decision about **what to assign Opus, which renderer and assets to use, how to check a result, and when to switch tools**, see the new [visual-effects production guide](docs/visual-effects-fit.md). Its task-family judgments are workflow advice, not measured success rates or a model ranking.
+The production guide above addresses **what to assign Opus, which renderer and assets to use, how to check a result, and when to switch tools**. Its task-family judgments are workflow advice, not measured success rates or a model ranking.
 
 ## Code-drawn 2D and motion graphics
 
@@ -101,8 +106,8 @@ For a decision about **what to assign Opus, which renderer and assets to use, ho
 
 ## Reusable open-source production systems
 
-- **[Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)**: In the [original post](https://x.com/lemomo_ai/status/2103811634565415152), @lemomo_ai introduces a selection of 39 film styles from a larger personal body of work. The [gallery](https://lemomo-ai.github.io/lemo-opuscar/) presents the styles with sample-film and `STYLE.md` links. A [director guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md), [technique guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md), and inspectable [sample scene code](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js) document two human approval points, deterministic frame rendering, shared timing, and sound checks. The creator says Canvas/WebGL code draws the films without a video-generation model. The published project documents a production method; it does not independently audit every film's model calls, all linked playback results, or finished quality. Its [license](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE) assigns MIT to code and CC BY 4.0 to guides, style files, and films, with third-party assets retaining their own terms.
-- **[Papermotion](https://github.com/francozanardi/papermotion)**: A reusable paper-cut animation engine and template with deterministic physics, character rigs, offline rendering, frame grabs, contact sheets, and sound checks. Its prepared engine is part of the input to later films, even when the human prompt is short.
+- [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) (checked Sep 27, 2026) - In the [original post](https://x.com/lemomo_ai/status/2103811634565415152), @lemomo_ai introduces a selection of 39 film styles from a larger personal body of work. The [gallery](https://lemomo-ai.github.io/lemo-opuscar/) presents the styles with sample-film and `STYLE.md` links. A [director guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md), [technique guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md), and inspectable [sample scene code](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js) document an initial brief, optional user-requested storyboard approval, deterministic frame rendering, shared timing, and sound checks. The creator says Canvas/WebGL code draws the films without a video-generation model. The published project documents a production method; it does not independently audit every film's model calls, all linked playback results, or finished quality. Its [license](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE) assigns MIT to code and CC BY 4.0 to guides, style files, and films, with third-party assets retaining their own terms.
+- [Papermotion](https://github.com/francozanardi/papermotion) (checked Sep 27, 2026) - A reusable paper-cut animation engine and template with deterministic physics, character rigs, offline rendering, frame grabs, contact sheets, and sound checks. Its current README attributes *snow*, *demo*, *rooftops*, and *sea* to Opus 5.5, while *light* and *embers* are labeled GPT 6 Astra. The engine is a reusable input to later films; its examples should be read by their individual model labels.
 
 These later-checked open-source resources sit outside the September 26 frozen corpus. They do **not** increase the 1,401-file or 168-case counts above.
 
@@ -110,14 +115,14 @@ These later-checked open-source resources sit outside the September 26 frozen co
 
 | Case | What the creator reports and what the X preview shows |
 |---|---|
-| [15-second résumé reel - @stephanlivera](https://x.com/stephanlivera/status/2103315922098470926) | Viral resume-style motion design reel (14k+ likes) demonstrating the brief contagion behind identical 15-second showreels. |
-| [Deconstructed motion workflow - @rexan_wong](https://x.com/rexan_wong/status/2103707054108299437) | Detailed 6-stage engineering and directorial pipeline (reference video, HyperFrames/Remotion, 21st.dev UI components, storyboard approvals, director notes) deconstructing the "one-prompt" myth. |
-| [Four-tool multimodal animation - @sankakuten91256](https://x.com/sankakuten91256/status/2103483923783373039) | Multimodal pipeline orchestrating GPT Images (frames), Grok (green screen dance video), Opus 5.5 (motion graphics background/code), and Astra (audio replacement). |
-| [Runway MCP documentary - @gavinpurcell](https://x.com/gavinpurcell/status/2103304514329854102) | Claude Agent (Fig) hooked to Runway MCP to script, prompt, and direct a 5-minute Netflix-style documentary, using Opus as an agentic coordinator for external diffusion models. |
-| [Splatoon gameplay capture - @JaydenDavisNC](https://x.com/JaydenDavisNC/status/2103357848961036304) | A playable browser game written from scratch by Opus 5.5, captured during live gameplay; illustrates the app/game capture production route. |
-| [Living rice paper ink wash - @AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231) | Open-ended creative brief rendered as progressive procedural stroke-by-stroke Canvas Chinese painting; highlights the aesthetic ceiling of 2D code art. |
-| [motion-ad skill product spot - @shushant_l](https://x.com/shushant_l/status/2103829449359966629) | 15-second commercial motion ad produced via Danny Postma's portable Claude Code `motion-ad` skill, demonstrating the shift from ad-hoc prompts to packaged tools. |
-| [Transformer explainer - @dotey](https://x.com/dotey/status/2103683057689522564) | 12-minute technical deep-dive into Transformer attention mechanisms produced with Claude Code and web toolchain capabilities. |
+| [15-second résumé reel - @stephanlivera](https://x.com/stephanlivera/status/2103315922098470926) | The creator shares a short showreel brief; the sampled X preview runs 15 seconds. No source project or revision history was published. |
+| [Deconstructed motion workflow - @rexan_wong](https://x.com/rexan_wong/status/2103707054108299437) | The creator proposes a workflow with references, HyperFrames/Remotion, UI components, storyboard review, and direction. An 11-second X preview is available; the post is guidance rather than an execution log for every step. |
+| [Four-tool multimodal animation - @sankakuten91256](https://x.com/sankakuten91256/status/2103483923783373039) | The creator describes GPT Images for source frames, Grok for green-screen dance, Opus for motion graphics, and Astra for audio replacement. The X preview runs 15 seconds; integration code is not public. |
+| [Runway MCP documentary - @gavinpurcell](https://x.com/gavinpurcell/status/2103304514329854102) | The creator says a Claude agent coordinated Runway through MCP for a documentary. The X preview runs over five minutes; the tool calls and origin of individual shots were not independently checked. |
+| [Splatoon gameplay capture - @JaydenDavisNC](https://x.com/JaydenDavisNC/status/2103357848961036304) | The creator says Opus wrote the browser game and links a playable demo. The X preview shows game capture; the development history was not independently checked. |
+| [Living rice paper ink wash - @AxtonLiu](https://x.com/AxtonLiu/status/2103288413969621231) | The creator describes an open-ended brief and Canvas rendering. Nine sampled frames show a painting developing over a 39-second preview; source code and intermediate revisions are not public. |
+| [motion-ad skill product spot - @shushant_l](https://x.com/shushant_l/status/2103829449359966629) | The creator attributes a 15-second product ad to the prepared `motion-ad` skill. The preview shows product UI and title cards; its invocation and revision history were not independently checked. |
+| [Transformer explainer - @dotey](https://x.com/dotey/status/2103683057689522564) | The creator says Claude Code used JavaScript and web tools for the explainer. The X preview runs 12.2 minutes and shows diagrams; the mathematical content needs its own review. |
 
 ## New cases from the September 25 refresh
 
@@ -144,4 +149,4 @@ The original X MP4s, raw search results, private paths, and individual contact s
 
 ## Contributing and license
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) to propose a new original post, improve a source link, or correct a workflow classification. The original annotations, writing, and diagrams in this repository are offered under [CC BY 4.0](LICENSE); the linked X posts, videos, music, creator prompts, and external projects remain with their respective rightsholders. See [THIRD_PARTY.md](THIRD_PARTY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) to propose a new original post or reusable production project, improve a source link, or correct a workflow classification. The original annotations, writing, and diagrams in this repository are offered under [CC BY 4.0](LICENSE); the linked X posts, videos, music, creator prompts, and external projects remain with their respective rightsholders. See [THIRD_PARTY.md](THIRD_PARTY.md).
