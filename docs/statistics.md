@@ -4,6 +4,8 @@
 
 Snapshot: 2026-09-26T13:53:20.929497+00:00. These are **descriptive statistics for the retrieved corpus**, not a census of X, a quality score, or a model success rate.
 
+Charts are generated from the same public data by [`scripts/generate_stat_charts.py`](../scripts/generate_stat_charts.py); run `python3 scripts/generate_stat_charts.py --check` to detect chart drift.
+
 ## Count the right unit
 
 | Count | Unit | Reproducible from public files? |
@@ -21,6 +23,8 @@ The snapshot also reports 39 byte-identical groups and 48 extra attachments in t
 
 A vision classifier assigned one `opus_made` label, one primary domain, and one primary style per file from the post text and nine sampled frames. Its labels do not independently establish authorship, model calls, or finished-video quality.
 
+![Classifier-assigned domain file counts, with yes in blue and likely in orange](../assets/domain-labels.svg)
+
 | Included labels | File denominator | Games / interactive | Ads / launches | First place |
 |---|---:|---:|---:|---|
 | `yes` only | 980 | 187 (19.1%) | 191 (19.5%) | Ads / launches |
@@ -28,9 +32,15 @@ A vision classifier assigned one `opus_made` label, one primary domain, and one 
 
 Across all 1,401 classified files, there are 980 `yes`, 139 `likely`, and 282 `no` labels. The two thresholds include 70.0% and 79.9% of these files; **these are not lower and upper bounds on actual Opus use**. The leading domain flips from ads to games, so that ranking depends on how `likely` is handled. The two leading primary styles remain motion graphics / UI (308 → 350) and 3D render (265 → 324).
 
+The style chart likewise counts **distinct files**, splitting the `yes` and added `likely` rows. These are classifier labels, not verified model use.
+
+![Thirteen primary visual styles by classified file count, split into yes and likely](../assets/style-labels.svg)
+
 ## Domain × primary style: ten largest cells
 
 This table uses only the 1,119 **files** labeled `yes` or `likely`. Each file contributes to one cell; percentages use that file denominator. Only ten cells are shown, so their counts do not sum to the denominator.
+
+![Heatmap of classifier-assigned primary domain by primary style; each cell prints its file count](../assets/domain-style-heatmap.svg)
 
 | Domain | Primary style | Files | Share of included files |
 |---|---|---:|---:|
@@ -50,6 +60,8 @@ The classifier CSV has 1,371 distinct post IDs, not 1,401 distinct posts. 23 pos
 ## Preview-duration distribution
 
 Durations describe accessible X preview MP4s, not necessarily the uploaded masters. Some older prose notes differ from the numeric duration and remain unreconciled. The median and 25th–75th percentiles describe skewed distributions. Quartiles use Python `statistics.quantiles(n=4, method='inclusive')`. These selected cases cannot rank production-path success.
+
+![Preview duration across seven manually reviewed production paths, showing medians and 25th–75th percentiles](../assets/preview-duration.svg)
 
 | Unit | n | Median (s) | 25th–75th percentile (s) |
 |---|---:|---:|---:|

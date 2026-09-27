@@ -317,6 +317,8 @@ def render(data: dict, chinese: bool) -> str:
             "从公开 CSV 和[冻结快照](../data/corpus-snapshot.json)生成。运行 "
             "`python3 scripts/generate_statistics.py --check` 可检查页面是否与数据一致。", "",
             f"数据截点：{snapshot['snapshot_utc']}。以下是**检索样本的描述统计**，不是 X 全站作品普查、质量评分或模型成功率。", "",
+            "图表由 [`scripts/generate_stat_charts.py`](../scripts/generate_stat_charts.py) 从相同公开数据生成；"
+            "运行 `python3 scripts/generate_stat_charts.py --check` 可检查图表是否过期。", "",
             "## 先分清统计单位", "",
             "| 数字 | 单位 | 公开文件能否复算 |", "|---|---|---|",
             f"| {snapshot['search_queries_saved']:,}；其中成功或命中缓存 {snapshot['search_queries_ok_or_cached']:,} | 保存的检索查询 | 仅有汇总和[查询覆盖说明](search-coverage.zh-CN.md)，原始回执未公开。查询成功不等于覆盖全部作品。 |",
@@ -332,6 +334,7 @@ def render(data: dict, chinese: bool) -> str:
             "## 分类阈值会改变第一名", "",
             "视觉分类器根据帖文和九帧，为每个文件给出一个 `opus_made` 标签、一个主领域和一个主画风。"
             "这是模型判断，不是作者身份、模型调用或完整成片的独立验证。", "",
+            "![分类器给出的各领域文件数；深蓝为 yes，橙色为 likely](../assets/domain-labels.svg)", "",
             "| 纳入口径 | 文件分母 | 游戏／交互 | 广告／发布片 | 第一名 |", "|---|---:|---:|---:|---|",
             f"| 只计 `yes` | {len(strict):,} | {sd['game_interactive']} ({percent(sd['game_interactive'], len(strict))}) | {sd['product_ad']} ({percent(sd['product_ad'], len(strict))}) | {DOMAINS[strict_top_domain][lang]} |",
             f"| 计 `yes` 和 `likely` | {len(inclusive):,} | {idom['game_interactive']} ({percent(idom['game_interactive'], len(inclusive))}) | {idom['product_ad']} ({percent(idom['product_ad'], len(inclusive))}) | {DOMAINS[inclusive_top_domain][lang]} |",
@@ -342,9 +345,12 @@ def render(data: dict, chinese: bool) -> str:
             "第一名从广告变成游戏，表明领域排名对是否纳入 `likely` 敏感。"
             f"主画风前两名在两种口径下仍是动态图形／界面（{ss['motion_graphics_ui']} → {istyle['motion_graphics_ui']}）"
             f"与三维渲染（{ss['3d_render']} → {istyle['3d_render']}）。", "",
+            "下面的画风图同样以**去重文件**为单位，将 `yes` 和新增的 `likely` 分段显示。", "",
+            "![十三种主画风的分类文件数；深蓝为 yes，橙色为 likely](../assets/style-labels.svg)", "",
             "## 领域 × 主画风：前十个组合", "",
             f"下表只统计 `yes`＋`likely` 的 {len(inclusive):,} 个**文件**；每个文件只进入一个组合。"
             "百分比以该口径文件数为分母，表中仅列前十项，不能将十项相加当作总数。", "",
+            "![按领域和主画风交叉计数的热力图，格子显示文件数](../assets/domain-style-heatmap.svg)", "",
             "| 领域 | 主画风 | 文件数 | 占该口径 |", "|---|---|---:|---:|",
         ]
         lines.extend(
@@ -361,6 +367,7 @@ def render(data: dict, chinese: bool) -> str:
             "片长来自可取得的 X 预览 MP4，不保证是上传母版；少数旧观察文字与数值列的片长尚未逐项核对。"
             "下表用中位数和第 25–75 百分位描述右偏分布。四分位采用 Python "
             "`statistics.quantiles(n=4, method='inclusive')`；只描述被选入的案例，不能比较路径成功率。", "",
+            "![七种人工案例路径的预览片长分布；点为中位数，横线为第 25 至 75 百分位](../assets/preview-duration.svg)", "",
             "| 单位 | n | 中位数（秒） | 第 25–75 百分位（秒） |", "|---|---:|---:|---:|",
             f"| 分类文件 | {len(classified):,} | {file_q[1]:.2f} | {file_q[0]:.2f}–{file_q[2]:.2f} |",
             f"| 人工案例主帖 MP4 | {len(cases):,} | {case_q[1]:.2f} | {case_q[0]:.2f}–{case_q[2]:.2f} |",
@@ -408,6 +415,9 @@ def render(data: dict, chinese: bool) -> str:
             "Run `python3 scripts/generate_statistics.py --check` to detect drift.", "",
             f"Snapshot: {snapshot['snapshot_utc']}. These are **descriptive statistics for the retrieved corpus**, "
             "not a census of X, a quality score, or a model success rate.", "",
+            "Charts are generated from the same public data by "
+            "[`scripts/generate_stat_charts.py`](../scripts/generate_stat_charts.py); "
+            "run `python3 scripts/generate_stat_charts.py --check` to detect chart drift.", "",
             "## Count the right unit", "",
             "| Count | Unit | Reproducible from public files? |", "|---|---|---|",
             f"| {snapshot['search_queries_saved']:,}; {snapshot['search_queries_ok_or_cached']:,} succeeded or used cache | Saved search queries | Only the summary and [coverage notes](search-coverage.zh-CN.md) are public; raw receipts are not. A successful query does not imply full coverage. |",
@@ -424,6 +434,7 @@ def render(data: dict, chinese: bool) -> str:
             "A vision classifier assigned one `opus_made` label, one primary domain, and one primary style per file "
             "from the post text and nine sampled frames. Its labels do not independently establish authorship, "
             "model calls, or finished-video quality.", "",
+            "![Classifier-assigned domain file counts, with yes in blue and likely in orange](../assets/domain-labels.svg)", "",
             "| Included labels | File denominator | Games / interactive | Ads / launches | First place |",
             "|---|---:|---:|---:|---|",
             f"| `yes` only | {len(strict):,} | {sd['game_interactive']} ({percent(sd['game_interactive'], len(strict))}) | {sd['product_ad']} ({percent(sd['product_ad'], len(strict))}) | {DOMAINS[strict_top_domain][lang]} |",
@@ -435,10 +446,14 @@ def render(data: dict, chinese: bool) -> str:
             "ads to games, so that ranking depends on how `likely` is handled. The two leading primary styles "
             f"remain motion graphics / UI ({ss['motion_graphics_ui']} → {istyle['motion_graphics_ui']}) "
             f"and 3D render ({ss['3d_render']} → {istyle['3d_render']}).", "",
+            "The style chart likewise counts **distinct files**, splitting the `yes` and added `likely` rows. "
+            "These are classifier labels, not verified model use.", "",
+            "![Thirteen primary visual styles by classified file count, split into yes and likely](../assets/style-labels.svg)", "",
             "## Domain × primary style: ten largest cells", "",
             f"This table uses only the {len(inclusive):,} **files** labeled `yes` or `likely`. "
             "Each file contributes to one cell; percentages use that file denominator. "
             "Only ten cells are shown, so their counts do not sum to the denominator.", "",
+            "![Heatmap of classifier-assigned primary domain by primary style; each cell prints its file count](../assets/domain-style-heatmap.svg)", "",
             "| Domain | Primary style | Files | Share of included files |",
             "|---|---|---:|---:|",
         ]
@@ -457,6 +472,7 @@ def render(data: dict, chinese: bool) -> str:
             "notes differ from the numeric duration and remain unreconciled. The median and 25th–75th percentiles "
             "describe skewed distributions. Quartiles use Python "
             "`statistics.quantiles(n=4, method='inclusive')`. These selected cases cannot rank production-path success.", "",
+            "![Preview duration across seven manually reviewed production paths, showing medians and 25th–75th percentiles](../assets/preview-duration.svg)", "",
             "| Unit | n | Median (s) | 25th–75th percentile (s) |", "|---|---:|---:|---:|",
             f"| Classified file | {len(classified):,} | {file_q[1]:.2f} | {file_q[0]:.2f}–{file_q[2]:.2f} |",
             f"| Curated case's main-post MP4 | {len(cases):,} | {case_q[1]:.2f} | {case_q[0]:.2f}–{case_q[2]:.2f} |",

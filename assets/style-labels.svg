@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="chart-title chart-description">
+<title id="chart-title">Primary visual styles in the retrieved corpus</title>
+<desc id="chart-description">Horizontal stacked bars for 13 primary visual styles in 980 yes and 139 likely classifier-labeled files.</desc>
+<style>text{font-family:Inter,"DejaVu Sans",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1200" height="1000" rx="0" fill="#fbfcff" stroke="none"/>
+<text x="56" y="64" font-size="34" font-weight="700" fill="#172742" text-anchor="start" >Primary visual styles in the retrieved corpus</text>
+<text x="56" y="96" font-size="17" font-weight="400" fill="#50627e" text-anchor="start" >1,401 classified MP4 files · 980 yes + 139 likely shown · one primary style per file</text>
+<rect x="58" y="121" width="22" height="16" rx="3" fill="#365d9d" stroke="none"/>
+<text x="88" y="135" font-size="16" font-weight="400" fill="#172742" text-anchor="start" >yes</text>
+<rect x="162" y="121" width="22" height="16" rx="3" fill="#e6a34b" stroke="none"/>
+<text x="192" y="135" font-size="16" font-weight="400" fill="#172742" text-anchor="start" >likely (added)</text>
+<line x1="365" y1="163" x2="365" y2="855" stroke="#dce5f0" stroke-width="1"/>
+<text x="365" y="883" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >0</text>
+<line x1="535" y1="163" x2="535" y2="855" stroke="#dce5f0" stroke-width="1"/>
+<text x="535" y="883" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >100</text>
+<line x1="705" y1="163" x2="705" y2="855" stroke="#dce5f0" stroke-width="1"/>
+<text x="705" y="883" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >200</text>
+<line x1="875" y1="163" x2="875" y2="855" stroke="#dce5f0" stroke-width="1"/>
+<text x="875" y="883" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >300</text>
+<line x1="1045" y1="163" x2="1045" y2="855" stroke="#dce5f0" stroke-width="1"/>
+<text x="1045" y="883" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >400</text>
+<text x="342" y="211" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Motion graphics / UI</text>
+<rect x="365" y="192" width="523.6" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="888.6" y="192" width="71.4" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="972" y="211" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >350</text>
+<text x="342" y="263" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >3D render</text>
+<rect x="365" y="244" width="450.5" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="815.5" y="244" width="100.3" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="927.8" y="263" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >324</text>
+<text x="342" y="315" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Flat cartoon</text>
+<rect x="365" y="296" width="261.8" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="626.8" y="296" width="13.6" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="652.4" y="315" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >162</text>
+<text x="342" y="367" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Pixel art</text>
+<rect x="365" y="348" width="95.2" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="460.2" y="348" width="3.4" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="475.6" y="367" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >58</text>
+<text x="342" y="419" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Hand-drawn</text>
+<rect x="365" y="400" width="81.6" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="446.6" y="400" width="6.8" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="465.4" y="419" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >52</text>
+<text x="342" y="471" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Paper cut-out</text>
+<rect x="365" y="452" width="61.2" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="426.2" y="452" width="5.1" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="443.3" y="471" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >39</text>
+<text x="342" y="523" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Ink / sand / paint</text>
+<rect x="365" y="504" width="51" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="416" y="504" width="11.9" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="439.9" y="523" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >37</text>
+<text x="342" y="575" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Generative abstract</text>
+<rect x="365" y="556" width="39.1" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<text x="416.1" y="575" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >23</text>
+<text x="342" y="627" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Anime</text>
+<rect x="365" y="608" width="28.9" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="393.9" y="608" width="6.8" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="412.7" y="627" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >21</text>
+<text x="342" y="679" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Math diagram</text>
+<rect x="365" y="660" width="34" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="399" y="660" width="1.7" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="412.7" y="679" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >21</text>
+<text x="342" y="731" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Photoreal</text>
+<rect x="365" y="712" width="22.1" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="387.1" y="712" width="6.8" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="405.9" y="731" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >17</text>
+<text x="342" y="783" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Live action</text>
+<rect x="365" y="764" width="10.2" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<rect x="375.2" y="764" width="8.5" height="27" rx="2" fill="#e6a34b" stroke="none"/>
+<text x="395.7" y="783" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >11</text>
+<text x="342" y="835" font-size="18" font-weight="400" fill="#172742" text-anchor="end" >Retro terminal / ASCII</text>
+<rect x="365" y="816" width="6.8" height="27" rx="2" fill="#365d9d" stroke="none"/>
+<text x="383.8" y="835" font-size="17" font-weight="700" fill="#172742" text-anchor="start" >4</text>
+<text x="365" y="920" font-size="16" font-weight="400" fill="#50627e" text-anchor="start" >Number of distinct-file rows</text>
+<text x="56" y="955" font-size="15" font-weight="400" fill="#50627e" text-anchor="start" >Frozen 26 Sep 2026 · Search-retrieved files; classifier labels are not independently verified model use.</text>
+<text x="56" y="978" font-size="15" font-weight="400" fill="#50627e" text-anchor="start" >Counts describe this retrieval, not X-wide prevalence. See docs/statistics.md for denominators and limits.</text>
+</svg>

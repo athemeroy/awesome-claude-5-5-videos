@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="chart-title chart-description">
+<title id="chart-title">Preview length by reviewed production path</title>
+<desc id="chart-description">7 reviewed production paths ordered by median duration, with median dots, interquartile bars, and 168 total case counts.</desc>
+<style>text{font-family:Inter,"DejaVu Sans",Arial,sans-serif}</style>
+<rect x="0" y="0" width="1200" height="760" rx="0" fill="#fbfcff" stroke="none"/>
+<text x="55" y="64" font-size="34" font-weight="700" fill="#172742" text-anchor="start" >Preview length by reviewed production path</text>
+<text x="55" y="96" font-size="17" font-weight="400" fill="#50627e" text-anchor="start" >168 selected source posts · dot = median · thick line = 25th–75th percentile</text>
+<text x="55" y="125" font-size="16" font-weight="400" fill="#50627e" text-anchor="start" >Ordered by median; different path sample sizes are shown beside their labels.</text>
+<line x1="405" y1="169" x2="405" y2="621" stroke="#dce5f0" stroke-width="1"/>
+<text x="405" y="653" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >0</text>
+<line x1="531" y1="169" x2="531" y2="621" stroke="#dce5f0" stroke-width="1"/>
+<text x="531" y="653" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >60</text>
+<line x1="657" y1="169" x2="657" y2="621" stroke="#dce5f0" stroke-width="1"/>
+<text x="657" y="653" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >120</text>
+<line x1="783" y1="169" x2="783" y2="621" stroke="#dce5f0" stroke-width="1"/>
+<text x="783" y="653" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >180</text>
+<line x1="909" y1="169" x2="909" y2="621" stroke="#dce5f0" stroke-width="1"/>
+<text x="909" y="653" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >240</text>
+<line x1="1035" y1="169" x2="1035" y2="621" stroke="#dce5f0" stroke-width="1"/>
+<text x="1035" y="653" font-size="15" font-weight="400" fill="#50627e" text-anchor="middle" >300</text>
+<text x="55" y="216" font-size="17" font-weight="400" fill="#172742" text-anchor="start" >External video-model pipeline</text>
+<text x="382" y="216" font-size="15" font-weight="400" fill="#50627e" text-anchor="end" >n=10</text>
+<line x1="445.595" y1="211" x2="515.921" y2="211" stroke="#a7bedb" stroke-width="16"/>
+<line x1="445.595" y1="200" x2="445.595" y2="222" stroke="#365d9d" stroke-width="2"/>
+<line x1="515.921" y1="200" x2="515.921" y2="222" stroke="#365d9d" stroke-width="2"/>
+<circle cx="456.99" cy="211" r="8" fill="#365d9d"/>
+<text x="528.921" y="216" font-size="15" font-weight="700" fill="#365d9d" text-anchor="start" >24.8s median</text>
+<text x="55" y="282" font-size="17" font-weight="400" fill="#172742" text-anchor="start" >3D or real-time graphics</text>
+<text x="382" y="282" font-size="15" font-weight="400" fill="#50627e" text-anchor="end" >n=19</text>
+<line x1="453.338" y1="277" x2="539.758" y2="277" stroke="#a7bedb" stroke-width="16"/>
+<line x1="453.338" y1="266" x2="453.338" y2="288" stroke="#365d9d" stroke-width="2"/>
+<line x1="539.758" y1="266" x2="539.758" y2="288" stroke="#365d9d" stroke-width="2"/>
+<circle cx="476.77" cy="277" r="8" fill="#365d9d"/>
+<text x="552.758" y="282" font-size="15" font-weight="700" fill="#365d9d" text-anchor="start" >34.2s median</text>
+<text x="55" y="348" font-size="17" font-weight="400" fill="#172742" text-anchor="start" >Existing-source transformation</text>
+<text x="382" y="348" font-size="15" font-weight="400" fill="#50627e" text-anchor="end" >n=32</text>
+<line x1="461.307" y1="343" x2="524.381" y2="343" stroke="#a7bedb" stroke-width="16"/>
+<line x1="461.307" y1="332" x2="461.307" y2="354" stroke="#365d9d" stroke-width="2"/>
+<line x1="524.381" y1="332" x2="524.381" y2="354" stroke="#365d9d" stroke-width="2"/>
+<circle cx="490.142" cy="343" r="8" fill="#365d9d"/>
+<text x="537.381" y="348" font-size="15" font-weight="700" fill="#365d9d" text-anchor="start" >40.5s median</text>
+<text x="55" y="414" font-size="17" font-weight="400" fill="#172742" text-anchor="start" >Code-drawn 2D</text>
+<text x="382" y="414" font-size="15" font-weight="400" fill="#50627e" text-anchor="end" >n=52</text>
+<line x1="468" y1="409" x2="626.85" y2="409" stroke="#a7bedb" stroke-width="16"/>
+<line x1="468" y1="398" x2="468" y2="420" stroke="#365d9d" stroke-width="2"/>
+<line x1="626.85" y1="398" x2="626.85" y2="420" stroke="#365d9d" stroke-width="2"/>
+<circle cx="502.395" cy="409" r="8" fill="#365d9d"/>
+<text x="639.85" y="414" font-size="15" font-weight="700" fill="#365d9d" text-anchor="start" >46.4s median</text>
+<text x="55" y="480" font-size="17" font-weight="400" fill="#172742" text-anchor="start" >App or game capture</text>
+<text x="382" y="480" font-size="15" font-weight="400" fill="#50627e" text-anchor="end" >n=14</text>
+<line x1="473.564" y1="475" x2="648.883" y2="475" stroke="#a7bedb" stroke-width="16"/>
+<line x1="473.564" y1="464" x2="473.564" y2="486" stroke="#365d9d" stroke-width="2"/>
+<line x1="648.883" y1="464" x2="648.883" y2="486" stroke="#365d9d" stroke-width="2"/>
+<circle cx="510.625" cy="475" r="8" fill="#365d9d"/>
+<text x="661.883" y="480" font-size="15" font-weight="700" fill="#365d9d" text-anchor="start" >50.3s median</text>
+<text x="55" y="546" font-size="17" font-weight="400" fill="#172742" text-anchor="start" >Mixed or unestablished pipeline</text>
+<text x="382" y="546" font-size="15" font-weight="400" fill="#50627e" text-anchor="end" >n=14</text>
+<line x1="462.808" y1="541" x2="726.115" y2="541" stroke="#a7bedb" stroke-width="16"/>
+<line x1="462.808" y1="530" x2="462.808" y2="552" stroke="#365d9d" stroke-width="2"/>
+<line x1="726.115" y1="530" x2="726.115" y2="552" stroke="#365d9d" stroke-width="2"/>
+<circle cx="513.753" cy="541" r="8" fill="#365d9d"/>
+<text x="739.115" y="546" font-size="15" font-weight="700" fill="#365d9d" text-anchor="start" >51.8s median</text>
+<text x="55" y="612" font-size="17" font-weight="400" fill="#172742" text-anchor="start" >Educational explainer</text>
+<text x="382" y="612" font-size="15" font-weight="400" fill="#50627e" text-anchor="end" >n=27</text>
+<line x1="531.111" y1="607" x2="943.729" y2="607" stroke="#a7bedb" stroke-width="16"/>
+<line x1="531.111" y1="596" x2="531.111" y2="618" stroke="#365d9d" stroke-width="2"/>
+<line x1="943.729" y1="596" x2="943.729" y2="618" stroke="#365d9d" stroke-width="2"/>
+<circle cx="619.79" cy="607" r="8" fill="#365d9d"/>
+<text x="956.729" y="612" font-size="15" font-weight="700" fill="#365d9d" text-anchor="start" >102.3s median</text>
+<text x="405" y="688" font-size="16" font-weight="400" fill="#50627e" text-anchor="start" >X preview duration (seconds)</text>
+<text x="55" y="714" font-size="15" font-weight="400" fill="#50627e" text-anchor="start" >These are manually selected cases, not a random sample or a measure of path success.</text>
+<text x="55" y="737" font-size="15" font-weight="400" fill="#50627e" text-anchor="start" >Preview length may differ from the upload master. Quartiles use Python&#x27;s inclusive method.</text>
+</svg>

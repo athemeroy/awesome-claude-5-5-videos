@@ -22,9 +22,21 @@ A curated, source-linked guide to videos people made **with** Claude Opus 5.5. I
 
 ![Classifier-assigned domain counts for the frozen September 26 file sample, with yes and likely labels shown separately](assets/domain-labels.svg)
 
-The chart counts only the 1,119 files tagged `yes` or `likely`, with one primary domain per file. The largest two main styles are motion graphics / UI (350) and 3D render (324). Explore the full **domain × visual-style matrix** in the [visual atlas](docs/domain-style-atlas.md): every nonempty cell reports its file count, and cells with reviewed examples lead to stills and original posts. Its popularity figures are dated observations, not final engagement or a measure of production quality.
+The domain chart counts only the 1,119 files tagged `yes` or `likely`, with one primary domain per file. The same files produce this style chart; the largest two primary styles are motion graphics / UI (350) and 3D render (324).
+
+![Counts for 13 classifier-assigned primary visual styles, split into yes and likely files](assets/style-labels.svg)
+
+Domain and style meet in this complete cross-tab. Each number is a **file count**, not a number of independent creators or verified Opus runs. Empty squares mean zero in the retrieved sample. Open the [domain × visual-style atlas](docs/domain-style-atlas.md) for a table whose populated cells lead to pictured cases and original posts. Its engagement figures are dated observations, not final popularity or production-quality scores.
+
+![Heatmap of 1,119 classifier-labeled files across 11 domains and 13 primary visual styles](assets/domain-style-heatmap.svg)
 
 **Classifier-threshold check:** among `yes` files only, ads and launches (191) narrowly exceed games and interactive demos (187). Adding `likely` reverses that order to games (230) and ads (215). The lead depends on the classifier threshold, not a measured change in what people made. The [reproducible statistical profile](docs/statistics.md) shows denominators, durations, and cross-tabs.
+
+### Preview length by production path
+
+![Median and interquartile range of X preview durations for 168 selected cases across seven reviewed production paths](assets/preview-duration.svg)
+
+Each dot is a median and each thick line spans the 25th–75th percentiles of accessible X previews. The 168 source-post cases were deliberately selected for review; this chart does not measure production time, model speed, or path success.
 
 One Top result on Western civilization had 42,836 likes when collected. Its 136.5-second MP4 was byte-identical to a later repost captioned as an Opus 5.5 video, while the earlier [post](https://x.com/IterIntellectus/status/2103212539895017864) only says “Claude.” We kept both posts in the candidate corpus but left the video out of the reviewed Opus case index because the original model version is unclear. Engagement is not evidence of authorship.
 
