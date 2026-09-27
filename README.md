@@ -8,6 +8,7 @@ A curated, source-linked guide to videos people made **with** Claude Opus 5.5. I
 
 - **Browse by picture:** open the [168-case visual directory](docs/cases-index.zh-CN.md); every reviewed case has a small frame from its sampled X preview.
 - **Explore the grid:** use the [domain × visual-style atlas](docs/domain-style-atlas.md) to compare cell counts and open pictured cases, with dated engagement observations.
+- **Compare palettes within each category:** the [color-mode study](docs/color-modes.md) includes 53 mode palettes, per-video measurements and a cautious look at likes.
 - **Compare evidence:** read [14 paired cases](docs/evidence-examples.md) across seven production paths and the [reproducible statistical profile](docs/statistics.md).
 - **Find the latest additions:** read [seven cases published after the frozen search cutoff](docs/new-cases-2026-09-27.md).
 - **Choose a production route:** use the [visual-effects production guide](docs/visual-effects-fit.md) to match a task with tools, inputs, checks, and likely limits.
@@ -25,6 +26,10 @@ A curated, source-linked guide to videos people made **with** Claude Opus 5.5. I
 The domain chart counts only the 1,119 files tagged `yes` or `likely`, with one primary domain per file. The same files produce this style chart; the largest two primary styles are motion graphics / UI (350) and 3D render (324).
 
 ![Counts for 13 classifier-assigned primary visual styles, split into yes and likely files](assets/style-labels.svg)
+
+### Color varies within a style
+
+A single average palette hides within-category differences. Nine frames from each of the 1,119 distinct preview files show **two or three color modes in 11 of 13 styles**. Motion graphics/UI, for example, splits into 198 dark-neutral and 152 light-neutral files. See the [color-mode study](docs/color-modes.md) for the four-category figure, full style/domain atlases, methods and downloadable numbers. Likes were not used to form the modes, and only 20 of 53 modes have at least five exact September 27 like observations.
 
 Domain and style meet in this complete cross-tab. Each number is a **file count**, not a number of independent creators or verified Opus runs. Empty squares mean zero in the retrieved sample. Open the [domain × visual-style atlas](docs/domain-style-atlas.md) for a table whose populated cells lead to pictured cases and original posts. Its case choices use a [separate September 27 X-page engagement refresh](data/case-engagement-refresh-2026-09-27.csv); likes and post views are dated observations, not final totals or production-quality scores.
 
