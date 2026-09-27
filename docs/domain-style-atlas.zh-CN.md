@@ -1,14 +1,14 @@
 # Opus 5.5 视频：主题 × 视觉风格图谱
 
-[English](domain-style-atlas.md) · 本页由 [`generate_domain_style_atlas.py`](../scripts/generate_domain_style_atlas.py) 根据[分类 CSV](../data/domain-style.csv)、[案例 CSV](../data/cases.csv)和[互动量观察表](../data/case-engagement-observed.csv)生成。
+[English](domain-style-atlas.md) · 本页由 [`generate_domain_style_atlas.py`](../scripts/generate_domain_style_atlas.py) 根据[分类 CSV](../data/domain-style.csv)、[案例 CSV](../data/cases.csv)、[9 月 27 日 X 页面互动量观察](../data/case-engagement-refresh-2026-09-27.csv)生成；[9 月 24–26 日旧观察表](../data/case-engagement-observed.csv)保留供追溯。
 
-**数据截点：** 2026-09-26T13:53:20.929497+00:00（UTC）。矩阵单元是**视频文件数**：存档快照报告 1,401 个 SHA-256 去重文件，公开分类 CSV 有对应的 1,401 行，但没有文件哈希，读者无法仅凭公开文件重做去重。图谱仅纳入分类器标为 `yes` 或 `likely` 的 1,119 个文件。每个文件只进一个主要主题和一种主要风格；`style2` 未计入。分类器判断不等于原作者身份或真实模型调用得到验证。
+**分类数据截点：** 2026-09-26T13:53:20.929497+00:00（UTC）。矩阵单元是**视频文件数**：存档快照报告 1,401 个 SHA-256 去重文件，公开分类 CSV 有对应的 1,401 行，但没有文件哈希，读者无法仅凭公开文件重做去重。图谱仅纳入分类器标为 `yes` 或 `likely` 的 1,119 个文件。每个文件只进一个主要主题和一种主要风格；`style2` 未计入。分类器判断不等于原作者身份或真实模型调用得到验证。
 
-143 个组合里有 92 个非空格。168 个审读帖子中，157 个案例对应 `yes`／`likely` 的文件，落在 58 格；其余 34 个非空格没有已审读案例。当前 168 个案例里 161 个有赞和浏览两项观察值，其中 161 个来自保存的搜索原始结果；另外 7 个旧合并缓存案例缺浏览量，无法进入互动量排序。58 个格子至少有一个双指标案例。下方共展示 88 个带截图案例，88 个选例的互动量均来自保存的原始搜索。
+143 个组合里有 92 个非空格。168 个审读帖子中，157 个案例对应 `yes`／`likely` 的文件，落在 58 格；其余 34 个非空格没有已审读案例。在本轮官方 X 帖子页面观察里，166/168 帖有**精确赞数与精确浏览数**，166 帖有精确赞数，166 帖有精确浏览数，2 帖两项精确值均未取得。58/58 个有审读案例的格子至少有一条本轮可用互动量；下方展示 87 个带截图案例。
 
-**选例规则：** 先限定在 168 个已审读案例中，再按原帖 URL 和预览时长精确对应分类结果；每格从有赞和浏览两项观察值的案例里，按观察到的点赞降序、浏览降序、帖子 ID 升序选择最多两例。若全格都缺一项指标，只展示一例并明确不排名。赞和浏览属于 X 原帖，浏览数不是视频播放次数；多个视频附件可能共用同一帖指标；这不是质量、制作难度、Opus 贡献或效果的评分。
+**选例规则：** 先限定在 168 个已审读案例中，再按原帖 URL 和预览时长精确对应分类结果；每格先从有本轮精确点赞或点赞缩写保守区间的案例找一例。若可能领先的点赞区间互相重叠，用精确帖子浏览量在这些候选里选择，不声称严格点赞名次；若全格缺点赞，则首例按精确浏览量。随后从剩余案例中按精确浏览数选第二例；若没有精确浏览数，才用点赞保守下界。完全没有本轮可用指标的格子只展示一例且不排名。维护者自己的帖子留在历史案例数据里，但不作为本页的展示选例。页面缩写不被伪装成精确数；赞和浏览属于 X 原帖，浏览数不是视频播放次数，多个视频附件可能共用同一帖指标。这不是质量、制作难度、Opus 贡献或效果评分。
 
-**时间限制：** 这些不是“最终”或同一时点的数字。原始搜索文件跨 9 月 24–26 日保存；少数合并缓存没有精确采集时间。161 个原始搜索观察值在发帖后约 0.05–53.76 小时存档，中位数 24.34 小时。较早发表、粉丝更多或转发更多的帖子获得互动的机会不同；不要把格子内名次当成公平的作品比较。截图仅用于辨认画面，取自可取得的 X 预览；权利仍归原作者。详情请看[统计说明](statistics.zh-CN.md)和[完整 168 案例目录](cases-index.zh-CN.md)。
+**时间限制：** 本轮记录逐帖发生在 2026-09-27T11:50:53+00:00 至 2026-09-27T12:32:39+00:00（UTC），不是同一瞬间，也不是“最终”互动量。各帖发表时间、粉丝和转发条件不同；格子内展示顺序不能当成公平的作品比较。旧观察表保存 9 月 24–26 日的原始检索记录，不与本轮数字混作一次观测。截图仅用于辨认可取得的 X 预览画面，权利仍归原作者。详情请看[统计说明](statistics.zh-CN.md)和[完整 168 案例目录](cases-index.zh-CN.md)。
 
 ## 全部主题 × 风格矩阵
 
@@ -36,7 +36,7 @@
 
 161 个分类文件；8 个对应已审读案例。
 
-#### 1. [@MengTo Japanese boat environment](https://x.com/MengTo/status/2102760783344189761)
+#### 示例 A：[@MengTo Japanese boat environment](https://x.com/MengTo/status/2102760783344189761)
 
 <a href="https://x.com/MengTo/status/2102760783344189761"><img src="../assets/case-thumbnails/2102760783344189761.webp" width="160" loading="lazy" alt="Still from @MengTo Japanese boat environment"></a>
 
@@ -46,9 +46,11 @@
 
 **审读边界：** Interactive 3D scene capture by creator disclosure; a video sample does not verify every claimed interaction or source asset.
 
-观察值：**5,817 赞、390,490 浏览**；原始搜索文件写入于 2026-09-24 19:26:15+00:00（UTC，发帖后约 29.38 小时；查询 `threejs`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 6,418 赞（页面按钮 精确值）；458,308 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:52:50+00:00（UTC）。
 
-#### 2. [@JaydenDavisNC Splatoon 游戏录屏](https://x.com/JaydenDavisNC/status/2103357848961036304)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@JaydenDavisNC Splatoon 游戏录屏](https://x.com/JaydenDavisNC/status/2103357848961036304)
 
 <a href="https://x.com/JaydenDavisNC/status/2103357848961036304"><img src="../assets/case-thumbnails/2103357848961036304.webp" width="160" loading="lazy" alt="Still from @JaydenDavisNC Splatoon 游戏录屏"></a>
 
@@ -58,7 +60,9 @@
 
 **审读边界：** 作者将成片描述为游戏录屏；九帧可见第三人称游戏画面。源码与开发日志未公开，不能独立核定 Opus 的具体贡献。
 
-观察值：**4,992 赞、530,825 浏览**；原始搜索文件写入于 2026-09-26 12:54:23+00:00（UTC，发帖后约 31.31 小时；查询 `update_20260926_exact_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 5,190 赞（页面按钮 精确值）；662,140 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:52:41+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-game_interactive-pixel_art"></a>
 
@@ -66,7 +70,7 @@
 
 12 个分类文件；2 个对应已审读案例。
 
-#### 1. [@ring_hyacinth](https://x.com/ring_hyacinth/status/2102865595675050010)
+#### 示例 A：[@ring_hyacinth](https://x.com/ring_hyacinth/status/2102865595675050010)
 
 <a href="https://x.com/ring_hyacinth/status/2102865595675050010"><img src="../assets/case-thumbnails/2102865595675050010.webp" width="160" loading="lazy" alt="Still from @ring_hyacinth"></a>
 
@@ -76,9 +80,11 @@
 
 **审读边界：** Reference-conditioned game creation and screen recording, not a new standalone film from zero assets.
 
-观察值：**699 赞、43,576 浏览**；原始搜索文件写入于 2026-09-24 20:02:19+00:00（UTC，发帖后约 23.04 小时；查询 `chinese_animate`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 735 赞（页面按钮 精确值）；49,263 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:54:39+00:00（UTC）。
 
-#### 2. [@KanaWorks_AI siege-game promo](https://x.com/KanaWorks_AI/status/2102684116525437206)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@KanaWorks_AI siege-game promo](https://x.com/KanaWorks_AI/status/2102684116525437206)
 
 <a href="https://x.com/KanaWorks_AI/status/2102684116525437206"><img src="../assets/case-thumbnails/2102684116525437206.webp" width="160" loading="lazy" alt="Still from @KanaWorks_AI siege-game promo"></a>
 
@@ -88,7 +94,9 @@
 
 **审读边界：** Mixed pipeline with an Opus-coded interactive game and external video/editing tools for the promotional clip. Do not assign the promo's video pixels solely to Opus.
 
-观察值：**161 赞、13,484 浏览**；原始搜索文件写入于 2026-09-24 22:21:39+00:00（UTC，发帖后约 37.38 小时；查询 `seedance_workflow`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 166 赞（页面按钮 精确值）；19,283 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:07:13+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-game_interactive-live_action"></a>
 
@@ -96,7 +104,7 @@
 
 1 个分类文件；1 个对应已审读案例。
 
-#### 1. [@TheViableEdge JEV＋Opus 实时视觉器](https://x.com/TheViableEdge/status/2103494684374900862)
+#### 示例 A：[@TheViableEdge JEV＋Opus 实时视觉器](https://x.com/TheViableEdge/status/2103494684374900862)
 
 <a href="https://x.com/TheViableEdge/status/2103494684374900862"><img src="../assets/case-thumbnails/2103494684374900862.webp" width="160" loading="lazy" alt="Still from @TheViableEdge JEV＋Opus 实时视觉器"></a>
 
@@ -106,7 +114,9 @@
 
 **审读边界：** 这是工具演示录屏，作者说的是未来用途，帖子没有展示由该工具制作完成的独立短片。
 
-观察值：**0 赞、12 浏览**；原始搜索文件写入于 2026-09-25 14:45:19+00:00（UTC，发帖后约 0.09 小时；查询 `update_20260925_video_latest`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 5 赞（页面按钮 精确值）；333 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:53:44+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-product_ad-motion_graphics_ui"></a>
 
@@ -114,7 +124,7 @@
 
 154 个分类文件；18 个对应已审读案例。
 
-#### 1. [@deedydas](https://x.com/deedydas/status/2102787937482252537)
+#### 示例 A：[@deedydas](https://x.com/deedydas/status/2102787937482252537)
 
 <a href="https://x.com/deedydas/status/2102787937482252537"><img src="../assets/case-thumbnails/2102787937482252537.webp" width="160" loading="lazy" alt="Still from @deedydas"></a>
 
@@ -124,9 +134,11 @@
 
 **审读边界：** Marketing motion graphics; timing/cost self-reported.
 
-观察值：**3,128 赞、318,498 浏览**；原始搜索文件写入于 2026-09-24 22:21:39+00:00（UTC，发帖后约 30.50 小时；查询 `seedance_workflow`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 3,244 赞（页面按钮 精确值）；338,541 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:10:13+00:00（UTC）。
 
-#### 2. [@trq212 personal-site trailer](https://x.com/trq212/status/2102477340920152162)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@trq212 personal-site trailer](https://x.com/trq212/status/2102477340920152162)
 
 <a href="https://x.com/trq212/status/2102477340920152162"><img src="../assets/case-thumbnails/2102477340920152162.webp" width="160" loading="lazy" alt="Still from @trq212 personal-site trailer"></a>
 
@@ -136,7 +148,9 @@
 
 **审读边界：** Existing design iterations were source material; this is a website-workflow-to-trailer transformation, not a blank-slate animation prompt.
 
-观察值：**2,166 赞、176,725 浏览**；原始搜索文件写入于 2026-09-24 18:03:12+00:00（UTC，发帖后约 46.77 小时；查询 `motion_graphics`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 2,174 赞（页面按钮 精确值）；181,095 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:05:34+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-product_ad-3d_render"></a>
 
@@ -144,7 +158,7 @@
 
 25 个分类文件；2 个对应已审读案例。
 
-#### 1. [@NiloTechInc](https://x.com/NiloTechInc/status/2102741813719138661)
+#### 示例 A：[@NiloTechInc](https://x.com/NiloTechInc/status/2102741813719138661)
 
 <a href="https://x.com/NiloTechInc/status/2102741813719138661"><img src="../assets/case-thumbnails/2102741813719138661.webp" width="160" loading="lazy" alt="Still from @NiloTechInc"></a>
 
@@ -154,9 +168,11 @@
 
 **审读边界：** Mixed-asset 3D trailer/demo; clear external/manual material.
 
-观察值：**104 赞、8,126 浏览**；原始搜索文件写入于 2026-09-24 16:13:55+00:00（UTC，发帖后约 27.43 小时；查询 `claude_phrase_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 116 赞（页面按钮 精确值）；16,341 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:53:06+00:00（UTC）。
 
-#### 2. [@Tariq_at 本地 ComfyUI 短片](https://x.com/Tariq_at/status/2102561072624410878)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@Tariq_at 本地 ComfyUI 短片](https://x.com/Tariq_at/status/2102561072624410878)
 
 <a href="https://x.com/Tariq_at/status/2102561072624410878"><img src="../assets/case-thumbnails/2102561072624410878.webp" width="160" loading="lazy" alt="Still from @Tariq_at 本地 ComfyUI 短片"></a>
 
@@ -166,7 +182,9 @@
 
 **审读边界：** Opus 是提示词与镜头编排者，ComfyUI 本地生成画面；本地运行不等于文本模型直接生成视频像素或没有算力成本。
 
-观察值：**4 赞、970 浏览**；原始搜索文件写入于 2026-09-24 19:58:58+00:00（UTC，发帖后约 43.15 小时；查询 `prompt`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 4 赞（页面按钮 精确值）；1,078 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:09:29+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-product_ad-flat_vector_cartoon"></a>
 
@@ -174,7 +192,21 @@
 
 14 个分类文件；4 个对应已审读案例。
 
-#### 1. [@jackfriks Lovelee](https://x.com/jackfriks/status/2103132260589338762)
+#### 示例 A：[@Lucas_IA_ skill-based ad](https://x.com/Lucas_IA_/status/2103152093733253544)
+
+<a href="https://x.com/Lucas_IA_/status/2103152093733253544"><img src="../assets/case-thumbnails/2103152093733253544.webp" width="160" loading="lazy" alt="Still from @Lucas_IA_ skill-based ad"></a>
+
+**画面主题：** Adaptogenic mushroom coffee advertisement · **案例制作路径：** `procedural_2d` · [完整目录](cases-index.zh-CN.md)
+
+**作者披露：** The creator's [12-post workflow thread](https://x.com/Lucas_IA_/status/2103152094958026953) describes an existing paid skill containing a drawing engine and scripts, then a short [trigger prompt](https://x.com/Lucas_IA_/status/2103152108224573507). Claude Code writes JS frames, HyperFrames exports MP4, ElevenLabs provides narration, Whisper aligns words, optional Suno supplies music, and ffmpeg mixes. The full skill/source is not public.
+
+**审读边界：** The visible short prompt depends on a prebuilt pipeline and prewritten script/brief. “$0 image/video generations” is compatible with paid Claude tokens and ElevenLabs voice; not total-zero cost.
+
+**本轮 X 页面观察：** 403 赞（公开帖子 HTML 精确值）；59,918 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:29:42+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@jackfriks Lovelee](https://x.com/jackfriks/status/2103132260589338762)
 
 <a href="https://x.com/jackfriks/status/2103132260589338762"><img src="../assets/case-thumbnails/2103132260589338762.webp" width="160" loading="lazy" alt="Still from @jackfriks Lovelee"></a>
 
@@ -184,19 +216,9 @@
 
 **审读边界：** Existing assets and product brief materially shape the output.
 
-观察值：**46 赞、15,409 浏览**；原始搜索文件写入于 2026-09-24 16:50:05+00:00（UTC，发帖后约 2.17 小时；查询 `one_shot`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 161 赞（页面按钮 精确值）；51,278 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:19:36+00:00（UTC）。
 
-#### 2. [@hanifproduktif 蚂蚁群落动画](https://x.com/hanifproduktif/status/2102742924148830211)
-
-<a href="https://x.com/hanifproduktif/status/2102742924148830211"><img src="../assets/case-thumbnails/2102742924148830211.webp" width="160" loading="lazy" alt="Still from @hanifproduktif 蚂蚁群落动画"></a>
-
-**画面主题：** Code-generated ant animation demo · **案例制作路径：** `procedural_2d` · [完整目录](cases-index.zh-CN.md)
-
-**作者披露：** 原帖链接到作者公开的[claude-animation-skill 仓库](https://github.com/buildwithhanif/claude-animation-skill)。仓库含与视频画面和“Every frame is code”片尾吻合的 `examples/ant-colony/film.mjs`：32 秒、24fps 的 `frame(ctx,t)` 动画，Node Canvas／ffmpeg 管线、蚂蚁 rig、场景、声音脚本及抽帧／确定性检查流程；仓库发布不等于能复原本次 Claude 的提示和调用记录。
-
-**审读边界：** 公开工程使“代码产出画面”有强于作者口头声明的佐证；音轨听感、每段代码的生成者和原始对话仍未独立验证。
-
-观察值：**20 赞、3,084 浏览**；原始搜索文件写入于 2026-09-24 21:08:55+00:00（UTC，发帖后约 32.27 小时；查询 `opus_spaced`）。这是存档时间，不是精确的 X 读数时间。
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-product_ad-paper_cutout_collage"></a>
 
@@ -204,7 +226,7 @@
 
 4 个分类文件；1 个对应已审读案例。
 
-#### 1. [@so_ainsight 手绘风 Claude Code 解说](https://x.com/so_ainsight/status/2103117547776163845)
+#### 示例 A：[@so_ainsight 手绘风 Claude Code 解说](https://x.com/so_ainsight/status/2103117547776163845)
 
 <a href="https://x.com/so_ainsight/status/2103117547776163845"><img src="../assets/case-thumbnails/2103117547776163845.webp" width="160" loading="lazy" alt="Still from @so_ainsight 手绘风 Claude Code 解说"></a>
 
@@ -214,7 +236,9 @@
 
 **审读边界：** “全交给 Claude”仍明确包含外部静态美术与 TTS，代码是合成／动效；质量自检是作者披露。
 
-观察值：**5 赞、1,150 浏览**；原始搜索文件写入于 2026-09-24 20:36:11+00:00（UTC，发帖后约 6.92 小时；查询 `japanese_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 38 赞（页面按钮 精确值）；3,992 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:24:18+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-product_ad-photoreal"></a>
 
@@ -222,7 +246,7 @@
 
 4 个分类文件；1 个对应已审读案例。
 
-#### 1. [@OriSilver Blender 草模到 Seedance](https://x.com/OriSilver/status/2102817977812824335)
+#### 示例 A：[@OriSilver Blender 草模到 Seedance](https://x.com/OriSilver/status/2102817977812824335)
 
 <a href="https://x.com/OriSilver/status/2102817977812824335"><img src="../assets/case-thumbnails/2102817977812824335.webp" width="160" loading="lazy" alt="Still from @OriSilver Blender 草模到 Seedance"></a>
 
@@ -232,7 +256,9 @@
 
 **审读边界：** 三层参考链：已有视频给镜头语言，Blender 草模给空间与动作控制，Seedance 做上方最终像素。不能称 Opus 直接生成真人场景，也不能把公开合辑的 27.6 秒当作草模母版时长。
 
-观察值：**31 赞、6,795 浏览**；原始搜索文件写入于 2026-09-24 19:25:29+00:00（UTC，发帖后约 25.58 小时；查询 `blender`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 33 赞（页面按钮 精确值）；7,298 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:07:44+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-product_ad-live_action"></a>
 
@@ -240,7 +266,7 @@
 
 5 个分类文件；2 个对应已审读案例。
 
-#### 1. [@gregpr07 口播多条 take 自动挑剪](https://x.com/gregpr07/status/2102984873351037161)
+#### 示例 A：[@gregpr07 口播多条 take 自动挑剪](https://x.com/gregpr07/status/2102984873351037161)
 
 <a href="https://x.com/gregpr07/status/2102984873351037161"><img src="../assets/case-thumbnails/2102984873351037161.webp" width="160" loading="lazy" alt="Still from @gregpr07 口播多条 take 自动挑剪"></a>
 
@@ -250,9 +276,11 @@
 
 **审读边界：** 已有真人表演的选择、剪辑和包装，模型作用是编辑与判断；不能称它从零生成片中人物或口播。
 
-观察值：**198 赞、16,548 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 17.44 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 299 赞（页面按钮 精确值）；56,301 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:03:35+00:00（UTC）。
 
-#### 2. [@sab8a 真人口播改剪](https://x.com/sab8a/status/2103144778481475686)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@sab8a 真人口播改剪](https://x.com/sab8a/status/2103144778481475686)
 
 <a href="https://x.com/sab8a/status/2103144778481475686"><img src="../assets/case-thumbnails/2103144778481475686.webp" width="160" loading="lazy" alt="Still from @sab8a 真人口播改剪"></a>
 
@@ -262,7 +290,9 @@
 
 **审读边界：** 典型真人素材改剪，第三方服务成本高于其自报模型 token 成本；费用数字是作者口径，不能解释为零素材生成。
 
-观察值：**21 赞、2,560 浏览**；原始搜索文件写入于 2026-09-24 19:58:58+00:00（UTC，发帖后约 4.49 小时；查询 `prompt`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 288 赞（公开帖子 HTML 精确值）；60,661 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:28:24+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-ai_self_meta-motion_graphics_ui"></a>
 
@@ -270,7 +300,7 @@
 
 62 个分类文件；7 个对应已审读案例。
 
-#### 1. [@stephanlivera 15 秒 motion-design showreel](https://x.com/stephanlivera/status/2103315922098470926)
+#### 示例 A：[@stephanlivera 15 秒 motion-design showreel](https://x.com/stephanlivera/status/2103315922098470926)
 
 <a href="https://x.com/stephanlivera/status/2103315922098470926"><img src="../assets/case-thumbnails/2103315922098470926.webp" width="160" loading="lazy" alt="Still from @stephanlivera 15 秒 motion-design showreel"></a>
 
@@ -280,9 +310,11 @@
 
 **审读边界：** 本批次收录的一条高互动 showreel；短提示词与成片均可见，但源工程和修改过程未公开，不能推断稳定产出能力。
 
-观察值：**14,618 赞、959,385 浏览**；原始搜索文件写入于 2026-09-26 13:01:24+00:00（UTC，发帖后约 34.20 小时；查询 `update_20260926_motion_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 16,061 赞（公开帖子 HTML 精确值）；1,640,686 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:32:16+00:00（UTC）。
 
-#### 2. [@ajith_io 15 秒 motion-design showreel](https://x.com/ajith_io/status/2103449416325890146)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@ajith_io 15 秒 motion-design showreel](https://x.com/ajith_io/status/2103449416325890146)
 
 <a href="https://x.com/ajith_io/status/2103449416325890146"><img src="../assets/case-thumbnails/2103449416325890146.webp" width="160" loading="lazy" alt="Still from @ajith_io 15 秒 motion-design showreel"></a>
 
@@ -292,7 +324,9 @@
 
 **审读边界：** 同日有多个相近的“15 秒 motion designer showreel”变体；这条证明作者公开了 brief，不证明它能稳定复现或带来相同传播。
 
-观察值：**3,255 赞、390,776 浏览**；原始搜索文件写入于 2026-09-26 13:01:24+00:00（UTC，发帖后约 25.36 小时；查询 `update_20260926_motion_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 3,715 赞（公开帖子 HTML 精确值）；528,391 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:30:16+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-ai_self_meta-3d_render"></a>
 
@@ -300,7 +334,7 @@
 
 60 个分类文件；7 个对应已审读案例。
 
-#### 1. [@higgsfield_ai](https://x.com/higgsfield_ai/status/2102533401110802552)
+#### 示例 A：[@higgsfield_ai](https://x.com/higgsfield_ai/status/2102533401110802552)
 
 <a href="https://x.com/higgsfield_ai/status/2102533401110802552"><img src="../assets/case-thumbnails/2102533401110802552.webp" width="160" loading="lazy" alt="Still from @higgsfield_ai"></a>
 
@@ -310,9 +344,11 @@
 
 **审读边界：** Benchmark/demo capture, not independent generated video footage.
 
-观察值：**3,484 赞、508,433 浏览**；原始搜索文件写入于 2026-09-24 16:13:55+00:00（UTC，发帖后约 41.23 小时；查询 `claude_phrase_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 3,547 赞（页面按钮 精确值）；524,692 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:54:09+00:00（UTC）。
 
-#### 2. [@Stefan_3D_AI Blender 双模型对照](https://x.com/Stefan_3D_AI/status/2102471841046786153)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@Stefan_3D_AI Blender 双模型对照](https://x.com/Stefan_3D_AI/status/2102471841046786153)
 
 <a href="https://x.com/Stefan_3D_AI/status/2102471841046786153"><img src="../assets/case-thumbnails/2102471841046786153.webp" width="160" loading="lazy" alt="Still from @Stefan_3D_AI Blender 双模型对照"></a>
 
@@ -322,7 +358,9 @@
 
 **审读边界：** 有共同任务描述和作者给出的耗时／费用，属于有参考价值的单例对照；输出 token 数、API 等价与实际订阅费用不能混作同一指标，视觉高下也不能由九帧量化。
 
-观察值：**1,828 赞、458,987 浏览**；原始搜索文件写入于 2026-09-24 19:25:29+00:00（UTC，发帖后约 48.50 小时；查询 `blender`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,846 赞（页面按钮 精确值）；465,542 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:51:19+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-ai_self_meta-flat_vector_cartoon"></a>
 
@@ -330,7 +368,7 @@
 
 34 个分类文件；1 个对应已审读案例。
 
-#### 1. [@jake11moran 会话历史动画 skill](https://x.com/jake11moran/status/2103247490237825416)
+#### 示例 A：[@jake11moran 会话历史动画 skill](https://x.com/jake11moran/status/2103247490237825416)
 
 <a href="https://x.com/jake11moran/status/2103247490237825416"><img src="../assets/case-thumbnails/2103247490237825416.webp" width="160" loading="lazy" alt="Still from @jake11moran 会话历史动画 skill"></a>
 
@@ -340,7 +378,9 @@
 
 **审读边界：** 短触发词背后有预置 skill、既有工具包和个人会话史；个人数据本身是素材，不应当成零输入动画。
 
-观察值：**2 赞、18 浏览**；原始搜索文件写入于 2026-09-24 22:22:26+00:00（UTC，发帖后约 0.08 小时；查询 `final_live`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 28 赞（页面按钮 精确值）；5,557 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:04:07+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-ai_self_meta-hand_drawn_sketch"></a>
 
@@ -348,7 +388,7 @@
 
 8 个分类文件；2 个对应已审读案例。
 
-#### 1. [@kevin_t_ngo](https://x.com/kevin_t_ngo/status/2102437977435893771)
+#### 示例 A：[@kevin_t_ngo](https://x.com/kevin_t_ngo/status/2102437977435893771)
 
 <a href="https://x.com/kevin_t_ngo/status/2102437977435893771"><img src="../assets/case-thumbnails/2102437977435893771.webp" width="160" loading="lazy" alt="Still from @kevin_t_ngo"></a>
 
@@ -358,9 +398,11 @@
 
 **审读边界：** Code-rendered narrative animation; source claim, no repo checked.
 
-观察值：**5,951 赞、611,668 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 53.66 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 6,041 赞（公开帖子 HTML 精确值）；632,277 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:31:26+00:00（UTC）。
 
-#### 2. [@N8Programs Gorm Fluid 文本改编](https://x.com/N8Programs/status/2103154189064876406)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@N8Programs Gorm Fluid 文本改编](https://x.com/N8Programs/status/2103154189064876406)
 
 <a href="https://x.com/N8Programs/status/2103154189064876406"><img src="../assets/case-thumbnails/2103154189064876406.webp" width="160" loading="lazy" alt="Still from @N8Programs Gorm Fluid 文本改编"></a>
 
@@ -370,7 +412,9 @@
 
 **审读边界：** 明确的源文档改编，而非空白主题生成。视频很长，但九帧不能检验 10 分钟内的叙事完整性、朗读和与原文的忠实程度。
 
-观察值：**0 赞、62 浏览**；原始搜索文件写入于 2026-09-24 16:13:45+00:00（UTC，发帖后约 0.12 小时；查询 `opus_phrase_latest`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1 赞（页面按钮 精确值）；1,650 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:00:20+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-ai_self_meta-paper_cutout_collage"></a>
 
@@ -378,7 +422,7 @@
 
 5 个分类文件；2 个对应已审读案例。
 
-#### 1. [@superalesha Claude-model history](https://x.com/superalesha/status/2102463796149440888)
+#### 示例 A：[@superalesha Claude-model history](https://x.com/superalesha/status/2102463796149440888)
 
 <a href="https://x.com/superalesha/status/2102463796149440888"><img src="../assets/case-thumbnails/2102463796149440888.webp" width="160" loading="lazy" alt="Still from @superalesha Claude-model history"></a>
 
@@ -388,9 +432,11 @@
 
 **审读边界：** Another short-visible-brief, rich-prebuilt-skill example; “pure JS” is a creator claim about visual production and does not erase the prior skill.
 
-观察值：**1,165 赞、65,548 浏览**；原始搜索文件写入于 2026-09-24 18:02:05+00:00（UTC，发帖后约 47.64 小时；查询 `animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,195 赞（页面按钮 精确值）；68,880 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:24:40+00:00（UTC）。
 
-#### 2. [@Voxyz_ai](https://x.com/Voxyz_ai/status/2102531681450119426)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@Voxyz_ai](https://x.com/Voxyz_ai/status/2102531681450119426)
 
 <a href="https://x.com/Voxyz_ai/status/2102531681450119426"><img src="../assets/case-thumbnails/2102531681450119426.webp" width="160" loading="lazy" alt="Still from @Voxyz_ai"></a>
 
@@ -400,7 +446,9 @@
 
 **审读边界：** Procedural narrative motion; no public code checked.
 
-观察值：**929 赞、116,908 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 47.45 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 939 赞（公开帖子 HTML 精确值）；121,984 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:29:59+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-ai_self_meta-painterly_ink_sand"></a>
 
@@ -408,7 +456,7 @@
 
 8 个分类文件；2 个对应已审读案例。
 
-#### 1. [@shfred0](https://x.com/shfred0/status/2102495989194236158)
+#### 示例 A：[@shfred0](https://x.com/shfred0/status/2102495989194236158)
 
 <a href="https://x.com/shfred0/status/2102495989194236158"><img src="../assets/case-thumbnails/2102495989194236158.webp" width="160" loading="lazy" alt="Still from @shfred0"></a>
 
@@ -418,9 +466,11 @@
 
 **审读边界：** Code-rendered 2D, claimed no external generative imagery.
 
-观察值：**4,142 赞、353,692 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 49.82 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 4,175 赞（公开帖子 HTML 精确值）；365,635 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:32:09+00:00（UTC）。
 
-#### 2. [@Medeo_AI](https://x.com/Medeo_AI/status/2102463091959288264)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@Medeo_AI](https://x.com/Medeo_AI/status/2102463091959288264)
 
 <a href="https://x.com/Medeo_AI/status/2102463091959288264"><img src="../assets/case-thumbnails/2102463091959288264.webp" width="160" loading="lazy" alt="Still from @Medeo_AI"></a>
 
@@ -430,7 +480,9 @@
 
 **审读边界：** External video model comparison, not direct pixel output by either LLM.
 
-观察值：**285 赞、126,275 浏览**；原始搜索文件写入于 2026-09-24 16:13:55+00:00（UTC，发帖后约 45.89 小时；查询 `claude_phrase_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 287 赞（页面按钮 精确值）；128,452 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:07:25+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-ai_self_meta-generative_abstract"></a>
 
@@ -438,7 +490,7 @@
 
 7 个分类文件；1 个对应已审读案例。
 
-#### 1. [@JustinPerea](https://x.com/JustinPerea/status/2102893186330841502)
+#### 示例 A：[@JustinPerea](https://x.com/JustinPerea/status/2102893186330841502)
 
 <a href="https://x.com/JustinPerea/status/2102893186330841502"><img src="../assets/case-thumbnails/2102893186330841502.webp" width="160" loading="lazy" alt="Still from @JustinPerea"></a>
 
@@ -448,7 +500,9 @@
 
 **审读边界：** Strong pure-code demoscene self-report, but “one prompt” here includes a preconfigured ultra-code workflow and a continuation. Raw token totals are not API billable output totals.
 
-观察值：**981 赞、72,739 浏览**；原始搜索文件写入于 2026-09-24 17:22:33+00:00（UTC，发帖后约 18.55 小时；查询 `day2_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,565 赞（页面按钮 精确值）；125,178 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:13:26+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-ai_self_meta-anime"></a>
 
@@ -456,7 +510,7 @@
 
 2 个分类文件；1 个对应已审读案例。
 
-#### 1. [@ishuagra02 动漫式模型对战预告](https://x.com/ishuagra02/status/2103247844542922825)
+#### 示例 A：[@ishuagra02 动漫式模型对战预告](https://x.com/ishuagra02/status/2103247844542922825)
 
 <a href="https://x.com/ishuagra02/status/2103247844542922825"><img src="../assets/case-thumbnails/2103247844542922825.webp" width="160" loading="lazy" alt="Still from @ishuagra02 动漫式模型对战预告"></a>
 
@@ -466,7 +520,9 @@
 
 **审读边界：** 与长分镜提示相反，这是真正简短的公开创意委托；较长成片与成本、渲染路径分开记录。
 
-观察值：**1 赞、8 浏览**；原始搜索文件写入于 2026-09-24 22:22:26+00:00（UTC，发帖后约 0.06 小时；查询 `final_live`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 60 赞（页面按钮 精确值）；3,762 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:19:10+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-ai_self_meta-photoreal"></a>
 
@@ -474,7 +530,7 @@
 
 4 个分类文件；1 个对应已审读案例。
 
-#### 1. [@gavinpurcell Runway MCP 纪录片](https://x.com/gavinpurcell/status/2103304514329854102)
+#### 示例 A：[@gavinpurcell Runway MCP 纪录片](https://x.com/gavinpurcell/status/2103304514329854102)
 
 <a href="https://x.com/gavinpurcell/status/2103304514329854102"><img src="../assets/case-thumbnails/2103304514329854102.webp" width="160" loading="lazy" alt="Still from @gavinpurcell Runway MCP 纪录片"></a>
 
@@ -484,7 +540,9 @@
 
 **审读边界：** 作者披露 Claude 代理通过 Runway MCP 编排制作；X 预览可见多镜头成片，但具体调用记录和逐镜来源未公开。
 
-观察值：**3,386 赞、252,592 浏览**；原始搜索文件写入于 2026-09-26 12:54:23+00:00（UTC，发帖后约 34.84 小时；查询 `update_20260926_exact_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 3,583 赞（公开帖子 HTML 精确值）；584,787 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:28:40+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-education_science-motion_graphics_ui"></a>
 
@@ -492,7 +550,7 @@
 
 55 个分类文件；15 个对应已审读案例。
 
-#### 1. [@addyosmani browser explainer](https://x.com/addyosmani/status/2103009037164110327)
+#### 示例 A：[@addyosmani browser explainer](https://x.com/addyosmani/status/2103009037164110327)
 
 <a href="https://x.com/addyosmani/status/2103009037164110327"><img src="../assets/case-thumbnails/2103009037164110327.webp" width="160" loading="lazy" alt="Still from @addyosmani browser explainer"></a>
 
@@ -502,19 +560,23 @@
 
 **审读边界：** Code-drawn educational explainer by creator disclosure; the sampled frames cannot validate the technical narration or full frame continuity.
 
-观察值：**1,548 赞、81,416 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 15.84 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 2,372 赞（页面按钮 精确值）；210,498 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:56:14+00:00（UTC）。
 
-#### 2. [@Ror_Fly Negroni recipe](https://x.com/Ror_Fly/status/2102853258582880547)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
-<a href="https://x.com/Ror_Fly/status/2102853258582880547"><img src="../assets/case-thumbnails/2102853258582880547.webp" width="160" loading="lazy" alt="Still from @Ror_Fly Negroni recipe"></a>
+#### 示例 B：[@dotey Transformer 教学讲解片](https://x.com/dotey/status/2103683057689522564)
 
-**画面主题：** Negroni cocktail recipe animated explainer · **案例制作路径：** `educational_explainer` · [完整目录](cases-index.zh-CN.md)
+<a href="https://x.com/dotey/status/2103683057689522564"><img src="../assets/case-thumbnails/2103683057689522564.webp" width="160" loading="lazy" alt="Still from @dotey Transformer 教学讲解片"></a>
 
-**作者披露：** The root shares a short cocktail explainer prompt and explicitly says one reference image was supplied; asks for JavaScript/HTML, 30 s, ingredients and measurements from empty glass to finished drink. The creator later says the work ran in Claude Code.
+**画面主题：** Transformer architecture explained · **案例制作路径：** `educational_explainer` · [完整目录](cases-index.zh-CN.md)
 
-**审读边界：** Short, asset-conditioned motion-graphics brief; the uploaded image is part of the input despite a compact text prompt.
+**作者披露：** 作者使用 Claude Code + Opus 5.5 并开放工具安装与联网检索权限，要求用 JS 深入浅出讲解 Transformer、自注意力机制与数学原理；作者称由此生成约 12 分钟讲解视频。
 
-观察值：**947 赞、60,469 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 26.16 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**审读边界：** 较长的教育图解案例；X 预览可见图表与公式，但源码、工具调用和数学正确性仍需分别核查。
+
+**本轮 X 页面观察：** 1,186 赞（页面按钮 精确值）；161,957 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:56:50+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-education_science-3d_render"></a>
 
@@ -522,7 +584,7 @@
 
 22 个分类文件；4 个对应已审读案例。
 
-#### 1. [@RyanSael interactive lens lab](https://x.com/RyanSael/status/2102591147927654847)
+#### 示例 A：[@RyanSael interactive lens lab](https://x.com/RyanSael/status/2102591147927654847)
 
 <a href="https://x.com/RyanSael/status/2102591147927654847"><img src="../assets/case-thumbnails/2102591147927654847.webp" width="160" loading="lazy" alt="Still from @RyanSael interactive lens lab"></a>
 
@@ -532,9 +594,11 @@
 
 **审读边界：** Interactive optical simulator capture, not a pre-rendered educational film; scientific fidelity and cost were not independently checked.
 
-观察值：**9,300 赞、643,873 浏览**；原始搜索文件写入于 2026-09-24 16:50:05+00:00（UTC，发帖后约 38.01 小时；查询 `one_shot`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 15,510 赞（公开帖子 HTML 精确值）；3,115,565 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:26:15+00:00（UTC）。
 
-#### 2. [@superalesha LHC](https://x.com/superalesha/status/2102779758408774104)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@superalesha LHC](https://x.com/superalesha/status/2102779758408774104)
 
 <a href="https://x.com/superalesha/status/2102779758408774104"><img src="../assets/case-thumbnails/2102779758408774104.webp" width="160" loading="lazy" alt="Still from @superalesha LHC"></a>
 
@@ -544,7 +608,9 @@
 
 **审读边界：** 3D generated scene / Blender, not native video pixels.
 
-观察值：**537 赞、23,128 浏览**；原始搜索文件写入于 2026-09-24 19:25:29+00:00（UTC，发帖后约 28.11 小时；查询 `blender`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 614 赞（页面按钮 精确值）；79,004 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:52:09+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-education_science-flat_vector_cartoon"></a>
 
@@ -552,7 +618,7 @@
 
 25 个分类文件；2 个对应已审读案例。
 
-#### 1. [@devteamdrew](https://x.com/devteamdrew/status/2102436464323661880)
+#### 示例 A：[@devteamdrew](https://x.com/devteamdrew/status/2102436464323661880)
 
 <a href="https://x.com/devteamdrew/status/2102436464323661880"><img src="../assets/case-thumbnails/2102436464323661880.webp" width="160" loading="lazy" alt="Still from @devteamdrew"></a>
 
@@ -562,9 +628,11 @@
 
 **审读边界：** Original stylized short; render method undisclosed in root.
 
-观察值：**9,286 赞、1,611,843 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 53.76 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 9,642 赞（页面按钮 精确值）；1,786,160 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:10:37+00:00（UTC）。
 
-#### 2. [@0x0funky](https://x.com/0x0funky/status/2102736587708854585)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@0x0funky](https://x.com/0x0funky/status/2102736587708854585)
 
 <a href="https://x.com/0x0funky/status/2102736587708854585"><img src="../assets/case-thumbnails/2102736587708854585.webp" width="160" loading="lazy" alt="Still from @0x0funky"></a>
 
@@ -574,7 +642,9 @@
 
 **审读边界：** Educational explainer with existing teaching material and multiple code/audio tools. The root's “one-shot” does not mean content was researched from scratch.
 
-观察值：**338 赞、34,143 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 33.88 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 341 赞（页面按钮 精确值）；35,080 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:54:47+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-education_science-hand_drawn_sketch"></a>
 
@@ -582,7 +652,7 @@
 
 15 个分类文件；5 个对应已审读案例。
 
-#### 1. [@akokoi1 geography](https://x.com/akokoi1/status/2102606609574941028)
+#### 示例 A：[@akokoi1 geography](https://x.com/akokoi1/status/2102606609574941028)
 
 <a href="https://x.com/akokoi1/status/2102606609574941028"><img src="../assets/case-thumbnails/2102606609574941028.webp" width="160" loading="lazy" alt="Still from @akokoi1 geography"></a>
 
@@ -592,9 +662,11 @@
 
 **审读边界：** Code/diagram educational explainer with external TTS; creator's exact prompt in root post.
 
-观察值：**672 赞、129,180 浏览**；原始搜索文件写入于 2026-09-24 20:02:19+00:00（UTC，发帖后约 40.19 小时；查询 `chinese_animate`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 694 赞（页面按钮 精确值）；134,233 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:56:32+00:00（UTC）。
 
-#### 2. [@AxtonLiu](https://x.com/AxtonLiu/status/2102827887732932956)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@AxtonLiu](https://x.com/AxtonLiu/status/2102827887732932956)
 
 <a href="https://x.com/AxtonLiu/status/2102827887732932956"><img src="../assets/case-thumbnails/2102827887732932956.webp" width="160" loading="lazy" alt="Still from @AxtonLiu"></a>
 
@@ -604,7 +676,9 @@
 
 **审读边界：** Source-conditioned video transformation/editing, not zero-asset generation.
 
-观察值：**362 赞、27,908 浏览**；原始搜索文件写入于 2026-09-24 20:02:19+00:00（UTC，发帖后约 25.54 小时；查询 `chinese_animate`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 371 赞（页面按钮 精确值）；31,551 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:59:41+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-education_science-math_diagram"></a>
 
@@ -612,7 +686,7 @@
 
 19 个分类文件；3 个对应已审读案例。
 
-#### 1. [@LinearUncle](https://x.com/LinearUncle/status/2103128559174971663)
+#### 示例 A：[@LinearUncle](https://x.com/LinearUncle/status/2103128559174971663)
 
 <a href="https://x.com/LinearUncle/status/2103128559174971663"><img src="../assets/case-thumbnails/2103128559174971663.webp" width="160" loading="lazy" alt="Still from @LinearUncle"></a>
 
@@ -622,9 +696,11 @@
 
 **审读边界：** Manim educational explainer with TTS. The 12-frame supplementary grid is in `evidence/`.
 
-观察值：**126 赞、10,511 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 7.92 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 258 赞（页面按钮 精确值）；21,936 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:55:37+00:00（UTC）。
 
-#### 2. [@ng169onX VAE 数学讲解](https://x.com/ng169onX/status/2103183904563998809)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@ng169onX VAE 数学讲解](https://x.com/ng169onX/status/2103183904563998809)
 
 <a href="https://x.com/ng169onX/status/2103183904563998809"><img src="../assets/case-thumbnails/2103183904563998809.webp" width="160" loading="lazy" alt="Still from @ng169onX VAE 数学讲解"></a>
 
@@ -634,7 +710,9 @@
 
 **审读边界：** 约五分半的复合教育视频：视觉演示、计算实验、TTS 和音乐是不同任务，单条人类指令不等于只有一次模型调用或经过学术校对。
 
-观察值：**1 赞、44 浏览**；原始搜索文件写入于 2026-09-24 19:24:42+00:00（UTC，发帖后约 1.33 小时；查询 `manim`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 4 赞（页面按钮 精确值）；836 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:58:35+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-story_short-motion_graphics_ui"></a>
 
@@ -642,7 +720,7 @@
 
 1 个分类文件；1 个对应已审读案例。
 
-#### 1. [@KamStudioLabs 不想被修复的 bug](https://x.com/KamStudioLabs/status/2102903173161877996)
+#### 示例 A：[@KamStudioLabs 不想被修复的 bug](https://x.com/KamStudioLabs/status/2102903173161877996)
 
 <a href="https://x.com/KamStudioLabs/status/2102903173161877996"><img src="../assets/case-thumbnails/2102903173161877996.webp" width="160" loading="lazy" alt="Still from @KamStudioLabs 不想被修复的 bug"></a>
 
@@ -652,7 +730,9 @@
 
 **审读边界：** 程序／代码意象叙事；与前一段碰撞机器是不同创意委托，不能把两者当同片迭代。
 
-观察值：**4 赞、40 浏览**；原始搜索文件写入于 2026-09-24 19:58:58+00:00（UTC，发帖后约 20.49 小时；查询 `prompt`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 5 赞（公开帖子 HTML 精确值）；52 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:29:27+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-story_short-3d_render"></a>
 
@@ -660,7 +740,7 @@
 
 21 个分类文件；3 个对应已审读案例。
 
-#### 1. [@Hesamation 2076 年机器人短片](https://x.com/Hesamation/status/2103457566978162901)
+#### 示例 A：[@Hesamation 2076 年机器人短片](https://x.com/Hesamation/status/2103457566978162901)
 
 <a href="https://x.com/Hesamation/status/2103457566978162901"><img src="../assets/case-thumbnails/2103457566978162901.webp" width="160" loading="lazy" alt="Still from @Hesamation 2076 年机器人短片"></a>
 
@@ -670,9 +750,11 @@
 
 **审读边界：** 媒体抽帧支持故事与视觉结构，不能验证作者对音效／音乐来源的归因，也不能复现其完整制作过程。
 
-观察值：**833 赞、74,892 浏览**；原始搜索文件写入于 2026-09-26 13:02:06+00:00（UTC，发帖后约 24.83 小时；查询 `update_20260926_animation_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 890 赞（页面按钮 精确值）；80,344 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:13:14+00:00（UTC）。
 
-#### 2. [@akokoi1 fight](https://x.com/akokoi1/status/2103149275945517546)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@akokoi1 fight](https://x.com/akokoi1/status/2103149275945517546)
 
 <a href="https://x.com/akokoi1/status/2103149275945517546"><img src="../assets/case-thumbnails/2103149275945517546.webp" width="160" loading="lazy" alt="Still from @akokoi1 fight"></a>
 
@@ -682,7 +764,9 @@
 
 **审读边界：** Clear multi-step workflow and human visual acceptance before main video prompt, despite the simple-looking root result.
 
-观察值：**54 赞、8,459 浏览**；原始搜索文件写入于 2026-09-24 20:02:19+00:00（UTC，发帖后约 4.25 小时；查询 `chinese_animate`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 157 赞（页面按钮 精确值）；26,046 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:51:26+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-story_short-flat_vector_cartoon"></a>
 
@@ -690,7 +774,7 @@
 
 37 个分类文件；6 个对应已审读案例。
 
-#### 1. [@cherry_mx_reds](https://x.com/cherry_mx_reds/status/2102472218269900876)
+#### 示例 A：[@cherry_mx_reds](https://x.com/cherry_mx_reds/status/2102472218269900876)
 
 <a href="https://x.com/cherry_mx_reds/status/2102472218269900876"><img src="../assets/case-thumbnails/2102472218269900876.webp" width="160" loading="lazy" alt="Still from @cherry_mx_reds"></a>
 
@@ -700,9 +784,11 @@
 
 **审读边界：** A useful boundary case: a single user turn can still be conditioned by image and workspace files.
 
-观察值：**998 赞、161,990 浏览**；原始搜索文件写入于 2026-09-24 18:02:05+00:00（UTC，发帖后约 47.09 小时；查询 `animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,004 赞（页面按钮 精确值）；165,787 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:17:16+00:00（UTC）。
 
-#### 2. [@cherry_mx_reds Oktoberfest](https://x.com/cherry_mx_reds/status/2102493303388475855)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@cherry_mx_reds Oktoberfest](https://x.com/cherry_mx_reds/status/2102493303388475855)
 
 <a href="https://x.com/cherry_mx_reds/status/2102493303388475855"><img src="../assets/case-thumbnails/2102493303388475855.webp" width="160" loading="lazy" alt="Still from @cherry_mx_reds Oktoberfest"></a>
 
@@ -712,7 +798,9 @@
 
 **审读边界：** Short single-turn prompt, but neither zero-image nor zero-audio-assets. Prompt screenshot archived under `evidence/prompts/`.
 
-观察值：**875 赞、114,999 浏览**；原始搜索文件写入于 2026-09-24 18:02:05+00:00（UTC，发帖后约 45.69 小时；查询 `animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 879 赞（页面按钮 精确值）；117,927 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:17:27+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-story_short-pixel_art"></a>
 
@@ -720,7 +808,7 @@
 
 12 个分类文件；1 个对应已审读案例。
 
-#### 1. [@yangfei33113 街景雨夜](https://x.com/yangfei33113/status/2102611841122017632)
+#### 示例 A：[@yangfei33113 街景雨夜](https://x.com/yangfei33113/status/2102611841122017632)
 
 <a href="https://x.com/yangfei33113/status/2102611841122017632"><img src="../assets/case-thumbnails/2102611841122017632.webp" width="160" loading="lazy" alt="Still from @yangfei33113 街景雨夜"></a>
 
@@ -730,7 +818,9 @@
 
 **审读边界：** 真实照片条件下的程序合成，而非从纯文本合成完整背景；“没有视频模型”与“没有外部图像”应分开。
 
-观察值：**1 赞、1,733 浏览**；原始搜索文件写入于 2026-09-24 20:01:06+00:00（UTC，发帖后约 39.82 小时；查询 `chinese_video`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1 赞（页面按钮 精确值）；1,773 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:06:20+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-story_short-hand_drawn_sketch"></a>
 
@@ -738,7 +828,7 @@
 
 7 个分类文件；1 个对应已审读案例。
 
-#### 1. [@araminta_k After Effects 线稿合成草稿](https://x.com/araminta_k/status/2103244081388503196)
+#### 示例 A：[@araminta_k After Effects 线稿合成草稿](https://x.com/araminta_k/status/2103244081388503196)
 
 <a href="https://x.com/araminta_k/status/2103244081388503196"><img src="../assets/case-thumbnails/2103244081388503196.webp" width="160" loading="lazy" alt="Still from @araminta_k After Effects 线稿合成草稿"></a>
 
@@ -748,7 +838,9 @@
 
 **审读边界：** 模型辅助动画工序和人工修订的案例；预览不应误写成已完成的彩色短片。
 
-观察值：**1 赞、69 浏览**；原始搜索文件写入于 2026-09-24 22:22:26+00:00（UTC，发帖后约 0.31 小时；查询 `final_live`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 112 赞（页面按钮 精确值）；7,039 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:01:31+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-story_short-paper_cutout_collage"></a>
 
@@ -756,7 +848,7 @@
 
 12 个分类文件；3 个对应已审读案例。
 
-#### 1. [@ring_hyacinth 中秋拼贴短片](https://x.com/ring_hyacinth/status/2102986085328716066)
+#### 示例 A：[@ring_hyacinth 中秋拼贴短片](https://x.com/ring_hyacinth/status/2102986085328716066)
 
 <a href="https://x.com/ring_hyacinth/status/2102986085328716066"><img src="../assets/case-thumbnails/2102986085328716066.webp" width="160" loading="lazy" alt="Still from @ring_hyacinth 中秋拼贴短片"></a>
 
@@ -766,9 +858,11 @@
 
 **审读边界：** 代码动画叠加外部生成的静态美术资产，再配现成脚本和音乐；不能称整支片“零素材”或单一模型端到端生成。
 
-观察值：**440 赞、21,121 浏览**；原始搜索文件写入于 2026-09-24 20:02:19+00:00（UTC，发帖后约 15.06 小时；查询 `chinese_animate`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 674 赞（页面按钮 精确值）；53,443 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:23:26+00:00（UTC）。
 
-#### 2. [@NFT_Chen 中秋剪纸拼贴](https://x.com/NFT_Chen/status/2103380404791333144)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@NFT_Chen 中秋剪纸拼贴](https://x.com/NFT_Chen/status/2103380404791333144)
 
 <a href="https://x.com/NFT_Chen/status/2103380404791333144"><img src="../assets/case-thumbnails/2103380404791333144.webp" width="160" loading="lazy" alt="Still from @NFT_Chen 中秋剪纸拼贴"></a>
 
@@ -778,7 +872,9 @@
 
 **审读边界：** 可见画面是代码动效与外部图像素材的混合；“逐帧代码绘制”不表示所有视觉元素都从空白代码生成。
 
-观察值：**83 赞、23,442 浏览**；原始搜索文件写入于 2026-09-25 14:44:45+00:00（UTC，发帖后约 7.65 小时；查询 `update_20260925_exact_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 117 赞（页面按钮 精确值）；46,006 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:15:15+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-story_short-painterly_ink_sand"></a>
 
@@ -786,7 +882,7 @@
 
 9 个分类文件；5 个对应已审读案例。
 
-#### 1. [@jurlycat](https://x.com/jurlycat/status/2102645793828036643)
+#### 示例 A：[@jurlycat](https://x.com/jurlycat/status/2102645793828036643)
 
 <a href="https://x.com/jurlycat/status/2102645793828036643"><img src="../assets/case-thumbnails/2102645793828036643.webp" width="160" loading="lazy" alt="Still from @jurlycat"></a>
 
@@ -796,9 +892,11 @@
 
 **审读边界：** Single-file code animation with disclosed human refinement; not a clean zero-edit example.
 
-观察值：**1,097 赞、41,643 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 39.90 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,119 赞（公开帖子 HTML 精确值）；45,817 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:31:06+00:00（UTC）。
 
-#### 2. [@mablesjoseph 手绘感动画短片](https://x.com/mablesjoseph/status/2103465246014746943)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@mablesjoseph 手绘感动画短片](https://x.com/mablesjoseph/status/2103465246014746943)
 
 <a href="https://x.com/mablesjoseph/status/2103465246014746943"><img src="../assets/case-thumbnails/2103465246014746943.webp" width="160" loading="lazy" alt="Still from @mablesjoseph 手绘感动画短片"></a>
 
@@ -808,7 +906,9 @@
 
 **审读边界：** 作者的数字没有账单、运行日志或 token 记录佐证；但它是公开承认多轮引导的例子，不能包装成短 prompt 的 one-shot。
 
-观察值：**151 赞、10,461 浏览**；原始搜索文件写入于 2026-09-26 13:02:06+00:00（UTC，发帖后约 24.32 小时；查询 `update_20260926_animation_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 153 赞（公开帖子 HTML 精确值）；10,848 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:31:46+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-story_short-anime"></a>
 
@@ -816,7 +916,7 @@
 
 7 个分类文件；1 个对应已审读案例。
 
-#### 1. [@sbalhatlani 阿拉伯语配音动漫试播集](https://x.com/sbalhatlani/status/2103475507471806929)
+#### 示例 A：[@sbalhatlani 阿拉伯语配音动漫试播集](https://x.com/sbalhatlani/status/2103475507471806929)
 
 <a href="https://x.com/sbalhatlani/status/2103475507471806929"><img src="../assets/case-thumbnails/2103475507471806929.webp" width="160" loading="lazy" alt="Still from @sbalhatlani 阿拉伯语配音动漫试播集"></a>
 
@@ -826,7 +926,9 @@
 
 **审读边界：** 是多资产、多工序的代理编排案例；九帧不能验收台词翻译、配音、音乐、完整连贯性或作者所称的镜头数量。
 
-观察值：**10 赞、3,855 浏览**；原始搜索文件写入于 2026-09-25 14:46:35+00:00（UTC，发帖后约 1.38 小时；查询 `update_20260925_animation_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 68 赞（页面按钮 精确值）；48,797 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:12:11+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-story_short-photoreal"></a>
 
@@ -834,7 +936,7 @@
 
 3 个分类文件；1 个对应已审读案例。
 
-#### 1. [@razeden0](https://x.com/razeden0/status/2103153899431432535)
+#### 示例 A：[@razeden0](https://x.com/razeden0/status/2103153899431432535)
 
 <a href="https://x.com/razeden0/status/2103153899431432535"><img src="../assets/case-thumbnails/2103153899431432535.webp" width="160" loading="lazy" alt="Still from @razeden0"></a>
 
@@ -844,7 +946,9 @@
 
 **审读边界：** External video-model renderer with Opus as director; a second clear example beyond @abxxai.
 
-观察值：**6 赞、772 浏览**；原始搜索文件写入于 2026-09-24 22:21:39+00:00（UTC，发帖后约 6.27 小时；查询 `seedance_workflow`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 8 赞（公开帖子 HTML 精确值）；1,258 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:29:02+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-music_video-motion_graphics_ui"></a>
 
@@ -852,7 +956,7 @@
 
 10 个分类文件；2 个对应已审读案例。
 
-#### 1. [@sankakuten91256 四工具多模态舞蹈动效](https://x.com/sankakuten91256/status/2103483923783373039)
+#### 示例 A：[@sankakuten91256 四工具多模态舞蹈动效](https://x.com/sankakuten91256/status/2103483923783373039)
 
 <a href="https://x.com/sankakuten91256/status/2103483923783373039"><img src="../assets/case-thumbnails/2103483923783373039.webp" width="160" loading="lazy" alt="Still from @sankakuten91256 四工具多模态舞蹈动效"></a>
 
@@ -862,9 +966,11 @@
 
 **审读边界：** 作者披露多模型分工；集成代码未公开，不能仅凭九帧核定每个工具的实际输出。
 
-观察值：**2,755 赞、447,518 浏览**；原始搜索文件写入于 2026-09-26 12:54:23+00:00（UTC，发帖后约 22.96 小时；查询 `update_20260926_exact_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 3,584 赞（页面按钮 精确值）；674,740 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:09:18+00:00（UTC）。
 
-#### 2. [@elianiva_ 黑白动效续作](https://x.com/elianiva_/status/2103003425915195750)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@elianiva_ 黑白动效续作](https://x.com/elianiva_/status/2103003425915195750)
 
 <a href="https://x.com/elianiva_/status/2103003425915195750"><img src="../assets/case-thumbnails/2103003425915195750.webp" width="160" loading="lazy" alt="Still from @elianiva_ 黑白动效续作"></a>
 
@@ -874,7 +980,9 @@
 
 **审读边界：** “模型完成作品”有明确的人工手写开头与既定美术，属于现有项目续作，非空白起步。
 
-观察值：**6 赞、512 浏览**；原始搜索文件写入于 2026-09-24 21:44:00+00:00（UTC，发帖后约 15.60 小时；查询 `day1_latest`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 7 赞（页面按钮 精确值）；605 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:03:23+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-music_video-3d_render"></a>
 
@@ -882,7 +990,7 @@
 
 7 个分类文件；2 个对应已审读案例。
 
-#### 1. [@aj_dev_smith No Samples](https://x.com/aj_dev_smith/status/2102803889183736141)
+#### 示例 A：[@aj_dev_smith No Samples](https://x.com/aj_dev_smith/status/2102803889183736141)
 
 <a href="https://x.com/aj_dev_smith/status/2102803889183736141"><img src="../assets/case-thumbnails/2102803889183736141.webp" width="160" loading="lazy" alt="Still from @aj_dev_smith No Samples"></a>
 
@@ -892,9 +1000,11 @@
 
 **审读边界：** Code video plus code audio by self-report. This is neither one prompt nor a blank workspace; earlier projects shaped the output.
 
-观察值：**1,842 赞、123,988 浏览**；原始搜索文件写入于 2026-09-24 21:08:55+00:00（UTC，发帖后约 28.23 小时；查询 `opus_spaced`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,951 赞（页面按钮 精确值）；139,661 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:16:31+00:00（UTC）。
 
-#### 2. [@xlcomplete 五分钟歌曲影像](https://x.com/xlcomplete/status/2103015953877647820)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@xlcomplete 五分钟歌曲影像](https://x.com/xlcomplete/status/2103015953877647820)
 
 <a href="https://x.com/xlcomplete/status/2103015953877647820"><img src="../assets/case-thumbnails/2103015953877647820.webp" width="160" loading="lazy" alt="Still from @xlcomplete 五分钟歌曲影像"></a>
 
@@ -904,7 +1014,9 @@
 
 **审读边界：** 现成歌曲是明确的人类输入；“画面逐帧由代码算出”是作者声明，应与已给的 Suno 音乐分开记。
 
-观察值：**0 赞、233 浏览**；原始搜索文件写入于 2026-09-24 21:44:00+00:00（UTC，发帖后约 14.78 小时；查询 `day1_latest`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 0 赞（公开帖子 HTML 精确值）；797 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:32:31+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-music_video-flat_vector_cartoon"></a>
 
@@ -912,7 +1024,7 @@
 
 17 个分类文件；4 个对应已审读案例。
 
-#### 1. [@other__reality](https://x.com/other__reality/status/2102514581684052169)
+#### 示例 A：[@other__reality](https://x.com/other__reality/status/2102514581684052169)
 
 <a href="https://x.com/other__reality/status/2102514581684052169"><img src="../assets/case-thumbnails/2102514581684052169.webp" width="160" loading="lazy" alt="Still from @other__reality"></a>
 
@@ -922,9 +1034,11 @@
 
 **审读边界：** Music-video case; public [PDoomVideo repo](https://github.com/JohnHeibel/PDoomVideo) documents a matching p5.js/Chrome/ffmpeg pipeline, existing song and two generations. Verify ownership before attributing repository authorship to X account.
 
-观察值：**5,950 赞、1,815,458 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 48.59 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 6,691 赞（页面按钮 精确值）；2,451,339 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:22:31+00:00（UTC）。
 
-#### 2. [@ExistentialEnso pre-existing song MV](https://x.com/ExistentialEnso/status/2102599211212554616)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@ExistentialEnso pre-existing song MV](https://x.com/ExistentialEnso/status/2102599211212554616)
 
 <a href="https://x.com/ExistentialEnso/status/2102599211212554616"><img src="../assets/case-thumbnails/2102599211212554616.webp" width="160" loading="lazy" alt="Still from @ExistentialEnso pre-existing song MV"></a>
 
@@ -934,7 +1048,9 @@
 
 **审读边界：** Existing-audio-conditioned long MV with creator-reported QA defect. A nine-frame tile cannot measure exact subtitle drift, so that part remains their disclosure.
 
-观察值：**38 赞、2,712 浏览**；原始搜索文件写入于 2026-09-24 18:04:14+00:00（UTC，发帖后约 38.71 小时；查询 `music_video`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 41 赞（页面按钮 精确值）；2,836 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:13:04+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-music_video-pixel_art"></a>
 
@@ -942,7 +1058,7 @@
 
 8 个分类文件；4 个对应已审读案例。
 
-#### 1. [@pleometric Donald-workflow follow-up](https://x.com/pleometric/status/2103082510607610023)
+#### 示例 A：[@pleometric Donald-workflow follow-up](https://x.com/pleometric/status/2103082510607610023)
 
 <a href="https://x.com/pleometric/status/2103082510607610023"><img src="../assets/case-thumbnails/2103082510607610023.webp" width="160" loading="lazy" alt="Still from @pleometric Donald-workflow follow-up"></a>
 
@@ -952,19 +1068,23 @@
 
 **审读边界：** Direct creator acknowledgement that a production recipe propagated. It does not prove a copied prompt, identical tool calls or that any particular video model generated the footage.
 
-观察值：**1,506 赞、87,499 浏览**；原始搜索文件写入于 2026-09-24 17:27:16+00:00（UTC，发帖后约 6.09 小时；查询 `day3_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 4,289 赞（页面按钮 精确值）；541,502 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:11:49+00:00（UTC）。
 
-#### 2. [@gandamu_ml Nightcall 像素短片](https://x.com/gandamu_ml/status/2103116003689550013)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
-<a href="https://x.com/gandamu_ml/status/2103116003689550013"><img src="../assets/case-thumbnails/2103116003689550013.webp" width="160" loading="lazy" alt="Still from @gandamu_ml Nightcall 像素短片"></a>
+#### 示例 B：[@minosdevs Paris loop](https://x.com/minosdevs/status/2103112945341251920)
 
-**画面主题：** Pixel art music video for Nightcall · **案例制作路径：** `mixed_or_not_established` · [完整目录](cases-index.zh-CN.md)
+<a href="https://x.com/minosdevs/status/2103112945341251920"><img src="../assets/case-thumbnails/2103112945341251920.webp" width="160" loading="lazy" alt="Still from @minosdevs Paris loop"></a>
 
-**作者披露：** 作者让 Opus 5.5 给 Kavinsky 既有歌曲《Nightcall》做像素画实时演示，并用 Blender MCP 保持几何一致以便转绘；初稿不满意，之后要求借鉴 *Another World* 式低多边形外观。未公布完整指令与工程。
+**画面主题：** Pixel art Paris rain lofi loop · **案例制作路径：** `procedural_2d` · [完整目录](cases-index.zh-CN.md)
 
-**审读边界：** 已有音乐＋Blender 几何＋二次美术指导；这是明确的人工审片后返工，不应将最终片描述为第一次输出。
+**作者披露：** The [3,027-character French prompt](https://x.com/minosdevs/status/2103112948478570675) asks for one standalone HTML/Canvas, a rainy pixel Paris night, deterministic 240 s seamless loop, 480×270 nearest-neighbor upscale to 1080p, 60 fps, and keyboard capture/export. The creator suggests looping it under lofi music for YouTube.
 
-观察值：**71 赞、2,251 浏览**；原始搜索文件写入于 2026-09-24 19:25:29+00:00（UTC，发帖后约 5.84 小时；查询 `blender`）。这是存档时间，不是精确的 X 读数时间。
+**审读边界：** Detailed technical visual spec; the posted excerpt does not verify that the demanded 4-minute perfect loop, 60 fps or 1080p export was actually achieved.
+
+**本轮 X 页面观察：** 661 赞（页面按钮 精确值）；135,173 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:22:06+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-music_video-hand_drawn_sketch"></a>
 
@@ -972,7 +1092,7 @@
 
 8 个分类文件；1 个对应已审读案例。
 
-#### 1. [@coolbat1999 child's drawing](https://x.com/coolbat1999/status/2103127192591065595)
+#### 示例 A：[@coolbat1999 child's drawing](https://x.com/coolbat1999/status/2103127192591065595)
 
 <a href="https://x.com/coolbat1999/status/2103127192591065595"><img src="../assets/case-thumbnails/2103127192591065595.webp" width="160" loading="lazy" alt="Still from @coolbat1999 child&#x27;s drawing"></a>
 
@@ -982,7 +1102,9 @@
 
 **审读边界：** Source-image-conditioned family MV, expressly two rounds; the existing drawing is the important visual asset.
 
-观察值：**1 赞、22 浏览**；原始搜索文件写入于 2026-09-24 17:27:16+00:00（UTC，发帖后约 3.13 小时；查询 `day3_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1 赞（页面按钮 精确值）；187 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:02:13+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-music_video-paper_cutout_collage"></a>
 
@@ -990,7 +1112,7 @@
 
 6 个分类文件；1 个对应已审读案例。
 
-#### 1. [@anjmaxx 20 s MV](https://x.com/anjmaxx/status/2103173729656459455)
+#### 示例 A：[@anjmaxx 20 s MV](https://x.com/anjmaxx/status/2103173729656459455)
 
 <a href="https://x.com/anjmaxx/status/2103173729656459455"><img src="../assets/case-thumbnails/2103173729656459455.webp" width="160" loading="lazy" alt="Still from @anjmaxx 20 s MV"></a>
 
@@ -1000,7 +1122,9 @@
 
 **审读边界：** A one-submission claim with a long, reference-conditioned production brief. Shared prompt wording shows a reusable recipe spreading through public posts, but does not establish authorship or which services were executed.
 
-观察值：**1 赞、20 浏览**；原始搜索文件写入于 2026-09-24 17:27:42+00:00（UTC，发帖后约 0.05 小时；查询 `day3_latest`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 10 赞（页面按钮 精确值）；770 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:09:39+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-music_video-painterly_ink_sand"></a>
 
@@ -1008,7 +1132,7 @@
 
 5 个分类文件；1 个对应已审读案例。
 
-#### 1. [@johnknopf watercolor MV](https://x.com/johnknopf/status/2103170666187117006)
+#### 示例 A：[@johnknopf watercolor MV](https://x.com/johnknopf/status/2103170666187117006)
 
 <a href="https://x.com/johnknopf/status/2103170666187117006"><img src="../assets/case-thumbnails/2103170666187117006.webp" width="160" loading="lazy" alt="Still from @johnknopf watercolor MV"></a>
 
@@ -1018,7 +1142,9 @@
 
 **审读边界：** Source-audio-conditioned animation; “one prompt” includes an existing song. Renderer and elapsed-time statements remain self-reports.
 
-观察值：**9 赞、396 浏览**；原始搜索文件写入于 2026-09-24 17:27:42+00:00（UTC，发帖后约 0.26 小时；查询 `day3_latest`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 40 赞（公开帖子 HTML 精确值）；2,981 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:30:51+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-music_video-generative_abstract"></a>
 
@@ -1026,7 +1152,7 @@
 
 2 个分类文件；2 个对应已审读案例。
 
-#### 1. [@cube__lol Tool 音乐长片](https://x.com/cube__lol/status/2102879729594343605)
+#### 示例 A：[@cube__lol Tool 音乐长片](https://x.com/cube__lol/status/2102879729594343605)
 
 <a href="https://x.com/cube__lol/status/2102879729594343605"><img src="../assets/case-thumbnails/2102879729594343605.webp" width="160" loading="lazy" alt="Still from @cube__lol Tool 音乐长片"></a>
 
@@ -1036,9 +1162,11 @@
 
 **审读边界：** 超长作品的真实时长可独立测量；“完全用代码”的制作声明仍需源码和音乐来源才能复核。
 
-观察值：**22 赞、661 浏览**；原始搜索文件写入于 2026-09-24 21:08:55+00:00（UTC，发帖后约 23.21 小时；查询 `opus_spaced`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 22 赞（页面按钮 精确值）；724 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:09:56+00:00（UTC）。
 
-#### 2. [@KamStudioLabs 碰撞奏乐机](https://x.com/KamStudioLabs/status/2102899866762440893)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@KamStudioLabs 碰撞奏乐机](https://x.com/KamStudioLabs/status/2102899866762440893)
 
 <a href="https://x.com/KamStudioLabs/status/2102899866762440893"><img src="../assets/case-thumbnails/2102899866762440893.webp" width="160" loading="lazy" alt="Still from @KamStudioLabs 碰撞奏乐机"></a>
 
@@ -1048,7 +1176,9 @@
 
 **审读边界：** 短提示的程序视听实验；时长和文件大小分别是 MP4 实测与作者自报。
 
-观察值：**0 赞、89 浏览**；原始搜索文件写入于 2026-09-24 19:58:58+00:00（UTC，发帖后约 20.71 小时；查询 `prompt`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1 赞（公开帖子 HTML 精确值）；146 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:29:19+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-music_video-anime"></a>
 
@@ -1056,7 +1186,7 @@
 
 8 个分类文件；2 个对应已审读案例。
 
-#### 1. [@donaldjewkes](https://x.com/donaldjewkes/status/2102801274173587569)
+#### 示例 A：[@donaldjewkes](https://x.com/donaldjewkes/status/2102801274173587569)
 
 <a href="https://x.com/donaldjewkes/status/2102801274173587569"><img src="../assets/case-thumbnails/2102801274173587569.webp" width="160" loading="lazy" alt="Still from @donaldjewkes"></a>
 
@@ -1066,9 +1196,11 @@
 
 **审读边界：** Source-conditioned, multi-tool direction. The prompt proves what was requested, not which external services were actually invoked. “One prompt” here refers to the number of user submissions, not brevity, lack of assets or absence of iteration.
 
-观察值：**5,673 赞、1,131,805 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 29.60 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 8,907 赞（页面按钮 精确值）；2,528,633 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:10:54+00:00（UTC）。
 
-#### 2. [@ruinolab character MV](https://x.com/ruinolab/status/2103120880796873091)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@ruinolab character MV](https://x.com/ruinolab/status/2103120880796873091)
 
 <a href="https://x.com/ruinolab/status/2103120880796873091"><img src="../assets/case-thumbnails/2103120880796873091.webp" width="160" loading="lazy" alt="Still from @ruinolab character MV"></a>
 
@@ -1078,7 +1210,9 @@
 
 **审读边界：** Multi-tool character-conditioned MV; Suno role is explicit, MiniMax H3 is tagged, but exact video-generation calls and human selection history are not public.
 
-观察值：**5 赞、178 浏览**；原始搜索文件写入于 2026-09-24 20:36:11+00:00（UTC，发帖后约 6.70 小时；查询 `japanese_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 31 赞（页面按钮 精确值）；2,718 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:12:00+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-music_video-photoreal"></a>
 
@@ -1086,7 +1220,7 @@
 
 4 个分类文件；1 个对应已审读案例。
 
-#### 1. [@abxxai](https://x.com/abxxai/status/2102775755646337530)
+#### 示例 A：[@abxxai](https://x.com/abxxai/status/2102775755646337530)
 
 <a href="https://x.com/abxxai/status/2102775755646337530"><img src="../assets/case-thumbnails/2102775755646337530.webp" width="160" loading="lazy" alt="Still from @abxxai"></a>
 
@@ -1096,7 +1230,9 @@
 
 **审读边界：** External video-model generation. Clear division between director/prompt writer and renderer.
 
-观察值：**1,539 赞、231,931 浏览**；原始搜索文件写入于 2026-09-24 22:21:39+00:00（UTC，发帖后约 31.31 小时；查询 `seedance_workflow`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,643 赞（页面按钮 精确值）；249,405 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:07:56+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-music_video-retro_terminal_ascii"></a>
 
@@ -1104,7 +1240,7 @@
 
 1 个分类文件；1 个对应已审读案例。
 
-#### 1. [@bradmillscan monetary-history MV](https://x.com/bradmillscan/status/2103108967194833310)
+#### 示例 A：[@bradmillscan monetary-history MV](https://x.com/bradmillscan/status/2103108967194833310)
 
 <a href="https://x.com/bradmillscan/status/2103108967194833310"><img src="../assets/case-thumbnails/2103108967194833310.webp" width="160" loading="lazy" alt="Still from @bradmillscan monetary-history MV"></a>
 
@@ -1114,7 +1250,9 @@
 
 **审读边界：** Existing source wikis, external music and explicit human revisions materially shaped the work. “Code only” in the post describes visual production, not a zero-tool/zero-input process.
 
-观察值：**158 赞、24,603 浏览**；原始搜索文件写入于 2026-09-24 18:04:14+00:00（UTC，发帖后约 4.95 小时；查询 `music_video`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 994 赞（页面按钮 精确值）；183,090 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:17:04+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-history_culture-3d_render"></a>
 
@@ -1122,7 +1260,7 @@
 
 9 个分类文件；1 个对应已审读案例。
 
-#### 1. [@tetumemo](https://x.com/tetumemo/status/2102652072252584046)
+#### 示例 A：[@tetumemo](https://x.com/tetumemo/status/2102652072252584046)
 
 <a href="https://x.com/tetumemo/status/2102652072252584046"><img src="../assets/case-thumbnails/2102652072252584046.webp" width="160" loading="lazy" alt="Still from @tetumemo"></a>
 
@@ -1132,7 +1270,9 @@
 
 **审读边界：** Brief but highly domain-structured 3D storyboard request; historical accuracy not checked by visual sampling.
 
-观察值：**56 赞、13,686 浏览**；原始搜索文件写入于 2026-09-24 16:13:55+00:00（UTC，发帖后约 33.37 小时；查询 `claude_phrase_top`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 56 赞（页面按钮 精确值）；14,353 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:52:15+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-history_culture-flat_vector_cartoon"></a>
 
@@ -1140,7 +1280,7 @@
 
 8 个分类文件；3 个对应已审读案例。
 
-#### 1. [@makwired Shaml 纸雕短片](https://x.com/makwired/status/2103008945220567166)
+#### 示例 A：[@makwired Shaml 纸雕短片](https://x.com/makwired/status/2103008945220567166)
 
 <a href="https://x.com/makwired/status/2103008945220567166"><img src="../assets/case-thumbnails/2103008945220567166.webp" width="160" loading="lazy" alt="Still from @makwired Shaml 纸雕短片"></a>
 
@@ -1150,9 +1290,11 @@
 
 **审读边界：** 开源代码能支持代码画帧路径，也清楚显示现成录音与多轮人类修订；“短触发词”不能代表生产链的全部输入。
 
-观察值：**3 赞、252 浏览**；原始搜索文件写入于 2026-09-24 21:44:00+00:00（UTC，发帖后约 15.24 小时；查询 `day1_latest`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 8 赞（页面按钮 精确值）；1,129 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:21:56+00:00（UTC）。
 
-#### 2. [@RetropunkAI Sphere 发展史动效](https://x.com/RetropunkAI/status/2103237989065277590)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@RetropunkAI Sphere 发展史动效](https://x.com/RetropunkAI/status/2103237989065277590)
 
 <a href="https://x.com/RetropunkAI/status/2103237989065277590"><img src="../assets/case-thumbnails/2103237989065277590.webp" width="160" loading="lazy" alt="Still from @RetropunkAI Sphere 发展史动效"></a>
 
@@ -1162,7 +1304,9 @@
 
 **审读边界：** 一轮人类提示实际上含有外部图像、资料、平台选型和结构化故事范围；成片接近上限时长，但制作链仍以作者披露为准。
 
-观察值：**2 赞、66 浏览**；原始搜索文件写入于 2026-09-24 22:22:26+00:00（UTC，发帖后约 0.71 小时；查询 `final_live`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 3 赞（页面按钮 精确值）；220 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:55:45+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-history_culture-hand_drawn_sketch"></a>
 
@@ -1170,7 +1314,7 @@
 
 5 个分类文件；3 个对应已审读案例。
 
-#### 1. [@akokoi1 history](https://x.com/akokoi1/status/2102583898865873225)
+#### 示例 A：[@akokoi1 history](https://x.com/akokoi1/status/2102583898865873225)
 
 <a href="https://x.com/akokoi1/status/2102583898865873225"><img src="../assets/case-thumbnails/2102583898865873225.webp" width="160" loading="lazy" alt="Still from @akokoi1 history"></a>
 
@@ -1180,9 +1324,11 @@
 
 **审读边界：** Educational explainer; origin of voice/audio still to verify.
 
-观察值：**677 赞、148,701 浏览**；原始搜索文件写入于 2026-09-24 20:02:19+00:00（UTC，发帖后约 41.69 小时；查询 `chinese_animate`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 688 赞（页面按钮 精确值）；154,717 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:56:24+00:00（UTC）。
 
-#### 2. [@hanifproduktif Indonesian-history comparison](https://x.com/hanifproduktif/status/2102695622042411419)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
+
+#### 示例 B：[@hanifproduktif Indonesian-history comparison](https://x.com/hanifproduktif/status/2102695622042411419)
 
 <a href="https://x.com/hanifproduktif/status/2102695622042411419"><img src="../assets/case-thumbnails/2102695622042411419.webp" width="160" loading="lazy" alt="Still from @hanifproduktif Indonesian-history comparison"></a>
 
@@ -1192,7 +1338,9 @@
 
 **审读边界：** Downstream helper/tool comparison, not two independent prompts. The composite clip cannot prove that Tesseract was the sole cause of differences, but creator attribution and split-screen labels establish the intended comparison.
 
-观察值：**156 赞、9,250 浏览**；原始搜索文件写入于 2026-09-24 19:58:58+00:00（UTC，发帖后约 34.24 小时；查询 `prompt`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 165 赞（页面按钮 精确值）；9,859 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:57:17+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-history_culture-painterly_ink_sand"></a>
 
@@ -1200,7 +1348,7 @@
 
 8 个分类文件；3 个对应已审读案例。
 
-#### 1. [@dhruvalgolakiya](https://x.com/dhruvalgolakiya/status/2102733714845491558)
+#### 示例 A：[@dhruvalgolakiya](https://x.com/dhruvalgolakiya/status/2102733714845491558)
 
 <a href="https://x.com/dhruvalgolakiya/status/2102733714845491558"><img src="../assets/case-thumbnails/2102733714845491558.webp" width="160" loading="lazy" alt="Still from @dhruvalgolakiya"></a>
 
@@ -1210,19 +1358,23 @@
 
 **审读边界：** Reference-conditioned code animation + external audio; expressly not one shot.
 
-观察值：**602 赞、53,273 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 34.07 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 616 赞（页面按钮 精确值）；55,401 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:02:41+00:00（UTC）。
 
-#### 2. [@AxtonLiu 会呼吸的宣纸水墨画](https://x.com/AxtonLiu/status/2103288413969621231)
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
-<a href="https://x.com/AxtonLiu/status/2103288413969621231"><img src="../assets/case-thumbnails/2103288413969621231.webp" width="160" loading="lazy" alt="Still from @AxtonLiu 会呼吸的宣纸水墨画"></a>
+#### 示例 B：[@Michaelzsguo](https://x.com/Michaelzsguo/status/2102592355165782312)
 
-**画面主题：** Procedural Chinese ink wash landscape generation · **案例制作路径：** `procedural_2d` · [完整目录](cases-index.zh-CN.md)
+<a href="https://x.com/Michaelzsguo/status/2102592355165782312"><img src="../assets/case-thumbnails/2102592355165782312.webp" width="160" loading="lazy" alt="Still from @Michaelzsguo"></a>
 
-**作者披露：** 作者给定开放式哲学提示词（让 Opus 发挥最大能力做出一件令人惊叹的作品）；作者称 Opus 编写 HTML/Canvas 程序在宣纸质感底纹上逐笔渲染山水、松舟与红日。
+**画面主题：** 250 years of American history in sand · **案例制作路径：** `procedural_2d` · [完整目录](cases-index.zh-CN.md)
 
-**审读边界：** 九帧显示水墨画逐步展开，符合作者描述的程序绘图外观；未公开源码，不能独立核定渲染实现或质量上限。
+**作者披露：** Creator reply gives a short two-minute U.S.-history sand-animation prompt with music/sound; says no Blender/Three.js and code-generated music.
 
-观察值：**409 赞、57,938 浏览**；原始搜索文件写入于 2026-09-26 12:54:23+00:00（UTC，发帖后约 35.90 小时；查询 `update_20260926_exact_top`）。这是存档时间，不是精确的 X 读数时间。
+**审读边界：** Code-generated historical animation by creator disclosure; “one prompt” and subscription usage remain self-reported.
+
+**本轮 X 页面观察：** 338 赞（页面按钮 精确值）；71,179 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:15:05+00:00（UTC）。
+
+**选例依据：** 按本轮精确帖子浏览量选出。
 
 <a id="cell-art_abstract-motion_graphics_ui"></a>
 
@@ -1230,7 +1382,7 @@
 
 6 个分类文件；1 个对应已审读案例。
 
-#### 1. [@leo_xiaolei 参考片程序动画](https://x.com/leo_xiaolei/status/2102724347446305104)
+#### 示例 A：[@leo_xiaolei 参考片程序动画](https://x.com/leo_xiaolei/status/2102724347446305104)
 
 <a href="https://x.com/leo_xiaolei/status/2102724347446305104"><img src="../assets/case-thumbnails/2102724347446305104.webp" width="160" loading="lazy" alt="Still from @leo_xiaolei 参考片程序动画"></a>
 
@@ -1240,7 +1392,9 @@
 
 **审读边界：** 这是参考视频条件下、近完整分镜与技术美术规格驱动的程序动画；“一个提示词”在此包含大量人类设计与外部视觉参照。
 
-观察值：**119 赞、13,115 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 34.69 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 120 赞（页面按钮 精确值）；18,333 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:04:18+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-art_abstract-3d_render"></a>
 
@@ -1248,7 +1402,7 @@
 
 10 个分类文件；1 个对应已审读案例。
 
-#### 1. [@gandamu_ml 90 年代风 demoscene](https://x.com/gandamu_ml/status/2102919394775220530)
+#### 示例 A：[@gandamu_ml 90 年代风 demoscene](https://x.com/gandamu_ml/status/2102919394775220530)
 
 <a href="https://x.com/gandamu_ml/status/2102919394775220530"><img src="../assets/case-thumbnails/2102919394775220530.webp" width="160" loading="lazy" alt="Still from @gandamu_ml 90 年代风 demoscene"></a>
 
@@ -1258,7 +1412,9 @@
 
 **审读边界：** 长程序图形演示明显依赖现成音乐；“one shot”与“无输入资产”不同，时长也不保证视觉全程同质量。
 
-观察值：**625 赞、26,014 浏览**；原始搜索文件写入于 2026-09-24 19:58:58+00:00（UTC，发帖后约 19.42 小时；查询 `prompt`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 771 赞（页面按钮 精确值）；37,459 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:51:40+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-art_abstract-flat_vector_cartoon"></a>
 
@@ -1266,7 +1422,7 @@
 
 3 个分类文件；1 个对应已审读案例。
 
-#### 1. [@ianstig animation showreel](https://x.com/ianstig/status/2103169675928764486)
+#### 示例 A：[@ianstig animation showreel](https://x.com/ianstig/status/2103169675928764486)
 
 <a href="https://x.com/ianstig/status/2103169675928764486"><img src="../assets/case-thumbnails/2103169675928764486.webp" width="160" loading="lazy" alt="Still from @ianstig animation showreel"></a>
 
@@ -1276,7 +1432,9 @@
 
 **审读边界：** Multi-style code animation by creator claim; nine frames corroborate style variety, not the exact number of shots or code-only provenance.
 
-观察值：**0 赞、27 浏览**；原始搜索文件写入于 2026-09-24 18:02:05+00:00（UTC，发帖后约 0.90 小时；查询 `animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 0 赞（公开帖子 HTML 精确值）；98 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:30:43+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-art_abstract-pixel_art"></a>
 
@@ -1284,7 +1442,7 @@
 
 4 个分类文件；1 个对应已审读案例。
 
-#### 1. [@riku720720](https://x.com/riku720720/status/2102515055116063144)
+#### 示例 A：[@riku720720](https://x.com/riku720720/status/2102515055116063144)
 
 <a href="https://x.com/riku720720/status/2102515055116063144"><img src="../assets/case-thumbnails/2102515055116063144.webp" width="160" loading="lazy" alt="Still from @riku720720"></a>
 
@@ -1294,7 +1452,9 @@
 
 **审读边界：** Constrained code animation. The prompt is long and precise despite the post’s “under 5 minutes” framing.
 
-观察值：**1,071 赞、236,989 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 48.55 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,080 赞（公开帖子 HTML 精确值）；240,772 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:32:00+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-art_abstract-hand_drawn_sketch"></a>
 
@@ -1302,7 +1462,7 @@
 
 1 个分类文件；1 个对应已审读案例。
 
-#### 1. [@AnduArtist spinning-cup overlay](https://x.com/AnduArtist/status/2102548178646016377)
+#### 示例 A：[@AnduArtist spinning-cup overlay](https://x.com/AnduArtist/status/2102548178646016377)
 
 <a href="https://x.com/AnduArtist/status/2102548178646016377"><img src="../assets/case-thumbnails/2102548178646016377.webp" width="160" loading="lazy" alt="Still from @AnduArtist spinning-cup overlay"></a>
 
@@ -1312,7 +1472,9 @@
 
 **审读边界：** Clear base-video-plus-code-overlay case: the cup's photographic footage is attributed to H3 Max, Opus to the added animation by creator disclosure.
 
-观察值：**3 赞、326 浏览**；原始搜索文件写入于 2026-09-24 18:02:05+00:00（UTC，发帖后约 42.06 小时；查询 `animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 3 赞（页面按钮 精确值）；350 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:06:58+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-art_abstract-paper_cutout_collage"></a>
 
@@ -1320,7 +1482,7 @@
 
 2 个分类文件；1 个对应已审读案例。
 
-#### 1. [@koldo2k 无限放大拼贴](https://x.com/koldo2k/status/2103129343253778767)
+#### 示例 A：[@koldo2k 无限放大拼贴](https://x.com/koldo2k/status/2103129343253778767)
 
 <a href="https://x.com/koldo2k/status/2103129343253778767"><img src="../assets/case-thumbnails/2103129343253778767.webp" width="160" loading="lazy" alt="Still from @koldo2k 无限放大拼贴"></a>
 
@@ -1330,7 +1492,9 @@
 
 **审读边界：** 这是高度编排的多服务生成视频：Opus 负责规划与编排，外部模型生成景观、剪纸、动片和音乐；“Opus 制片”不能描述为它自己直接绘制写实画面。
 
-观察值：**334 赞、24,830 浏览**；原始搜索文件写入于 2026-09-24 22:20:21+00:00（UTC，发帖后约 7.87 小时；查询 `french_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 704 赞（公开帖子 HTML 精确值）；67,258 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:28:53+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-art_abstract-generative_abstract"></a>
 
@@ -1338,19 +1502,7 @@
 
 11 个分类文件；2 个对应已审读案例。
 
-#### 1. [@dfeinition mosaic](https://x.com/dfeinition/status/2102436001473786054)
-
-<a href="https://x.com/dfeinition/status/2102436001473786054"><img src="../assets/case-thumbnails/2102436001473786054.webp" width="160" loading="lazy" alt="Still from @dfeinition mosaic"></a>
-
-**画面主题：** Code-generated mosaic goldfish animation · **案例制作路径：** `procedural_2d` · [完整目录](cases-index.zh-CN.md)
-
-**作者披露：** Creator claims 13,081 mosaic tiles, all code-drawn and animated by Opus without image files. No repo or prompt was checked.
-
-**审读边界：** Procedural 2D narrative by creator disclosure; exact tile count and no-image claim are not independently verified by MP4 frames.
-
-观察值：**1,336 赞、145,805 浏览**；原始搜索文件写入于 2026-09-24 17:22:06+00:00（UTC，发帖后约 48.82 小时；查询 `day1_top`）。这是存档时间，不是精确的 X 读数时间。
-
-#### 2. [@LCSlates](https://x.com/LCSlates/status/2102503027340988559)
+#### 示例 A：[@LCSlates](https://x.com/LCSlates/status/2102503027340988559)
 
 <a href="https://x.com/LCSlates/status/2102503027340988559"><img src="../assets/case-thumbnails/2102503027340988559.webp" width="160" loading="lazy" alt="Still from @LCSlates"></a>
 
@@ -1360,7 +1512,9 @@
 
 **审读边界：** Procedural WebGL animation with explicit storyboard and iteration.
 
-观察值：**970 赞、80,239 浏览**；原始搜索文件写入于 2026-09-24 19:58:58+00:00（UTC，发帖后约 46.99 小时；查询 `prompt`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 1,037 赞（页面按钮 精确值）；128,571 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:14:35+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-humor_meme-3d_render"></a>
 
@@ -1368,7 +1522,7 @@
 
 4 个分类文件；1 个对应已审读案例。
 
-#### 1. [@AxtonLiu 鹈鹕骑车剧场版](https://x.com/AxtonLiu/status/2103119648271290566)
+#### 示例 A：[@AxtonLiu 鹈鹕骑车剧场版](https://x.com/AxtonLiu/status/2103119648271290566)
 
 <a href="https://x.com/AxtonLiu/status/2103119648271290566"><img src="../assets/case-thumbnails/2103119648271290566.webp" width="160" loading="lazy" alt="Still from @AxtonLiu 鹈鹕骑车剧场版"></a>
 
@@ -1378,7 +1532,9 @@
 
 **审读边界：** 纯代码三维外观不必然低保真；视觉足以否定“只有矢量卡通”的简单印象，却不足以独立证明作者的零外部素材声明。
 
-观察值：**31 赞、3,592 浏览**；原始搜索文件写入于 2026-09-24 20:01:06+00:00（UTC，发帖后约 6.19 小时；查询 `chinese_video`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 69 赞（页面按钮 精确值）；10,027 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:50:53+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-humor_meme-paper_cutout_collage"></a>
 
@@ -1386,7 +1542,7 @@
 
 2 个分类文件；1 个对应已审读案例。
 
-#### 1. [@YoshiKura535130](https://x.com/YoshiKura535130/status/2102910805721362875)
+#### 示例 A：[@YoshiKura535130](https://x.com/YoshiKura535130/status/2102910805721362875)
 
 <a href="https://x.com/YoshiKura535130/status/2102910805721362875"><img src="../assets/case-thumbnails/2102910805721362875.webp" width="160" loading="lazy" alt="Still from @YoshiKura535130"></a>
 
@@ -1396,7 +1552,9 @@
 
 **审读边界：** Code-rendered 2D narrative by creator disclosure.
 
-观察值：**0 赞、39 浏览**；原始搜索文件写入于 2026-09-24 20:36:11+00:00（UTC，发帖后约 20.61 小时；查询 `japanese_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 0 赞（公开帖子 HTML 精确值）；61 次帖子浏览（公开帖子 HTML 精确值）。记录于 2026-09-27 12:30:07+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-data_viz-motion_graphics_ui"></a>
 
@@ -1404,7 +1562,7 @@
 
 9 个分类文件；1 个对应已审读案例。
 
-#### 1. [@Luchigatica La Redonda 竖版推荐](https://x.com/Luchigatica/status/2102853289259729328)
+#### 示例 A：[@Luchigatica La Redonda 竖版推荐](https://x.com/Luchigatica/status/2102853289259729328)
 
 <a href="https://x.com/Luchigatica/status/2102853289259729328"><img src="../assets/case-thumbnails/2102853289259729328.webp" width="160" loading="lazy" alt="Still from @Luchigatica La Redonda 竖版推荐"></a>
 
@@ -1414,7 +1572,9 @@
 
 **审读边界：** “一个 prompt”触发既有视频＋数据库＋图片素材的生产系统；真实人物资料和数值必须另核。
 
-观察值：**24 赞、3,718 浏览**；原始搜索文件写入于 2026-09-24 21:48:28+00:00（UTC，发帖后约 25.62 小时；查询 `spanish_animation`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 24 赞（页面按钮 精确值）；3,879 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 12:00:00+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 <a id="cell-other-3d_render"></a>
 
@@ -1422,7 +1582,7 @@
 
 2 个分类文件；1 个对应已审读案例。
 
-#### 1. [@manaimovie Tripo/Blender character](https://x.com/manaimovie/status/2103138089790996843)
+#### 示例 A：[@manaimovie Tripo/Blender character](https://x.com/manaimovie/status/2103138089790996843)
 
 <a href="https://x.com/manaimovie/status/2103138089790996843"><img src="../assets/case-thumbnails/2103138089790996843.webp" width="160" loading="lazy" alt="Still from @manaimovie Tripo/Blender character"></a>
 
@@ -1432,7 +1592,9 @@
 
 **审读边界：** External 3D asset/model plus Opus-controlled Blender according to creator. The visual is a render/capture, not evidence of native LLM video output.
 
-观察值：**132 赞、5,479 浏览**；原始搜索文件写入于 2026-09-24 17:33:22+00:00（UTC，发帖后约 2.51 小时；查询 `japanese_day3`）。这是存档时间，不是精确的 X 读数时间。
+**本轮 X 页面观察：** 686 赞（页面按钮 精确值）；70,534 次帖子浏览（页面 tooltip 精确值）。记录于 2026-09-27 11:51:57+00:00（UTC）。
+
+**选例依据：** 按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。
 
 ---
 

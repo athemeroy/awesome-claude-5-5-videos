@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Generate the bilingual domain/style atlas from frozen public data.
+"""Generate the bilingual domain/style atlas from frozen and dated public data.
 
 The optional --export-engagement-from argument reconstructs a dated engagement
-file from the maintainers' saved X search results. It never contacts X. Public
-readers can run --check using only files in this repository.
+archive from the maintainers' saved X search results. It never contacts X. The
+separate 2026-09-27 refresh is a dated official-page observation, not a change
+to the frozen corpus. Public readers can run --check using repository files.
 """
 
 from __future__ import annotations
@@ -15,11 +16,11 @@ import difflib
 import html
 import json
 import re
-import statistics
 import sys
 from collections import Counter, defaultdict
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +29,7 @@ CASES = DATA / "cases.csv"
 CLASSIFIED = DATA / "domain-style.csv"
 SNAPSHOT = DATA / "corpus-snapshot.json"
 ENGAGEMENT = DATA / "case-engagement-observed.csv"
+REFRESH = DATA / "case-engagement-refresh-2026-09-27.csv"
 ENGLISH_NOTES = DATA / "atlas-case-notes-en.csv"
 OUTPUTS = (ROOT / "docs/domain-style-atlas.md", ROOT / "docs/domain-style-atlas.zh-CN.md")
 THUMBNAILS = ROOT / "assets/case-thumbnails"
@@ -66,6 +68,16 @@ ENGAGEMENT_FIELDS = (
     "observed_at_utc", "hours_after_post", "observed_before_utc",
     "source_quality", "source_ref",
 )
+REFRESH_FIELDS = (
+    "post_id", "source_url", "post_created_at_utc", "likes", "views",
+    "likes_display", "views_display", "likes_lower_bound", "likes_upper_bound",
+    "observed_at_utc", "source_method", "page_http_status", "page_url",
+    "status", "error",
+)
+REFRESH_STATUSES = {"ok", "partial", "failed", "not_attempted"}
+OFFICIAL_REFRESH_METHODS = {"x_public_post_ui_hover", "x_public_post_html"}
+# Retained in the historical 168-case data, but omitted from featured examples.
+SHOWCASE_EXCLUDED_POST_IDS = {"2103108551799632050"}
 CASE_FIELDS = (
     "source_url", "primary_path", "label", "creator_disclosure",
     "hypit_observation", "review_note", "duration_s", "hypit_status",
@@ -170,11 +182,149 @@ def export_engagement(private_root: Path, cases: list[dict[str, str]], snapshot:
         writer.writerows(exported)
 
 
+def like_bounds(row: dict[str, str]) -> tuple[int, int] | None:
+    """Return exact likes or the collector's conservative display interval."""
+    if row["likes"]:
+        count = int(row["likes"])
+        return count, count
+    if row["likes_lower_bound"]:
+        return int(row["likes_lower_bound"]), int(row["likes_upper_bound"])
+    return None
+
+
+def exact_views(row: dict[str, str]) -> int | None:
+    return int(row["views"]) if row["views"] else None
+
+
+def unabridged_display(value: str) -> int | None:
+    """A bare UI integer can cross-check HTML data; abbreviations cannot."""
+    normalized = re.sub(r"[,\u00a0\u202f\s]", "", value.strip())
+    return int(normalized) if re.fullmatch(r"[0-9]+", normalized) else None
+
+
+def validate_refresh(rows: list[dict[str, str]], cases: dict[str, dict[str, str]],
+                     archive: dict[str, dict[str, str]], snapshot_time: dt.datetime) -> dict[str, dict[str, str]]:
+    """Check that the dated public refresh is complete and never implies false precision."""
+    require(len(rows) == len(cases), "Dated refresh must have one row for every curated case")
+    refreshed: dict[str, dict[str, str]] = {}
+    for row in rows:
+        post_id = row["post_id"]
+        require(post_id in cases and post_id not in refreshed,
+                f"Dated refresh has an unknown or repeated ID: {post_id}")
+        require(row["source_url"] == cases[post_id]["source_url"],
+                f"Dated refresh URL mismatch: {post_id}")
+        require(parse_utc(row["post_created_at_utc"]) == parse_utc(archive[post_id]["post_created_at_utc"]),
+                f"Dated refresh post-time mismatch: {post_id}")
+        require(row["status"] in REFRESH_STATUSES, f"Unknown dated refresh status: {post_id}")
+        require(row["status"] != "not_attempted", f"Dated refresh is still in progress: {post_id}")
+        require(row["source_method"] in OFFICIAL_REFRESH_METHODS,
+                f"Dated refresh lacks official-page provenance: {post_id}")
+        require(bool(row["observed_at_utc"]), f"Dated refresh lacks capture time: {post_id}")
+        observed = parse_utc(row["observed_at_utc"])
+        require(observed >= snapshot_time and observed >= parse_utc(row["post_created_at_utc"]),
+                f"Dated refresh time predates the corpus or post: {post_id}")
+        if row["page_http_status"]:
+            require(row["page_http_status"].isdigit(), f"Non-numeric page status: {post_id}")
+        for field in ("likes", "views", "likes_lower_bound", "likes_upper_bound"):
+            if row[field]:
+                require(row[field].isdigit(), f"Invalid exact or interval metric {field}: {post_id}")
+        require(bool(row["likes_lower_bound"]) == bool(row["likes_upper_bound"]),
+                f"Only one like-interval endpoint: {post_id}")
+        bounds = like_bounds(row)
+        if row["source_method"] == "x_public_post_ui_hover" and not row["views_display"].strip():
+            require(bounds is None,
+                    f"UI likes lack a target-post views-link display: {post_id}")
+        if row["likes"]:
+            require(bounds == (int(row["likes"]), int(row["likes"])) and
+                    row["likes_lower_bound"] == row["likes_upper_bound"] == row["likes"],
+                    f"Exact likes and interval disagree: {post_id}")
+        elif bounds is not None:
+            require(bounds[0] <= bounds[1] and bool(row["likes_display"]),
+                    f"Rounded like interval lacks a display or is inverted: {post_id}")
+        views = exact_views(row)
+        displayed_likes = unabridged_display(row["likes_display"])
+        displayed_views = unabridged_display(row["views_display"])
+        if row["likes"] and displayed_likes is not None:
+            require(int(row["likes"]) == displayed_likes,
+                    f"Exact likes disagree with unabridged X-page display: {post_id}")
+        if views is not None and displayed_views is not None:
+            require(views == displayed_views,
+                    f"Exact post views disagree with unabridged X-page display: {post_id}")
+        if bounds is not None or views is not None:
+            page = urlsplit(row["page_url"])
+            match = re.fullmatch(r"/[^/]+/status/(\d+)/?", page.path)
+            require(page.scheme == "https" and page.hostname in
+                    {"x.com", "www.x.com", "twitter.com", "www.twitter.com"} and
+                    match is not None and match.group(1) == post_id,
+                    f"A dated metric is not attached to its target post page: {post_id}")
+        if row["status"] == "ok":
+            require(bool(row["likes"]) and views is not None,
+                    f"Successful refresh lacks both exact metrics: {post_id}")
+        elif row["status"] == "partial":
+            require(bounds is not None or views is not None,
+                    f"Partial refresh has no usable metric: {post_id}")
+            require(not (row["likes"] and views is not None),
+                    f"Partial refresh has both exact metrics: {post_id}")
+        else:
+            require(not row["likes"] and views is None,
+                    f"Failed refresh unexpectedly contains an exact metric: {post_id}")
+        refreshed[post_id] = row
+    require(set(refreshed) == set(cases), "Dated refresh IDs do not match reviewed cases")
+    return refreshed
+
+
+def select_examples(items: list[dict]) -> list[dict]:
+    """Pick one like-led and one view-led example without treating ranges as exact."""
+    measured = [item for item in items
+                if like_bounds(item["refresh"]) is not None or exact_views(item["refresh"]) is not None]
+    if not measured:
+        fallback = min(items, key=lambda item: item["post_id"]).copy()
+        fallback["selection_reason"] = "unranked"
+        return [fallback]
+
+    with_likes = [item for item in measured if like_bounds(item["refresh"]) is not None]
+    if with_likes:
+        highest_lower = max(like_bounds(item["refresh"])[0] for item in with_likes)
+        plausible_leaders = [item for item in with_likes
+                             if like_bounds(item["refresh"])[1] >= highest_lower]
+        first = sorted(plausible_leaders, key=lambda item: (
+            -(exact_views(item["refresh"]) if exact_views(item["refresh"]) is not None else -1),
+            -like_bounds(item["refresh"])[0], item["post_id"],
+        ))[0]
+        first_reason = ("likes" if len(plausible_leaders) == 1 else
+                        "overlap_views" if any(exact_views(item["refresh"]) is not None
+                                               for item in plausible_leaders) else
+                        "overlap_lower_bound")
+    else:
+        first = sorted(measured, key=lambda item: (-exact_views(item["refresh"]), item["post_id"]))[0]
+        first_reason = "views"
+
+    chosen = first.copy()
+    chosen["selection_reason"] = first_reason
+    result = [chosen]
+    remaining = [item for item in measured if item["post_id"] != first["post_id"]]
+    with_views = [item for item in remaining if exact_views(item["refresh"]) is not None]
+    if with_views:
+        second = sorted(with_views, key=lambda item: (-exact_views(item["refresh"]), item["post_id"]))[0]
+        second_reason = "views"
+    elif remaining:
+        second = sorted(remaining, key=lambda item: (-like_bounds(item["refresh"])[0], item["post_id"]))[0]
+        second_reason = "likes_remainder"
+    else:
+        second = None
+    if second is not None:
+        chosen = second.copy()
+        chosen["selection_reason"] = second_reason
+        result.append(chosen)
+    return result
+
+
 def load_and_validate() -> dict:
     snapshot = json.loads(SNAPSHOT.read_text(encoding="utf-8"))
     cases = read_csv(CASES, CASE_FIELDS)
     classified = read_csv(CLASSIFIED, CLASSIFIED_FIELDS)
     engagement = read_csv(ENGAGEMENT, ENGAGEMENT_FIELDS)
+    refresh_rows = read_csv(REFRESH, REFRESH_FIELDS)
     require(len(cases) == snapshot["curated_cases"] == 168, "Curated denominator changed")
     require(len(classified) == snapshot["domain_style_classified_files"] == 1401,
             "Classified-file denominator changed")
@@ -252,31 +402,34 @@ def load_and_validate() -> dict:
             raise ValueError(f"Unknown source quality: {row['source_quality']}")
         metrics[post_id] = row
     require(set(metrics) == set(case_by_id), "Engagement IDs do not equal curated case IDs")
+    refreshed = validate_refresh(refresh_rows, case_by_id, metrics, snapshot_time)
 
     for items in vetted.values():
         for item in items:
             item["engagement"] = metrics[item["post_id"]]
-    selected: dict[tuple[str, str], list[dict]] = {}
-    for cell, items in vetted.items():
-        complete = [item for item in items
-                    if item["engagement"]["likes"] and item["engagement"]["views"]]
-        complete.sort(key=lambda item: (
-            -int(item["engagement"]["likes"]),
-            -int(item["engagement"]["views"]),
-            item["post_id"],
-        ))
-        if complete:
-            selected[cell] = complete[:2]
-        else:
-            # Keep a reviewed visual example without assigning it a popularity rank.
-            selected[cell] = [sorted(items, key=lambda item: item["post_id"])[0]]
+            item["refresh"] = refreshed[item["post_id"]]
+    require(SHOWCASE_EXCLUDED_POST_IDS <= set(case_by_id),
+            "A maintainer showcase exclusion is absent from the retained case data")
+    selectable = {cell: [item for item in items
+                         if item["post_id"] not in SHOWCASE_EXCLUDED_POST_IDS]
+                  for cell, items in vetted.items()}
+    require(all(selectable.values()), "A cell would have only an excluded maintainer example")
+    selected = {cell: select_examples(items) for cell, items in selectable.items()}
     require(len(selected) == 58, "Vetted cell selection changed")
+    require(all(1 <= len(items) <= 2 for items in selected.values()),
+            "Every reviewed atlas cell should show one or two cases")
+    require(not any(item["post_id"] in SHOWCASE_EXCLUDED_POST_IDS
+                    for items in selected.values() for item in items),
+            "Maintainer case entered featured atlas examples")
     note_rows = read_csv(ENGLISH_NOTES, ENGLISH_NOTE_FIELDS)
     english_notes: dict[str, dict[str, str]] = {}
     for note in note_rows:
         post_id = note["post_id"]
         require(post_id.isdigit() and post_id not in english_notes,
                 f"Invalid or repeated English atlas note ID: {post_id}")
+        require(post_id in case_by_id and any(CJK.search(case_by_id[post_id][field])
+                                               for field in ("label", "creator_disclosure", "review_note")),
+                f"English atlas note does not match a CJK reviewed case: {post_id}")
         for field in ENGLISH_NOTE_FIELDS[1:]:
             require(bool(note[field].strip()) and not CJK.search(note[field]),
                     f"English atlas note has empty or CJK {field}: {post_id}")
@@ -286,12 +439,12 @@ def load_and_validate() -> dict:
         if any(CJK.search(item["case"][field])
                for field in ("label", "creator_disclosure", "review_note"))
     }
-    require(set(english_notes) == selected_cjk_ids,
-            "English atlas notes must match selected cases with CJK fields exactly; "
-            f"missing={sorted(selected_cjk_ids - set(english_notes))}, "
-            f"stale={sorted(set(english_notes) - selected_cjk_ids)}")
+    require(selected_cjk_ids <= set(english_notes),
+            "English atlas notes must cover selected cases with CJK fields; "
+            f"missing={sorted(selected_cjk_ids - set(english_notes))}")
     return {"snapshot": snapshot, "counts": counts, "vetted": vetted,
-            "selected": selected, "engagement": metrics, "english_notes": english_notes}
+            "selected": selected, "engagement": metrics, "refresh": refreshed,
+            "english_notes": english_notes}
 
 
 def number(value: str) -> str:
@@ -321,62 +474,138 @@ def matrix(state: dict, chinese: bool) -> list[str]:
     return lines
 
 
-def metric_line(row: dict[str, str], chinese: bool) -> str:
+def archived_metric_line(row: dict[str, str], chinese: bool) -> str:
     likes, views = number(row["likes"]), number(row["views"])
     if row["source_quality"] == "saved_raw_search":
         timestamp = row["observed_at_utc"].replace("T", " ")
         age = row["hours_after_post"]
         if chinese:
-            return (f"观察值：**{likes} 赞、{views} 浏览**；原始搜索文件写入于 "
+            return (f"历史存档观察值：**{likes} 赞、{views} 浏览**；原始搜索文件写入于 "
                     f"{timestamp}（UTC，发帖后约 {age} 小时；查询 `{row['source_ref']}`）。"
                     "这是存档时间，不是精确的 X 读数时间。")
-        return (f"Observed: **{likes} likes, {views} views**; saved search file written "
+        return (f"Archived observation: **{likes} likes, {views} views**; saved search file written "
                 f"{timestamp} (UTC, about {age} hours after posting; query `{row['source_ref']}`). "
                 "File-write time is not the exact X read time.")
     deadline = row["observed_before_utc"].replace("T", " ")
     if chinese:
-        return (f"缓存观察值：**{likes} 赞、{views} 浏览**；不晚于 {deadline}（UTC），"
+        return (f"历史缓存观察值：**{likes} 赞、{views} 浏览**；不晚于 {deadline}（UTC），"
                 "具体采集时间不明；缺失值不参与排名。")
-    return (f"Cached observation: **{likes} likes, {views} views**; no later than "
+    return (f"Archived cached observation: **{likes} likes, {views} views**; no later than "
             f"{deadline} (UTC), exact capture time unknown. Missing values are not ranked.")
+
+
+def metric_line(row: dict[str, str], chinese: bool) -> str:
+    """Show exact current values or the literal rounded display and its interval."""
+    observed = row["observed_at_utc"].replace("T", " ")
+    bounds = like_bounds(row)
+    if row["likes"]:
+        source = ("公开帖子 HTML" if row["source_method"] == "x_public_post_html" else "页面按钮")
+        source_en = ("public post HTML" if row["source_method"] == "x_public_post_html" else "page button")
+        likes = (f"{number(row['likes'])} 赞（{source} 精确值）" if chinese else
+                 f"{number(row['likes'])} likes (exact {source_en} value)")
+    elif bounds is not None:
+        display = safe_inline(row["likes_display"])
+        likes = (f"页面赞数显示「{display}」，保守区间 {bounds[0]:,}–{bounds[1]:,}（精确值未知）" if chinese else
+                 f"X displays {display} for likes; conservative interval {bounds[0]:,}–{bounds[1]:,} "
+                 "(exact count unknown)")
+    else:
+        display = safe_inline(row["likes_display"])
+        likes = ((f"未取得精确赞数（页面显示 {display}）" if display else "本轮未取得赞数") if chinese else
+                 (f"no exact likes captured (page shows {display})" if display else "likes unavailable in this refresh"))
+    if row["views"]:
+        source = ("公开帖子 HTML" if row["source_method"] == "x_public_post_html" else "页面 tooltip")
+        source_en = ("public post HTML" if row["source_method"] == "x_public_post_html" else "page tooltip")
+        views = (f"{number(row['views'])} 次帖子浏览（{source} 精确值）" if chinese else
+                 f"{number(row['views'])} post views (exact {source_en} value)")
+    else:
+        display = safe_inline(row["views_display"])
+        views = ((f"未取得精确帖子浏览量（页面显示 {display}）" if display else "本轮未取得帖子浏览量")
+                 if chinese else
+                 (f"no exact post views captured (page shows {display})" if display else
+                  "post views unavailable in this refresh"))
+    if chinese:
+        return f"**本轮 X 页面观察：** {likes}；{views}。记录于 {observed}（UTC）。"
+    return f"**Current X-page observation:** {likes}; {views}. Captured {observed} (UTC)."
+
+
+def selection_line(reason: str, chinese: bool) -> str:
+    translations = {
+        "likes": (
+            "按本轮点赞选出；在有赞数的案例中，下界高于其余案例的上界。",
+            "Like-led among cases with current like counts; its lower bound exceeds the other upper bounds.",
+        ),
+        "overlap_views": (
+            "可能领先的点赞区间重叠；按精确帖子浏览量选出，不能判定点赞严格名次。",
+            "Plausible like leaders' intervals overlap; chosen by exact post views, without a strict like rank.",
+        ),
+        "overlap_lower_bound": (
+            "点赞区间重叠且缺精确浏览量；按保守下界选出，不能断言严格名次。",
+            "Like intervals overlap and exact views are missing; chosen by conservative lower bound, not strict rank.",
+        ),
+        "views": (
+            "按本轮精确帖子浏览量选出。",
+            "Chosen by current exact post views.",
+        ),
+        "likes_remainder": (
+            "其余案例缺精确浏览量；按本轮点赞保守下界选出，不代表严格名次。",
+            "Remaining cases lack exact views; chosen by current like lower bound, without a strict rank.",
+        ),
+        "unranked": (
+            "本格缺本轮可用互动量；仅展示一条画面案例，不按旧值排名。",
+            "No usable current counts in this cell; one visual example, not ranked by archived values.",
+        ),
+    }
+    return ("**选例依据：** " if chinese else "**Selection basis:** ") + translations[reason][0 if chinese else 1]
 
 
 def render(state: dict, chinese: bool) -> str:
     snapshot = state["snapshot"]["snapshot_utc"]
-    complete_cells = sum(any(item["engagement"]["likes"] and item["engagement"]["views"]
-                             for item in items) for items in state["vetted"].values())
-    complete_cases = sum(bool(row["likes"] and row["views"]) for row in state["engagement"].values())
-    raw_cases = sum(row["source_quality"] == "saved_raw_search" for row in state["engagement"].values())
-    raw_selected = sum(item["engagement"]["source_quality"] == "saved_raw_search"
-                       for items in state["selected"].values() for item in items)
-    post_ages = sorted(float(row["hours_after_post"]) for row in state["engagement"].values()
-                       if row["hours_after_post"])
-    age_summary = f"{post_ages[0]:.2f}–{post_ages[-1]:.2f}"
-    age_median = f"{statistics.median(post_ages):.2f}"
+    refresh = state["refresh"]
+    complete_cases = sum(bool(row["likes"] and row["views"]) for row in refresh.values())
+    exact_likes = sum(bool(row["likes"]) for row in refresh.values())
+    rounded_likes = sum(bool(not row["likes"] and row["likes_lower_bound"]) for row in refresh.values())
+    rounded_zh = f"{rounded_likes} 帖仅有点赞缩写的保守区间，" if rounded_likes else ""
+    rounded_en = (f"{rounded_likes} only a conservative interval for abbreviated likes, "
+                  if rounded_likes else "")
+    exact_view_cases = sum(bool(row["views"]) for row in refresh.values())
+    failed_cases = sum(row["status"] == "failed" for row in refresh.values())
+    measured_cells = sum(any(like_bounds(item["refresh"]) is not None or
+                             exact_views(item["refresh"]) is not None
+                             for item in items if item["post_id"] not in SHOWCASE_EXCLUDED_POST_IDS)
+                         for items in state["vetted"].values())
+    observed_times = sorted(parse_utc(row["observed_at_utc"]) for row in refresh.values())
+    first_observed = observed_times[0].isoformat(timespec="seconds")
+    last_observed = observed_times[-1].isoformat(timespec="seconds")
     selected_count = sum(len(items) for items in state["selected"].values())
     if chinese:
         lines = [
             "# Opus 5.5 视频：主题 × 视觉风格图谱", "",
             "[English](domain-style-atlas.md) · 本页由 [`generate_domain_style_atlas.py`](../scripts/generate_domain_style_atlas.py) "
-            "根据[分类 CSV](../data/domain-style.csv)、[案例 CSV](../data/cases.csv)和[互动量观察表](../data/case-engagement-observed.csv)生成。",
-            "", f"**数据截点：** {snapshot}（UTC）。矩阵单元是**视频文件数**：存档快照报告 1,401 个 SHA-256 "
+            "根据[分类 CSV](../data/domain-style.csv)、[案例 CSV](../data/cases.csv)、"
+            "[9 月 27 日 X 页面互动量观察](../data/case-engagement-refresh-2026-09-27.csv)生成；"
+            "[9 月 24–26 日旧观察表](../data/case-engagement-observed.csv)保留供追溯。",
+            "", f"**分类数据截点：** {snapshot}（UTC）。矩阵单元是**视频文件数**：存档快照报告 1,401 个 SHA-256 "
             "去重文件，公开分类 CSV 有对应的 1,401 行，但没有文件哈希，读者无法仅凭公开文件重做去重。"
             "图谱仅纳入分类器标为 `yes` 或 `likely` 的 1,119 个文件。每个文件只进一个主要主题和一种主要风格；"
             "`style2` 未计入。分类器判断不等于原作者身份或真实模型调用得到验证。", "",
             f"143 个组合里有 92 个非空格。168 个审读帖子中，157 个案例对应 `yes`／`likely` 的文件，"
-            f"落在 58 格；其余 34 个非空格没有已审读案例。当前 168 个案例里 {complete_cases} 个有赞和浏览两项观察值，"
-            f"其中 {raw_cases} 个来自保存的搜索原始结果；另外 7 个旧合并缓存案例缺浏览量，"
-            f"无法进入互动量排序。{complete_cells} 个格子至少有一个双指标案例。"
-            f"下方共展示 {selected_count} 个带截图案例，{raw_selected} 个选例的互动量均来自保存的原始搜索。", "",
+            f"落在 58 格；其余 34 个非空格没有已审读案例。在本轮官方 X 帖子页面观察里，{complete_cases}/168 帖有"
+            f"**精确赞数与精确浏览数**，{exact_likes} 帖有精确赞数，{rounded_zh}"
+            f"{exact_view_cases} 帖有精确浏览数，{failed_cases} 帖两项精确值均未取得。"
+            f"{measured_cells}/58 个有审读案例的格子至少有一条本轮可用互动量；"
+            f"下方展示 {selected_count} 个带截图案例。", "",
             "**选例规则：** 先限定在 168 个已审读案例中，再按原帖 URL 和预览时长精确对应分类结果；"
-            "每格从有赞和浏览两项观察值的案例里，按观察到的点赞降序、浏览降序、帖子 ID 升序选择最多两例。"
-            "若全格都缺一项指标，只展示一例并明确不排名。赞和浏览属于 X 原帖，浏览数不是视频播放次数；"
-            "多个视频附件可能共用同一帖指标；"
-            "这不是质量、制作难度、Opus 贡献或效果的评分。", "",
-            "**时间限制：** 这些不是“最终”或同一时点的数字。原始搜索文件跨 9 月 24–26 日保存；"
-            f"少数合并缓存没有精确采集时间。161 个原始搜索观察值在发帖后约 {age_summary} 小时存档，"
-            f"中位数 {age_median} 小时。较早发表、粉丝更多或转发更多的帖子获得互动的机会不同；"
-            "不要把格子内名次当成公平的作品比较。截图仅用于辨认画面，取自可取得的 X 预览；"
+            "每格先从有本轮精确点赞或点赞缩写保守区间的案例找一例。若可能领先的点赞区间互相重叠，"
+            "用精确帖子浏览量在这些候选里选择，不声称严格点赞名次；若全格缺点赞，则首例按精确浏览量。"
+            "随后从剩余案例中按精确浏览数选第二例；"
+            "若没有精确浏览数，才用点赞保守下界。完全没有本轮可用指标的格子只展示一例且不排名。"
+            "维护者自己的帖子留在历史案例数据里，但不作为本页的展示选例。"
+            "页面缩写不被伪装成精确数；赞和浏览属于 X 原帖，浏览数不是视频播放次数，"
+            "多个视频附件可能共用同一帖指标。这不是质量、制作难度、Opus 贡献或效果评分。", "",
+            f"**时间限制：** 本轮记录逐帖发生在 {first_observed} 至 {last_observed}（UTC），不是同一瞬间，"
+            "也不是“最终”互动量。各帖发表时间、粉丝和转发条件不同；格子内展示顺序不能当成公平的作品比较。"
+            "旧观察表保存 9 月 24–26 日的原始检索记录，不与本轮数字混作一次观测。"
+            "截图仅用于辨认可取得的 X 预览画面，"
             "权利仍归原作者。详情请看[统计说明](statistics.zh-CN.md)和[完整 168 案例目录](cases-index.zh-CN.md)。", "",
             "## 全部主题 × 风格矩阵", "",
             "表内数字为文件数。可点击的数字跳转到有截图的审读案例；`†` 代表有分类文件、但没有落在该格的已审读案例；"
@@ -387,9 +616,10 @@ def render(state: dict, chinese: bool) -> str:
             "# Opus 5.5 videos: domain × visual style atlas", "",
             "[中文](domain-style-atlas.zh-CN.md) · Generated by [`generate_domain_style_atlas.py`](../scripts/generate_domain_style_atlas.py) "
             "from the [classifier CSV](../data/domain-style.csv), [case CSV](../data/cases.csv), "
-            "[engagement observation table](../data/case-engagement-observed.csv), and "
+            "[27 September X-page engagement refresh](../data/case-engagement-refresh-2026-09-27.csv), "
+            "[archived September 24–26 observations](../data/case-engagement-observed.csv), and "
             "[English case-note translations](../data/atlas-case-notes-en.csv).", "",
-            f"**Frozen data:** {snapshot} (UTC). A matrix cell counts **video files**. The snapshot reports "
+            f"**Frozen classifier data:** {snapshot} (UTC). A matrix cell counts **video files**. The snapshot reports "
             "1,401 SHA-256-distinct files, and the public classifier CSV has 1,401 corresponding rows. "
             "It does not expose hashes, so public files alone cannot repeat the byte deduplication. "
             "This atlas includes the 1,119 labeled `yes` or `likely` by the classifier. Each file "
@@ -397,24 +627,27 @@ def render(state: dict, chinese: bool) -> str:
             "verify original authorship or actual model calls.", "",
             f"Of 143 possible combinations, 92 contain files. Among 168 reviewed source-post cases, 157 "
             f"match `yes`/`likely` files in 58 cells; the other 34 populated cells have no reviewed case. "
-            f"Both likes and views are available for {complete_cases} of 168 cases, all {raw_cases} from "
-            f"saved raw search results. The other seven cases have older merged-cache values without views "
-            f"and cannot enter the engagement ordering. All {complete_cells} cells with a reviewed case "
-            f"have at least one case with both metrics. There are {selected_count} illustrated cases below; "
-            f"all {raw_selected} selected examples use saved raw search observations.", "",
+            f"In the dated refresh, {complete_cases}/168 posts have **both exact likes and exact views**; "
+            f"{exact_likes} have exact likes, {rounded_en}{exact_view_cases} exact post views, "
+            f"and {failed_cases} neither exact metric. "
+            f"At least one current metric is available in {measured_cells}/58 reviewed cells. "
+            f"There are {selected_count} illustrated examples below.", "",
             "**Selection rule:** First restrict to the 168 reviewed cases, then match classifier rows by exact "
-            "original-post URL and preview duration. Within each cell, select up to two cases with both "
-            "metrics, ordering by observed likes descending, views descending, then post ID ascending. "
-            "If every reviewed case in a cell lacks a metric, show one without a rank. Likes and views "
-            "belong to the X post; views are not video plays. Several video attachments can share these "
-            "metrics. Popularity does not score quality, "
-            "production difficulty, Opus's contribution, or effectiveness.", "",
-            "**Timing limit:** These are neither final nor simultaneous counts. The saved raw search files "
-            f"span September 24–26, and some merged cache rows lack an exact capture time. The 161 raw "
-            f"observations were saved about {age_summary} hours after posting (median {age_median} hours). "
-            "Earlier posts, "
-            "larger audiences, and reposting have different chances to accumulate engagement. Do not treat "
-            "within-cell order as a fair performance comparison. Stills identify the look of an accessible "
+            "original-post URL and preview duration. In each cell, the first example is led by current exact "
+            "likes or a conservative interval from an abbreviated display. When plausible like leaders' "
+            "intervals overlap, use exact post views to choose among them without claiming a strict like "
+            "rank; if no likes are available, use exact views for the first example. "
+            "The second example, if available, has the highest exact post views among the remaining "
+            "cases; absent those, use the conservative like lower bound. A cell with no usable current "
+            "measure gets one unranked visual example. The maintainer's own post remains in the historical "
+            "case data but is excluded from featured examples. Likes and views belong to the X post; views "
+            "are not video plays. Several attachments may share post metrics. Engagement does not score "
+            "quality, effort, Opus's contribution, or effectiveness.", "",
+            f"**Timing limit:** The official X-page observations span {first_observed} to {last_observed} "
+            "(UTC), neither a single instant nor final counts. Posts were published at different times and "
+            "have different audiences and reposting conditions. Display order is not a fair comparison of "
+            "works. The separate archive preserves older September 24–26 search observations and is not "
+            "mixed into this refresh. Stills identify the look of an accessible "
             "X preview; image rights remain with the original creator. See the [statistical profile](statistics.md) "
             "and [full 168-case directory](cases-index.zh-CN.md).", "",
             "## Complete domain × style matrix", "",
@@ -436,10 +669,10 @@ def render(state: dict, chinese: bool) -> str:
             lines += [(f"{count} 个分类文件；{vetted_count} 个对应已审读案例。"
                        if chinese else f"{count} classified {'file' if count == 1 else 'files'}; "
                        f"{vetted_count} matching reviewed {'case' if vetted_count == 1 else 'cases'}."), ""]
-            for rank, item in enumerate(state["selected"][cell], 1):
+            for index, item in enumerate(state["selected"][cell]):
                 case = item["case"]
                 category = item["category"]
-                engagement = item["engagement"]
+                refresh_row = item["refresh"]
                 post_id = item["post_id"]
                 url = case["source_url"]
                 english_note = state["english_notes"].get(post_id) if not chinese else None
@@ -448,9 +681,11 @@ def render(state: dict, chinese: bool) -> str:
                 route = safe_inline(case["primary_path"])
                 creator = safe_inline(english_note["creator_account_en"] if english_note else case["creator_disclosure"])
                 review = safe_inline(english_note["review_limit_en"] if english_note else case["review_note"])
-                complete = bool(engagement["likes"] and engagement["views"])
-                heading = (f"{rank}. [{title}]({url})" if complete else
-                           f"{rank}. [{title}]({url}) " + ("（未排名）" if chinese else "(unranked)"))
+                letter = "AB"[index]
+                heading = (f"示例 {letter}：[{title}]({url})" if chinese else
+                           f"Example {letter}: [{title}]({url})")
+                if item["selection_reason"] == "unranked":
+                    heading += "（未排名）" if chinese else " (unranked)"
                 lines += [f"#### {heading}", "",
                           f'<a href="{url}"><img src="../assets/case-thumbnails/{post_id}.webp" '
                           f'width="160" loading="lazy" alt="Still from {html.escape(title, quote=True)}"></a>', "",
@@ -460,7 +695,10 @@ def render(state: dict, chinese: bool) -> str:
                            f"[Full case directory](cases-index.zh-CN.md)"), "",
                           (f"**作者披露：** {creator}" if chinese else f"**Creator account:** {creator}"), "",
                           (f"**审读边界：** {review}" if chinese else f"**Review limit:** {review}"), "",
-                          metric_line(engagement, chinese), ""]
+                          metric_line(refresh_row, chinese), "",
+                          selection_line(item["selection_reason"], chinese), ""]
+                if item["selection_reason"] == "unranked":
+                    lines += [archived_metric_line(item["engagement"], chinese), ""]
     lines += ["---", "", ("复核页面：`python3 scripts/generate_domain_style_atlas.py --check`。"
                            if chinese else "Check generated pages: `python3 scripts/generate_domain_style_atlas.py --check`."), ""]
     return "\n".join(lines)
