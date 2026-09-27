@@ -43,6 +43,15 @@
 | **外部视频模型编排** | [Opus＋Seedance](https://x.com/abxxai/status/2102775755646337530)、[多模型无限放大拼贴](https://x.com/koldo2k/status/2103129343253778767) | Opus 是写分镜／调度，还是实际出画面像素？ |
 | **应用或游戏录屏** | [捡罐模拟器与在线演示](https://x.com/masaya_1980/status/2103115017755500561)、[交互海岛](https://x.com/Acemation_/status/2103150350211354966) | 交付物是 MP4 电影，还是可玩的程序及其录屏？ |
 
+想知道某类视觉任务**该让 Opus 负责什么、用什么工具、怎样验收、什么时候换专门工具**，请看新增的[视觉效果制作适配指南](docs/visual-effects-fit.zh-CN.md)。它给出七类任务的决策表、关键帧→短动作样片→整片的验收步骤，以及记录返工和成本的方法。这里的“适合”是工程判断，不是模型成功率或对其他模型的排名。
+
+## 可复用的开源制作工程
+
+- **[Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)**：[@lemomo_ai 的原帖](https://x.com/lemomo_ai/status/2103811634565415152)介绍了作者从更多作品中整理出的 39 种影片风格。[公开图鉴](https://lemomo-ai.github.io/lemo-opuscar/)展示风格并提供样片与 `STYLE.md` 链接；仓库还提供[导演指南](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md)、[技术指南](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md)和可检查的[样片代码](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js)，包括分镜与画风的两次人工确认、确定性逐帧渲染、共用时间线和音频检查。作者称影片以 Canvas／WebGL 代码绘帧，没有调用视频生成模型；仓库可核对制作方法，不能单独审计每部影片的模型调用、所有链接的播放结果和最终质量。[许可文件](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE)将代码列为 MIT，指南、风格说明和影片列为 CC BY 4.0，第三方素材另按各自许可。
+- **[Papermotion](https://github.com/francozanardi/papermotion)**：纸片风动画的可复用引擎与模板，公开确定性物理、角色 rig、离线渲染、帧抓取、contact sheet 和音频检查命令。它展示了预置系统怎样改变后续作品的起点；不要把一个短提示词误读为从零开始的全部投入。
+
+这两项是 9 月 26 日冻结语料之外补充核查的开源资源，**不计入**上面的 1,401 个文件或 168 条深读案例，也不改变历史检索数字。
+
 ## 9 月 26 日新增案例
 
 | 作品 | 为什么值得看、有哪些边界 |
@@ -75,6 +84,7 @@
 
 - [完整中文报告](docs/report.zh-CN.md)与[适合 X Article 的版本](docs/x-article.zh-CN.md)。
 - [88 例提示词与制作条件矩阵](docs/prompt-matrix.zh-CN.md)、[七类可复用提示词模板](docs/prompt-playbook.zh-CN.md)。
+- [视觉效果制作适配指南](docs/visual-effects-fit.zh-CN.md)：按任务族选择制作路径、验收方法和成本口径。
 - [方法和证据等级](docs/methodology.zh-CN.md)、[56 组查询回执](docs/search-coverage.zh-CN.md)、[MP4 文件属性](docs/media-profile.zh-CN.md)、[冻结计数](data/corpus-snapshot.json)。
 
 本仓库不转载创作者的 MP4、音乐或完整第三方提示词，也不分发原始抓取记录与本地九帧图。案例说明区分**创作者披露**、**公开工程佐证**和**Hypit 对预览 MP4 的独立观察**。九帧无法验收全片运动、音质、知识正确性或隐藏调用。

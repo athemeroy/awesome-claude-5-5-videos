@@ -25,4 +25,4 @@ Use one primary path from the [field guide](docs/case-index-guide.zh-CN.md), the
 
 Each CSV row represents one original X post ID. Keep the existing columns and UTF-8 encoding. Do not add NAS paths, raw media URLs, access tokens, user cookies, or individual downloaded MP4 metadata that could become a redistribution channel. Include a brief review note describing what the sources do **not** establish.
 
-The current snapshot is frozen at September 25, 2026, 06:22 China Standard Time. New cases should carry their own verification date in the pull request; do not silently revise the historical counts in the 2026-09-25 report.
+The current corpus snapshot is frozen at September 26, 2026, 21:53 China Standard Time; its counts are recorded in [`data/corpus-snapshot.json`](data/corpus-snapshot.json). New cases and source-only resources should carry their own verification date in the pull request. Do not silently revise the frozen counts or present an unprobed X post as a `tile_ok` video case.

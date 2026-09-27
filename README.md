@@ -42,6 +42,7 @@ One Top result on Western civilization had 42,836 likes when collected. Its 136.
 - [Existing footage, audio, or project transformation](#existing-footage-audio-or-project-transformation)
 - [External video-model pipelines](#external-video-model-pipelines)
 - [Apps and games shown through capture](#apps-and-games-shown-through-capture)
+- [Reusable open-source production systems](#reusable-open-source-production-systems)
 - [New cases from the September 26 refresh](#new-cases-from-the-september-26-refresh)
 - [New cases from the September 25 refresh](#new-cases-from-the-september-25-refresh)
 - [Dataset and method](#dataset-and-method)
@@ -56,6 +57,8 @@ Anthropic's [Opus 5.5 model description](https://platform.claude.com/docs/en/mod
 **Creator account:** The workflow comes from the creator's post or reply; our independent observation is limited to the accessible MP4 and nine sampled frames.
 
 This home page deliberately selects examples with distinct production paths. The 168-case audit table includes comparisons and less certain cases and should not be interpreted as a prevalence survey.
+
+For a decision about **what to assign Opus, which renderer and assets to use, how to check a result, and when to switch tools**, see the new [visual-effects production guide](docs/visual-effects-fit.md). Its task-family judgments are workflow advice, not measured success rates or a model ranking.
 
 ## Code-drawn 2D and motion graphics
 
@@ -96,6 +99,13 @@ This home page deliberately selects examples with distinct production paths. The
 - [Interactive island - @Acemation_](https://x.com/Acemation_/status/2103150350211354966) - A captured navigable environment rather than a finished linear film; costs and development time are creator reports. **Creator account.**
 - [Game demonstration - @NiloTechInc](https://x.com/NiloTechInc/status/2102741813719138661) - The creator credits human-made character, animation, and clothing assets alongside Opus-assisted game development. **Creator account.**
 
+## Reusable open-source production systems
+
+- **[Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)**: In the [original post](https://x.com/lemomo_ai/status/2103811634565415152), @lemomo_ai introduces a selection of 39 film styles from a larger personal body of work. The [gallery](https://lemomo-ai.github.io/lemo-opuscar/) presents the styles with sample-film and `STYLE.md` links. A [director guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/DIRECTOR.md), [technique guide](https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md), and inspectable [sample scene code](https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/crayon-book/demo/film.js) document two human approval points, deterministic frame rendering, shared timing, and sound checks. The creator says Canvas/WebGL code draws the films without a video-generation model. The published project documents a production method; it does not independently audit every film's model calls, all linked playback results, or finished quality. Its [license](https://github.com/lemomo-ai/lemo-opuscar/blob/main/LICENSE) assigns MIT to code and CC BY 4.0 to guides, style files, and films, with third-party assets retaining their own terms.
+- **[Papermotion](https://github.com/francozanardi/papermotion)**: A reusable paper-cut animation engine and template with deterministic physics, character rigs, offline rendering, frame grabs, contact sheets, and sound checks. Its prepared engine is part of the input to later films, even when the human prompt is short.
+
+These later-checked open-source resources sit outside the September 26 frozen corpus. They do **not** increase the 1,401-file or 168-case counts above.
+
 ## New cases from the September 26 refresh
 
 | Case | What the creator reports and what the X preview shows |
@@ -126,7 +136,7 @@ This home page deliberately selects examples with distinct production paths. The
 
 The [case index](data/cases.csv) and [field definitions](docs/case-index-guide.zh-CN.md) cover all 168 reviewed examples.
 
-Read the [full Chinese research report](docs/report.zh-CN.md), [Article version](docs/x-article.zh-CN.md), [prompt/workflow matrix](docs/prompt-matrix.zh-CN.md), and [reusable prompt templates](docs/prompt-playbook.zh-CN.md).
+Read the [full Chinese research report](docs/report.zh-CN.md), [Article version](docs/x-article.zh-CN.md), [prompt/workflow matrix](docs/prompt-matrix.zh-CN.md), [reusable prompt templates](docs/prompt-playbook.zh-CN.md), and [visual-effects production guide](docs/visual-effects-fit.md).
 
 The [search coverage](docs/search-coverage.zh-CN.md), [media profile](docs/media-profile.zh-CN.md), [methodology](docs/methodology.zh-CN.md), and [frozen counts](data/corpus-snapshot.json) explain the collection boundaries.
 
