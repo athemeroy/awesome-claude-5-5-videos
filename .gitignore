@@ -7,5 +7,6 @@ Thumbs.db
 *.wav
 *.zip
 __pycache__/
+.venv-charts/
 .env
 .env.*

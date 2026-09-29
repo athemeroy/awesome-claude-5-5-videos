@@ -40,7 +40,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/MengTo/status/2102760783344189761"><img src="../assets/case-thumbnails/2102760783344189761.webp" width="160" loading="lazy" alt="Still from @MengTo Japanese boat environment"></a>
 
-**Subject:** Interactive Three.js Japanese boat scene · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Interactive Three.js Japanese boat scene · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md#case-2102760783344189761)
 
 **Creator account:** Creator reports a playable Three.js boat scene through Japanese landscapes with weather, day/night lighting, textures and characters, and links a live site.
 
@@ -54,7 +54,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/JaydenDavisNC/status/2103357848961036304"><img src="../assets/case-thumbnails/2103357848961036304.webp" width="160" loading="lazy" alt="Still from @JaydenDavisNC Splatoon game capture"></a>
 
-**Subject:** Splatoon game clone made by Opus · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Splatoon game clone made by Opus · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md#case-2103357848961036304)
 
 **Creator account:** The creator says Opus 5.5 coded a playable Splatoon-style game from scratch and deployed it on Itch.io. The post links a playable build; the video records the creator playing in a browser.
 
@@ -74,7 +74,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ring_hyacinth/status/2102865595675050010"><img src="../assets/case-thumbnails/2102865595675050010.webp" width="160" loading="lazy" alt="Still from @ring_hyacinth"></a>
 
-**Subject:** Pixel Shanghai interactive game demo · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Pixel Shanghai interactive game demo · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md#case-2102865595675050010)
 
 **Creator account:** Says a prior-year Pixel Shanghai short supplied the scene world, while Opus invoked Nano Banana Pro for characters/map and generated music/SFX in browser.
 
@@ -88,7 +88,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/KanaWorks_AI/status/2102684116525437206"><img src="../assets/case-thumbnails/2102684116525437206.webp" width="160" loading="lazy" alt="Still from @KanaWorks_AI siege-game promo"></a>
 
-**Subject:** Three Kingdoms siege game showcase · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Three Kingdoms siege game showcase · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2102684116525437206)
 
 **Creator account:** Japanese creator says Opus built an eight-stage side-scrolling game/site in about two hours, then captured and edited a 60-second promo. The post explicitly credits Opus 5.5 for code and Seedance 2.5, MiniMax H3 and CapCut for video.
 
@@ -108,7 +108,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/TheViableEdge/status/2103494684374900862"><img src="../assets/case-thumbnails/2103494684374900862.webp" width="160" loading="lazy" alt="Still from @TheViableEdge JEV and Opus visualizer"></a>
 
-**Subject:** Real-time visualizer app demo · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Real-time visualizer app demo · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md#case-2103494684374900862)
 
 **Creator account:** The creator says Opus 5.5 and JEV built a live visualizer that prepares charts and motion elements for later use. They propose social-video overlays and later mention camera gesture control; JEV's precise role and architecture are not disclosed.
 
@@ -128,7 +128,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/deedydas/status/2102787937482252537"><img src="../assets/case-thumbnails/2102787937482252537.webp" width="160" loading="lazy" alt="Still from @deedydas"></a>
 
-**Subject:** AI inference startup launch promo · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** AI inference startup launch promo · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2102787937482252537)
 
 **Creator account:** Short prompt for a modern startup inference ad; self-reports 1 minute and about $2.
 
@@ -142,7 +142,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/trq212/status/2102477340920152162"><img src="../assets/case-thumbnails/2102477340920152162.webp" width="160" loading="lazy" alt="Still from @trq212 personal-site trailer"></a>
 
-**Subject:** Personal website redesign showcase trailer · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Personal website redesign showcase trailer · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2102477340920152162)
 
 **Creator account:** Creator first used workflows to iterate and critique several redesigns of their existing personal site, then asked Opus to make a trailer from those iterations.
 
@@ -162,7 +162,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/NiloTechInc/status/2102741813719138661"><img src="../assets/case-thumbnails/2102741813719138661.webp" width="160" loading="lazy" alt="Still from @NiloTechInc"></a>
 
-**Subject:** Roblox game trailer showcase · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Roblox game trailer showcase · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md#case-2102741813719138661)
 
 **Creator account:** Says humans manually made animations, clothes and 3D assets in Nilo, then Opus assembled trailer/cameras in Roblox Studio.
 
@@ -176,7 +176,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Tariq_at/status/2102561072624410878"><img src="../assets/case-thumbnails/2102561072624410878.webp" width="160" loading="lazy" alt="Still from @Tariq_at local ComfyUI short"></a>
 
-**Subject:** Claude Opus conceptual promo · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Claude Opus conceptual promo · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2102561072624410878)
 
 **Creator account:** The creator says Opus wrote shot prompts, planned scene details, and composed music, while the visuals were generated locally in ComfyUI. Workflow nodes, underlying models, audio, and hardware costs were not released.
 
@@ -196,7 +196,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Lucas_IA_/status/2103152093733253544"><img src="../assets/case-thumbnails/2103152093733253544.webp" width="160" loading="lazy" alt="Still from @Lucas_IA_ skill-based ad"></a>
 
-**Subject:** Adaptogenic mushroom coffee advertisement · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Adaptogenic mushroom coffee advertisement · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103152093733253544)
 
 **Creator account:** The creator's [12-post workflow thread](https://x.com/Lucas_IA_/status/2103152094958026953) describes an existing paid skill containing a drawing engine and scripts, then a short [trigger prompt](https://x.com/Lucas_IA_/status/2103152108224573507). Claude Code writes JS frames, HyperFrames exports MP4, ElevenLabs provides narration, Whisper aligns words, optional Suno supplies music, and ffmpeg mixes. The full skill/source is not public.
 
@@ -210,7 +210,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/jackfriks/status/2103132260589338762"><img src="../assets/case-thumbnails/2103132260589338762.webp" width="160" loading="lazy" alt="Still from @jackfriks Lovelee"></a>
 
-**Subject:** Lovelee app animated promo · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Lovelee app animated promo · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103132260589338762)
 
 **Creator account:** One-turn creator claim; the [actual prompt](https://x.com/jackfriks/status/2103134485910892602) points to pig assets on a new app branch and requests a 9:16 story with SFX and app teaser.
 
@@ -230,7 +230,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/so_ainsight/status/2103117547776163845"><img src="../assets/case-thumbnails/2103117547776163845.webp" width="160" loading="lazy" alt="Still from @so_ainsight hand-drawn Claude Code explainer"></a>
 
-**Subject:** Claude Code promotional animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Claude Code promotional animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103117547776163845)
 
 **Creator account:** The creator's [task reply](https://x.com/so_ainsight/status/2103119227192225926) specifies a 15-second Japanese-narrated paper-collage explainer and permits outside image and speech tools. They report using an image model for 11 assets, Gemini TTS for four speech segments, and HTML/JS frame capture, with agent review of stills. The roughly 12-minute runtime is self-reported.
 
@@ -250,7 +250,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/OriSilver/status/2102817977812824335"><img src="../assets/case-thumbnails/2102817977812824335.webp" width="160" loading="lazy" alt="Still from @OriSilver Blender blocking to Seedance"></a>
 
-**Subject:** Squid Game recreated with AI and Blender · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Squid Game recreated with AI and Blender · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2102817977812824335)
 
 **Creator account:** The creator says they provided a camera-style reference clip; Opus used MaxFusion MCP to sample it and build Blender camera, staging, and shot blocking. A rough cut and original characters then guided Seedance 2.5 for the final imagery. The source clip and call logs were not checked.
 
@@ -270,7 +270,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/gregpr07/status/2102984873351037161"><img src="../assets/case-thumbnails/2102984873351037161.webp" width="160" loading="lazy" alt="Still from @gregpr07 selecting talking-head takes"></a>
 
-**Subject:** video-use AI editor launch promo · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** video-use AI editor launch promo · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2102984873351037161)
 
 **Creator account:** The creator says they provided 13 recordings of one spoken line to Opus 5.5 and video-use. The agent reportedly compared transcripts and frames, chose a clean take, then edited, graded, subtitled, and packaged it. Time and cost are self-reported; raw takes and logs are unavailable.
 
@@ -284,7 +284,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/sab8a/status/2103144778481475686"><img src="../assets/case-thumbnails/2103144778481475686.webp" width="160" loading="lazy" alt="Still from @sab8a talking-head recut"></a>
 
-**Subject:** AI automated talking-head video editing · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** AI automated talking-head video editing · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2103144778481475686)
 
 **Creator account:** The creator gave a short brief to make existing talking-head footage livelier with captions, graphics, and music, crediting Opus 5.5 and OpenEdit. They report 1 hour 51 minutes, $23 in model tokens, and $49 in fal services, without the raw footage, bills, or logs.
 
@@ -304,7 +304,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/stephanlivera/status/2103315922098470926"><img src="../assets/case-thumbnails/2103315922098470926.webp" width="160" loading="lazy" alt="Still from @stephanlivera motion-design showreel"></a>
 
-**Subject:** Claude motion designer showreel · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Claude motion designer showreel · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103315922098470926)
 
 **Creator account:** The creator reports using Opus 5.5 at Max effort with a short brief for a 15-second motion-design résumé showreel. The production project and run log are unpublished.
 
@@ -318,7 +318,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ajith_io/status/2103449416325890146"><img src="../assets/case-thumbnails/2103449416325890146.webp" width="160" loading="lazy" alt="Still from @ajith_io motion-design showreel"></a>
 
-**Subject:** Claude motion designer showreel · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Claude motion designer showreel · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103449416325890146)
 
 **Creator account:** The creator shares a short brief for a 15-second résumé-style motion-design showreel made with Opus 5.5. The project, audio source, and run log were not released.
 
@@ -338,7 +338,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/higgsfield_ai/status/2102533401110802552"><img src="../assets/case-thumbnails/2102533401110802552.webp" width="160" loading="lazy" alt="Still from @higgsfield_ai"></a>
 
-**Subject:** AI 3D game dev comparison · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** AI 3D game dev comparison · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md#case-2102533401110802552)
 
 **Creator account:** Opus/GPT-6 comparison for game development in Unreal Engine.
 
@@ -352,7 +352,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Stefan_3D_AI/status/2102471841046786153"><img src="../assets/case-thumbnails/2102471841046786153.webp" width="160" loading="lazy" alt="Still from @Stefan_3D_AI Blender model comparison"></a>
 
-**Subject:** Opus 5.5 vs GPT-6 3D test · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Opus 5.5 vs GPT-6 3D test · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md#case-2102471841046786153)
 
 **Creator account:** The creator says Opus 5.5 and GPT-6 Astra received the same procedural Blender task with no premade assets. They report Opus taking 35 minutes and about $13.30 in API-equivalent cost, versus 28 minutes and about $14.50 for Astra. No independent run logs are available.
 
@@ -372,7 +372,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/jake11moran/status/2103247490237825416"><img src="../assets/case-thumbnails/2103247490237825416.webp" width="160" loading="lazy" alt="Still from @jake11moran session-history animation skill"></a>
 
-**Subject:** Animated Claude coding session story · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Animated Claude coding session story · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2103247490237825416)
 
 **Creator account:** The creator says their /session-story skill with Opus 5.5 and HyperFrames reads local Claude Code conversations, finds representative sessions, and animates the messages. They also cite an existing Clawd kit. The skill file and data-handling log were not available in this review.
 
@@ -392,7 +392,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/kevin_t_ngo/status/2102437977435893771"><img src="../assets/case-thumbnails/2102437977435893771.webp" width="160" loading="lazy" alt="Still from @kevin_t_ngo"></a>
 
-**Subject:** Girl asks Claude what it loves · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Girl asks Claude what it loves · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102437977435893771)
 
 **Creator account:** States every frame drawn in JavaScript.
 
@@ -406,7 +406,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/N8Programs/status/2103154189064876406"><img src="../assets/case-thumbnails/2103154189064876406.webp" width="160" loading="lazy" alt="Still from @N8Programs Gorm Fluid text adaptation"></a>
 
-**Subject:** Animation on GPT-4 and simulacra theory · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Animation on GPT-4 and simulacra theory · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2103154189064876406)
 
 **Creator account:** The creator says they adapted an [existing Cyborgism Wiki text](https://cyborgism.wiki/hypha/gpt-4_gorm_fluid) into video during the Opus 5.5 trend. The prompt, narration method, and rendering project are not public.
 
@@ -426,7 +426,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/superalesha/status/2102463796149440888"><img src="../assets/case-thumbnails/2102463796149440888.webp" width="160" loading="lazy" alt="Still from @superalesha Claude-model history"></a>
 
-**Subject:** History of Claude models development · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** History of Claude models development · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102463796149440888)
 
 **Creator account:** Creator says Opus built the animation in pure JS using the creator's existing skill. No skill file or code was checked here.
 
@@ -440,7 +440,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Voxyz_ai/status/2102531681450119426"><img src="../assets/case-thumbnails/2102531681450119426.webp" width="160" loading="lazy" alt="Still from @Voxyz_ai"></a>
 
-**Subject:** Claude collecting human warmth in user prompts · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Claude collecting human warmth in user prompts · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102531681450119426)
 
 **Creator account:** Claims model wrote story, drew every frame and made music; creator wrote no code.
 
@@ -460,7 +460,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/shfred0/status/2102495989194236158"><img src="../assets/case-thumbnails/2102495989194236158.webp" width="160" loading="lazy" alt="Still from @shfred0"></a>
 
-**Subject:** Claude animating its own life journey · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Claude animating its own life journey · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102495989194236158)
 
 **Creator account:** No video model or images, JS brush strokes.
 
@@ -474,7 +474,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Medeo_AI/status/2102463091959288264"><img src="../assets/case-thumbnails/2102463091959288264.webp" width="160" loading="lazy" alt="Still from @Medeo_AI"></a>
 
-**Subject:** AI ink animation model comparison · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** AI ink animation model comparison · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2102463091959288264)
 
 **Creator account:** States both compared clips use Seedance 2.5 on Medeo, with GPT-6 Sol vs Opus 5.5 upstream.
 
@@ -494,7 +494,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/JustinPerea/status/2102893186330841502"><img src="../assets/case-thumbnails/2102893186330841502.webp" width="160" loading="lazy" alt="Still from @JustinPerea"></a>
 
-**Subject:** Procedural demoscene generated by Opus · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Procedural demoscene generated by Opus · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102893186330841502)
 
 **Creator account:** Says a broad demo request led to one 280 KB HTML file making all pixels and sounds. A [creator reply](https://x.com/JustinPerea/status/2103118512315097398) clarifies the striking 697M-token figure was 98.1% cache reads, with 566K output tokens; another reply says he sent “continue” after a session limit.
 
@@ -514,7 +514,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ishuagra02/status/2103247844542922825"><img src="../assets/case-thumbnails/2103247844542922825.webp" width="160" loading="lazy" alt="Still from @ishuagra02 anime model-battle trailer"></a>
 
-**Subject:** AI models anime battle trailer · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** AI models anime battle trailer · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103247844542922825)
 
 **Creator account:** The creator's [published brief](https://x.com/ishuagra02/status/2103247960272433307) asks for an anime-style Claude-versus-ChatGPT battle with story pacing and audiovisual impact. They say Opus downloaded fonts, made audio, and generated frames in JavaScript in one submission, taking about 1.5 hours and $28 in API usage; code and bills are unavailable.
 
@@ -534,7 +534,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/gavinpurcell/status/2103304514329854102"><img src="../assets/case-thumbnails/2103304514329854102.webp" width="160" loading="lazy" alt="Still from @gavinpurcell Runway MCP documentary"></a>
 
-**Subject:** Documentary about AI superintelligence · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Documentary about AI superintelligence · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2103304514329854102)
 
 **Creator account:** The creator says a Claude agent named Fig had access to Runway MCP and was tasked with conceiving and making a five-minute, Netflix-style superintelligence documentary. They show the film and generated shots.
 
@@ -554,7 +554,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/addyosmani/status/2103009037164110327"><img src="../assets/case-thumbnails/2103009037164110327.webp" width="160" loading="lazy" alt="Still from @addyosmani browser explainer"></a>
 
-**Subject:** How web browsers work · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** How web browsers work · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2103009037164110327)
 
 **Creator account:** Creator says Opus 5.5 drew each frame in JavaScript and, in a reply, says most of these demos were one-shot. No source repository was checked.
 
@@ -568,7 +568,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/dotey/status/2103683057689522564"><img src="../assets/case-thumbnails/2103683057689522564.webp" width="160" loading="lazy" alt="Still from @dotey Transformer explainer"></a>
 
-**Subject:** Transformer architecture explained · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Transformer architecture explained · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2103683057689522564)
 
 **Creator account:** Using Claude Code and Opus 5.5 with permission to install tools and search the web, the creator requested an accessible but detailed JavaScript explanation of Transformers, self-attention, and their mathematics. They say the result is an approximately 12-minute explainer.
 
@@ -588,7 +588,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/RyanSael/status/2102591147927654847"><img src="../assets/case-thumbnails/2102591147927654847.webp" width="160" loading="lazy" alt="Still from @RyanSael interactive lens lab"></a>
 
-**Subject:** Interactive camera lens focus simulator · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Interactive camera lens focus simulator · **Reviewed production path:** `app_or_game_capture` · [Full case directory](cases-index.zh-CN.md#case-2102591147927654847)
 
 **Creator account:** Creator says they asked Opus to explain camera focus by building an interactive lens lab; one-shot run of 1h26 and $25.66 API equivalent are self-reported. Users can move the focus ring in the linked app.
 
@@ -602,7 +602,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/superalesha/status/2102779758408774104"><img src="../assets/case-thumbnails/2102779758408774104.webp" width="160" loading="lazy" alt="Still from @superalesha LHC"></a>
 
-**Subject:** LHC proton collision simulation · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** LHC proton collision simulation · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md#case-2102779758408774104)
 
 **Creator account:** Asked Opus for a Blender proton-collision scene.
 
@@ -622,7 +622,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/devteamdrew/status/2102436464323661880"><img src="../assets/case-thumbnails/2102436464323661880.webp" width="160" loading="lazy" alt="Still from @devteamdrew"></a>
 
-**Subject:** Journey through science and the cosmos · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Journey through science and the cosmos · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2102436464323661880)
 
 **Creator account:** “Made with Opus 5.5”; no stack in root post.
 
@@ -636,7 +636,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/0x0funky/status/2102736587708854585"><img src="../assets/case-thumbnails/2102736587708854585.webp" width="160" loading="lazy" alt="Still from @0x0funky"></a>
 
-**Subject:** English past continuous tense animated lesson · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** English past continuous tense animated lesson · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2102736587708854585)
 
 **Creator account:** Creator follow-ups identify pre-organized course content, Remotion for video, React/SVG/HTML/CSS/web fonts for visuals, and local CosyVoice TTS; says production took about 45 minutes and less than 1% weekly subscription usage.
 
@@ -656,7 +656,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/akokoi1/status/2102606609574941028"><img src="../assets/case-thumbnails/2102606609574941028.webp" width="160" loading="lazy" alt="Still from @akokoi1 geography"></a>
 
-**Subject:** Atmospheric circulation geography explainer · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Atmospheric circulation geography explainer · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2102606609574941028)
 
 **Creator account:** Full workflow: supply a TTS vendor's docs and API configuration, request line-art high-school atmospheric-circulation video, bilingual subtitles and export.
 
@@ -670,7 +670,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/AxtonLiu/status/2102827887732932956"><img src="../assets/case-thumbnails/2102827887732932956.webp" width="160" loading="lazy" alt="Still from @AxtonLiu"></a>
 
-**Subject:** Work adaptation strategies explainer · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Work adaptation strategies explainer · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2102827887732932956)
 
 **Creator account:** Supplied original 83 s talking-head video; requested circular presenter inset, concept-matched line-art B-roll, preserved original audio/subtitles/duration; claims no human intervention.
 
@@ -690,7 +690,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/LinearUncle/status/2103128559174971663"><img src="../assets/case-thumbnails/2103128559174971663.webp" width="160" loading="lazy" alt="Still from @LinearUncle"></a>
 
-**Subject:** Calculus derivative concept explanation · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Calculus derivative concept explanation · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2103128559174971663)
 
 **Creator account:** Explicit Manim derivative lesson, edge-tts; short Chinese prompt disclosed.
 
@@ -704,7 +704,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ng169onX/status/2103183904563998809"><img src="../assets/case-thumbnails/2103183904563998809.webp" width="160" loading="lazy" alt="Still from @ng169onX VAE mathematics explainer"></a>
 
-**Subject:** Variational Autoencoders explainer · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Variational Autoencoders explainer · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2103183904563998809)
 
 **Creator account:** The creator says a short prompt led Opus to use Manim for a variational-autoencoder lesson, train an MNIST model, use Qwen3-TTS on MLX for cloned narration, and make original background music. Training code, voice authorization, and content checks were not shared.
 
@@ -724,7 +724,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/KamStudioLabs/status/2102903173161877996"><img src="../assets/case-thumbnails/2102903173161877996.webp" width="160" loading="lazy" alt="Still from @KamStudioLabs bug-that-refuses-fixing short"></a>
 
-**Subject:** A bug refusing to be fixed · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** A bug refusing to be fixed · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102903173161877996)
 
 **Creator account:** In the same thread, the creator offered a second brief for a 90-second animated story about a bug that does not want to be fixed. The renderer and audio source were not specified.
 
@@ -744,7 +744,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Hesamation/status/2103457566978162901"><img src="../assets/case-thumbnails/2103457566978162901.webp" width="160" loading="lazy" alt="Still from @Hesamation robot story set in 2076"></a>
 
-**Subject:** Lonely robot in a post-human world · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Lonely robot in a post-human world · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103457566978162901)
 
 **Creator account:** The creator says they asked Opus to imagine a world after AI destroys humanity. They credit Claude with the story, animation, sound effects, and music, and say the video was encoded in JavaScript.
 
@@ -758,7 +758,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/akokoi1/status/2103149275945517546"><img src="../assets/case-thumbnails/2103149275945517546.webp" width="160" loading="lazy" alt="Still from @akokoi1 fight"></a>
 
-**Subject:** 3D character fight animation · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** 3D character fight animation · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md#case-2103149275945517546)
 
 **Creator account:** Root highlights ~2,000 lines of code and a one-minute fight. [Creator follow-up](https://x.com/akokoi1/status/2103149539880562718) gives three stages: first make a Three.js character and adjust it until satisfactory, then ask for a 60-second cinematic fight based on that model, then add sound/export.
 
@@ -778,7 +778,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/cherry_mx_reds/status/2102472218269900876"><img src="../assets/case-thumbnails/2102472218269900876.webp" width="160" loading="lazy" alt="Still from @cherry_mx_reds"></a>
 
-**Subject:** Creature bouncing to reach candy · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Creature bouncing to reach candy · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102472218269900876)
 
 **Creator account:** Claims an 18m31s one-shot animation. In creator replies, says it was code without frameworks, but also says the short prompt included an image, and that prior animation files existed on disk.
 
@@ -792,7 +792,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/cherry_mx_reds/status/2102493303388475855"><img src="../assets/case-thumbnails/2102493303388475855.webp" width="160" loading="lazy" alt="Still from @cherry_mx_reds Oktoberfest"></a>
 
-**Subject:** Oktoberfest celebration animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Oktoberfest celebration animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102493303388475855)
 
 **Creator account:** The [prompt screenshot](https://x.com/cherry_mx_reds/status/2102493305992880314) explicitly references an attached character image, asks for a 30-second Oktoberfest animation, and tells Opus to find and use audio samples already on disk instead of synthesizing audio.
 
@@ -812,7 +812,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/yangfei33113/status/2102611841122017632"><img src="../assets/case-thumbnails/2102611841122017632.webp" width="160" loading="lazy" alt="Still from @yangfei33113 rainy street composite"></a>
 
-**Subject:** Pixel character walking in rainy Asakusa · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Pixel character walking in rainy Asakusa · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2102611841122017632)
 
 **Creator account:** The creator says the agent found a real street photograph online, then coded rain, reflections, focus, human lighting, and sound without a video generation model. The source photo, rights, and program were not disclosed.
 
@@ -832,7 +832,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/araminta_k/status/2103244081388503196"><img src="../assets/case-thumbnails/2103244081388503196.webp" width="160" loading="lazy" alt="Still from @araminta_k After Effects line-art draft"></a>
 
-**Subject:** hand-drawn character animation comp test · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** hand-drawn character animation comp test · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2103244081388503196)
 
 **Creator account:** The creator says Opus worked in After Effects from their style reference, adjusting x-sheet exposure timing and layered compositing. A human then directed more natural motion over about an hour; coloring was still a future step. The After Effects project and layer logs are unavailable.
 
@@ -852,7 +852,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ring_hyacinth/status/2102986085328716066"><img src="../assets/case-thumbnails/2102986085328716066.webp" width="160" loading="lazy" alt="Still from @ring_hyacinth Mid-Autumn collage short"></a>
 
-**Subject:** Cat Mid-Autumn Festival animated short · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Cat Mid-Autumn Festival animated short · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102986085328716066)
 
 **Creator account:** The creator says they supplied the script and music, while Opus used JavaScript and p5.js/p5.brush for frame animation, Nano Banana Pro made backgrounds and paper textures, and Node.js composed sound effects. Full prompts, code, and assets were not shared.
 
@@ -866,7 +866,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/NFT_Chen/status/2103380404791333144"><img src="../assets/case-thumbnails/2103380404791333144.webp" width="160" loading="lazy" alt="Still from @NFT_Chen Mid-Autumn paper-cut collage"></a>
 
-**Subject:** Cat mends the moon for Mid-Autumn · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Cat mends the moon for Mid-Autumn · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103380404791333144)
 
 **Creator account:** The creator says they supplied script and music; Nano Banana Pro made the background and torn-paper textures, while Opus coded per-frame drawing in JavaScript, p5.js, and p5.brush, with Node.js sound effects. Code, layers, and call logs are unavailable.
 
@@ -886,7 +886,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/jurlycat/status/2102645793828036643"><img src="../assets/case-thumbnails/2102645793828036643.webp" width="160" loading="lazy" alt="Still from @jurlycat"></a>
 
-**Subject:** Animated scenery viewed through a window · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Animated scenery viewed through a window · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102645793828036643)
 
 **Creator account:** One index.html file, no images, video files or libraries; later says they ran and tweaked the generated file.
 
@@ -900,7 +900,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/mablesjoseph/status/2103465246014746943"><img src="../assets/case-thumbnails/2103465246014746943.webp" width="160" loading="lazy" alt="Still from @mablesjoseph hand-drawn animated short"></a>
 
-**Subject:** Girl and animated flying lantern short · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Girl and animated flying lantern short · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103465246014746943)
 
 **Creator account:** The creator says code generated brushwork, watercolor effects, and sound, while explicitly describing a multi-round process: 163 model calls, about 6 hours 45 minutes elapsed, 1.5 hours of human involvement, and 12 minutes of rendering. Their reported 62.7 million tokens, mostly cache reads, and roughly $34 API-equivalent cost are self-reported.
 
@@ -920,7 +920,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/sbalhatlani/status/2103475507471806929"><img src="../assets/case-thumbnails/2103475507471806929.webp" width="160" loading="lazy" alt="Still from @sbalhatlani Arabic-dubbed anime pilot"></a>
 
-**Subject:** Arabic dubbed anime pilot episode · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Arabic dubbed anime pilot episode · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2103475507471806929)
 
 **Creator account:** The creator says they guided Opus 5.5 in Claude Code for about 14 hours to make an 8-minute-33-second pilot, reporting 211 planned shots, over 300 character and scene images, 11 characters, 70 Arabic voice lines, 16 music cues, subtitles, and a 2D animation engine. No project or call log was released.
 
@@ -940,7 +940,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/razeden0/status/2103153899431432535"><img src="../assets/case-thumbnails/2103153899431432535.webp" width="160" loading="lazy" alt="Still from @razeden0"></a>
 
-**Subject:** Coastal road trip cinematic video · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Coastal road trip cinematic video · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2103153899431432535)
 
 **Creator account:** Explicitly says Opus wrote story plan, character sheet, start frames, camera moves and timing, then Seedance 2.5 animated them; user provided a concept and a few look screenshots.
 
@@ -960,7 +960,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/sankakuten91256/status/2103483923783373039"><img src="../assets/case-thumbnails/2103483923783373039.webp" width="160" loading="lazy" alt="Still from @sankakuten91256 four-tool dance motion graphic"></a>
 
-**Subject:** Anime girl rhythmic motion graphics dance · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Anime girl rhythmic motion graphics dance · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2103483923783373039)
 
 **Creator account:** The creator describes GPT Images 2.5 making a nine-panel dance image, Grok making green-screen dance footage, Opus 5.5 coding motion backgrounds and layout, and Astra replacing audio. Integration code was not released.
 
@@ -974,7 +974,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/elianiva_/status/2103003425915195750"><img src="../assets/case-thumbnails/2103003425915195750.webp" width="160" loading="lazy" alt="Still from @elianiva_ black-and-white motion continuation"></a>
 
-**Subject:** Japanese lyric motion graphics · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Japanese lyric motion graphics · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2103003425915195750)
 
 **Creator account:** The creator says they hand-coded the first four seconds years earlier and asked Opus to continue it over about an hour and several exchanges. The black-and-white constraint came from the old work; the source project is not public.
 
@@ -994,7 +994,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/aj_dev_smith/status/2102803889183736141"><img src="../assets/case-thumbnails/2102803889183736141.webp" width="160" loading="lazy" alt="Still from @aj_dev_smith No Samples"></a>
 
-**Subject:** Claude Opus rap music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Claude Opus rap music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102803889183736141)
 
 **Creator account:** Root says custom JavaScript written by Opus powers both music and visuals. In a [creator reply](https://x.com/aj_dev_smith/status/2102888015903474051), the artist clarifies roughly two hours, two prompts (one song, one video), about 700k tokens in one Claude Code session, no subagents, and prior EDM/pop-punk projects as a base.
 
@@ -1008,7 +1008,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/xlcomplete/status/2103015953877647820"><img src="../assets/case-thumbnails/2103015953877647820.webp" width="160" loading="lazy" alt="Still from @xlcomplete five-minute song video"></a>
 
-**Subject:** Train journey shader music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Train journey shader music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103015953877647820)
 
 **Creator account:** The creator says they supplied a song previously made with Suno, and Opus 5.5 at xhigh effort wrote shaders to draw the video frame by frame. The prompt, project, cost, and song file were not shared.
 
@@ -1028,7 +1028,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/other__reality/status/2102514581684052169"><img src="../assets/case-thumbnails/2102514581684052169.webp" width="160" loading="lazy" alt="Still from @other__reality"></a>
 
-**Subject:** Animated song about AI singularity · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Animated song about AI singularity · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102514581684052169)
 
 **Creator account:** Praises Opus 5.5 visual design; quotes an older song post.
 
@@ -1042,7 +1042,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ExistentialEnso/status/2102599211212554616"><img src="../assets/case-thumbnails/2102599211212554616.webp" width="160" loading="lazy" alt="Still from @ExistentialEnso pre-existing song MV"></a>
 
-**Subject:** animated music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** animated music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102599211212554616)
 
 **Creator account:** Creator calls it a one-shot-style request and openly says the subtitles desynchronize near the end; [a reply](https://x.com/ExistentialEnso/status/2102647383200768306) says the song already existed and was made with Suno a week earlier.
 
@@ -1062,7 +1062,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/pleometric/status/2103082510607610023"><img src="../assets/case-thumbnails/2103082510607610023.webp" width="160" loading="lazy" alt="Still from @pleometric Donald-workflow follow-up"></a>
 
-**Subject:** Retro anime MV about AI singularity · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Retro anime MV about AI singularity · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2103082510607610023)
 
 **Creator account:** Creator explicitly says a previous video inspired them to push Opus 5.5 and that they followed @donaldjewkes's general workflow. They do not publish their full prompt, asset list or invocation log in this root.
 
@@ -1076,7 +1076,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/minosdevs/status/2103112945341251920"><img src="../assets/case-thumbnails/2103112945341251920.webp" width="160" loading="lazy" alt="Still from @minosdevs Paris loop"></a>
 
-**Subject:** Pixel art Paris rain lofi loop · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Pixel art Paris rain lofi loop · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103112945341251920)
 
 **Creator account:** The [3,027-character French prompt](https://x.com/minosdevs/status/2103112948478570675) asks for one standalone HTML/Canvas, a rainy pixel Paris night, deterministic 240 s seamless loop, 480×270 nearest-neighbor upscale to 1080p, 60 fps, and keyboard capture/export. The creator suggests looping it under lofi music for YouTube.
 
@@ -1096,7 +1096,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/coolbat1999/status/2103127192591065595"><img src="../assets/case-thumbnails/2103127192591065595.webp" width="160" loading="lazy" alt="Still from @coolbat1999 child&#x27;s drawing"></a>
 
-**Subject:** Music video from kid's drawings · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Music video from kid's drawings · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2103127192591065595)
 
 **Creator account:** Creator says two conversations with Opus animated a child's doodle into an MV. Full input drawings, prompt and render stack were not published in the root.
 
@@ -1116,7 +1116,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/anjmaxx/status/2103173729656459455"><img src="../assets/case-thumbnails/2103173729656459455.webp" width="160" loading="lazy" alt="Still from @anjmaxx 20 s MV"></a>
 
-**Subject:** Line Go Up AI meme music video · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Line Go Up AI meme music video · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2103173729656459455)
 
 **Creator account:** Root claims one prompt. The [later full prompt](https://x.com/anjmaxx/status/2103174007319413155) is 5,594 characters: two protagonists, style references/attachments, lyric typography, internet research, a style sheet, optional Seedance 2.5 base generations and repeated review. Its literal wording overlaps extensively with @donaldjewkes's earlier public prompt: 87.0% of unique five-word spans in the later text occur in the earlier text, by `research/compare_public_prompts.py`.
 
@@ -1136,7 +1136,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/johnknopf/status/2103170666187117006"><img src="../assets/case-thumbnails/2103170666187117006.webp" width="160" loading="lazy" alt="Still from @johnknopf watercolor MV"></a>
 
-**Subject:** Watercolor animated music video of life · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Watercolor animated music video of life · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103170666187117006)
 
 **Creator account:** Creator supplied a song they had made in Suno and says one prompt led Opus to build a watercolor renderer, draw scenes from lyrics and finish within an hour. No source code was checked.
 
@@ -1156,7 +1156,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/cube__lol/status/2102879729594343605"><img src="../assets/case-thumbnails/2102879729594343605.webp" width="160" loading="lazy" alt="Still from @cube__lol 13-minute Tool music video"></a>
 
-**Subject:** Tool music video generated with code · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Tool music video generated with code · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2102879729594343605)
 
 **Creator account:** The creator says Opus 5.5 made a 13-minute Tool music video with code. They did not share the prompt, project, song input, or production logs.
 
@@ -1170,7 +1170,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/KamStudioLabs/status/2102899866762440893"><img src="../assets/case-thumbnails/2102899866762440893.webp" width="160" loading="lazy" alt="Still from @KamStudioLabs collision music machine"></a>
 
-**Subject:** Physics collision music machine · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Physics collision music machine · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102899866762440893)
 
 **Creator account:** The creator describes a one-sentence brief in which every visible collision should play a note. They report a 47 KB single HTML file, no images or external audio, and browser-synthesized sound, without releasing code or sound analysis.
 
@@ -1190,7 +1190,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/donaldjewkes/status/2102801274173587569"><img src="../assets/case-thumbnails/2102801274173587569.webp" width="160" loading="lazy" alt="Still from @donaldjewkes"></a>
 
-**Subject:** AI singularity and p(doom) music video · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** AI singularity and p(doom) music video · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2102801274173587569)
 
 **Creator account:** Reports one prompt, 5 minutes speaking to computer, 12 hours autonomous work. The [full prompt](https://x.com/donaldjewkes/status/2102801469976248500) is ~9.5k characters and supplies an existing MP4/song, source code and a project folder; it directs the agent toward image generation, Seedance 2.5 base clips, optional ElevenLabs sound design, JavaScript paint-over, multiple viewing/revision loops and substantial available credits.
 
@@ -1204,7 +1204,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ruinolab/status/2103120880796873091"><img src="../assets/case-thumbnails/2103120880796873091.webp" width="160" loading="lazy" alt="Still from @ruinolab character MV"></a>
 
-**Subject:** AI generated anime music video · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** AI generated anime music video · **Reviewed production path:** `mixed_or_not_established` · [Full case directory](cases-index.zh-CN.md#case-2103120880796873091)
 
 **Creator account:** Creator says they supplied a character setting; Opus planned shots/performance, wrote lyrics/Suno directions, aligned cuts and lyric text, and applied effects. The post tags MiniMax H3. [Follow-up](https://x.com/ruinolab/status/2103135617567924603) reports beat-level shot selection and frame review.
 
@@ -1224,7 +1224,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/abxxai/status/2102775755646337530"><img src="../assets/case-thumbnails/2102775755646337530.webp" width="160" loading="lazy" alt="Still from @abxxai"></a>
 
-**Subject:** Coastal road trip music video · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Coastal road trip music video · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2102775755646337530)
 
 **Creator account:** Explicit Opus 5.5 + Seedance 2.5; Opus supplied prompt/direction.
 
@@ -1244,7 +1244,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/bradmillscan/status/2103108967194833310"><img src="../assets/case-thumbnails/2103108967194833310.webp" width="160" loading="lazy" alt="Still from @bradmillscan monetary-history MV"></a>
 
-**Subject:** Bitcoin and monetary history music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Bitcoin and monetary history music video · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103108967194833310)
 
 **Creator account:** Creator supplied Bitcoin and monetary-history wikis; says Opus used ElevenLabs for the track, agents made about 75 beat-cut shots, and the human requested two revisions after stick-like people and then to add matrix code.
 
@@ -1264,7 +1264,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/tetumemo/status/2102652072252584046"><img src="../assets/case-thumbnails/2102652072252584046.webp" width="160" loading="lazy" alt="Still from @tetumemo"></a>
 
-**Subject:** 3D recreation of Battle of Dan-no-ura · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** 3D recreation of Battle of Dan-no-ura · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md#case-2102652072252584046)
 
 **Creator account:** Creator [reply](https://x.com/tetumemo/status/2102652076702716273) prompts a TV-special style 3D overhead treatment of the Battle of Dan-no-ura, including geography, ships, tide reversal, arrows, mist and changing camera positions.
 
@@ -1284,7 +1284,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/makwired/status/2103008945220567166"><img src="../assets/case-thumbnails/2103008945220567166.webp" width="160" loading="lazy" alt="Still from @makwired Shaml paper-cut short"></a>
 
-**Subject:** Islamic wisdom quote animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Islamic wisdom quote animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103008945220567166)
 
 **Creator account:** The creator links an [open repository](https://github.com/klsoen/opus-js-animations). Its matching Shaml example describes a 20.4-second Canvas 2D animation, an existing spoken recording, and several rounds of human art direction. The full conversation for this particular post is unavailable.
 
@@ -1298,7 +1298,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/RetropunkAI/status/2103237989065277590"><img src="../assets/case-thumbnails/2103237989065277590.webp" width="160" loading="lazy" alt="Still from @RetropunkAI Sphere history motion graphic"></a>
 
-**Subject:** Las Vegas Sphere brief history · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Las Vegas Sphere brief history · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2103237989065277590)
 
 **Creator account:** The creator's [shared brief](https://x.com/RetropunkAI/status/2103237991091060898) supplies three images, a folder, background material, and GSAP as the animation platform for a roughly 30–60-second Sphere explainer. They report a single Opus Medium submission taking about 25 minutes, with no follow-up questions.
 
@@ -1318,7 +1318,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/akokoi1/status/2102583898865873225"><img src="../assets/case-thumbnails/2102583898865873225.webp" width="160" loading="lazy" alt="Still from @akokoi1 history"></a>
 
-**Subject:** Brief animation of Chinese history · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Brief animation of Chinese history · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2102583898865873225)
 
 **Creator account:** Says Opus 5.5 made a Chinese-history explainer; gives subscription usage.
 
@@ -1332,7 +1332,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/hanifproduktif/status/2102695622042411419"><img src="../assets/case-thumbnails/2102695622042411419.webp" width="160" loading="lazy" alt="Still from @hanifproduktif Indonesian-history comparison"></a>
 
-**Subject:** 81 years of Indonesian history · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** 81 years of Indonesian history · **Reviewed production path:** `educational_explainer` · [Full case directory](cases-index.zh-CN.md#case-2102695622042411419)
 
 **Creator account:** Creator publishes a short prompt for a less-than-one-minute light line-drawing history of Indonesia with music/voiceover. They say the second version used the same prompt and voiceover but added the Tesseract CLI.
 
@@ -1352,7 +1352,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/dhruvalgolakiya/status/2102733714845491558"><img src="../assets/case-thumbnails/2102733714845491558.webp" width="160" loading="lazy" alt="Still from @dhruvalgolakiya"></a>
 
-**Subject:** Journey of human civilization and future · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Journey of human civilization and future · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2102733714845491558)
 
 **Creator account:** Three prompts and 2 h; creator follow-up discloses video reference, 6–7 subagents, JavaScript single file and ElevenLabs speech.
 
@@ -1366,7 +1366,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Michaelzsguo/status/2102592355165782312"><img src="../assets/case-thumbnails/2102592355165782312.webp" width="160" loading="lazy" alt="Still from @Michaelzsguo"></a>
 
-**Subject:** 250 years of American history in sand · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** 250 years of American history in sand · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102592355165782312)
 
 **Creator account:** Creator reply gives a short two-minute U.S.-history sand-animation prompt with music/sound; says no Blender/Three.js and code-generated music.
 
@@ -1386,7 +1386,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/leo_xiaolei/status/2102724347446305104"><img src="../assets/case-thumbnails/2102724347446305104.webp" width="160" loading="lazy" alt="Still from @leo_xiaolei reference-video procedural animation"></a>
 
-**Subject:** Procedural motion graphic cosmic journey · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Procedural motion graphic cosmic journey · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2102724347446305104)
 
 **Creator account:** The creator published a long Chinese brief specifying a supplied reference video, Vite/TypeScript/Canvas 2D, deterministic timing, target resolution and frame rate, and a near-complete sequence of scenes and transitions. The reference file and execution logs were not shared.
 
@@ -1406,7 +1406,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/gandamu_ml/status/2102919394775220530"><img src="../assets/case-thumbnails/2102919394775220530.webp" width="160" loading="lazy" alt="Still from @gandamu_ml 1990s-style demoscene"></a>
 
-**Subject:** 90s style demoscene demo · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** 90s style demoscene demo · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md#case-2102919394775220530)
 
 **Creator account:** The creator describes a first attempt from one human prompt, with pre-existing Purple Motion music from Second Reality supplied as input. They say Opus wrote the C/C++ and OpenGL demo. The full prompt, project, and music permission are not public.
 
@@ -1426,7 +1426,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/ianstig/status/2103169675928764486"><img src="../assets/case-thumbnails/2103169675928764486.webp" width="160" loading="lazy" alt="Still from @ianstig animation showreel"></a>
 
-**Subject:** Multi-style character animation showreel · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Multi-style character animation showreel · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2103169675928764486)
 
 **Creator account:** Creator says one request produced 19 shots of a character in multiple visual styles, with every frame drawn in code and sound effects synchronized from the same program. No repo or prompt was checked.
 
@@ -1446,7 +1446,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/riku720720/status/2102515055116063144"><img src="../assets/case-thumbnails/2102515055116063144.webp" width="160" loading="lazy" alt="Still from @riku720720"></a>
 
-**Subject:** pixel art character in space · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** pixel art character in space · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102515055116063144)
 
 **Creator account:** Detailed creator-reply prompt demands one standalone HTML, Canvas 2D, 160×90 integer pixel grid, fixed palette, no external assets or libraries, authored obstacle/action patterns.
 
@@ -1466,7 +1466,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/AnduArtist/status/2102548178646016377"><img src="../assets/case-thumbnails/2102548178646016377.webp" width="160" loading="lazy" alt="Still from @AnduArtist spinning-cup overlay"></a>
 
-**Subject:** Hand-drawn animation on rotating coffee cup · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Hand-drawn animation on rotating coffee cup · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2102548178646016377)
 
 **Creator account:** Creator says fal H3 Max first generated a spinning-cup video, then Opus 5.5 animated drawings on top.
 
@@ -1486,7 +1486,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/koldo2k/status/2103129343253778767"><img src="../assets/case-thumbnails/2103129343253778767.webp" width="160" loading="lazy" alt="Still from @koldo2k infinite-zoom collage"></a>
 
-**Subject:** Surreal infinite zoom collage loop · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Surreal infinite zoom collage loop · **Reviewed production path:** `external_video_model` · [Full case directory](cases-index.zh-CN.md#case-2103129343253778767)
 
 **Creator account:** The creator's [shared brief](https://x.com/koldo2k/status/2103129347791986942) asks for a looping 20-second zoom through objects and explicitly assigns asset generation to Magnific MCP services: Seedream for scenery, GPT for cut-outs, Kling for animated figures, and Lyria for music. A [follow-up](https://x.com/koldo2k/status/2103155960688627834) reports 1,500 credits; bills and logs were not checked.
 
@@ -1506,7 +1506,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/LCSlates/status/2102503027340988559"><img src="../assets/case-thumbnails/2102503027340988559.webp" width="160" loading="lazy" alt="Still from @LCSlates"></a>
 
-**Subject:** Animated mosaic tile art · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Animated mosaic tile art · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102503027340988559)
 
 **Creator account:** Creator reply specifies 80 s square WebGL2/plain JS, no external assets; agent readout details timed scenes and creator’s frame-by-frame changes.
 
@@ -1526,7 +1526,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/AxtonLiu/status/2103119648271290566"><img src="../assets/case-thumbnails/2103119648271290566.webp" width="160" loading="lazy" alt="Still from @AxtonLiu pelican cycling film"></a>
 
-**Subject:** Pelican riding a bicycle along pier · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Pelican riding a bicycle along pier · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md#case-2103119648271290566)
 
 **Creator account:** The creator shared an open-ended brief for an elaborate pelican-on-a-bicycle animation, then said Opus wrote a GPU ray-marching renderer. They report code-generated characters, bicycle, pier, sea, sky, and music, with no external models, textures, or audio. They report 1,140 frames at 40 samples per frame.
 
@@ -1546,7 +1546,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/YoshiKura535130/status/2102910805721362875"><img src="../assets/case-thumbnails/2102910805721362875.webp" width="160" loading="lazy" alt="Still from @YoshiKura535130"></a>
 
-**Subject:** Relatable everyday situations animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Relatable everyday situations animation · **Reviewed production path:** `procedural_2d` · [Full case directory](cases-index.zh-CN.md#case-2102910805721362875)
 
 **Creator account:** Says everyday “relatable moments” brief led to 1,290 Canvas frames, with JS-made BGM/SFX.
 
@@ -1566,7 +1566,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/Luchigatica/status/2102853289259729328"><img src="../assets/case-thumbnails/2102853289259729328.webp" width="160" loading="lazy" alt="Still from @Luchigatica La Redonda vertical recommendation"></a>
 
-**Subject:** Fantasy football player recommendations · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** Fantasy football player recommendations · **Reviewed production path:** `existing_source_transformation` · [Full case directory](cases-index.zh-CN.md#case-2102853289259729328)
 
 **Creator account:** The creator says one trigger prompt started an existing workflow: read and transcribe a YouTube commentary, identify five players, cross-check Winning data, and combine photos, crests, and statistics into a vertical animation. The prompt, code, data checks, and image permissions are not public.
 
@@ -1586,7 +1586,7 @@ Cells count files. Linked numbers jump to illustrated reviewed cases; `†` mean
 
 <a href="https://x.com/manaimovie/status/2103138089790996843"><img src="../assets/case-thumbnails/2103138089790996843.webp" width="160" loading="lazy" alt="Still from @manaimovie Tripo/Blender character"></a>
 
-**Subject:** 3D anime character animation demo · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md)
+**Subject:** 3D anime character animation demo · **Reviewed production path:** `3d_or_realtime_graphics` · [Full case directory](cases-index.zh-CN.md#case-2103138089790996843)
 
 **Creator account:** Creator explicitly says this is 3D Blender animation rather than video-model generation, with Tripo and Opus 5.5; they did not operate Blender manually. The post mentions a video-generation skill for motion/posing and ongoing texture correction.
 

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Render reproducible SVG charts from the public, frozen CSV snapshot.
+"""Render four reproducible statistical SVGs from the frozen public CSVs.
 
-All marks are counts or quantiles of the published rows. Run with --check in CI;
-the script then compares the rendered SVG bytes without changing any files.
+Install requirements-charts.txt first. All marks and conclusions derive from
+published rows; --check compares SVG bytes without changing the assets.
 """
 
 from __future__ import annotations
 
 import argparse
-import html
+import io
 import math
 import sys
 import xml.etree.ElementTree as ET
@@ -16,245 +16,325 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.colors import BoundaryNorm, ListedColormap
+from matplotlib.patches import Patch, Rectangle
+
 from generate_statistics import DOMAINS, PATHS, STYLES, duration, quartiles, summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS = {
-    "style-labels.svg": ROOT / "assets" / "style-labels.svg",
-    "preview-duration.svg": ROOT / "assets" / "preview-duration.svg",
-    "domain-style-heatmap.svg": ROOT / "assets" / "domain-style-heatmap.svg",
+    name: ROOT / "assets" / name
+    for name in (
+        "domain-labels.svg", "style-labels.svg", "domain-style-heatmap.svg",
+        "preview-duration.svg",
+    )
 }
-INK = "#172742"
-MUTED = "#50627e"
-GRID = "#dce5f0"
-YES = "#365d9d"
-LIKELY = "#e6a34b"
-BG = "#fbfcff"
+BG = "#f8f6f1"
+INK = "#172b32"
+MUTED = "#536368"
+GRID = "#dedfd6"
+YES = "#287e81"
+LIKELY = "#dfaa56"
+SVG_NS = "http://www.w3.org/2000/svg"
+HEAT_COLORS = ("#eeeae1", "#e0eeea", "#b8d6cf", "#85bdb6", "#5b9e9c", YES, "#174d51")
+HEAT_LABELS = ("0", "1–4", "5–9", "10–24", "25–49", "50–99", "100+")
+DOMAIN_SHORT = {
+    "ai_self_meta": "AI about\nAI",
+    "art_abstract": "Art /\nabstract",
+    "data_viz": "Data\nvisualization",
+    "education_science": "Education /\nscience",
+    "game_interactive": "Games /\ninteractive",
+    "history_culture": "History /\nculture",
+    "humor_meme": "Humor /\nmeme",
+    "music_video": "Music\nvideo",
+    "other": "Other",
+    "product_ad": "Ads /\nlaunches",
+    "story_short": "Short\nstory",
+}
+PATH_SHORT = {
+    "procedural_2d": "Code-drawn 2D",
+    "educational_explainer": "Educational explainer",
+    "3d_or_realtime_graphics": "3D / real-time graphics",
+    "existing_source_transformation": "Existing-source edit",
+    "external_video_model": "External video model",
+    "app_or_game_capture": "App / game capture",
+    "mixed_or_not_established": "Mixed / unestablished",
+}
 
 
-def esc(value: object) -> str:
-    return html.escape(str(value), quote=True)
+def configure() -> None:
+    """Pin font metrics, generated IDs and SVG metadata for byte comparisons."""
+    matplotlib.rcParams.update({
+        "font.family": "DejaVu Sans",
+        "font.size": 11,
+        "text.color": INK,
+        "axes.labelcolor": MUTED,
+        "xtick.color": MUTED,
+        "ytick.color": INK,
+        "figure.facecolor": BG,
+        "axes.facecolor": BG,
+        "savefig.facecolor": BG,
+        "svg.fonttype": "path",
+        "svg.hashsalt": "hypit-frozen-statistics-v2",
+        "axes.unicode_minus": False,
+    })
 
 
-def text(x: float, y: float, value: object, *, size: int = 17,
-         weight: int = 400, fill: str = INK, anchor: str = "start",
-         extra: str = "") -> str:
-    return (f'<text x="{x:g}" y="{y:g}" font-size="{size}" '
-            f'font-weight="{weight}" fill="{fill}" text-anchor="{anchor}" '
-            f'{extra}>{esc(value)}</text>')
+def figure(size: tuple[float, float], category: str, title: str,
+           subtitle: str, data: dict) -> plt.Figure:
+    fig = plt.figure(figsize=size)
+    fig.text(.055, .956, category.upper(), color=YES, fontsize=10, weight="bold", va="top")
+    fig.text(.055, .91, title, fontsize=23, weight="bold", va="top")
+    fig.text(.055, .853, subtitle, color=MUTED, fontsize=10.7, va="top")
+    frozen = datetime.fromisoformat(data["snapshot"]["snapshot_utc"]).strftime("%d %b %Y")
+    fig.text(.055, .035, f"Frozen {frozen} UTC · Public CSV snapshot", color=MUTED, fontsize=9.5)
+    return fig
 
 
-def line(x1: float, y1: float, x2: float, y2: float,
-         *, stroke: str = GRID, width: float = 1) -> str:
-    return (f'<line x1="{x1:g}" y1="{y1:g}" x2="{x2:g}" y2="{y2:g}" '
-            f'stroke="{stroke}" stroke-width="{width:g}"/>')
+def finish(fig: plt.Figure, title: str, description: str,
+           preview_dir: Path | None, filename: str) -> str:
+    """Use stable SVG bytes while adding an accessible chart description."""
+    if preview_dir is not None:
+        preview_dir.mkdir(parents=True, exist_ok=True)
+        fig.savefig(preview_dir / filename.replace(".svg", ".png"), dpi=140)
+    stream = io.StringIO()
+    fig.savefig(stream, format="svg", metadata={"Date": None, "Creator": "hypit statistical charts"})
+    plt.close(fig)
+    value = stream.getvalue()
+    # Preserve Matplotlib's serialization, which includes stable font paths and
+    # IDs, rather than reserializing the entire XML with platform-dependent prefixes.
+    root = ET.fromstring(value)
+    root_start = value.index("<svg ")
+    root_end = value.index(">", root_start)
+    accessible = ' role="img" aria-labelledby="chart-title chart-description"'
+    title_node = ET.Element("title", {"id": "chart-title"})
+    title_node.text = title
+    desc_node = ET.Element("desc", {"id": "chart-description"})
+    desc_node.text = description
+    extra = ET.tostring(title_node, encoding="unicode") + "\n " + ET.tostring(desc_node, encoding="unicode")
+    value = value[:root_end] + accessible + value[root_end:root_end + 1] + "\n " + extra + value[root_end + 1:]
+    assert root.tag == f"{{{SVG_NS}}}svg"
+    value = "\n".join(line.rstrip() for line in value.splitlines()) + "\n"
+    ET.fromstring(value)
+    return value
 
 
-def rect(x: float, y: float, width: float, height: float, fill: str,
-         *, rx: int = 0, stroke: str = "none") -> str:
-    return (f'<rect x="{x:g}" y="{y:g}" width="{width:g}" height="{height:g}" '
-            f'rx="{rx}" fill="{fill}" stroke="{stroke}"/>')
+def clean_axes(ax: plt.Axes, *, grid_axis: str = "x") -> None:
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_axisbelow(True)
+    ax.grid(axis=grid_axis, color=GRID, linewidth=.8)
+    ax.tick_params(axis="both", length=0)
 
 
-def svg(width: int, height: int, title: str, description: str,
-        shapes: list[str]) -> str:
-    return "\n".join([
-        '<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
-        'role="img" aria-labelledby="chart-title chart-description">',
-        f'<title id="chart-title">{esc(title)}</title>',
-        f'<desc id="chart-description">{esc(description)}</desc>',
-        '<style>text{font-family:Inter,"DejaVu Sans",Arial,sans-serif}</style>',
-        rect(0, 0, width, height, BG),
-        *shapes,
-        '</svg>',
-        '',
-    ])
-
-
-def style_labels(data: dict) -> str:
-    yes = Counter(row["style"] for row in data["strict"])
-    likely = Counter(row["style"] for row in data["classified"] if row["opus_made"] == "likely")
-    keys = sorted(STYLES, key=lambda key: (-(yes[key] + likely[key]), key))
+def label_counts(data: dict, key: str) -> tuple[Counter, Counter]:
+    yes = Counter(row[key] for row in data["strict"])
+    likely = Counter(row[key] for row in data["classified"] if row["opus_made"] == "likely")
     assert sum(yes.values()) == len(data["strict"])
     assert sum(likely.values()) == data["labels"]["likely"]
-    max_tick = max(400, math.ceil(max(yes[key] + likely[key] for key in keys) / 100) * 100)
-    x0, scale, y0, row = 365, 680 / max_tick, 186, 52
-    bottom = y0 + len(keys) * row
-    parts = [
-        text(56, 64, "Primary visual styles in the retrieved corpus", size=34, weight=700),
-        text(56, 96, f"{len(data['classified']):,} classified MP4 files · {len(data['strict']):,} yes + "
-             f"{sum(likely.values()):,} likely shown · one primary style per file", size=17, fill=MUTED),
-        rect(58, 121, 22, 16, YES, rx=3), text(88, 135, "yes", size=16),
-        rect(162, 121, 22, 16, LIKELY, rx=3), text(192, 135, "likely (added)", size=16),
-    ]
-    for tick in range(0, max_tick + 1, 100):
-        x = x0 + tick * scale
-        parts.append(line(x, y0 - 23, x, bottom - 7))
-        parts.append(text(x, bottom + 21, tick, size=15, fill=MUTED, anchor="middle"))
-    for idx, key in enumerate(keys):
-        cy = y0 + idx * row + 19
-        strict, added = yes[key], likely[key]
-        parts.append(text(x0 - 23, cy + 6, STYLES[key][0], size=18, anchor="end"))
-        parts.append(rect(x0, cy - 13, strict * scale, 27, YES, rx=2))
-        if added:
-            parts.append(rect(x0 + strict * scale, cy - 13, added * scale, 27, LIKELY, rx=2))
-        parts.append(text(x0 + (strict + added) * scale + 12, cy + 6,
-                          strict + added, size=17, weight=700))
-    parts.extend([
-        text(x0, bottom + 58, "Number of distinct-file rows", size=16, fill=MUTED),
-        text(56, 955, "Frozen " + datetime.fromisoformat(data["snapshot"]["snapshot_utc"]).strftime("%d %b %Y")
-             + " · Search-retrieved files; classifier labels are not independently verified model use.", size=15, fill=MUTED),
-        text(56, 978, "Counts describe this retrieval, not X-wide prevalence. See docs/statistics.md for denominators and limits.", size=15, fill=MUTED),
-    ])
-    return svg(1200, 1000, "Primary visual styles in the retrieved corpus",
-               f"Horizontal stacked bars for {len(keys)} primary visual styles in "
-               f"{len(data['strict'])} yes and {sum(likely.values())} likely classifier-labeled files.", parts)
+    assert sum(yes.values()) + sum(likely.values()) == len(data["inclusive"])
+    return yes, likely
 
 
-def preview_duration(data: dict) -> str:
+def label_bars(data: dict, key: str, labels: dict, preview_dir: Path | None) -> str:
+    yes, likely = label_counts(data, key)
+    keys = sorted(labels, key=lambda item: (-(yes[item] + likely[item]), item))
+    total = len(data["inclusive"])
+    totals = [yes[item] + likely[item] for item in keys]
+    if key == "domain":
+        share = sum(yes[item] + likely[item] for item in
+                    ("game_interactive", "product_ad", "ai_self_meta")) / total * 100
+        title = f"Games, ads and AI account for {share:.0f}% of files"
+        category = "Primary domains"
+        height = 8.2
+    else:
+        share = sum(yes[item] + likely[item] for item in
+                    ("motion_graphics_ui", "3d_render")) / total * 100
+        title = f"Motion graphics and 3D account for {share:.0f}%"
+        category = "Primary visual styles"
+        height = 9.0
+    subtitle = f"{total:,} yes / likely files of {len(data['classified']):,} byte-distinct MP4s · one primary {key} per file"
+    fig = figure((12, height), category, title, subtitle, data)
+    fig.legend(
+        handles=[Patch(facecolor=YES, label=f"yes · {sum(yes.values()):,}"),
+                 Patch(facecolor=LIKELY, label=f"likely · {sum(likely.values()):,}")],
+        loc="upper left", bbox_to_anchor=(.045, .81), ncols=2,
+        frameon=False, fontsize=10.5, handlelength=1.5, columnspacing=2,
+    )
+    ax = fig.add_axes((.265, .18, .67, .57))
+    positions = np.arange(len(keys))
+    ax.barh(positions, [yes[item] for item in keys], color=YES, height=.62)
+    ax.barh(positions, [likely[item] for item in keys],
+            left=[yes[item] for item in keys], color=LIKELY, height=.62)
+    ax.set_yticks(positions, [labels[item][0] for item in keys], fontsize=11.5)
+    ax.tick_params(axis="y", pad=13)
+    ax.invert_yaxis()
+    ax.set_ylim(len(keys) - .35, -.65)
+    largest = max(totals)
+    upper = math.ceil(largest / 50) * 50
+    ax.set_xlim(0, upper * 1.27)
+    ticks = np.arange(0, upper + 1, 50 if upper <= 300 else 100)
+    ax.set_xticks(ticks)
+    ax.set_xlabel("File count", fontsize=10.5, labelpad=13)
+    clean_axes(ax)
+    for index, count in enumerate(totals):
+        ax.text(count + largest * .025, index,
+                f"{count:,}  ·  {count / total * 100:.1f}%", fontsize=10.8,
+                va="center", weight="bold")
+    fig.text(.055, .091, "Bars show classifier labels; percentages use the 1,119 yes / likely files.".replace("1,119", f"{total:,}"),
+             fontsize=9.8, color=MUTED)
+    fig.text(.055, .064, "Retrieved files describe this sample; they do not measure X-wide prevalence or verified model use.",
+             fontsize=9.8, color=MUTED)
+    description = f"{total} yes or likely files. " + "; ".join(
+        f"{labels[item][0]}: {yes[item]} yes, {likely[item]} likely, {totals[index] / total * 100:.1f}% of included files"
+        for index, item in enumerate(keys)
+    ) + ". Classifier labels are not independently verified model use."
+    return finish(fig, title, description, preview_dir, f"{key}-labels.svg")
+
+
+def domain_labels(data: dict, preview_dir: Path | None = None) -> str:
+    return label_bars(data, "domain", DOMAINS, preview_dir)
+
+
+def style_labels(data: dict, preview_dir: Path | None = None) -> str:
+    return label_bars(data, "style", STYLES, preview_dir)
+
+
+def domain_style_heatmap(data: dict, preview_dir: Path | None = None) -> str:
+    counts = Counter((row["domain"], row["style"]) for row in data["inclusive"])
+    domains = sorted(DOMAINS, key=lambda item: (-sum(counts[item, style] for style in STYLES), item))
+    styles = sorted(STYLES, key=lambda item: (-sum(counts[domain, item] for domain in DOMAINS), item))
+    matrix = np.array([[counts[domain, style] for domain in domains] for style in styles])
+    assert int(matrix.sum()) == len(data["inclusive"]) and set(domains) == set(DOMAIN_SHORT)
+    strongest = counts.most_common(2)
+    leading = sum(value for _, value in strongest)
+    total = len(data["inclusive"])
+    leading_pairs = {("game_interactive", "3d_render"), ("product_ad", "motion_graphics_ui")}
+    title = ("Games × 3D and ads × motion graphics lead"
+             if {pair for pair, _ in strongest} == leading_pairs
+             else "Two domain / style pairs lead the sample")
+    subtitle = f"{total:,} yes / likely files · the two largest pairs contain {leading:,} files ({leading / total * 100:.1f}%)"
+    fig = figure((12.8, 9.8), "Domain × visual style", title, subtitle, data)
+    ax = fig.add_axes((.245, .255, .705, .495))
+    boundaries = [-.5, .5, 4.5, 9.5, 24.5, 49.5, 99.5, max(100, int(matrix.max())) + .5]
+    colors = ListedColormap(HEAT_COLORS)
+    norm = BoundaryNorm(boundaries, colors.N)
+    ax.imshow(matrix, cmap=colors, norm=norm, aspect="auto", interpolation="none")
+    ax.set_xticks(np.arange(len(domains)), [DOMAIN_SHORT[item] for item in domains], fontsize=9.5)
+    ax.set_yticks(np.arange(len(styles)), [STYLES[item][0] for item in styles], fontsize=11)
+    ax.tick_params(axis="x", length=0, pad=12)
+    ax.tick_params(axis="y", length=0, pad=10)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_xticks(np.arange(-.5, len(domains), 1), minor=True)
+    ax.set_yticks(np.arange(-.5, len(styles), 1), minor=True)
+    ax.grid(which="minor", color=BG, linewidth=3)
+    ax.tick_params(which="minor", length=0)
+    for row_index, style in enumerate(styles):
+        for col_index, domain in enumerate(domains):
+            count = counts[domain, style]
+            ax.text(col_index, row_index, str(count) if count else "–",
+                    ha="center", va="center", fontsize=10.7,
+                    weight="bold" if count else "normal",
+                    color="#ffffff" if count >= 50 else (INK if count else "#9b9f96"))
+    for (domain, style), _ in strongest:
+        ax.add_patch(Rectangle((domains.index(domain) - .47, styles.index(style) - .47), .94, .94,
+                               fill=False, edgecolor=LIKELY, linewidth=2.5, zorder=4))
+    fig.text(.055, .16, "Files per cell", fontsize=10, color=MUTED, va="center")
+    for index, (color, label) in enumerate(zip(HEAT_COLORS, HEAT_LABELS)):
+        x = .245 + index * .095
+        fig.add_artist(Rectangle((x, .15), .022, .019, transform=fig.transFigure,
+                                  facecolor=color, edgecolor=GRID, linewidth=.6))
+        fig.text(x + .029, .1595, label, fontsize=9.5, va="center", color=MUTED)
+    fig.text(.245, .122, "Amber outlines mark the two largest pairs; dashes indicate zero files.", fontsize=9.6, color=MUTED)
+    fig.text(.055, .078, "One primary domain and style per file. Classifier labels describe retrieved files, not independent creators.",
+             fontsize=9.7, color=MUTED)
+    description = f"Heatmap of {total} yes or likely files, {len(domains)} domains and {len(styles)} styles. " + "; ".join(
+        f"{DOMAINS[domain][0]} / {STYLES[style][0]}: {count}"
+        for (domain, style), count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))
+    ) + ". Missing pairs have zero files."
+    return finish(fig, title, description, preview_dir, "domain-style-heatmap.svg")
+
+
+def preview_duration(data: dict, preview_dir: Path | None = None) -> str:
     rows = []
-    for key, en, _ in PATHS:
+    for key, _, _ in PATHS:
         values = [duration(case, "cases.csv") for case in data["cases"] if case["primary_path"] == key]
         q1, median, q3 = quartiles(values)
-        rows.append((en, len(values), q1, median, q3))
-    rows.sort(key=lambda item: item[3])
+        rows.append((key, len(values), q1, median, q3))
+    rows.sort(key=lambda item: (item[3], item[0]))
     assert sum(row[1] for row in rows) == len(data["cases"])
-    max_tick = max(300, math.ceil(max(row[4] for row in rows) / 60) * 60)
-    x0, scale, y0, row_gap = 405, 630 / max_tick, 194, 66
-    bottom = y0 + len(rows) * row_gap
-    parts = [
-        text(55, 64, "Preview length by reviewed production path", size=34, weight=700),
-        text(55, 96, f"{len(data['cases'])} selected source posts · dot = median · thick line = 25th–75th percentile", size=17, fill=MUTED),
-        text(55, 125, "Ordered by median; different path sample sizes are shown beside their labels.", size=16, fill=MUTED),
-    ]
-    for tick in range(0, max_tick + 1, 60):
-        x = x0 + tick * scale
-        parts.append(line(x, y0 - 25, x, bottom - 35))
-        parts.append(text(x, bottom - 3, tick, size=15, fill=MUTED, anchor="middle"))
-    for idx, (label, count, q1, median, q3) in enumerate(rows):
-        cy = y0 + idx * row_gap + 17
-        parts.append(text(55, cy + 5, label, size=17))
-        parts.append(text(x0 - 23, cy + 5, f"n={count}", size=15, fill=MUTED, anchor="end"))
-        parts.append(line(x0 + q1 * scale, cy, x0 + q3 * scale, cy,
-                          stroke="#a7bedb", width=16))
-        parts.append(line(x0 + q1 * scale, cy - 11, x0 + q1 * scale, cy + 11,
-                          stroke=YES, width=2))
-        parts.append(line(x0 + q3 * scale, cy - 11, x0 + q3 * scale, cy + 11,
-                          stroke=YES, width=2))
-        parts.append(f'<circle cx="{x0 + median * scale:g}" cy="{cy:g}" r="8" fill="{YES}"/>')
-        parts.append(text(x0 + q3 * scale + 13, cy + 5, f"{median:.1f}s median",
-                          size=15, weight=700, fill=YES))
-    parts.extend([
-        text(x0, bottom + 32, "X preview duration (seconds)", size=16, fill=MUTED),
-        text(55, 714, "These are manually selected cases, not a random sample or a measure of path success.", size=15, fill=MUTED),
-        text(55, 737, "Preview length may differ from the upload master. Quartiles use Python's inclusive method.", size=15, fill=MUTED),
-    ])
-    return svg(1200, 760, "Preview length by reviewed production path",
-               f"{len(rows)} reviewed production paths ordered by median duration, with median dots, interquartile bars, "
-               f"and {len(data['cases'])} total case counts.", parts)
+    title = f"Path medians range from {rows[0][3]:.0f} to {rows[-1][3]:.0f} seconds"
+    fig = figure((12, 7.6), "Reviewed preview duration", title,
+                 f"{len(data['cases'])} selected source posts · dots show medians; bars show the middle 50% of previews", data)
+    fig.text(.055, .79, "Sorted by median · n is the number of selected cases in each path", fontsize=10.5, color=MUTED)
+    ax = fig.add_axes((.31, .22, .62, .51))
+    upper = max(300, math.ceil(max(row[4] for row in rows) / 60) * 60)
+    ax.set_xlim(0, upper)
+    positions = np.arange(len(rows))
+    ax.set_yticks(positions, [f"{PATH_SHORT[key]}  (n={count})" for key, count, *_ in rows], fontsize=11)
+    ax.tick_params(axis="y", pad=12)
+    ax.set_ylim(len(rows) - .3, -.7)
+    ax.set_xticks(np.arange(0, upper + 1, 60))
+    ax.set_xlabel("X preview duration (seconds)", fontsize=10.5, labelpad=14)
+    clean_axes(ax)
+    for index, (_, _, q1, median, q3) in enumerate(rows):
+        ax.plot([q1, q3], [index, index], linewidth=12, color="#a8cec4", solid_capstyle="round")
+        ax.plot([q1, q3], [index, index], linestyle="none", marker="|", markersize=18,
+                markeredgewidth=1.7, color=YES)
+        ax.scatter([median], [index], s=110, color=YES, edgecolor=BG, linewidth=1.6, zorder=3)
+        ax.text(q3 + upper * .035, index, f"{median:.1f}s", fontsize=11,
+                color=YES, weight="bold", va="center")
+    fig.text(.055, .12, "Selected examples are not a random sample; preview length does not measure production time or success.",
+             fontsize=9.7, color=MUTED)
+    fig.text(.055, .088, "The upload master may be longer. Quartiles use the inclusive method.", fontsize=9.7, color=MUTED)
+    description = f"{len(data['cases'])} selected source posts, ordered by path median preview duration. " + "; ".join(
+        f"{PATH_SHORT[key]}, n={count}: median {median:.3f} seconds, middle 50% {q1:.3f} to {q3:.3f} seconds"
+        for key, count, q1, median, q3 in rows
+    ) + ". These manually selected cases are not a random sample."
+    return finish(fig, title, description, preview_dir, "preview-duration.svg")
 
 
-DOMAIN_SHORT = {
-    "ai_self_meta": ("AI about", "AI"),
-    "art_abstract": ("Art /", "abstract"),
-    "data_viz": ("Data", "viz"),
-    "education_science": ("Education /", "science"),
-    "game_interactive": ("Games /", "interactive"),
-    "history_culture": ("History /", "culture"),
-    "humor_meme": ("Humor /", "meme"),
-    "music_video": ("Music", "video"),
-    "other": ("Other", ""),
-    "product_ad": ("Ads /", "launches"),
-    "story_short": ("Short", "story"),
-}
-HEAT_BINS = (
-    (0, "#edf2f7", "#7b8ca3"),
-    (4, "#dcebf8", INK),
-    (9, "#a9d0ed", INK),
-    (24, "#70abda", INK),
-    (49, "#347eba", "#ffffff"),
-    (99, "#195c98", "#ffffff"),
-    (float("inf"), "#103b70", "#ffffff"),
-)
-
-
-def heat_color(count: int) -> tuple[str, str]:
-    for maximum, fill, label in HEAT_BINS:
-        if count <= maximum:
-            return fill, label
-    raise AssertionError(count)
-
-
-def domain_style_heatmap(data: dict) -> str:
-    counts = Counter((row["domain"], row["style"]) for row in data["inclusive"])
-    domains = sorted(DOMAINS, key=lambda key: (-sum(counts[key, style] for style in STYLES), key))
-    styles = sorted(STYLES, key=lambda key: (-sum(counts[domain, key] for domain in DOMAINS), key))
-    assert sum(counts.values()) == len(data["inclusive"]) and set(domains) == set(DOMAIN_SHORT)
-    x0, y0, w, h = 290, 195, 82, 48
-    parts = [
-        text(54, 62, "Where domains and styles meet", size=35, weight=700),
-        text(54, 96, f"{len(data['inclusive']):,} files labeled yes or likely · "
-             "one classifier-assigned primary domain and style per file", size=17, fill=MUTED),
-        text(54, 126, "Color and printed value both encode file count. Blank cells contain zero files in this retrieval.", size=16, fill=MUTED),
-    ]
-    legend_x = 400
-    legend_labels = ("0", "1–4", "5–9", "10–24", "25–49", "50–99", "100+")
-    for idx, (_, fill, _) in enumerate(HEAT_BINS):
-        x = legend_x + idx * 114
-        parts.append(rect(x, 150, 23, 18, fill, rx=2, stroke="#cad6e6"))
-        parts.append(text(x + 30, 165, legend_labels[idx], size=14, fill=MUTED))
-    for ridx, style in enumerate(styles):
-        cy = y0 + ridx * h + h / 2
-        parts.append(text(x0 - 14, cy + 6, STYLES[style][0], size=17, anchor="end"))
-        for cidx, domain in enumerate(domains):
-            count = counts[domain, style]
-            x, y = x0 + cidx * w, y0 + ridx * h
-            fill, label_fill = heat_color(count)
-            parts.append(rect(x + 2, y + 2, w - 4, h - 4, fill, rx=4))
-            if count:
-                parts.append(text(x + w / 2, y + h / 2 + 6, count,
-                                  size=17, weight=700, fill=label_fill, anchor="middle"))
-    label_y = y0 + len(styles) * h + 30
-    for idx, key in enumerate(domains):
-        cx = x0 + idx * w + w / 2
-        a, b = DOMAIN_SHORT[key]
-        parts.append(text(cx, label_y, a, size=14, anchor="middle"))
-        if b:
-            parts.append(text(cx, label_y + 19, b, size=14, anchor="middle"))
-    parts.extend([
-        text(54, 908, "This heatmap describes the retrieved files only. A file is not an independent creator or a verified Opus run.", size=15, fill=MUTED),
-        text(54, 932, "Open the case atlas for pictured examples and the statistics page for method and denominator details.", size=15, fill=MUTED),
-    ])
-    return svg(1240, 960, "Where domains and styles meet",
-               f"{len(domains)} domains by {len(styles)} visual styles, colored by count among "
-               f"{len(data['inclusive'])} classified yes or likely files.", parts)
+def render(data: dict, preview_dir: Path | None = None) -> dict[str, str]:
+    configure()
+    return {
+        "domain-labels.svg": domain_labels(data, preview_dir),
+        "style-labels.svg": style_labels(data, preview_dir),
+        "domain-style-heatmap.svg": domain_style_heatmap(data, preview_dir),
+        "preview-duration.svg": preview_duration(data, preview_dir),
+    }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="Check rendered SVGs for drift")
+    parser.add_argument("--check", action="store_true", help="Check all four rendered SVGs for drift")
+    parser.add_argument("--preview-dir", type=Path, help="Also export PNGs to this directory for visual review")
     args = parser.parse_args()
+    if args.check and args.preview_dir:
+        parser.error("--preview-dir writes PNG files; use it without --check")
     try:
-        data = summary()
-        rendered = {
-            "style-labels.svg": style_labels(data),
-            "preview-duration.svg": preview_duration(data),
-            "domain-style-heatmap.svg": domain_style_heatmap(data),
-        }
+        rendered = render(summary(), args.preview_dir)
+        stale = []
         for filename, value in rendered.items():
-            ET.fromstring(value)
             target = OUTPUTS[filename]
             if args.check:
                 if not target.exists() or target.read_text(encoding="utf-8") != value:
-                    print(f"Stale chart: {target.relative_to(ROOT)}", file=sys.stderr)
-                    return 1
+                    stale.append(target.relative_to(ROOT))
             else:
                 target.write_text(value, encoding="utf-8")
                 print(f"Updated {target.relative_to(ROOT)}")
+        if stale:
+            for target in stale:
+                print(f"Stale chart: {target}", file=sys.stderr)
+            return 1
         if args.check:
-            print("All three public statistical charts match the frozen CSV snapshot")
+            print("All four public statistical charts match the frozen CSV snapshot")
         return 0
     except (OSError, ValueError, KeyError, AssertionError, ET.ParseError) as exc:
         print(f"Chart generation failed: {exc}", file=sys.stderr)

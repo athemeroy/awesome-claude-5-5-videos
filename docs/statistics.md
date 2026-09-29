@@ -23,7 +23,7 @@ The snapshot also reports 39 byte-identical groups and 48 extra attachments in t
 
 A vision classifier assigned one `opus_made` label, one primary domain, and one primary style per file from the post text and nine sampled frames. Its labels do not independently establish authorship, model calls, or finished-video quality.
 
-![Classifier-assigned domain file counts, with yes in blue and likely in orange](../assets/domain-labels.svg)
+![Classifier-assigned domain file counts, with yes in teal and likely in amber](../assets/domain-labels.svg)
 
 | Included labels | File denominator | Games / interactive | Ads / launches | First place |
 |---|---:|---:|---:|---|

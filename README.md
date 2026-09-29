@@ -2,56 +2,90 @@
 
 [中文说明](README.zh-CN.md)
 
-A curated, source-linked guide to videos people made **with** Claude Opus 5.5. It focuses on what the model actually did: writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project, not affiliated with Anthropic or X. We use Hypit to inspect accessible video previews.
+A curated, source-linked guide to videos people made **with** Claude Opus 5.5. We examine the model's role in writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project. Hypit inspects accessible X video previews; case notes distinguish creator disclosures, matching public projects, and our observations.
 
 ## Start here
 
-- **Browse by picture:** open the [168-case visual directory](docs/cases-index.zh-CN.md); every reviewed case has a small frame from its sampled X preview.
-- **Explore the grid:** use the [domain × visual-style atlas](docs/domain-style-atlas.md) to compare cell counts and open pictured cases, with dated engagement observations.
-- **Compare palettes within each category:** the [color-mode study](docs/color-modes.md) includes 53 mode palettes, per-video measurements and a cautious look at likes.
-- **Compare evidence:** read [14 paired cases](docs/evidence-examples.md) across seven production paths and the [reproducible statistical profile](docs/statistics.md).
-- **Find the latest additions:** read [seven cases published after the frozen search cutoff](docs/new-cases-2026-09-27.md).
-- **Choose a production route:** use the [visual-effects production guide](docs/visual-effects-fit.md) to match a task with tools, inputs, checks, and likely limits.
+- **Browse by picture:** the [168-case bilingual visual directory](docs/cases-index.zh-CN.md) has a sampled frame and original-post link for every reviewed case, with notes in the source language.
+- **Choose and reuse a production route:** see the [production guide](docs/visual-effects-fit.md), [seven pictured paths](#seven-production-paths-with-frames), and [open-source systems](#reusable-open-source-production-systems).
+- **Explore the evidence:** [14 paired cases](docs/evidence-examples.md) compare similar looks produced with different tools and inputs.
+- **Explore the numbers:** this page summarizes the snapshot; the [domain × style atlas](docs/domain-style-atlas.md), [color study](docs/color-modes.md), and [statistical profile](docs/statistics.md) provide detailed tables and methods.
+- **See later work:** [seven posts after the frozen cutoff](docs/new-cases-2026-09-27.md) have their own dated evidence page.
 
-> **Refresh:** X searches ran through September 26, 2026, 21:05 China Standard Time; this snapshot was reconciled at 21:53. Across 56 recorded queries, 55 succeeded and one query had been rate-limited in an earlier batch. The corpus has 1,511 unique candidate posts, 1,419 with MP4, and 1,449 attachments. Hypit 0.2.3 probed and sampled nine frames from all 1,449; SHA-256 found 1,401 distinct files. We reviewed 168 source-linked cases. Search limits, reposts, and unrelated results mean these numbers are **not** a count of original Opus videos or all of X. See the [search receipts summary](docs/search-coverage.zh-CN.md) and [frozen snapshot](data/corpus-snapshot.json).
+## Frozen snapshot: what each count means
 
-![Four common production routes from an Opus request to video pixels](assets/opus55-video-paths.png)
+The last successful X search was **September 26, 2026, 21:05 China Standard Time**; the file snapshot was reconciled at 21:53. Of 56 saved queries, 55 succeeded or used cache, while an earlier query was rate-limited. The [coverage notes](docs/search-coverage.zh-CN.md) record the search boundaries. Later additions are kept separate from these frozen counts.
 
-## What people made, and how it looks
+![Frozen corpus counts distinguish posts, attachments, distinct files, classifier labels, and deliberately reviewed cases](assets/corpus-overview.svg)
 
-> Refresh, Sep 26 2026: a vision model (Gemini 3.8 Flash) classified the nine-frame samples and post text for all 1,401 byte-distinct MP4s. It labeled 980 “yes” and 139 “likely” for Opus involvement. Those 1,119 labels are classifier judgments, not verified authorship; one label per video can also miss mixed domains or styles. The classifier sorts by topic and look. It does **not** predict virality. Data: [`data/domain-style.csv`](data/domain-style.csv).
+| Count | Counted unit | Public source and boundary |
+|---|---|---|
+| 1,511 | Deduplicated candidate posts | [Snapshot](data/corpus-snapshot.json); includes reposts, comparisons, and search noise. |
+| 1,419 | Candidate posts with MP4 | [Snapshot](data/corpus-snapshot.json); a post can contain several files. |
+| 1,449 | Retrieved MP4 attachments | [Snapshot](data/corpus-snapshot.json); all probed and sampled into nine frames with Hypit 0.2.3. |
+| 1,401 | Files reported as SHA-256 distinct | [Classifier CSV](data/domain-style.csv) has one row per file; source hashes and MP4s are private. |
+| 1,119 | Files labeled `yes` or `likely` | [Classifier CSV](data/domain-style.csv); the denominator of the topic, style, and color analyses below. |
+| 168 | Deliberately reviewed source-post cases | [Case CSV](data/cases.csv); chosen to examine production paths and evidence, rather than randomly sampled. |
 
-![Classifier-assigned domain counts for the frozen September 26 file sample, with yes and likely labels shown separately](assets/domain-labels.svg)
+The 48 byte-identical extra attachments account for **1,449 − 1,401**. Different encodings of the same work can still count as distinct files. These units cannot be read as independent creators, verified Opus runs, or all original videos on X. [Methods and reproducibility](docs/statistics.md#count-the-right-unit) explain which counts can be independently checked from public files.
 
-The domain chart counts only the 1,119 files tagged `yes` or `likely`, with one primary domain per file. The same files produce this style chart; the largest two primary styles are motion graphics / UI (350) and 3D render (324).
+## Topics and looks in the retrieved sample
 
-![Counts for 13 classifier-assigned primary visual styles, split into yes and likely files](assets/style-labels.svg)
+Gemini 3.8 Flash classified the post text and nine sampled frames of each of the 1,401 files: **980 `yes`, 139 `likely`, and 282 `no`** for Opus involvement, with one primary domain and one primary style per file. These judgments organize the sample; they do not establish model calls or authorship. The domain, style and color charts in this section use the **1,119 `yes` / `likely` files**. [Data](data/domain-style.csv) · [classification limits](docs/statistics.md#the-classifier-threshold-changes-first-place).
 
-### Color varies within a style
+### Leading domains depend on the threshold
 
-A single average palette hides within-category differences. Nine frames from each of the 1,119 distinct preview files show **two or three color modes in 11 of 13 styles**. Motion graphics/UI, for example, splits into 198 dark-neutral and 152 light-neutral files. See the [color-mode study](docs/color-modes.md) for the four-category figure, full style/domain atlases, methods and downloadable numbers. Likes were not used to form the modes, and only 20 of 53 modes have at least five exact September 27 like observations.
+![Eleven primary domains by distinct-file count, with yes and added likely labels shown separately](assets/domain-labels.svg)
 
-Domain and style meet in this complete cross-tab. Each number is a **file count**, not a number of independent creators or verified Opus runs. Empty squares mean zero in the retrieved sample. Open the [domain × visual-style atlas](docs/domain-style-atlas.md) for a table whose populated cells lead to pictured cases and original posts. Its case choices use a [separate September 27 X-page engagement refresh](data/case-engagement-refresh-2026-09-27.csv); likes and post views are dated observations, not final totals or production-quality scores.
+Games / interactive (230), ads / launches (215), and AI about AI (201) account for **646 files, or 57.7%** of the included sample. The top two domains swap places when the inclusion threshold changes:
 
-The engagement refresh obtained both exact likes and exact post views for **166 of 168 reviewed posts**; two pages remained unverifiable. The readings span 11:50–12:32 UTC on September 27, so case picks compare observations from different moments.
+| Included labels | File denominator | Games / interactive | Ads / launches | First place |
+|---|---:|---:|---:|---|
+| `yes` | 980 | 187 (19.1%) | 191 (19.5%) | Ads / launches |
+| `yes` + `likely` | 1,119 | 230 (20.6%) | 215 (19.2%) | Games / interactive |
 
-![Heatmap of 1,119 classifier-labeled files across 11 domains and 13 primary visual styles](assets/domain-style-heatmap.svg)
+The reversal reflects label inclusion, rather than a time trend. Neither threshold gives a bound on actual Opus use.
 
-In this retrieved file sample, **games × 3D render** (161) and **ads × motion/UI** (154) together account for 315 of the 1,119 `yes`/`likely` files (28.2%). This describes where the sample clusters, not the share of all Opus videos on X.
+![Thirteen primary visual styles by distinct-file count, split into yes and likely](assets/style-labels.svg)
 
-**Classifier-threshold check:** among `yes` files only, ads and launches (191) narrowly exceed games and interactive demos (187). Adding `likely` reverses that order to games (230) and ads (215). The lead depends on the classifier threshold, not a measured change in what people made. The [reproducible statistical profile](docs/statistics.md) shows denominators, durations, and cross-tabs.
+Motion graphics / UI (350) and 3D render (324) together account for **674 files, or 60.2%**. They also remain the two leading styles with `yes` alone (308 and 265). A video may mix styles; these charts count only its assigned primary style.
 
-### Preview length by production path
+### Where domain and style meet
 
-![Median and interquartile range of X preview durations for 168 selected cases across seven reviewed production paths](assets/preview-duration.svg)
+![Cross-tab of 1,119 files across eleven primary domains and thirteen primary visual styles](assets/domain-style-heatmap.svg)
 
-Each dot is a median and each thick line spans the 25th–75th percentiles of accessible X previews. The 168 source-post cases were deliberately selected for review; this chart does not measure production time, model speed, or path success.
+The largest cells are **games × 3D render: 161 (14.4%)**, and **ads × motion graphics / UI: 154 (13.8%)**. Together they contain 315 files, or **28.2%** of the sample. Each included file enters one cell; zero means no included `yes` / `likely` file falls in that cell. The [clickable atlas](docs/domain-style-atlas.md) connects populated cells to pictured cases and original posts; the [full statistical table](docs/statistics.md#domain--primary-style-ten-largest-cells) provides the next largest cells.
 
-Among these reviewed cases, **educational explainers have the longest median preview** at 102.28 seconds; the other six path medians range from 24.76 to 51.79 seconds. This comparison concerns preview lengths within the selected cases, not a general advantage of one production path.
+Case picks in that atlas use a [separate September 27 engagement refresh](data/case-engagement-refresh-2026-09-27.csv): **166 of 168 reviewed posts** yielded exact likes and exact post views. Readings span 11:50–12:32 UTC, so they represent different moments. Engagement measures visibility in a selected set of posts; it cannot verify authorship or finished-video quality.
 
-One highly engaged Top result on Western civilization was byte-identical to a later repost captioned as an Opus 5.5 video, while the earlier [post](https://x.com/IterIntellectus/status/2103212539895017864) only says “Claude.” We kept both posts in the candidate corpus but left the video out of the reviewed Opus case index because the original model version is unclear. Engagement is not evidence of authorship.
+### One category can contain several palettes
+
+![Median and interquartile range of colorful-pixel share in each of eleven domains](assets/color-study/color-modes-overview.svg)
+
+The median video-level share of **visibly colorful pixels** is **45.5% for music videos (77 files)** and **17.6% for ads / launches (215 files)**. The measure counts sampled pixels with HSV saturation ≥ 0.25 and value ≥ 0.15; it describes color area, rather than aesthetic quality. See the [per-video measurements](data/color-study/per-video-color-vectors.csv).
+
+[![Four categories split into color modes with pixel-weighted palettes and separately counted same-day like observations](assets/color-study/color-modes-highlight.svg)](docs/color-modes.md)
+
+Within-category clustering finds two or three modes in **11 of 13 styles** and **10 of 11 domains**. Motion graphics / UI, for example, splits into **198 dark-neutral** and **152 light-neutral** files. Palette segment widths represent the share of sampled pixels in that mode, rather than its share of videos. The [color study](docs/color-modes.md) provides all 53 modes, full atlases, and measurement rules.
+
+Likes were excluded from clustering. The dark and light motion/UI modes have same-day median likes of **50 and 104**, respectively, with only **22 posts in each mode**. Only **20 of 53 modes** have at least five exact September 27 like observations. Author reach, topic, post age, and distribution confound these comparisons; the study does not test a causal effect of color on likes. [Mode summaries](data/color-study/color-mode-summary.csv) · [engagement method](docs/color-modes.md#engagement-and-data).
+
+### Preview length also reflects case selection
+
+| Sample and unit | n | Median preview (s) | 25th–75th percentile (s) |
+|---|---:|---:|---:|
+| All classified files | 1,401 | 39.20 | 21.91–77.07 |
+| Reviewed cases' main-post MP4s | 168 | 52.37 | 29.76–117.04 |
+
+The reviewed set has longer previews, but the rows have different units and selection rules. Their difference cannot establish a production-route effect. These durations describe accessible X previews, which may differ from the uploaded masters. [Reproducible duration statistics](docs/statistics.md#preview-duration-distribution).
+
+![Median and interquartile range of X preview duration for 168 deliberately reviewed cases across seven production paths](assets/preview-duration.svg)
+
+Educational explainers have the longest median among reviewed paths, **102.28 seconds**; the other six medians range from **24.76 to 51.79 seconds**. The dots mark medians and thick lines span the 25th–75th percentiles. Preview length cannot establish production time, model speed, cost, or path success.
 
 ## Seven production paths, with frames
+
+![Four roles Opus can have in producing a video: rendering code, supplied-media editing, external-model direction, and app or game capture](assets/production-paths.svg)
 
 Each picture links to the creator's original post. These are deliberately chosen examples, not the most common or highest-quality outcomes. The [14 paired evidence cases](docs/evidence-examples.md) show why a similar look can come from different inputs and tools; the [168-case visual directory](docs/cases-index.zh-CN.md) shows one sampled frame for every reviewed case.
 
@@ -65,7 +99,15 @@ Each picture links to the creator's original post. These are deliberately chosen
 | App or game capture | <a href="https://x.com/masaya_1980/status/2103115017755500561"><img src="assets/case-thumbnails/2103115017755500561.webp" width="180" alt="Can-collection simulation preview"></a><br>[Can-collection simulation](https://x.com/masaya_1980/status/2103115017755500561) | Is the deliverable a playable program, with video as its recording? |
 | Mixed or not established | <a href="https://x.com/leogao25/status/2102544078927741369"><img src="assets/case-thumbnails/2102544078927741369.webp" width="180" alt="Split-screen physics comparison preview"></a><br>[Two-model physics comparison](https://x.com/leogao25/status/2102544078927741369) | Are the inputs, budgets, and scoring procedure comparable? |
 
-Anthropic's [Opus 5.5 model description](https://platform.claude.com/docs/en/models/opus-5-5/overview) specifies text and image input with text output. A video can instead come from code it wrote, a program it controlled, existing footage it edited, or another model it directed. A frame alone cannot prove the production path. We distinguish creator disclosures, publicly matching projects or prompts, and direct observations of sampled X previews. The [production guide](docs/visual-effects-fit.md) explains suitable tasks and checks as engineering advice, not measured model success rates.
+A frame alone cannot establish the production path. We distinguish creator disclosures, publicly matching projects or prompts, and direct observations of sampled X previews. The [production guide](docs/visual-effects-fit.md) explains suitable tasks and checks as engineering advice, rather than measured model success rates.
+
+## What a public prompt reveals
+
+![Visible character counts for five selected public commissions, from 172 to 17,664 characters](assets/prompt-lengths.svg)
+
+Five selected public commissions range from **172 to 17,664 visible characters**. They include technical specifications and a reference-video storyboard, alongside open-ended briefs. Character count measures the text visible in those posts; it does not record all supplied assets, prior turns, revisions, or model cost. These five examples do not describe a prompt-length distribution. [Source-linked counts](data/visible-prompt-lengths.json) · [88-case prompt/workflow matrix](docs/prompt-matrix.zh-CN.md) · [reusable templates](docs/prompt-playbook.zh-CN.md).
+
+When reusing a brief, carry over its required inputs, rendering route, and checks. Similar public wording also does not establish independent execution: one later music-video commission shares **87.0% of its unique five-word sequences** with an earlier one. The [token-overlap record](data/prompt-overlap.json) preserves the method and both posts; it cannot establish who read or copied which text.
 
 ## Reusable open-source production systems
 
@@ -97,6 +139,8 @@ The [case index](data/cases.csv) and [field definitions](docs/case-index-guide.z
 Read the [full Chinese research report](docs/report.zh-CN.md), [Article version](docs/x-article.zh-CN.md), [prompt/workflow matrix](docs/prompt-matrix.zh-CN.md), and [reusable prompt templates](docs/prompt-playbook.zh-CN.md).
 
 The [search coverage](docs/search-coverage.zh-CN.md), [media profile](docs/media-profile.zh-CN.md), [methodology](docs/methodology.zh-CN.md), and [frozen counts](data/corpus-snapshot.json) explain the collection boundaries.
+
+Charts are generated from the public data. Install dependencies with `python3 -m pip install -r requirements-charts.txt`, then run `scripts/generate_intro_charts.py`, `scripts/generate_stat_charts.py`, and `scripts/generate_color_charts.py` with Python. Each supports `--check` in CI. See [chart generation and verification](docs/chart-generation.md).
 
 The original X MP4s, raw search results, private paths, and nine-frame contact sheets are **not** distributed here. Small single-frame previews link to the creators' posts and remain the creators' material; they are outside this repository's CC BY license. Case notes distinguish creator disclosures from what Hypit independently observed. Nine sampled frames cannot establish full-motion quality, audio quality, knowledge accuracy, hidden model calls, or the highest-resolution master.
 

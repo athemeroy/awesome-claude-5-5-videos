@@ -1,4 +1,4 @@
-name: Check generated pages and stills
+name: Check generated pages, charts and stills
 
 on:
   push:
@@ -15,6 +15,9 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-charts.txt
+      - run: python3 -m pip install -r requirements-charts.txt
       - run: python3 scripts/generate_cases.py --check
       - run: python3 scripts/generate_statistics.py --check
       - run: python3 scripts/generate_stat_charts.py --check
@@ -22,3 +25,6 @@ jobs:
       - run: python3 scripts/generate_domain_style_atlas.py --check
       - run: python3 scripts/generate_case_thumbnails.py --check
       - run: python3 scripts/generate_new_case_thumbnails.py --check
+      - run: python3 scripts/check_color_modes.py
+      - run: python3 scripts/generate_intro_charts.py --check
+      - run: python3 scripts/generate_color_charts.py --check

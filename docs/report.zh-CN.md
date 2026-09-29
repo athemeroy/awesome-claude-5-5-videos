@@ -100,7 +100,7 @@
 
 一个相反端点是[@ishuagra02 的动漫式对战预告](https://x.com/ishuagra02/status/2103247844542922825)：[作者回复的完整人类提示](https://x.com/ishuagra02/status/2103247960272433307)确实较短，只交代角色、故事动感、动漫风格及声画效果。Hypit 得到 100.8 秒 MP4，九帧见战斗、标题和卡通结尾；作者称代理下载字体、用 JavaScript 画帧并做音轨，耗 1.5 小时和 $28 API 用量，这些制作与账单细节未见源码核对。**短提示词也能有长成片**，但一个短输入不能让隐藏执行步骤自动可见。另一例 [@jake11moran 的 `/session-story`](https://x.com/jake11moran/status/2103247490237825416)只用短触发词启动预置 skill，据作者说读取本地 Claude Code 会话史并通过 HyperFrames 动画化；52.7 秒卡通片可见，预置系统和个人消息本身却是输入。
 
-![五例公开提示词可见字符数对照](../assets/visible-prompt-lengths.png)
+![五例公开提示词可见字符数对照](../assets/prompt-lengths.svg)
 
 新发现的一端更极端：[@yumaeriel 公开的 30 秒手绘片提示词](https://x.com/yumaeriel/status/2103053172235264150)约 **17,664 个英文字符**，把“随附的视频”设成严格视觉参考，逐条规定刷痕的形状和方向、蓝橙色域、12–15 fps 的笔触更新、逐秒分镜和不许出现的矢量／粒子视觉。Hypit 取得的[成片](https://x.com/yumaeriel/status/2103053166006657284)正好 30 秒，九帧能看到规定的光束、笔触和场景顺序；参考原片与代码都未公开，所以不能从取样判断它是否真的按 p5.js 实现或与参考片逐帧一致。另一端的[@rainwishyt 光合作用片](https://x.com/rainwishyt/status/2102605921025462283)只有简短的儿童教学委托，作者随后称代理自行选用 HyperFrames、Kokoro TTS、字体和 ffmpeg。这里的差别是**设计约束给谁写、由谁做工具选择**，不只是字数。
 

@@ -334,7 +334,7 @@ def render(data: dict, chinese: bool) -> str:
             "## 分类阈值会改变第一名", "",
             "视觉分类器根据帖文和九帧，为每个文件给出一个 `opus_made` 标签、一个主领域和一个主画风。"
             "这是模型判断，不是作者身份、模型调用或完整成片的独立验证。", "",
-            "![分类器给出的各领域文件数；深蓝为 yes，橙色为 likely](../assets/domain-labels.svg)", "",
+            "![分类器给出的各领域文件数；蓝绿为 yes，金黄为 likely](../assets/domain-labels.svg)", "",
             "| 纳入口径 | 文件分母 | 游戏／交互 | 广告／发布片 | 第一名 |", "|---|---:|---:|---:|---|",
             f"| 只计 `yes` | {len(strict):,} | {sd['game_interactive']} ({percent(sd['game_interactive'], len(strict))}) | {sd['product_ad']} ({percent(sd['product_ad'], len(strict))}) | {DOMAINS[strict_top_domain][lang]} |",
             f"| 计 `yes` 和 `likely` | {len(inclusive):,} | {idom['game_interactive']} ({percent(idom['game_interactive'], len(inclusive))}) | {idom['product_ad']} ({percent(idom['product_ad'], len(inclusive))}) | {DOMAINS[inclusive_top_domain][lang]} |",
@@ -434,7 +434,7 @@ def render(data: dict, chinese: bool) -> str:
             "A vision classifier assigned one `opus_made` label, one primary domain, and one primary style per file "
             "from the post text and nine sampled frames. Its labels do not independently establish authorship, "
             "model calls, or finished-video quality.", "",
-            "![Classifier-assigned domain file counts, with yes in blue and likely in orange](../assets/domain-labels.svg)", "",
+            "![Classifier-assigned domain file counts, with yes in teal and likely in amber](../assets/domain-labels.svg)", "",
             "| Included labels | File denominator | Games / interactive | Ads / launches | First place |",
             "|---|---:|---:|---:|---|",
             f"| `yes` only | {len(strict):,} | {sd['game_interactive']} ({percent(sd['game_interactive'], len(strict))}) | {sd['product_ad']} ({percent(sd['product_ad'], len(strict))}) | {DOMAINS[strict_top_domain][lang]} |",

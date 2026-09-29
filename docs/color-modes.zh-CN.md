@@ -4,9 +4,13 @@
 
 我们对 2026 年 9 月 26 日冻结的 X 预览片做了一次色彩研究。纳入的是分类器判断与 Opus 5.5 有关（`yes` 或 `likely`）的 **1,119 个 SHA-256 去重 MP4**，涉及 1,099 条帖子。每个文件等时间抽取九帧，共 **10,071 帧**。这些标签尚未逐片核实制作过程；本研究描述的是这批可取得的预览片，不代表 X 全站作品。
 
-![科普、故事短片、动态图形和广告内部的色彩模式；色条宽度按抽帧像素占比绘制](../assets/color-study/color-modes-highlight.png)
+![十一种内容领域的彩色像素占比，逐视频中位数及四分位区间](../assets/color-study/color-modes-overview.svg)
 
-这张图选了样本较充分的四类。[打开 13 种画风的完整大图](../assets/color-study/color-modes-style-atlas.png) · [打开 11 种内容领域的完整大图](../assets/color-study/color-modes-domain-atlas.png)。大图适合放大查看；每行的 `n` 是文件数，点赞旁的 `n` 是有同日精确观测的**帖子数**，不是同一个分母。
+这张总览比较各领域的彩色面积；圆点与线段描述逐视频测量值的中位数和四分位区间，线段不是不确定性区间。下面选了样本较充分的四类，展示类别内部的配色模式：
+
+![科普、故事短片、动态图形和广告内部的色彩模式；色条宽度按抽帧像素占比绘制](../assets/color-study/color-modes-highlight.svg)
+
+[打开 13 种画风的完整大图](../assets/color-study/color-modes-style-atlas.svg) · [打开 11 种内容领域的完整大图](../assets/color-study/color-modes-domain-atlas.svg)。图中使用英文标签，适合放大查看；每行文件数与点赞旁的同日精确观测**帖子数**使用不同分母。
 
 ## 看到了什么
 

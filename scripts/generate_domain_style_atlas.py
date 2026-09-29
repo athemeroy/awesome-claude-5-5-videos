@@ -675,6 +675,7 @@ def render(state: dict, chinese: bool) -> str:
                 refresh_row = item["refresh"]
                 post_id = item["post_id"]
                 url = case["source_url"]
+                directory_url = f"cases-index.zh-CN.md#case-{post_id}"
                 english_note = state["english_notes"].get(post_id) if not chinese else None
                 title = safe_inline(english_note["title_en"] if english_note else case["label"])
                 topic = safe_inline(category["topic_en"])
@@ -690,9 +691,9 @@ def render(state: dict, chinese: bool) -> str:
                           f'<a href="{url}"><img src="../assets/case-thumbnails/{post_id}.webp" '
                           f'width="160" loading="lazy" alt="Still from {html.escape(title, quote=True)}"></a>', "",
                           (f"**画面主题：** {topic} · **案例制作路径：** `{route}` · "
-                           f"[完整目录](cases-index.zh-CN.md)" if chinese else
+                           f"[完整目录]({directory_url})" if chinese else
                            f"**Subject:** {topic} · **Reviewed production path:** `{route}` · "
-                           f"[Full case directory](cases-index.zh-CN.md)"), "",
+                           f"[Full case directory]({directory_url})"), "",
                           (f"**作者披露：** {creator}" if chinese else f"**Creator account:** {creator}"), "",
                           (f"**审读边界：** {review}" if chinese else f"**Review limit:** {review}"), "",
                           metric_line(refresh_row, chinese), "",

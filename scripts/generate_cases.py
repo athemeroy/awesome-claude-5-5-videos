@@ -178,6 +178,7 @@ def render(groups: dict[str, list[dict[str, str]]]) -> str:
             )
             post_id = row["source_url"].rsplit("/", 1)[-1]
             still = (
+                f'<a id="case-{post_id}"></a>'
                 f'<a href="{html.escape(row["source_url"], quote=True)}">'
                 f'<img src="../assets/case-thumbnails/{post_id}.webp" width="160" '
                 f'loading="lazy" alt="X preview still for {html.escape(row["label"], quote=True)}"></a>'

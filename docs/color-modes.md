@@ -4,7 +4,13 @@
 
 We measured color in the **1,119 byte-distinct X-preview MP4s** that the project's classifier labeled `yes` or `likely` for Opus 5.5 involvement in its September 26, 2026 snapshot. They came from 1,099 posts. Nine evenly spaced frames per file yield **10,071 frames**. These labels do not independently verify how every video was made, and this retrieved sample is not a census of X.
 
-The [four-category highlight](../assets/color-study/color-modes-highlight.png) shows education, short stories, motion/UI and ads. Its labels are mainly Chinese; the [13-style atlas](../assets/color-study/color-modes-style-atlas.png) and [11-domain atlas](../assets/color-study/color-modes-domain-atlas.png) can be opened at full size. In each row, the file count and the count of posts with exact same-day likes have different denominators.
+![Colorful-pixel share by domain, showing video-level medians and interquartile ranges](../assets/color-study/color-modes-overview.svg)
+
+The overview compares color area across the 11 domains. It shows a distribution of video-level measurements; its lines are interquartile ranges, not uncertainty intervals. The [four-category highlight](../assets/color-study/color-modes-highlight.svg) shows the palettes within education, short stories, motion/UI and ads:
+
+![Four categories split into color modes, with pixel-weighted palettes and dated like observations](../assets/color-study/color-modes-highlight.svg)
+
+The [13-style atlas](../assets/color-study/color-modes-style-atlas.svg) and [11-domain atlas](../assets/color-study/color-modes-domain-atlas.svg) can be opened at full size. Figure labels are in English. In each row, the file count and the count of posts with exact same-day likes have different denominators.
 
 ## Findings
 
