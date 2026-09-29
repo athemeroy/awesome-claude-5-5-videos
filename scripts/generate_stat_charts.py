@@ -225,7 +225,13 @@ def domain_style_heatmap(data: dict, preview_dir: Path | None = None) -> str:
     boundaries = [-.5, .5, 4.5, 9.5, 24.5, 49.5, 99.5, max(100, int(matrix.max())) + .5]
     colors = ListedColormap(HEAT_COLORS)
     norm = BoundaryNorm(boundaries, colors.N)
-    ax.imshow(matrix, cmap=colors, norm=norm, aspect="auto", interpolation="none")
+    # Draw vector cells. imshow embeds a PNG whose compression bytes vary
+    # between platform builds of Pillow/zlib, defeating SVG byte comparisons.
+    nrows, ncols = matrix.shape
+    ax.pcolormesh(np.arange(ncols + 1) - .5, np.arange(nrows + 1) - .5,
+                  matrix, cmap=colors, norm=norm, shading="flat", rasterized=False)
+    ax.set_xlim(-.5, ncols - .5)
+    ax.set_ylim(nrows - .5, -.5)
     ax.set_xticks(np.arange(len(domains)), [DOMAIN_SHORT[item] for item in domains], fontsize=9.5)
     ax.set_yticks(np.arange(len(styles)), [STYLES[item][0] for item in styles], fontsize=11)
     ax.tick_params(axis="x", length=0, pad=12)
