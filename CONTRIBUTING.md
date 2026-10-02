@@ -2,6 +2,12 @@
 
 Thank you for helping make this list more accurate. Contributions can add a creator's original post, supply a missing prompt or project link, correct a production path, or flag a deleted source.
 
+## Model labels and early-access reports
+
+The list covers Claude 5.5 video workflows. Record the exact model/version named by the creator, the model label shown in the interface if available, and whether backend identity is independently verified. For suspected next-Fable routing, use “creator reports Fable 5.5; backend unverified.” Keep those sources in a dated update and its separate source ledger until media review qualifies them for a later case collection. A knowledge question, model self-identification, or stronger-looking output does not verify a backend change.
+
+The September 26 datasets remain an Opus 5.5 snapshot. Adding another model does not relabel those rows or expand their denominators. See the [October 2 update](docs/claude55-update-2026-10-02.md).
+
 ## Propose a case
 
 Open an issue using the **New video case** template or a pull request. Please include:
@@ -10,14 +16,14 @@ Open an issue using the **New video case** template or a pull request. Please in
 2. A short description of the video and why it adds a distinct technique, workflow, or well-documented example.
 3. Links to the creator's own prompt, replies, source repository, or making-of account, if public.
 4. The supplied assets: earlier footage, photographs, music, documents, product code, character files, or prepared skills.
-5. The role of Opus, the renderer or external model that produced the pixels, and any named audio tools. Use “creator says” when no source or execution log confirms a step.
+5. The role of Claude, the renderer or external model that produced the pixels, and any named audio tools. Use “creator says” when no source or execution log confirms a step.
 6. Human revision rounds, cost, and elapsed time only when sourced; distinguish subscription allowance, API-equivalent estimates, and actual bills.
 
 Please do **not** upload third-party MP4s, music, screenshots of private conversations, credentials, or complete third-party prompt text. Link to the creator's original publication and paraphrase what is relevant. If you are the creator and wish to share your own assets or full prompt, link to a repository you control.
 
 ## Propose a reusable resource
 
-Use the **Reusable project or resource** issue template or a pull request for an open-source engine, skill, style library, or production guide. Link the maintainer's original project, a representative demo or announcement, and the exact files or commands readers can reuse. State which examples the maintainer attributes to Opus 5.5; a multi-model project's other examples should keep their own labels. Include the project's license, any separate asset terms, the date you checked it, and claims that remain unverified.
+Use the **Reusable project or resource** issue template or a pull request for an open-source engine, skill, style library, or production guide. Link the maintainer's original project, a representative demo or announcement, and the exact files or commands readers can reuse. State which examples the maintainer attributes to each model; a multi-model project's other examples should keep their own labels. Include the project's license, any separate asset terms, the date you checked it, and claims that remain unverified.
 
 A source-only resource can be useful without an original X MP4. List it in the open-source production systems section when it teaches a distinct, inspectable workflow. Do not add it to the frozen September 26 video-case or media counts unless it independently qualifies as a new case in a later, separately dated snapshot.
 

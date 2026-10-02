@@ -1,5 +1,5 @@
 name: New video case
-description: Suggest an original Opus 5.5 video or a stronger source for an existing entry.
+description: Suggest an original Claude 5.5 video or a stronger source for an existing entry.
 title: "Case: "
 labels: [case-review]
 body:
@@ -9,6 +9,14 @@ body:
       label: Original X post
       description: Link to the creator's own post, rather than a repost or quote.
       placeholder: https://x.com/creator/status/1234567890
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and access evidence
+      description: Exact model/version, displayed label, and source for access. Mark suspected Fable routing as unverified.
+      placeholder: Creator reports Fable 5.5; UI says Fable 5.1; backend unverified.
     validations:
       required: true
   - type: textarea
@@ -22,7 +30,7 @@ body:
     id: production
     attributes:
       label: Inputs and production roles
-      description: What assets were supplied? What did Opus do? Which program or model rendered the pixels and audio?
+      description: What assets were supplied? What did Claude do? Which program or model rendered the pixels and audio?
     validations:
       required: true
   - type: textarea

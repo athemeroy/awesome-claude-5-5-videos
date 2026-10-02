@@ -1,11 +1,18 @@
-# Awesome Claude Opus 5.5 Videos [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Claude 5.5 Videos [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 [中文说明](README.zh-CN.md)
 
-A curated, source-linked guide to videos people made **with** Claude Opus 5.5. We examine the model's role in writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project. Hypit inspects accessible X video previews; case notes distinguish creator disclosures, matching public projects, and our observations.
+A curated, source-linked guide to videos and animations made **with Claude 5.5**, covering Opus 5.5, Sonnet 5.5, and separately labeled community reports of next-Fable testing. We examine the model's role in writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project. Hypit inspects accessible X video previews in the reviewed corpus; new source-only entries distinguish creator disclosures from independently inspected media.
+
+## October 2 update: next-Fable experiments
+
+X creators are publishing animations they attribute to **Fable 5.5 via suspected routing from Fable 5.1**. That is an early-access claim, not a confirmed public release or verified backend identity. Our [dated review and original demos](docs/claude55-update-2026-10-02.md) includes same-prompt Opus comparisons, creator replies, Sonnet examples, and uncertainty about access.
+
+The clearest reported differences are **visual focus, pacing, beat synchronization, and richer scene details**. The strongest direct motion comparison comes from one creator; other demos use different tools and inputs. We do not have evidence for a general Fable 5.5 quality, speed, or cost ranking. These additions are source-only and stay outside the frozen Opus counts below.
 
 ## Start here
 
+- **See the latest models:** [October 2 Claude 5.5 update](docs/claude55-update-2026-10-02.md), with provisional Fable demos and Sonnet sources.
 - **Browse by picture:** the [168-case bilingual visual directory](docs/cases-index.zh-CN.md) has a sampled frame and original-post link for every reviewed case, with notes in the source language.
 - **Choose and reuse a production route:** see the [production guide](docs/visual-effects-fit.md), [seven pictured paths](#seven-production-paths-with-frames), and [open-source systems](#reusable-open-source-production-systems).
 - **Explore the evidence:** [14 paired cases](docs/evidence-examples.md) compare similar looks produced with different tools and inputs.

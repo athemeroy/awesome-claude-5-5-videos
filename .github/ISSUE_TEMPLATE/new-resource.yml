@@ -1,5 +1,5 @@
 name: Reusable project or resource
-description: Suggest a public project, tool, or production guide related to Opus 5.5 video work.
+description: Suggest a public project, tool, or production guide related to Claude 5.5 video work.
 title: "Resource: "
 body:
   - type: input
@@ -28,7 +28,7 @@ body:
     id: evidence
     attributes:
       label: Model roles and evidence
-      description: State what the creator claims, what public code or examples show, and which specific examples are attributed to Opus 5.5. Mark claims you could not independently check.
+      description: State what the creator claims, what public code or examples show, and which specific examples are attributed to each exact Claude model/version. Mark claims you could not independently check.
     validations:
       required: true
   - type: input
