@@ -1,5 +1,7 @@
 # Claude 5.5 demos and reported next-Fable testing
 
+Follow-up: [October 3 source and sampled-media directory](claude55-update-2026-10-03.md). This page retains its original October 2 review boundary.
+
 [中文](claude55-update-2026-10-02.zh-CN.md) · [Home](../README.md) · Checked October 2, 2026, China Standard Time
 
 **Decision: expand the collection to Awesome Claude 5.5 Videos.** Sonnet 5.5 has distinct creator examples, and October 1–2 X posts include demos and comparisons that several creators attribute to Fable 5.5. Those sources are useful with explicit model uncertainty.

@@ -1,0 +1,22 @@
+key,kind,query_or_root_id,mode,requested_limit,status,returned_rows,cap_reached,started_at_utc,finished_at_utc,note
+chinese-film-thread,thread,2106211651833987580,,default,ok,1,no,2026-10-03T05:15:37.363128+00:00,2026-10-03T05:15:57.347615+00:00,
+claude-chinese,search,Claude 5.5 (视频 OR 动画 OR 動画) since:2026-10-01,live,50,ok,50,yes,2026-10-03T05:03:42.071336+00:00,2026-10-03T05:04:54.634286+00:00,
+clawdhouse-thread,thread,2106138602073641241,,default,ok,13,no,2026-10-03T05:15:13.285684+00:00,2026-10-03T05:15:33.212840+00:00,
+fable-chinese,search,"""Fable 5.5"" (视频 OR 动画 OR 三维)",top,50,ok,20,no,2026-10-03T05:12:17.707424+00:00,2026-10-03T05:13:26.757090+00:00,
+fable-compact,search,"(Fable5.5 OR ""fable-5-5"" OR ""Fable 5.1"") filter:videos since:2026-10-01",live,50,ok,50,yes,2026-10-03T05:01:49.023469+00:00,2026-10-03T05:02:13.515650+00:00,
+fable-latest,search,"""Fable 5.5"" filter:videos",live,50,ok,50,yes,,,
+fable-motion,search,"""Fable 5.5"" (animation OR music OR threejs OR film)",top,50,ok,33,no,2026-10-03T05:13:30.905651+00:00,2026-10-03T05:14:34.040328+00:00,
+fable-oct1,search,Fable filter:videos since:2026-10-01 until:2026-10-02,live,50,ok,50,yes,2026-10-03T05:01:06.871306+00:00,2026-10-03T05:01:17.333334+00:00,
+fable-oct2,search,Fable filter:videos since:2026-10-02 until:2026-10-03,live,50,ok,50,yes,2026-10-03T05:00:38.980410+00:00,2026-10-03T05:01:02.733463+00:00,
+fable-oct3,search,Fable filter:videos since:2026-10-03,live,50,timeout,0,no,2026-10-03T04:58:54.448919+00:00,,"Search command timed out; result unknown, no automatic retry"
+fable-older,search,Fable filter:videos since:2026-09-28 until:2026-10-01,top,50,ok,50,yes,2026-10-03T05:04:58.781099+00:00,2026-10-03T05:05:26.826200+00:00,
+fable-top,search,"""Fable 5.5"" filter:videos",top,50,ok,50,yes,2026-10-03T04:58:28.107452+00:00,2026-10-03T04:58:50.302113+00:00,
+fable-video,search,"""Fable 5.5"" (video OR animation OR 视频 OR 动画)",live,50,ok,50,yes,2026-10-03T05:01:21.480129+00:00,2026-10-03T05:01:44.873513+00:00,
+history-author,search,from:imjustnewatai (Fable OR Opus) filter:videos,live,50,ok,11,no,2026-10-03T05:11:03.363686+00:00,2026-10-03T05:11:51.254648+00:00,
+history-thread,thread,2106081142143168580,,default,ok,50,yes,2026-10-03T04:57:58.773688+00:00,2026-10-03T04:58:23.960158+00:00,
+moonwalk-thread,thread,2106105810812112937,,default,ok,11,no,2026-10-03T05:14:38.186743+00:00,2026-10-03T05:14:58.586077+00:00,
+opus-latest,search,"""Opus 5.5"" filter:videos since:2026-09-28",live,50,ok,50,yes,2026-10-03T05:02:17.660964+00:00,2026-10-03T05:02:42.012996+00:00,
+opus-top,search,"""Opus 5.5"" filter:videos since:2026-09-28",top,50,ok,50,yes,2026-10-03T05:02:46.161027+00:00,2026-10-03T05:03:08.463760+00:00,
+sonnet-latest,search,"""Sonnet 5.5"" filter:videos since:2026-09-28",live,50,ok,50,yes,2026-10-03T05:03:12.607918+00:00,2026-10-03T05:03:37.924561+00:00,
+tak-author,search,from:cherry_mx_reds Fable filter:videos,live,50,rate_limited,0,no,2026-10-03T05:11:55.397777+00:00,,HTTP 429; no automatic retry
+threebody-thread,thread,2105822678519001360,,default,ok,47,no,2026-10-03T05:15:02.735197+00:00,2026-10-03T05:15:09.136505+00:00,

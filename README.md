@@ -4,15 +4,17 @@
 
 A curated, source-linked guide to videos and animations made **with Claude 5.5**, covering Opus 5.5, Sonnet 5.5, and separately labeled community reports of next-Fable testing. We examine the model's role in writing rendering code, directing external models, editing supplied footage, or building an app that someone recorded. This is an independent project. Hypit inspects accessible X video previews in the reviewed corpus; new source-only entries distinguish creator disclosures from independently inspected media.
 
-## October 2 update: next-Fable experiments
+## October 3 update: human history, art history and more
 
-X creators are publishing animations they attribute to **Fable 5.5 via suspected routing from Fable 5.1**. That is an early-access claim, not a confirmed public release or verified backend identity. Our [dated review and original demos](docs/claude55-update-2026-10-02.md) includes same-prompt Opus comparisons, creator replies, Sonnet examples, and uncertainty about access.
+The [new directory](docs/claude55-update-2026-10-03.md) adds **157 source posts**, including reported Fable human history, art history and universe-scale films, plus Opus/Sonnet animations, launches and interactive programs. Start with seven pictured examples, then browse every added source by purpose. Source rows include comparisons, variants and two secondary recordings needing original-creator tracing; they are not an independent-film total.
 
-The clearest reported differences are **visual focus, pacing, beat synchronization, and richer scene details**. The strongest direct motion comparison comes from one creator; other demos use different tools and inputs. We do not have evidence for a general Fable 5.5 quality, speed, or cost ranking. These additions are source-only and stay outside the frozen Opus counts below.
+We attempted 16 direct X searches, of which 14 succeeded, read five threads, and inspected nine sampled frames from fifteen previews. The [coverage ledger](data/claude55-search-coverage-2026-10-03.csv) and [602-ID candidate/quote/thread audit](data/claude55-candidate-audit-2026-10-03.csv) preserve deduplication, failures and unresolved sources. Capped results, one timeout and one rate limit prevent an exhaustive-web claim.
+
+Reported Fable 5.5 backend identities remain unverified. The [October 2 comparison page](docs/claude55-update-2026-10-02.md) retains earlier observations about pacing, sound and detail. New sources and media samples are recorded separately from the frozen Opus statistics below.
 
 ## Start here
 
-- **See the latest models:** [October 2 Claude 5.5 update](docs/claude55-update-2026-10-02.md), with provisional Fable demos and Sonnet sources.
+- **See the latest models:** [October 3 directory](docs/claude55-update-2026-10-03.md), with seven pictured examples and 157 grouped sources; also see the [October 2 comparisons](docs/claude55-update-2026-10-02.md).
 - **Browse by picture:** the [168-case bilingual visual directory](docs/cases-index.zh-CN.md) has a sampled frame and original-post link for every reviewed case, with notes in the source language.
 - **Choose and reuse a production route:** see the [production guide](docs/visual-effects-fit.md), [seven pictured paths](#seven-production-paths-with-frames), and [open-source systems](#reusable-open-source-production-systems).
 - **Explore the evidence:** [14 paired cases](docs/evidence-examples.md) compare similar looks produced with different tools and inputs.
