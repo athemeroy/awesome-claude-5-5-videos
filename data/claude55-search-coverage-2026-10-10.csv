@@ -1,0 +1,7 @@
+key,query,mode,requested_limit,status,returned_rows,cap_reached,started_at_utc,finished_at_utc,note
+claude-chinese,Claude 5.5 (视频 OR 动画 OR 動画) since:2026-10-03,live,50,ok,50,yes,2026-10-09T17:34:12.427857+00:00,2026-10-09T17:34:37.108764+00:00,
+fable-latest,"(""Fable 5.5"" OR Fable5.5) filter:videos since:2026-10-03",live,50,ok,50,yes,2026-10-09T17:33:04.323629+00:00,2026-10-09T17:33:26.901189+00:00,
+haiku-chinese,"(Haiku5.5 OR ""Haiku 5.5"") (视频 OR 动画 OR animation) since:2026-10-03",live,50,ok,50,yes,2026-10-09T17:38:06.505047+00:00,2026-10-09T17:38:15.690120+00:00,
+haiku-latest,"""Haiku 5.5"" filter:videos since:2026-10-03",live,50,ok,50,yes,2026-10-09T17:37:37.548975+00:00,2026-10-09T17:38:02.365961+00:00,
+opus-latest,"""Opus 5.5"" filter:videos since:2026-10-03",live,50,ok,50,yes,2026-10-09T17:33:31.040117+00:00,2026-10-09T17:33:55.159463+00:00,
+sonnet-latest,"""Sonnet 5.5"" filter:videos since:2026-10-03",live,50,ok,50,yes,2026-10-09T17:33:59.308317+00:00,2026-10-09T17:34:08.281591+00:00,

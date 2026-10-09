@@ -1,0 +1,43 @@
+{
+  "as_of": "2026-10-10",
+  "unit": "source post ID; includes replies, comparisons and variants",
+  "unique_source_posts": 372,
+  "batches": [
+    {
+      "date": "2026-09-26",
+      "source": "data/cases.csv",
+      "unique_source_posts": 168,
+      "newly_listed_source_posts": 168,
+      "overlaps_earlier_batches": 0
+    },
+    {
+      "date": "2026-09-27",
+      "source": "assets/new-case-thumbnails/frames.csv",
+      "unique_source_posts": 7,
+      "newly_listed_source_posts": 7,
+      "overlaps_earlier_batches": 0
+    },
+    {
+      "date": "2026-10-02",
+      "source": "data/claude55-source-review-2026-10-02.csv",
+      "unique_source_posts": 22,
+      "newly_listed_source_posts": 22,
+      "overlaps_earlier_batches": 0
+    },
+    {
+      "date": "2026-10-03",
+      "source": "data/claude55-source-review-2026-10-03.csv",
+      "unique_source_posts": 157,
+      "newly_listed_source_posts": 157,
+      "overlaps_earlier_batches": 0
+    },
+    {
+      "date": "2026-10-10",
+      "source": "data/claude55-source-review-2026-10-10.csv",
+      "unique_source_posts": 18,
+      "newly_listed_source_posts": 18,
+      "overlaps_earlier_batches": 0
+    }
+  ],
+  "frozen_media_snapshot": "data/corpus-snapshot.json"
+}
