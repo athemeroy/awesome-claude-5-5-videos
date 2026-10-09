@@ -13,3 +13,7 @@ The October 3 Claude update adds seven 320-pixel-wide sampled stills. Their sour
 ## October 10 Haiku previews
 
 The two small stills in `assets/haiku-2026-10-10/` identify creator-reported Haiku 5.5 examples. Each links to its original X post; source, sampled time and preview duration are recorded in [the frame manifest](assets/haiku-2026-10-10/frames.csv). These frames remain the creators’ material, outside CC BY 4.0 for this repository’s original writing. No MP4 or contact sheet is distributed. Model use and soundtrack rights are not independently established.
+
+## October 10 follow-up previews
+
+The three small stills in `assets/claude55-2026-10-10-followup/` identify Haiku motion design, a Sonnet tower visualization and creator-reported Fable history. Original posts, exact sample times and preview durations appear in [the frame manifest](assets/claude55-2026-10-10-followup/frames.csv). The frames remain their creators’ material and are outside this repository’s CC BY license. They establish neither backend model identity nor rights to redistribute the complete videos.

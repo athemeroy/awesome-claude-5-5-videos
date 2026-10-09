@@ -1,37 +1,49 @@
 # Awesome Claude 5.5 Videos [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[English](README.md) · [看图找案例](docs/cases-index.zh-CN.md) · [参与维护](CONTRIBUTING.md)
+[English](README.md) · [全部来源](docs/library.zh-CN.md) · [参与维护](CONTRIBUTING.md)
 
-精选**使用 Claude 5.5 参与制作**的视频、动画与可复用工程。覆盖 Opus、Sonnet、Haiku，以及作者报告的 Fable 灰度作品。每条案例链接原帖，说明 Claude 负责绘图代码、素材改编、外部模型调度，还是被录屏的应用。
+精选使用 **Claude 5.5** 参与制作的视频、动画与可复用工程。覆盖 Opus、Sonnet、Haiku，以及作者报告的 Fable 灰度作品。原帖、模型角色、制作输入与证据分别记录。
 
 ## 目录
 
-- [先看作品](#先看作品)
-- [浏览目录](#浏览目录)
+- [按模型找作品](#按模型找作品)
+- [四个作品入口](#四个作品入口)
 - [自己动手](#自己动手)
-- [收录统计](#收录统计)
+- [我们看到了什么](#我们看到了什么)
 - [研究与数据](#研究与数据)
 - [更新记录](#更新记录)
 - [参与维护与许可](#参与维护与许可)
 
-## 先看作品
+## 按模型找作品
 
-| 历史 | 艺术 | 科学 |
-|:---:|:---:|:---:|
-| [<img src="assets/claude55-2026-10-03/2106081142143168580.jpg" width="240" alt="以一天时钟组织人类进步史">](https://x.com/imjustnewatai/status/2106081142143168580) | [<img src="assets/claude55-2026-10-03/2106095190285144331.jpg" width="240" alt="画家与猫穿越不同艺术年代">](https://x.com/cherry_mx_reds/status/2106095190285144331) | [<img src="assets/claude55-2026-10-03/2106190594775097663.jpg" width="240" alt="从微观结构不断缩放到星系">](https://x.com/imjustnewatai/status/2106190594775097663) |
-| [把人类进步压缩成一天](https://x.com/imjustnewatai/status/2106081142143168580) · @imjustnewatai | [四万年艺术史，还有一只猫](https://x.com/cherry_mx_reds/status/2106095190285144331) · @cherry_mx_reds | [The Long Way Out](https://x.com/imjustnewatai/status/2106190594775097663) · @imjustnewatai |
-| 用时钟连接历史与未来设想。 | 用持续出现的角色连接画风变化。 | 用一次缩放连接夸克、人物与星系。 |
+<!-- collection-summary:start -->
 
-三条均由作者称使用 Fable 5.5，后台身份未核实。我们查看了每段预览的九帧取样。[制作说明与证据](docs/claude55-update-2026-10-03.zh-CN.md)。
+截至 2026-10-10：**394 条去重来源帖**，其中 **194 条有九帧预览取样**。
 
-## 浏览目录
+| 模型浏览入口 | 来源帖 |
+|---|---:|
+| [Opus](docs/library.zh-CN.md#opus) | 282 |
+| [Sonnet](docs/library.zh-CN.md#sonnet) | 45 |
+| [Haiku](docs/library.zh-CN.md#haiku) | 15 |
+| [Fable](docs/library.zh-CN.md#fable) | 65 |
 
-- [Haiku 视频与对照](docs/maintenance-2026-10-10.zh-CN.md#haiku-视频与对照)：诗歌、动效、三维鹈鹕、剪辑与图形对照。
-- [看图找案例](docs/cases-index.zh-CN.md)：168 条深读来源帖，每条附截图、原帖和制作说明。
-- [Claude 作品分类目录](docs/claude55-update-2026-10-03.zh-CN.md)：历史、科普、故事、发布片、音乐、游戏与视觉实验。
-- [领域 × 画风图谱](docs/domain-style-atlas.zh-CN.md)：按内容和画风找有图案例。
-- [制作证据对照](docs/evidence-examples.zh-CN.md)：外观相近，输入和工具不同。
-- [Fable／Opus 与 Sonnet 对照](docs/claude55-update-2026-10-02.zh-CN.md)：早期作者反馈与来源记录。
+[完整目录](docs/library.zh-CN.md) · [证据与作者分布](docs/collection-analysis.zh-CN.md) · [批次汇总](data/collection-summary.json)
+
+<!-- collection-summary:end -->
+
+多模型对照会进入多个分组，表格行不能相加。Opus 旧快照按研究背景归组；Fable 保留疑似路由标记。来源帖含回复与版本变体，不是独立影片数量。
+
+[按制作路径看图](docs/cases-index.zh-CN.md) · [按内容与画风找案例](docs/domain-style-atlas.zh-CN.md) · [制作证据对照](docs/evidence-examples.zh-CN.md)
+
+## 四个作品入口
+
+| Opus | Sonnet | Haiku | Fable（作者报告） |
+|:---:|:---:|:---:|:---:|
+| [<img src="assets/case-thumbnails/2102786378282987591.webp" width="180" alt="Clearwater 水面">](https://x.com/Aurelien_Gz/status/2102786378282987591) | [<img src="assets/claude55-2026-10-10-followup/2107548992640880755.jpg" width="180" alt="建楼示意">](https://x.com/Solvaix/status/2107548992640880755) | [<img src="assets/claude55-2026-10-10-followup/2108089492016103775.jpg" width="180" alt="动效自荐片">](https://x.com/badboyfoxy/status/2108089492016103775) | [<img src="assets/claude55-2026-10-10-followup/2107958931230241037.jpg" width="180" alt="涂鸦人类史">](https://x.com/oalanicolas/status/2107958931230241037) |
+| [Clearwater 水面](https://x.com/Aurelien_Gz/status/2102786378282987591) | [建楼示意](https://x.com/Solvaix/status/2107548992640880755) | [动效自荐片](https://x.com/badboyfoxy/status/2108089492016103775) | [涂鸦人类史](https://x.com/oalanicolas/status/2107958931230241037) |
+| 实时 WebGL 图形 | 逐步建造的交互场景 | 文字、缓动与轨道图形 | 年代变化与持续角色 |
+
+这是四种任务的入口，不是同提示模型排名。预览已做九帧取样，不能验证完整动态或模型调用。[新取样与制作说明](docs/maintenance-2026-10-10-followup.zh-CN.md)。
 
 ## 自己动手
 
@@ -56,51 +68,36 @@
 
 [工程预览、可复用文件与来源说明](docs/production-resources.zh-CN.md)。工程说明核对于 9 月 27 日，外部项目可能继续变化。
 
-## 收录统计
+## 我们看到了什么
 
-<!-- collection-summary:start -->
+- **输入决定任务。**参考视频、角色设定、歌曲和已有工程，都会改变“模型做了什么”。
+- **一条提示不等于一轮制作。**F1 作者称 Opus 反复拒绝中间结果；Taxtello 记录了五个版本。
+- **看整项任务费用。**金门桥对照中，作者报告 Haiku 的费用为 Opus 的 72.0%；F1 的执行端占团队费用的 64.2%。这不是模型通用排名。
+- **动画可信感与事实正确分开。**Sonnet 建楼作者明确说明顺序是编排的，未做工程计算。
 
-| 批次 | 来源帖 | 比此前新增 |
-|---|---:|---:|
-| [2026-09-26](data/cases.csv) | 168 | 168 |
-| [2026-09-27](assets/new-case-thumbnails/frames.csv) | 7 | 7 |
-| [2026-10-02](data/claude55-source-review-2026-10-02.csv) | 22 | 22 |
-| [2026-10-03](data/claude55-source-review-2026-10-03.csv) | 157 | 157 |
-| [2026-10-10](data/claude55-source-review-2026-10-10.csv) | 18 | 18 |
-
-截至 2026-10-10，合计 **372 条去重来源帖**。
-
-<!-- collection-summary:end -->
-
-这里统计来源帖，含回复、对照和版本变体，不是独立影片数或已核实的模型运行次数。汇总按帖子 ID 跨批次去重。[可复算汇总](data/collection-summary.json)。
-
-**9 月 26 日 Opus 冻结快照**含 1,401 个逐字节不同的文件，其中 1,119 个标为 `yes`／`likely`。主要结果：
-
-- 游戏、广告与 AI 自谈占纳入文件的 **57.7%**。
-- 动态图形／界面与三维渲染占 **60.2%**。
-- 深读预览中位数为 **52.37 秒**，全部分类文件为 **39.20 秒**。两组的单位和选例方式不同。
-
-[统计图与分析](docs/snapshot-analysis.zh-CN.md) · [完整统计](docs/statistics.zh-CN.md) · [配色研究](docs/color-modes.zh-CN.md)
+[制作方式与费用分析](docs/workflow-analysis.zh-CN.md) · [取样覆盖与作者分布](docs/collection-analysis.zh-CN.md)
 
 ## 研究与数据
 
-- [方法](docs/methodology.zh-CN.md)、[检索覆盖](docs/search-coverage.zh-CN.md)与[媒体属性](docs/media-profile.zh-CN.md)。
-- [深读案例](data/cases.csv)、[逐文件分类](data/domain-style.csv)与[字段说明](docs/case-index-guide.zh-CN.md)。
-- [研究报告](docs/report.zh-CN.md)与[长文版本](docs/x-article.zh-CN.md)。
-- [图表复现方法](docs/chart-generation.md)。完整图表放在研究专题页。
+- [统一来源 CSV](data/collection-index.csv)：所有批次、模型角色、原帖与证据入口。
+- [收录与证据分析](docs/collection-analysis.zh-CN.md)：模型标签、取样覆盖、账号分布与批次统计。
+- [冻结快照分析](docs/snapshot-analysis.zh-CN.md)、[完整统计](docs/statistics.zh-CN.md)与[配色研究](docs/color-modes.zh-CN.md)。
+- [方法](docs/methodology.zh-CN.md)、[媒体属性](docs/media-profile.zh-CN.md)与[图表复现](docs/chart-generation.md)。
 
-模型标注来自作者披露。取样画面能说明可见内容，不能核实隐藏工具调用、完整动态质量或音乐来源。仓库不分发原始 MP4 与私有采集记录。本项目独立维护。
+9 月 26 日文件快照仍为 1,401 个逐字节不同的文件，分类纳入 1,119 个。游戏、广告与 AI 自谈占 57.7%；动态图形／界面与三维渲染占 60.2%。后续来源不混入这套文件分母。
+
+取样说明可见内容；作者披露说明制作主张。后台身份、完整动态、费用与音乐原创未逐条独立核实。仓库不分发原始 MP4。本项目独立维护。
 
 ## 更新记录
 
-- [10 月 10 日：维护与近期来源复核](docs/maintenance-2026-10-10.zh-CN.md)。
-- [10 月 3 日：Claude 作品分类目录](docs/claude55-update-2026-10-03.zh-CN.md)。
-- [10 月 2 日：Fable 报告与 Sonnet 对照](docs/claude55-update-2026-10-02.zh-CN.md)。
-- [9 月 27 日：七条新增工作流](docs/new-cases-2026-09-27.zh-CN.md)。
-- [9 月 26 日：Opus 冻结研究快照](docs/snapshot-analysis.zh-CN.md)。
+- [2026-10-10 补搜与分析](docs/maintenance-2026-10-10-followup.zh-CN.md)。
+- [2026-10-10 首轮维护与 Haiku](docs/maintenance-2026-10-10.zh-CN.md)。
+- [2026-10-03 分类作品目录](docs/claude55-update-2026-10-03.zh-CN.md)。
+- [2026-10-02 Fable 报告与 Sonnet 对照](docs/claude55-update-2026-10-02.zh-CN.md)。
+- [2026-09-27 新增工作流](docs/new-cases-2026-09-27.zh-CN.md)。
 
 ## 参与维护与许可
 
-[提交原创作品或可复用工程](CONTRIBUTING.md)。优先收录不同的制作方法、清楚的输入或可检查的源码。欢迎纠错与补充原作者链接。
+[提交原帖或可复用工程](CONTRIBUTING.md)。优先收录不同制作方式、清楚输入或可检查源码。欢迎纠错与补充原作者。
 
-原创文字与图表使用 [CC BY 4.0](LICENSE)。链接作品和预览截图归原作者，按各自条款使用。[第三方素材说明](THIRD_PARTY.md)。
+原创文字与图表使用 [CC BY 4.0](LICENSE)。链接作品与截图归原作者，按各自条款使用。[第三方素材](THIRD_PARTY.md)。

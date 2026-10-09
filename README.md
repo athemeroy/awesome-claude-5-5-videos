@@ -1,37 +1,49 @@
 # Awesome Claude 5.5 Videos [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[中文](README.zh-CN.md) · [Visual directory](docs/cases-index.zh-CN.md) · [Contribute](CONTRIBUTING.md)
+[中文](README.zh-CN.md) · [All sources](docs/library.md) · [Contribute](CONTRIBUTING.md)
 
-A curated collection of videos, animations and reusable production workflows made with **Claude 5.5**. Covers Opus, Sonnet, Haiku and creator-reported Fable testing. Each example links to its source and explains Claude's role: rendering code, supplied-media editing, external-model direction or a recorded app.
+Curated videos, animations and reusable workflows made with **Claude 5.5**: Opus, Sonnet, Haiku and creator-reported Fable testing. Original posts, model roles, inputs and evidence are recorded separately.
 
 ## Contents
 
-- [Watch examples](#watch-examples)
-- [Browse the collection](#browse-the-collection)
+- [Browse by model](#browse-by-model)
+- [Four starting points](#four-starting-points)
 - [Make your own](#make-your-own)
-- [Collection statistics](#collection-statistics)
+- [What we learned](#what-we-learned)
 - [Research and data](#research-and-data)
 - [Updates](#updates)
 - [Contributing and license](#contributing-and-license)
 
-## Watch examples
+## Browse by model
 
-| History | Art | Science |
-|:---:|:---:|:---:|
-| [<img src="assets/claude55-2026-10-03/2106081142143168580.jpg" width="240" alt="Human progress shown on a one-day clock">](https://x.com/imjustnewatai/status/2106081142143168580) | [<img src="assets/claude55-2026-10-03/2106095190285144331.jpg" width="240" alt="An artist and cat travel through art history">](https://x.com/cherry_mx_reds/status/2106095190285144331) | [<img src="assets/claude55-2026-10-03/2106190594775097663.jpg" width="240" alt="A continuous zoom from microscopic structures to galaxies">](https://x.com/imjustnewatai/status/2106190594775097663) |
-| [Human progress in one day](https://x.com/imjustnewatai/status/2106081142143168580) · @imjustnewatai | [40,000 years of art, with a cat](https://x.com/cherry_mx_reds/status/2106095190285144331) · @cherry_mx_reds | [The Long Way Out](https://x.com/imjustnewatai/status/2106190594775097663) · @imjustnewatai |
-| A clock carries the story into imagined futures. | Recurring characters connect changing art styles. | One zoom connects quarks, people and galaxies. |
+<!-- collection-summary:start -->
 
-All three are creator-reported Fable 5.5 examples with unverified backend identity. We inspected nine sampled frames per preview. [Production claims and review notes](docs/claude55-update-2026-10-03.md).
+As of 2026-10-10: **394 distinct source posts**, with **194 receiving nine-frame preview sampling**.
 
-## Browse the collection
+| Browse by model | Source posts |
+|---|---:|
+| [Opus](docs/library.md#opus) | 282 |
+| [Sonnet](docs/library.md#sonnet) | 45 |
+| [Haiku](docs/library.md#haiku) | 15 |
+| [Fable](docs/library.md#fable) | 65 |
 
-- [Haiku videos and comparisons](docs/maintenance-2026-10-10.md#haiku-videos-and-comparisons) — poetry, motion design, a 3D pelican, editing and graphics comparisons.
-- [Visual case directory](docs/cases-index.zh-CN.md) — 168 reviewed source posts, each with a frame, original link and production notes.
-- [Claude video directory](docs/claude55-update-2026-10-03.md#browse-all-added-sources-by-purpose) — history, science, stories, launches, music, games and visual experiments.
-- [Domain × style atlas](docs/domain-style-atlas.md) — find pictured examples by subject and look.
-- [Evidence comparisons](docs/evidence-examples.md) — similar looks, different inputs and tool roles.
-- [Fable / Opus and Sonnet comparisons](docs/claude55-update-2026-10-02.md) — early creator reports with source notes.
+[Complete directory](docs/library.md) · [Evidence and account coverage](docs/collection-analysis.md) · [Batch totals](data/collection-summary.json)
+
+<!-- collection-summary:end -->
+
+Multi-model comparisons appear in several groups, so rows cannot be summed. Older Opus cases use snapshot context; Fable includes suspected routing. Source posts include replies and variants, not independent-film counts.
+
+[Pictured production paths](docs/cases-index.zh-CN.md) · [Subject × style atlas](docs/domain-style-atlas.md) · [Evidence comparisons](docs/evidence-examples.md)
+
+## Four starting points
+
+| Opus | Sonnet | Haiku | Fable (creator report) |
+|:---:|:---:|:---:|:---:|
+| [<img src="assets/case-thumbnails/2102786378282987591.webp" width="180" alt="Clearwater water">](https://x.com/Aurelien_Gz/status/2102786378282987591) | [<img src="assets/claude55-2026-10-10-followup/2107548992640880755.jpg" width="180" alt="Tower construction">](https://x.com/Solvaix/status/2107548992640880755) | [<img src="assets/claude55-2026-10-10-followup/2108089492016103775.jpg" width="180" alt="Motion showreel">](https://x.com/badboyfoxy/status/2108089492016103775) | [<img src="assets/claude55-2026-10-10-followup/2107958931230241037.jpg" width="180" alt="Doodle history">](https://x.com/oalanicolas/status/2107958931230241037) |
+| [Clearwater water](https://x.com/Aurelien_Gz/status/2102786378282987591) | [Tower construction](https://x.com/Solvaix/status/2107548992640880755) | [Motion showreel](https://x.com/badboyfoxy/status/2108089492016103775) | [Doodle history](https://x.com/oalanicolas/status/2107958931230241037) |
+| Real-time WebGL graphics | A staged interactive scene | Type, easing and orbital forms | Changing eras and a recurring character |
+
+These illustrate four different tasks, not a same-prompt model ranking. Previews received nine-frame sampling, which cannot verify full motion or model calls. [New preview and workflow notes](docs/maintenance-2026-10-10-followup.md).
 
 ## Make your own
 
@@ -56,51 +68,36 @@ All three are creator-reported Fable 5.5 examples with unverified backend identi
 
 [Previews, reusable files and attribution notes](docs/production-resources.md#reusable-open-source-production-systems). Resource descriptions were checked September 27; external projects may change.
 
-## Collection statistics
+## What we learned
 
-<!-- collection-summary:start -->
+- **Inputs define the task.** References, character sheets, songs and existing projects change what the model actually contributes.
+- **One prompt can trigger many passes.** The F1 creator reports repeated rejection of intermediate results; Taxtello records five versions.
+- **Compare task cost.** In reported costs, Haiku uses 72.0% of Opus’s bridge budget; the F1 executor accounts for 64.2% of its team total. These are not general model rankings.
+- **Appearance and correctness need separate evidence.** The Sonnet tower creator says the sequence is invented and not engineering-calculated.
 
-| Batch | Source posts | New to earlier batches |
-|---|---:|---:|
-| [2026-09-26](data/cases.csv) | 168 | 168 |
-| [2026-09-27](assets/new-case-thumbnails/frames.csv) | 7 | 7 |
-| [2026-10-02](data/claude55-source-review-2026-10-02.csv) | 22 | 22 |
-| [2026-10-03](data/claude55-source-review-2026-10-03.csv) | 157 | 157 |
-| [2026-10-10](data/claude55-source-review-2026-10-10.csv) | 18 | 18 |
-
-As of 2026-10-10: **372 distinct source posts**.
-
-<!-- collection-summary:end -->
-
-These are source-post counts, including replies, comparisons and variants, rather than independent-film or verified-model-run counts. Totals are deduplicated across dated batches. [Reproducible totals](data/collection-summary.json).
-
-The **September 26 Opus snapshot** contains 1,401 byte-distinct files, of which 1,119 were labeled `yes` / `likely`. Its main findings:
-
-- Games, ads and AI-about-AI comprise **57.7%** of included files.
-- Motion graphics / UI and 3D render comprise **60.2%**.
-- Reviewed previews have a **52.37 s** median; all classified files have a **39.20 s** median. The samples use different units and selection rules.
-
-[Charts and analysis](docs/snapshot-analysis.md) · [Full statistics](docs/statistics.md) · [Color study](docs/color-modes.md)
+[Workflow and cost analysis](docs/workflow-analysis.md) · [Sampling and account coverage](docs/collection-analysis.md)
 
 ## Research and data
 
-- [Methodology](docs/methodology.zh-CN.md), [search coverage](docs/search-coverage.zh-CN.md) and [media profile](docs/media-profile.zh-CN.md).
-- [Reviewed cases](data/cases.csv), [file classifications](data/domain-style.csv) and [field guide](docs/case-index-guide.zh-CN.md).
-- [Research report](docs/report.zh-CN.md) and [Article version](docs/x-article.zh-CN.md).
-- [Chart reproduction](docs/chart-generation.md). Detailed charts stay on the research pages.
+- [Unified source CSV](data/collection-index.csv): every batch, model/role label, original post and evidence link.
+- [Collection and evidence analysis](docs/collection-analysis.md): model labels, sampling, publishing accounts and batches.
+- [Frozen snapshot analysis](docs/snapshot-analysis.md), [full statistics](docs/statistics.md) and [color study](docs/color-modes.md).
+- [Methodology](docs/methodology.zh-CN.md), [media profile](docs/media-profile.zh-CN.md) and [chart reproduction](docs/chart-generation.md).
 
-Model labels follow creator disclosures. Sampled frames establish visible content, not hidden tool calls, full-motion quality or music provenance. Original MP4s and private acquisition records are not distributed. This is an independent collection.
+The September 26 file snapshot remains 1,401 byte-distinct files, with 1,119 included by classification. Games, ads and AI-about-AI comprise 57.7%; motion/UI and 3D render comprise 60.2%. Later sources do not enter these file denominators.
+
+Samples document visible content; disclosures document production claims. Backend identity, full motion, costs and original music are not independently verified for every entry. Original MP4s are not distributed. This collection is independent.
 
 ## Updates
 
-- [October 10: maintenance and source review](docs/maintenance-2026-10-10.md).
-- [October 3: grouped Claude video directory](docs/claude55-update-2026-10-03.md).
-- [October 2: Fable reports and Sonnet comparisons](docs/claude55-update-2026-10-02.md).
-- [September 27: seven additional workflows](docs/new-cases-2026-09-27.md).
-- [September 26: frozen Opus research snapshot](docs/snapshot-analysis.md).
+- [2026-10-10 follow-up and analysis](docs/maintenance-2026-10-10-followup.md).
+- [2026-10-10 first maintenance and Haiku](docs/maintenance-2026-10-10.md).
+- [2026-10-03 grouped video directory](docs/claude55-update-2026-10-03.md).
+- [2026-10-02 Fable reports and Sonnet comparisons](docs/claude55-update-2026-10-02.md).
+- [2026-09-27 additional workflows](docs/new-cases-2026-09-27.md).
 
 ## Contributing and license
 
-[Suggest an original video or reusable project](CONTRIBUTING.md). Prefer a distinct workflow, clear inputs or inspectable source. Corrections and missing creator links are welcome.
+[Suggest an original post or reusable project](CONTRIBUTING.md). Prefer distinct workflows, clear inputs or inspectable source. Corrections and missing creator links are welcome.
 
 Original writing and diagrams: [CC BY 4.0](LICENSE). Linked works and preview frames belong to their creators and have separate terms. [Third-party material](THIRD_PARTY.md).

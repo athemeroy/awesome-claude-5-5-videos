@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 382" role="img" aria-labelledby="title desc">
+<title id="title">Preview sampling coverage by collection batch</title>
+<desc id="desc">Source-post counts. Navy shows posts with nine-frame preview sampling; grey shows posts without sampling. Batches use listing dates, not release dates.</desc>
+<rect width="920" height="382" fill="#fafbfc"/>
+<g font-family="system-ui,sans-serif" fill="#1f2937">
+<text x="24" y="32" font-size="22" font-weight="600">How much of the collection has preview evidence?</text>
+<text x="24" y="55" font-size="13">Source posts by listing batch · nine-frame sampling does not verify full motion or model calls</text>
+<rect x="24" y="70" width="12" height="12" fill="#244b67"/><text x="42" y="81" font-size="12">Sampled preview</text>
+<rect x="195" y="70" width="12" height="12" fill="#d7dfe5"/><text x="213" y="81" font-size="12">Source only</text>
+<text x="24" y="127" font-size="13">2026-09-26</text>
+<rect x="215" y="110" width="480" height="24" rx="3" fill="#d7dfe5"/>
+<rect x="215" y="110" width="480.00" height="24" fill="#244b67"/>
+<text x="715" y="127" font-size="13">168 / 168 sampled (100.0%)</text>
+<text x="24" y="169" font-size="13">2026-09-27</text>
+<rect x="215" y="152" width="480" height="24" rx="3" fill="#d7dfe5"/>
+<rect x="215" y="152" width="480.00" height="24" fill="#244b67"/>
+<text x="715" y="169" font-size="13">7 / 7 sampled (100.0%)</text>
+<text x="24" y="211" font-size="13">2026-10-02</text>
+<rect x="215" y="194" width="480" height="24" rx="3" fill="#d7dfe5"/>
+<rect x="215" y="194" width="0.00" height="24" fill="#244b67"/>
+<text x="715" y="211" font-size="13">0 / 22 sampled (0.0%)</text>
+<text x="24" y="253" font-size="13">2026-10-03</text>
+<rect x="215" y="236" width="480" height="24" rx="3" fill="#d7dfe5"/>
+<rect x="215" y="236" width="42.80" height="24" fill="#244b67"/>
+<text x="715" y="253" font-size="13">14 / 157 sampled (8.9%)</text>
+<text x="24" y="295" font-size="13">2026-10-10</text>
+<rect x="215" y="278" width="480" height="24" rx="3" fill="#d7dfe5"/>
+<rect x="215" y="278" width="53.33" height="24" fill="#244b67"/>
+<text x="715" y="295" font-size="13">2 / 18 sampled (11.1%)</text>
+<text x="24" y="337" font-size="13">2026-10-10 follow-up</text>
+<rect x="215" y="320" width="480" height="24" rx="3" fill="#d7dfe5"/>
+<rect x="215" y="320" width="65.45" height="24" fill="#244b67"/>
+<text x="715" y="337" font-size="13">3 / 22 sampled (13.6%)</text>
+</g></svg>
