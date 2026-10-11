@@ -7,6 +7,7 @@ import html
 import json
 import re
 from collections import Counter
+from datetime import date as calendar_date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +15,7 @@ START = '<!-- collection-summary:start -->'
 END = '<!-- collection-summary:end -->'
 MODELS = ('Opus', 'Sonnet', 'Haiku', 'Fable')
 POST = re.compile(r'https://x\.com/([^/]+)/status/(\d+)')
+LEDGER = re.compile(r'claude55-source-review-(\d{4}-\d{2}-\d{2})(-[a-z0-9-]+)?\.csv')
 NEW_CASES = {
     '2104131805175844923': ('Handmade launch film versus code remake', '手工发布片与代码改编', 'Opus 5.5'),
     '2104009748874141941': ('Green-screen clip and edited version', '绿幕原片与编辑版本', 'Opus 5.5 + Grok footage'),
@@ -25,9 +27,22 @@ NEW_CASES = {
 }
 
 
-def rows(path):
+def rows(path, required=('source_url',)):
     with path.open(encoding='utf-8-sig', newline='') as stream:
-        return list(csv.DictReader(stream))
+        reader = csv.DictReader(stream)
+        missing = set(required) - set(reader.fieldnames or ())
+        if missing:
+            raise ValueError(f'{path.name}: missing columns: {", ".join(sorted(missing))}')
+        result = []
+        for number, row in enumerate(reader, start=2):
+            if None in row or any(value is None for value in row.values()):
+                raise ValueError(f'{path.name}:{number}: row width does not match its header')
+            if any(not row[field].strip() for field in required):
+                raise ValueError(f'{path.name}:{number}: blank required field')
+            result.append(row)
+        if not result:
+            raise ValueError(f'{path.name}: no source rows')
+        return result
 
 
 def clean(value):
@@ -41,55 +56,95 @@ def model_tags(label):
     return tags
 
 
-def collect():
+def source_batches():
+    """Keep listing dates distinct from the original posts' publication dates."""
     sources = [('2026-09-26', 'data/cases.csv'), ('2026-09-27', 'assets/new-case-thumbnails/frames.csv')]
-    ledgers = sorted((ROOT / 'data').glob('claude55-source-review-*.csv'),
-                     key=lambda p: (p.stem.removeprefix('claude55-source-review-')[:10], 'followup' in p.stem, p.name))
-    sources += [(p.stem.removeprefix('claude55-source-review-')[:10], str(p.relative_to(ROOT))) for p in ledgers]
-    index = {}; groups = []
-    for date, file in sources:
+    ledgers = []
+    for path in (ROOT / 'data').glob('claude55-source-review-*.csv'):
+        match = LEDGER.fullmatch(path.name)
+        if not match:
+            raise ValueError(f'Expected a dated source ledger: {path.name}')
+        date = calendar_date.fromisoformat(match[1]).isoformat()
+        ledgers.append((date, str(path.relative_to(ROOT))))
+    return sources + sorted(ledgers, key=lambda item: (item[0], 'followup' in item[1], item[1]))
+
+
+def detail_page(file, explicit=''):
+    """Resolve a batch's page without redirecting future follow-ups to an old date."""
+    if explicit:
+        candidates = [explicit]
+    else:
+        batch = Path(file).stem.removeprefix('claude55-source-review-')
+        candidates = [f'docs/maintenance-{batch}.md', f'docs/claude55-update-{batch}.md']
+    for candidate in candidates:
+        path = ROOT / candidate.partition('#')[0]
+        if path.is_file() and path.resolve().is_relative_to(ROOT):
+            return candidate
+    raise ValueError(f'{file}: missing detail page; expected {" or ".join(candidates)}')
+
+
+def normalize_source(row, date, file):
+    """Adapt the three public input formats to one source-post record."""
+    match = POST.fullmatch(row['source_url'])
+    if not match or row.get('post_id', match[2]) != match[2]:
+        raise ValueError(f'Invalid post ID / source URL in {file}')
+    author, pid = match.groups()
+    item = dict(post_id=pid, creator=author, source_url=row['source_url'], first_listed_date=date,
+                model_attribution='', model_tags='', entry_kind='example_or_comparison',
+                media_evidence='source_only', title_en='', title_zh='', category='',
+                source_ledger=file, detail_page='', thumbnail='')
+    if file == 'data/cases.csv':
+        item.update(model_attribution='Opus 5.5 snapshot context; consult individual source notes', model_tags='Opus',
+                    media_evidence='sampled_preview', title_en=row['label'], title_zh=row['label'],
+                    category=row['primary_path'], detail_page=f'docs/cases-index.zh-CN.md#case-{pid}',
+                    thumbnail=f'assets/case-thumbnails/{pid}.webp')
+        if row['hypit_status'] != 'tile_ok':
+            raise ValueError(f'Unsampled frozen case: {pid}')
+    elif file.endswith('frames.csv'):
+        if pid not in NEW_CASES:
+            raise ValueError(f'{file}: missing September 27 source description for {pid}')
+        en, zh, label = NEW_CASES[pid]
+        item.update(model_attribution=label, model_tags=';'.join(model_tags(label)),
+                    media_evidence='sampled_preview', title_en=en, title_zh=zh,
+                    category='later_workflow', detail_page='docs/new-cases-2026-09-27.md',
+                    thumbnail=f'assets/new-case-thumbnails/{pid}.webp')
+    else:
+        label = row['model_attribution']
+        context = row.get('source_kind') == 'routing discussion'
+        item.update(model_attribution=label, model_tags='' if context else ';'.join(model_tags(label)),
+                    entry_kind='routing_context' if context else 'example_or_comparison',
+                    media_evidence='sampled_preview' if row['media_review'].startswith('nine frames inspected') else 'source_only',
+                    title_en=row.get('title_en') or f'@{author} — {row.get("source_kind", "source")}',
+                    title_zh=row.get('title_zh') or f'@{author} — {row.get("source_kind", "来源")}',
+                    category=row.get('category', row.get('source_kind', '')),
+                    detail_page=detail_page(file, row.get('detail_page', '')),
+                    thumbnail=row.get('thumbnail', ''))
+    for field in ('detail_page', 'thumbnail'):
+        value = item[field].partition('#')[0]
+        if value and not (ROOT / value).is_file():
+            raise ValueError(f'{file}: missing {field} for {pid}: {value}')
+    return item
+
+
+def collect():
+    index = {}
+    groups = []
+    for date, file in source_batches():
         batch = set()
-        for row in rows(ROOT / file):
-            match = POST.fullmatch(row['source_url'])
-            if not match or row.get('post_id', match[2]) != match[2]:
-                raise ValueError(f'Invalid post ID / source URL in {file}')
-            author, pid = match.groups()
+        prior_total = len(index)
+        required = ('source_url',)
+        if file.startswith('data/claude55-source-review-'):
+            required += ('post_id', 'model_attribution', 'media_review')
+        elif file == 'data/cases.csv':
+            required += ('label', 'primary_path', 'hypit_status')
+        for row in rows(ROOT / file, required):
+            item = normalize_source(row, date, file)
+            pid = item['post_id']
             if pid in batch:
                 if file.endswith('frames.csv'):
                     continue  # Two attachments still represent one post.
                 raise ValueError(f'Duplicate source in {file}: {pid}')
             batch.add(pid)
-            item = dict(post_id=pid, creator=author, source_url=row['source_url'], first_listed_date=date,
-                        model_attribution='', model_tags='', entry_kind='example_or_comparison',
-                        media_evidence='source_only', title_en='', title_zh='', category='',
-                        source_ledger=file, detail_page='', thumbnail='')
-            if file == 'data/cases.csv':
-                item.update(model_attribution='Opus 5.5 snapshot context; consult individual source notes', model_tags='Opus',
-                            media_evidence='sampled_preview', title_en=row['label'], title_zh=row['label'],
-                            category=row['primary_path'], detail_page=f'docs/cases-index.zh-CN.md#case-{pid}',
-                            thumbnail=f'assets/case-thumbnails/{pid}.webp')
-                if row['hypit_status'] != 'tile_ok':
-                    raise ValueError(f'Unsampled frozen case: {pid}')
-            elif file.endswith('frames.csv'):
-                en, zh, label = NEW_CASES[pid]
-                item.update(model_attribution=label, model_tags=';'.join(model_tags(label)),
-                            media_evidence='sampled_preview', title_en=en, title_zh=zh,
-                            category='later_workflow', detail_page='docs/new-cases-2026-09-27.md',
-                            thumbnail=f'assets/new-case-thumbnails/{pid}.webp')
-            else:
-                label = row['model_attribution']; context = row.get('source_kind') == 'routing discussion'
-                item.update(model_attribution=label, model_tags='' if context else ';'.join(model_tags(label)),
-                            entry_kind='routing_context' if context else 'example_or_comparison',
-                            media_evidence='sampled_preview' if row['media_review'].startswith('nine frames inspected') else 'source_only',
-                            title_en=row.get('title_en') or f'@{author} — {row.get("source_kind", "source")}',
-                            title_zh=row.get('title_zh') or f'@{author} — {row.get("source_kind", "来源")}',
-                            category=row.get('category', row.get('source_kind', '')),
-                            detail_page=('docs/maintenance-2026-10-10-followup.md' if 'followup' in file else
-                                         'docs/maintenance-2026-10-10.md' if date == '2026-10-10' else
-                                         f'docs/claude55-update-{date}.md'),
-                            thumbnail=row.get('thumbnail', ''))
-            if item['thumbnail'] and not (ROOT / item['thumbnail']).exists():
-                raise ValueError(f'Missing thumbnail: {item["thumbnail"]}')
             if pid in index:
                 # Preserve the earliest listing and keep the strongest public media record.
                 prev = index[pid]
@@ -99,7 +154,6 @@ def collect():
             else:
                 index[pid] = item
         # Count additions from the union size before and after this batch.
-        prior_total = sum(g['newly_listed_source_posts'] for g in groups)
         groups.append(dict(date=date, label=date + (' follow-up' if 'followup' in file else ''), source=file,
                            unique_source_posts=len(batch), newly_listed_source_posts=len(index) - prior_total,
                            overlaps_earlier_batches=len(batch) - (len(index) - prior_total)))
@@ -133,6 +187,12 @@ def render_library(entries, zh):
 
 
 def render_analysis(entries, groups, zh):
+    latest_file = groups[-1]['source']
+    latest_row = rows(ROOT / latest_file)[0]
+    latest_page = detail_page(latest_file, latest_row.get('detail_page', ''))
+    if zh and (ROOT / (latest_page[:-3] + '.zh-CN.md')).is_file():
+        latest_page = latest_page[:-3] + '.zh-CN.md'
+    latest_link = Path(latest_page).name
     total = len(entries); sampled = sum(e['media_evidence'] == 'sampled_preview' for e in entries)
     context = sum(e['entry_kind'] == 'routing_context' for e in entries)
     later = [e for e in entries if e['first_listed_date'] >= '2026-10-02' and e['entry_kind'] != 'routing_context']
@@ -165,7 +225,7 @@ def render_analysis(entries, groups, zh):
               '## 各批次与搜索缺口' if zh else '## Batches and search gaps', '',
               '| 批次 | 来源帖 | 比此前新增 |' if zh else '| Batch | Source posts | New to earlier batches |', '|---|---:|---:|']
     lines += [f'| [{g["label"]}](../{g["source"]}) | {g["unique_source_posts"]} | {g["newly_listed_source_posts"]} |' for g in groups]
-    lines += ['', '批次按首次收录日期组织，不是作品发布趋势。搜索结果有数量上限，日期条件还需核对帖子的实际时间。补搜与复核记录见[本轮更新](maintenance-2026-10-10-followup.zh-CN.md)。9 月 26 日逐文件领域、画风、片长和配色分析保留在[冻结快照分析](snapshot-analysis.zh-CN.md)。两套单位不混算。' if zh else 'Batches use first-listing dates, not a publication trend. Search results are capped, and requested dates need checking against actual post timestamps. See [this follow-up](maintenance-2026-10-10-followup.md) for coverage. September 26 file-level domain, style, duration and color results remain in [frozen snapshot analysis](snapshot-analysis.md); the units are not merged.', '']
+    lines += ['', f'批次按首次收录日期组织，不是作品发布趋势。搜索结果有数量上限，日期条件还需核对帖子的实际时间。补搜与复核记录见[本轮更新]({latest_link})。9 月 26 日逐文件领域、画风、片长和配色分析保留在[冻结快照分析](snapshot-analysis.zh-CN.md)。两套单位不混算。' if zh else f'Batches use first-listing dates, not a publication trend. Search results are capped, and requested dates need checking against actual post timestamps. See [this follow-up]({latest_link}) for coverage. September 26 file-level domain, style, duration and color results remain in [frozen snapshot analysis](snapshot-analysis.md); the units are not merged.', '']
     return '\n'.join(lines)
 
 

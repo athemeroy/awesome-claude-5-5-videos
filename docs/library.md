@@ -2,30 +2,42 @@
 
 [Home](../README.md) · [中文](library.zh-CN.md)
 
-All dated batches in one directory: **394 distinct source posts**. Older case titles retain their source language.
+All dated batches in one directory: **424 distinct source posts**. Older case titles retain their source language.
 
 Groups follow source labels; multi-model comparisons appear in several groups. Older Opus entries are grouped by snapshot context, not verified calls. Fable includes suspected routing. Routing discussions are listed separately.
 
 [Collection / evidence analysis](collection-analysis.md) · [Workflow analysis](workflow-analysis.md) · [Complete CSV](../data/collection-index.csv)
 
-- [Opus (282)](#opus)
-- [Sonnet (45)](#sonnet)
-- [Haiku (15)](#haiku)
-- [Fable (65)](#fable)
+- [Opus (301)](#opus)
+- [Sonnet (54)](#sonnet)
+- [Haiku (21)](#haiku)
+- [Fable (68)](#fable)
 - [Context and other comparisons](#context)
 
 <a id="opus"></a>
 
-## Opus (282)
+## Opus (301)
 
 | Original post | Model / role label | Evidence | First listed |
 |---|---|---|---|
+| [Follow the Crumbs mixed-tool film](https://x.com/sarit69976/status/2109072935998681436) | Opus 5.5 direction/editing + Magnific + Seedance 2.5 + ElevenLabs | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Hangul Day code animation](https://x.com/danialnamkr/status/2109070380711481599) | Opus 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Interactive Edo-kiriko glass](https://x.com/mizugame_22/status/2109067132839579693) | Opus 5.5 + Three.js | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Falcon 9 landing visualization](https://x.com/konstantinsaifo/status/2109061641027678483) | Opus 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Imagined Starbase coastline expansion](https://x.com/konstantinsaifo/status/2109059572619002267) | Opus 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [184 SwiftUI text animations](https://x.com/amos_gyamfi/status/2109056620831649927) | Opus 5.5 + human SwiftUI seed examples | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Chroma Sweep gallery-heist trailer](https://x.com/jeffbruchado/status/2109041668595069182) | Opus 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Thermal Courier game trailer comparison](https://x.com/jeffbruchado/status/2108951077991362922) | Opus 5.5 / Sonnet 5.5 | [9-frame sample](maintenance-2026-10-11.md) | 2026-10-11 |
+| [A showreel after 71 messages](https://x.com/MaciejPoczek/status/2108924468110176457) | Opus 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Article-to-video with nine scene workers](https://x.com/agito20211021/status/2108852733792891379) | Opus 5.5 lead + Sonnet 5.5 scene workers + external media tools | [9-frame sample](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Fishing-game trailer](https://x.com/Blushneyy/status/2108644023330390194) | Opus 5.5 + Blender | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Game demo with purchased assets](https://x.com/Rush3rx/status/2108607656776876368) | Opus 5.5 + Tripo P2 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Comparing explainer production tools](https://x.com/avthar/status/2108603075174797490) | Opus 5.5 + ElevenLabs | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Taxtello launch film, fifth revision](https://x.com/daniel_haida/status/2108595684236755242) | Opus 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Browser kart racing and an edited recording](https://x.com/cafunify/status/2108581004432830683) | Opus 5.5 + Sonnet 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Three-prompt motion graphics comparison](https://x.com/mmmarcus_ai/status/2108550192882503797) | Opus 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Product folder plus a reference video](https://x.com/zhongerxin/status/2108532720414699696) | Opus 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
+| [Poor Haiku runner-game first attempt](https://x.com/nabendu82/status/2108523368701993395) | Haiku 5.5 / Sonnet 5.5 / Opus 5.5 comparison | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Ink animation with synthesized sound](https://x.com/gkxspace/status/2108506384711213108) | Opus 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Half a blanket across the miles](https://x.com/Vallabh469/status/2108494077389926611) | Opus 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Model-themed video with human narration](https://x.com/dorszafranski/status/2108493804068118778) | Opus 5.5 + creator voice | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
@@ -34,10 +46,17 @@ Groups follow source labels; multi-model comparisons appear in several groups. O
 | [Launch film after several iterations](https://x.com/_MasterMal/status/2108471807372325100) | Opus 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [A 3D pedal-stress explainer](https://x.com/chang_/status/2108458503367200908) | Opus 5.5 + ElevenLabs | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Data-led football-goal reconstruction](https://x.com/lv_feng47448/status/2108397996740432136) | Opus 5.5 + Blender + data + mocap | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
+| [Devin-made animation with revisions](https://x.com/Screeendev/status/2108333562462408823) | Opus 5.5 in Devin | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Golden Gate Bridge task-cost comparison](https://x.com/Solomonrojie/status/2108322280094728219) | Haiku 5.5 / Opus 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [F1 pit-stop orchestrator and executor comparison](https://x.com/rubenssoto_ai/status/2108289170871582851) | Opus 5.5 + Haiku 5.5 / GPT models | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
+| [Reference-led animation skill](https://x.com/ishuagra02/status/2108250410221781009) | Opus 5.5 + video-by-reference skill | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Desmodus visuals with human sound design](https://x.com/RogerKernel/status/2108226472607690903) | Opus 5.5 + Remotion + professional sound effects | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Fluffy-crab same-prompt comparison](https://x.com/vib3coded/status/2108190478889824662) | Opus 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Audio- and motion-reactive compositing](https://x.com/aicreataro/status/2108091976574988390) | Opus 5.5 + Blender + MiniMax + Midjourney | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
+| [Braun PS550 product film and 3d-product skill](https://x.com/nicceasy/status/2108018789468250448) | Opus 5.5 + scripted 3D rendering + external assets/audio | [9-frame sample](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Music video with image/video/upscale models](https://x.com/atomtanstudio/status/2107990511164559839) | Opus 5.5 + GPT Image 2.5 + MiniMax H3 + Topaz | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Eleven composable video-production skills](https://x.com/eazymoney888/status/2107876636133847244) | Opus 5.5 within an assistant-coordinated video workflow | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Finishing an existing edit](https://x.com/DTM_lab/status/2107108897521897547) | Opus 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Expressive interactive presentation](https://x.com/pham_blnh/status/2106247720570962081) | Opus 5.5 (creator report) | [Source only](claude55-update-2026-10-03.md) | 2026-10-03 |
 | [Prove you are conscious trailer](https://x.com/hive_echo/status/2106246677141266850) | Opus 5.5 / Grok (creator report) | [Source only](claude55-update-2026-10-03.md) | 2026-10-03 |
 | [Stained-glass image animation](https://x.com/rws1st/status/2106245625067282560) | Opus 5.5 (creator report) | [Source only](claude55-update-2026-10-03.md) | 2026-10-03 |
@@ -305,18 +324,27 @@ Groups follow source labels; multi-model comparisons appear in several groups. O
 
 <a id="sonnet"></a>
 
-## Sonnet (45)
+## Sonnet (54)
 
 | Original post | Model / role label | Evidence | First listed |
 |---|---|---|---|
+| [Chroma Sweep gallery-heist trailer](https://x.com/jeffbruchado/status/2109041668595069182) | Opus 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [End of Humanity: narrative versus generated footage](https://x.com/nonodigitalart/status/2109038670611100001) | Sonnet 5.5 narrative + Google Flow / Omni Flash video | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Bee comparison follow-up](https://x.com/letdarky/status/2108992110598697376) | Sonnet 5.5 / Haiku 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Thermal Courier game trailer comparison](https://x.com/jeffbruchado/status/2108951077991362922) | Opus 5.5 / Sonnet 5.5 | [9-frame sample](maintenance-2026-10-11.md) | 2026-10-11 |
+| [After Effects particle-plugin prototype](https://x.com/learson_move/status/2108906894379344339) | Sonnet 5.5 + After Effects + DeepGlow | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Article-to-video with nine scene workers](https://x.com/agito20211021/status/2108852733792891379) | Opus 5.5 lead + Sonnet 5.5 scene workers + external media tools | [9-frame sample](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Browser kart racing and an edited recording](https://x.com/cafunify/status/2108581004432830683) | Opus 5.5 + Sonnet 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Three-prompt motion graphics comparison](https://x.com/mmmarcus_ai/status/2108550192882503797) | Opus 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
+| [Poor Haiku runner-game first attempt](https://x.com/nabendu82/status/2108523368701993395) | Haiku 5.5 / Sonnet 5.5 / Opus 5.5 comparison | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Fluffy-crab same-prompt comparison](https://x.com/vib3coded/status/2108190478889824662) | Opus 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [CSS origami animation comparison](https://x.com/UgoBit_/status/2107953568993141074) | Haiku 5.5 / Sonnet 5.5 / GPT models | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
+| [Motorcycle materials comparison](https://x.com/ziwenxu_/status/2107943956709339177) | Haiku 5.5 / Sonnet 5.5 / GPT-6 Luna + Blender | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Electric-motor explainer comparison](https://x.com/rubenssoto_ai/status/2107919226728050775) | Haiku 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Illustrative tower construction](https://x.com/Solvaix/status/2107548992640880755) | Sonnet 5.5 | [9-frame sample](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Understory: procedural-art action RPG](https://x.com/DannyLimanseta/status/2107505970809336071) | Sonnet 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Slow Me Down](https://x.com/kevin_t_ngo/status/2106864721525915941) | Sonnet 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
+| [Prison Break animation](https://x.com/VulKan42069/status/2106425412712804791) | Sonnet 5.5 + Blender | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Xiangqi game and promo](https://x.com/CoderRw11326/status/2106242032893411721) | Sonnet 5.5 (creator report) | [Source only](claude55-update-2026-10-03.md) | 2026-10-03 |
 | [Brief history of gaming](https://x.com/craigmiller1973/status/2106241923036164535) | Sonnet 5.5 (creator report) | [Source only](claude55-update-2026-10-03.md) | 2026-10-03 |
 | [Tropical miniature world](https://x.com/sonia_code/status/2106218179978785001) | Sonnet 5.5 (creator report) | [Source only](claude55-update-2026-10-03.md) | 2026-10-03 |
@@ -357,13 +385,18 @@ Groups follow source labels; multi-model comparisons appear in several groups. O
 
 <a id="haiku"></a>
 
-## Haiku (15)
+## Haiku (21)
 
 | Original post | Model / role label | Evidence | First listed |
 |---|---|---|---|
+| [Flexible glowing rod comparison](https://x.com/noclipepe/status/2109076746524045447) | Haiku 5.5 / GPT-6 Luna / Gemini 3.8 Flash | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Bee comparison follow-up](https://x.com/letdarky/status/2108992110598697376) | Sonnet 5.5 / Haiku 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Bee with a disclosed wing defect](https://x.com/letdarky/status/2108936071409000539) | Haiku 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
+| [West Lake footage edit](https://x.com/shengtang135754/status/2108934243636408790) | Haiku 5.5 + Pixabay footage + Volcengine narration | [9-frame sample](maintenance-2026-10-11.md) | 2026-10-11 |
 | [A creator’s video edit](https://x.com/pruthvithinks/status/2108594104133423276) | Haiku 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Three.js snow-globe comparison](https://x.com/buildwithrajath/status/2108571974222197055) | Haiku 5.5 / GPT-6 Luna | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Beijing promo with supplied production constraints](https://x.com/shengtang135754/status/2108549555528872041) | Haiku 5.5 + MiniMax narration + sourced footage | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
+| [Poor Haiku runner-game first attempt](https://x.com/nabendu82/status/2108523368701993395) | Haiku 5.5 / Sonnet 5.5 / Opus 5.5 comparison | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Golden Gate Bridge task-cost comparison](https://x.com/Solomonrojie/status/2108322280094728219) | Haiku 5.5 / Opus 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [F1 pit-stop orchestrator and executor comparison](https://x.com/rubenssoto_ai/status/2108289170871582851) | Opus 5.5 + Haiku 5.5 / GPT models | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [A 3D pelican riding a bicycle](https://x.com/xueyu1125/status/2108156768023118268) | Haiku 5.5 | [9-frame sample](maintenance-2026-10-10.md) | 2026-10-10 |
@@ -375,18 +408,22 @@ Groups follow source labels; multi-model comparisons appear in several groups. O
 | [A self-introduction built around 5–7–5](https://x.com/lemomo_ai/status/2107985954648867292) | Haiku 5.5 | [9-frame sample](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Night-train counterexample](https://x.com/EnvolDev/status/2107973447230091623) | Haiku 5.5 / GPT-6 Luna | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [CSS origami animation comparison](https://x.com/UgoBit_/status/2107953568993141074) | Haiku 5.5 / Sonnet 5.5 / GPT models | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
+| [Motorcycle materials comparison](https://x.com/ziwenxu_/status/2107943956709339177) | Haiku 5.5 / Sonnet 5.5 / GPT-6 Luna + Blender | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Electric-motor explainer comparison](https://x.com/rubenssoto_ai/status/2107919226728050775) | Haiku 5.5 / Sonnet 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 
 <a id="fable"></a>
 
-## Fable (65)
+## Fable (68)
 
 | Original post | Model / role label | Evidence | First listed |
 |---|---|---|---|
+| [Low Tide Shuffle rhythm game](https://x.com/blueemi99/status/2108912164253602187) | Opus / creator-reported Fable 5.5 | [9-frame sample](maintenance-2026-10-11.md) | 2026-10-11 |
+| [Qingming Scroll bridge environment](https://x.com/AISuperDomain/status/2108878175531110875) | creator-reported Fable 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [A 2000s Flash-style animation](https://x.com/YanqingCheng/status/2108296567166042404) | Reported Fable 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
 | [Human history in doodles](https://x.com/oalanicolas/status/2107958931230241037) | Reported Fable 5.5 | [9-frame sample](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Reference-led recreation with a skill](https://x.com/notdwd/status/2107816799840690589) | Reported Fable 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [JavaScript animation with wind-responsive IK](https://x.com/adam_fresko/status/2107637770873417894) | Reported Fable 5.5 | [Source only](maintenance-2026-10-10.md) | 2026-10-10 |
+| [Brainrot edit with reported cost](https://x.com/blueemi99/status/2107459553369760024) | creator-reported Fable 5.5 | [Source only](maintenance-2026-10-11.md) | 2026-10-11 |
 | [Balatro × League of Legends](https://x.com/Vince__Russell/status/2107315127292952696) | Reported Fable 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Classic stick fight](https://x.com/AndrewOnXYZ/status/2107262468502544435) | Reported Fable 5.5 | [Source only](maintenance-2026-10-10-followup.md) | 2026-10-10 |
 | [Illuminati horror motion film](https://x.com/badboyfoxy/status/2106241189976387799) | Fable 5.5 (creator report) | [Source only](claude55-update-2026-10-03.md) | 2026-10-03 |

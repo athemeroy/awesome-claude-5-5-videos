@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 382" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 424" role="img" aria-labelledby="title desc">
 <title id="title">Preview sampling coverage by collection batch</title>
 <desc id="desc">Source-post counts. Navy shows posts with nine-frame preview sampling; grey shows posts without sampling. Batches use listing dates, not release dates.</desc>
-<rect width="920" height="382" fill="#fafbfc"/>
+<rect width="920" height="424" fill="#fafbfc"/>
 <g font-family="system-ui,sans-serif" fill="#1f2937">
 <text x="24" y="32" font-size="22" font-weight="600">How much of the collection has preview evidence?</text>
 <text x="24" y="55" font-size="13">Source posts by listing batch · nine-frame sampling does not verify full motion or model calls</text>
@@ -31,4 +31,8 @@
 <rect x="215" y="320" width="480" height="24" rx="3" fill="#d7dfe5"/>
 <rect x="215" y="320" width="65.45" height="24" fill="#244b67"/>
 <text x="715" y="337" font-size="13">3 / 22 sampled (13.6%)</text>
+<text x="24" y="379" font-size="13">2026-10-11</text>
+<rect x="215" y="362" width="480" height="24" rx="3" fill="#d7dfe5"/>
+<rect x="215" y="362" width="80.00" height="24" fill="#244b67"/>
+<text x="715" y="379" font-size="13">5 / 30 sampled (16.7%)</text>
 </g></svg>

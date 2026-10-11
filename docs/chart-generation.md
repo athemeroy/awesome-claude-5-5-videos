@@ -1,5 +1,7 @@
 # Reproduce the public figures
 
+For the unified project command, see the [maintenance guide](maintenance.md): `python3 scripts/maintain.py check --scope all` checks these figures together with the source directory and datasets.
+
 The September 30 redraw uses the existing **September 26 frozen corpus** and separately dated September 27 color and engagement records. It adds no new X observations. All plotting runs locally from public CSV/JSON files; no X requests or private media are needed.
 
 Use Python 3.12 or newer and the pinned rendering packages:

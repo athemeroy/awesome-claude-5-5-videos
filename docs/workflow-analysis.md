@@ -2,7 +2,21 @@
 
 [Home](../README.md) · [Full directory](library.md) · [中文](workflow-analysis.zh-CN.md)
 
-The newer posts reveal several production patterns. They do not establish a general winner among Opus, Sonnet, Haiku and reported Fable. This analysis uses creator disclosures, three follow-up threads and sampled previews. [Source ledger](../data/claude55-source-review-2026-10-10-followup.csv) · [Sampling and account coverage](collection-analysis.md).
+The newer posts reveal several production patterns. They do not establish a general winner among Opus, Sonnet, Haiku and reported Fable. This analysis uses creator disclosures, follow-up threads, public projects and sampled previews. [Source ledger](../data/claude55-source-review-2026-10-10-followup.csv) · [Sampling and account coverage](collection-analysis.md).
+
+## October 11: automation within the full production process
+
+| Example | New disclosure | A reusable practice |
+|---|---|---|
+| [Haiku West Lake promo](https://x.com/shengtang135754/status/2108934243636408790) | The creator reports CNY 4. Their public brief specifies Pixabay footage, Volcengine narration, a supplied music track, chapter labels, and individually generated and timed voice segments. | Plan footage and timing before fitting narration, captions and transitions. CNY 4 is a reported task total without itemized billing. |
+| [Article to video with Opus and nine Sonnets](https://x.com/agito20211021/status/2108852733792891379) | The author assigns planning, script and design to Opus and scene work to nine Sonnets, with HyperFrames and external image, music and TTS tools. They report internal fixes for spoken stage directions, shortening 84 seconds to 61, and the closing fade. | Parallel scenes need shared audio timing and interfaces. Automated fixes after the first request still belong to the production process. |
+| [Braun turntable product film](https://x.com/nicceasy/status/2108018789468250448) | The author's [version-pinned README](https://github.com/nicceasy/3d-product/blob/b7e2025cbcb33ffd9625cd21ad506343b8b6e83d/README.md) describes nine days of work and Octane rendering on four GPUs. A person decides the intention, shots, cut, music and render go-aheads. | Resolve grey-box composition, key frames and an animatic before the full render. Natural-language tool control still involves design and choices. |
+
+These examples cover footage editing, multi-agent assembly and a 3D product film. Inputs, human roles and render requirements differ, so duration or a single initiating prompt does not place them on one efficiency scale.
+
+The turntable film's asset credits are instructive: KitBash3D and Greyscalegorilla for the set, Midjourney for record-label art, and Suno for songs. Code-controlled rendering can coexist with external assets. When reusing the skill, record the models, renderer, asset libraries and human decisions together; an MIT tool license does not replace third-party asset terms. [New projects and starting files](production-resources.md#production-resources-added-on-october-11).
+
+[This update's sources, previews and search records](maintenance-2026-10-11.md) retain the supporting evidence.
 
 ## The input changes the task
 

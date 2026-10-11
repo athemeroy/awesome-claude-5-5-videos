@@ -2,7 +2,21 @@
 
 [首页](../README.zh-CN.md) · [完整目录](library.zh-CN.md) · [English](workflow-analysis.md)
 
-新帖子给出了几种有用的制作方式。但这些例子不能得出 Opus、Sonnet、Haiku 与疑似 Fable 的通用排名。本页依据作者披露、三个补读线程与预览取样。[来源账本](../data/claude55-source-review-2026-10-10-followup.csv) · [取样覆盖与作者分布](collection-analysis.zh-CN.md)。
+新帖子给出了几种有用的制作方式。但这些例子不能得出 Opus、Sonnet、Haiku 与疑似 Fable 的通用排名。本页综合作者披露、补读线程、公开工程与预览取样。[来源账本](../data/claude55-source-review-2026-10-10-followup.csv) · [取样覆盖与作者分布](collection-analysis.zh-CN.md)。
+
+## 10 月 11 日补充：把自动化放回完整制作过程
+
+| 案例 | 新披露 | 可以复用的做法 |
+|---|---|---|
+| [Haiku 西湖宣传片](https://x.com/shengtang135754/status/2108934243636408790) | 作者报告花费 4 元。公开任务要求 Pixabay 素材、火山引擎旁白、指定背景音乐、章节标签，以及逐段生成和测量配音长度。 | 先安排素材和时间线，再处理旁白、字幕与段间过渡。4 元是作者报告的任务费用，未给出各项账单。 |
+| [Opus＋9 个 Sonnet 的文章转视频](https://x.com/agito20211021/status/2108852733792891379) | 作者称 Opus 负责进度、台本与设计，9 个 Sonnet 分工制作；另用 HyperFrames、外部图像、音乐和 TTS。内部修正了误读舞台指令、84 秒压到 61 秒、片尾淡出等问题。 | 并行制作需要统一声音时长与场景接口。第一次启动后的自动修正，也属于制作过程。 |
+| [Braun 唱盘产品片](https://x.com/nicceasy/status/2108018789468250448) | 作者的[固定版本 README](https://github.com/nicceasy/3d-product/blob/b7e2025cbcb33ffd9625cd21ad506343b8b6e83d/README.md)称样片经历九天，使用四 GPU 的 Octane 渲染；人要对意图、镜头、剪辑、音乐和渲染作出决定。 | 先做灰模构图、关键帧和预览剪辑，再投入完整渲染。自然语言控制工具，仍需要设计与选择。 |
+
+这三例覆盖素材剪辑、多代理组装和三维产品片。它们所需的输入、人工角色和渲染条件不同，不能按片长或“单次提示”放进同一效率榜。
+
+唱盘片的素材说明尤其有用：布景使用 KitBash3D 与 Greyscalegorilla，唱片标签画面使用 Midjourney，歌曲使用 Suno。代码控制渲染可以和外部素材共存。复用该 skill 时，应一起记录模型、渲染器、素材库和人的决定；MIT 工具许可不替代第三方素材许可。[新工程与起步文件](production-resources.zh-CN.md#10-月-11-日新增的制作资源)。
+
+[本轮来源、预览与搜索记录](maintenance-2026-10-11.zh-CN.md)保留更完整的证据。
 
 ## 输入不同，任务也不同
 

@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-10-10",
+  "as_of": "2026-10-11",
   "unit": "source post ID; includes replies, comparisons and variants",
-  "unique_source_posts": 394,
-  "sampled_source_posts": 194,
+  "unique_source_posts": 424,
+  "sampled_source_posts": 199,
   "routing_context_posts": 6,
   "batches": [
     {
@@ -51,6 +51,14 @@
       "source": "data/claude55-source-review-2026-10-10-followup.csv",
       "unique_source_posts": 22,
       "newly_listed_source_posts": 22,
+      "overlaps_earlier_batches": 0
+    },
+    {
+      "date": "2026-10-11",
+      "label": "2026-10-11",
+      "source": "data/claude55-source-review-2026-10-11.csv",
+      "unique_source_posts": 30,
+      "newly_listed_source_posts": 30,
       "overlaps_earlier_batches": 0
     }
   ],

@@ -10,37 +10,37 @@ These statistics describe selected source posts in this repository. They do not 
 
 | Unit | Count | Meaning |
 |---|---:|---|
-| Distinct source posts | 394 | Includes replies, comparisons and variants |
-| Posts with nine-frame preview sampling | 194 (49.2%) | Posts, not attachments or full-playback acceptance |
-| Posts without preview sampling | 200 | Source disclosures, including context discussion |
+| Distinct source posts | 424 | Includes replies, comparisons and variants |
+| Posts with nine-frame preview sampling | 199 (46.9%) | Posts, not attachments or full-playback acceptance |
+| Posts without preview sampling | 225 | Source disclosures, including context discussion |
 | Routing-context posts | 6 | Included in total sources; kept separate from examples |
 
 Sampling coverage means at least one preview received nine-frame inspection. It does not verify full motion, synchronization, original music or backend identity. Source additions outpace media review, so new-post totals must not be reported as new verified films.
 
 ## Model labels in later batches
 
-Use the **213 non-routing-context sources listed since October 2**, avoiding the 168 older Opus-focused cases as a cross-model denominator.
+Use the **243 non-routing-context sources listed since October 2**, avoiding the 168 older Opus-focused cases as a cross-model denominator.
 
 | Model label | Source posts | With sampling |
 |---|---:|---:|
-| Opus 5.5 | 107 | 2 |
-| Sonnet 5.5 | 45 | 1 |
-| Haiku 5.5 | 15 | 3 |
-| Fable 5.5 | 65 | 14 |
+| Opus 5.5 | 126 | 5 |
+| Sonnet 5.5 | 54 | 3 |
+| Haiku 5.5 | 21 | 4 |
+| Fable 5.5 | 68 | 15 |
 
-20 sources mention multiple Claude 5.5 labels; 1 match no explicit Claude 5.5 label. Rows therefore cannot be summed. Fable includes unverified routing reports.
+26 sources mention multiple Claude 5.5 labels; 1 match no explicit Claude 5.5 label. Rows therefore cannot be summed. Fable includes unverified routing reports.
 
 ## Source-account concentration
 
-The collection contains **314 case-insensitive publishing handles**. The five most represented accounts contribute 29/394 (7.4%). A publishing handle is not necessarily an original creator.
+The collection contains **335 case-insensitive publishing handles**. The five most represented accounts contribute 31/424 (7.3%). A publishing handle is not necessarily an original creator.
 
 | Publishing handle | Source posts |
 |---|---:|
 | @imjustnewatai | 11 |
+| @blueemi99 | 6 |
 | @cherry_mx_reds | 5 |
 | @chetaslua | 5 |
-| @aicreataro | 4 |
-| @blueemi99 | 4 |
+| @ishuagra02 | 4 |
 
 This concentration reflects search and curation, not market share. A series by one author is not independent replication by many creators.
 
@@ -54,5 +54,6 @@ This concentration reflects search and curation, not market share. A series by o
 | [2026-10-03](../data/claude55-source-review-2026-10-03.csv) | 157 | 157 |
 | [2026-10-10](../data/claude55-source-review-2026-10-10.csv) | 18 | 18 |
 | [2026-10-10 follow-up](../data/claude55-source-review-2026-10-10-followup.csv) | 22 | 22 |
+| [2026-10-11](../data/claude55-source-review-2026-10-11.csv) | 30 | 30 |
 
-Batches use first-listing dates, not a publication trend. Search results are capped, and requested dates need checking against actual post timestamps. See [this follow-up](maintenance-2026-10-10-followup.md) for coverage. September 26 file-level domain, style, duration and color results remain in [frozen snapshot analysis](snapshot-analysis.md); the units are not merged.
+Batches use first-listing dates, not a publication trend. Search results are capped, and requested dates need checking against actual post timestamps. See [this follow-up](maintenance-2026-10-11.md) for coverage. September 26 file-level domain, style, duration and color results remain in [frozen snapshot analysis](snapshot-analysis.md); the units are not merged.

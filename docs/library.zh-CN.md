@@ -2,30 +2,42 @@
 
 [首页](../README.zh-CN.md) · [English](library.md)
 
-合并全部日期批次，共 **394 条去重来源帖**。案例说明沿用来源语言。
+合并全部日期批次，共 **424 条去重来源帖**。案例说明沿用来源语言。
 
 模型分组按来源标签整理，多模型对照会出现在多个分组。Opus 旧快照条目按研究背景归组，并不核实逐条模型调用。Fable 包括作者怀疑的路由。路由讨论另列。
 
 [收录与证据分析](collection-analysis.zh-CN.md) · [制作方式分析](workflow-analysis.zh-CN.md) · [完整 CSV](../data/collection-index.csv)
 
-- [Opus (282)](#opus)
-- [Sonnet (45)](#sonnet)
-- [Haiku (15)](#haiku)
-- [Fable (65)](#fable)
+- [Opus (301)](#opus)
+- [Sonnet (54)](#sonnet)
+- [Haiku (21)](#haiku)
+- [Fable (68)](#fable)
 - [背景与其他对照](#context)
 
 <a id="opus"></a>
 
-## Opus (282)
+## Opus (301)
 
 | 原帖 | 模型／角色标签 | 证据 | 收录日期 |
 |---|---|---|---|
+| [Follow the Crumbs 多工具短片](https://x.com/sarit69976/status/2109072935998681436) | Opus 5.5 direction/editing + Magnific + Seedance 2.5 + ElevenLabs | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [韩文日代码动画](https://x.com/danialnamkr/status/2109070380711481599) | Opus 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [可交互的江户切子玻璃](https://x.com/mizugame_22/status/2109067132839579693) | Opus 5.5 + Three.js | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [Falcon 9 着陆可视化](https://x.com/konstantinsaifo/status/2109061641027678483) | Opus 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [想象版 Starbase 海岸扩展](https://x.com/konstantinsaifo/status/2109059572619002267) | Opus 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [一百八十四种 SwiftUI 文字动画](https://x.com/amos_gyamfi/status/2109056620831649927) | Opus 5.5 + human SwiftUI seed examples | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [Chroma Sweep 画廊潜入预告](https://x.com/jeffbruchado/status/2109041668595069182) | Opus 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [Thermal Courier 游戏预告对照](https://x.com/jeffbruchado/status/2108951077991362922) | Opus 5.5 / Sonnet 5.5 | [九帧取样](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [经过七十一条消息的作品集短片](https://x.com/MaciejPoczek/status/2108924468110176457) | Opus 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [九个场景工人的文章转视频](https://x.com/agito20211021/status/2108852733792891379) | Opus 5.5 lead + Sonnet 5.5 scene workers + external media tools | [九帧取样](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [钓鱼游戏预告](https://x.com/Blushneyy/status/2108644023330390194) | Opus 5.5 + Blender | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [使用购买素材的游戏演示](https://x.com/Rush3rx/status/2108607656776876368) | Opus 5.5 + Tripo P2 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [讲解视频制作工具对照](https://x.com/avthar/status/2108603075174797490) | Opus 5.5 + ElevenLabs | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [Taxtello 宣传片第五版](https://x.com/daniel_haida/status/2108595684236755242) | Opus 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [浏览器卡丁车与剪辑录屏](https://x.com/cafunify/status/2108581004432830683) | Opus 5.5 + Sonnet 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [三条提示的动效对照](https://x.com/mmmarcus_ai/status/2108550192882503797) | Opus 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [产品工程与参考视频作为输入](https://x.com/zhongerxin/status/2108532720414699696) | Opus 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
+| [Haiku 跑酷游戏首次结果不佳](https://x.com/nabendu82/status/2108523368701993395) | Haiku 5.5 / Sonnet 5.5 / Opus 5.5 comparison | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [水墨动画与合成声音](https://x.com/gkxspace/status/2108506384711213108) | Opus 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [跨越距离的半条毯子](https://x.com/Vallabh469/status/2108494077389926611) | Opus 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [使用作者真人声音的模型主题片](https://x.com/dorszafranski/status/2108493804068118778) | Opus 5.5 + creator voice | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
@@ -34,10 +46,17 @@
 | [多轮修改的发布片](https://x.com/_MasterMal/status/2108471807372325100) | Opus 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [三维踏板应力讲解](https://x.com/chang_/status/2108458503367200908) | Opus 5.5 + ElevenLabs | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [数据与动作捕捉驱动的进球重建](https://x.com/lv_feng47448/status/2108397996740432136) | Opus 5.5 + Blender + data + mocap | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
+| [在 Devin 中迭代完成的动画](https://x.com/Screeendev/status/2108333562462408823) | Opus 5.5 in Devin | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [金门桥场景的任务费用对照](https://x.com/Solomonrojie/status/2108322280094728219) | Haiku 5.5 / Opus 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [F1 进站的规划与执行模型对照](https://x.com/rubenssoto_ai/status/2108289170871582851) | Opus 5.5 + Haiku 5.5 / GPT models | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
+| [以参考视频为输入的动画技能](https://x.com/ishuagra02/status/2108250410221781009) | Opus 5.5 + video-by-reference skill | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [Desmodus 画面与人工音效分工](https://x.com/RogerKernel/status/2108226472607690903) | Opus 5.5 + Remotion + professional sound effects | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [毛茸茸螃蟹的同提示对照](https://x.com/vib3coded/status/2108190478889824662) | Opus 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [声音与运动驱动的混合画面](https://x.com/aicreataro/status/2108091976574988390) | Opus 5.5 + Blender + MiniMax + Midjourney | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
+| [Braun PS550 产品片与 3d-product 技能](https://x.com/nicceasy/status/2108018789468250448) | Opus 5.5 + scripted 3D rendering + external assets/audio | [九帧取样](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [分工生成并放大的音乐视频](https://x.com/atomtanstudio/status/2107990511164559839) | Opus 5.5 + GPT Image 2.5 + MiniMax H3 + Topaz | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [十一个可组合视频制作技能](https://x.com/eazymoney888/status/2107876636133847244) | Opus 5.5 within an assistant-coordinated video workflow | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [完成已有的未完剪辑](https://x.com/DTM_lab/status/2107108897521897547) | Opus 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [Expressive 交互演示](https://x.com/pham_blnh/status/2106247720570962081) | Opus 5.5 (creator report) | [仅来源](claude55-update-2026-10-03.zh-CN.md) | 2026-10-03 |
 | [证明你有意识的预告片](https://x.com/hive_echo/status/2106246677141266850) | Opus 5.5 / Grok (creator report) | [仅来源](claude55-update-2026-10-03.zh-CN.md) | 2026-10-03 |
 | [彩色玻璃图像动画](https://x.com/rws1st/status/2106245625067282560) | Opus 5.5 (creator report) | [仅来源](claude55-update-2026-10-03.zh-CN.md) | 2026-10-03 |
@@ -305,18 +324,27 @@
 
 <a id="sonnet"></a>
 
-## Sonnet (45)
+## Sonnet (54)
 
 | 原帖 | 模型／角色标签 | 证据 | 收录日期 |
 |---|---|---|---|
+| [Chroma Sweep 画廊潜入预告](https://x.com/jeffbruchado/status/2109041668595069182) | Opus 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [End of Humanity：叙事与生成镜头分工](https://x.com/nonodigitalart/status/2109038670611100001) | Sonnet 5.5 narrative + Google Flow / Omni Flash video | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [蜜蜂对照的 Sonnet 后续](https://x.com/letdarky/status/2108992110598697376) | Sonnet 5.5 / Haiku 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [Thermal Courier 游戏预告对照](https://x.com/jeffbruchado/status/2108951077991362922) | Opus 5.5 / Sonnet 5.5 | [九帧取样](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [After Effects 粒子插件原型](https://x.com/learson_move/status/2108906894379344339) | Sonnet 5.5 + After Effects + DeepGlow | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [九个场景工人的文章转视频](https://x.com/agito20211021/status/2108852733792891379) | Opus 5.5 lead + Sonnet 5.5 scene workers + external media tools | [九帧取样](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [浏览器卡丁车与剪辑录屏](https://x.com/cafunify/status/2108581004432830683) | Opus 5.5 + Sonnet 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [三条提示的动效对照](https://x.com/mmmarcus_ai/status/2108550192882503797) | Opus 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
+| [Haiku 跑酷游戏首次结果不佳](https://x.com/nabendu82/status/2108523368701993395) | Haiku 5.5 / Sonnet 5.5 / Opus 5.5 comparison | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [毛茸茸螃蟹的同提示对照](https://x.com/vib3coded/status/2108190478889824662) | Opus 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [CSS 折纸动画对照](https://x.com/UgoBit_/status/2107953568993141074) | Haiku 5.5 / Sonnet 5.5 / GPT models | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
+| [摩托车材质对照](https://x.com/ziwenxu_/status/2107943956709339177) | Haiku 5.5 / Sonnet 5.5 / GPT-6 Luna + Blender | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [电机原理动画对照](https://x.com/rubenssoto_ai/status/2107919226728050775) | Haiku 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [示意性高楼建造动画](https://x.com/Solvaix/status/2107548992640880755) | Sonnet 5.5 | [九帧取样](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [Understory 程序绘图角色游戏](https://x.com/DannyLimanseta/status/2107505970809336071) | Sonnet 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [Slow Me Down 亲子短片](https://x.com/kevin_t_ngo/status/2106864721525915941) | Sonnet 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
+| [Prison Break 动画](https://x.com/VulKan42069/status/2106425412712804791) | Sonnet 5.5 + Blender | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [中国象棋游戏及宣传片](https://x.com/CoderRw11326/status/2106242032893411721) | Sonnet 5.5 (creator report) | [仅来源](claude55-update-2026-10-03.zh-CN.md) | 2026-10-03 |
 | [游戏简史](https://x.com/craigmiller1973/status/2106241923036164535) | Sonnet 5.5 (creator report) | [仅来源](claude55-update-2026-10-03.zh-CN.md) | 2026-10-03 |
 | [热带箱庭](https://x.com/sonia_code/status/2106218179978785001) | Sonnet 5.5 (creator report) | [仅来源](claude55-update-2026-10-03.zh-CN.md) | 2026-10-03 |
@@ -357,13 +385,18 @@
 
 <a id="haiku"></a>
 
-## Haiku (15)
+## Haiku (21)
 
 | 原帖 | 模型／角色标签 | 证据 | 收录日期 |
 |---|---|---|---|
+| [发光软杆对照](https://x.com/noclipepe/status/2109076746524045447) | Haiku 5.5 / GPT-6 Luna / Gemini 3.8 Flash | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [蜜蜂对照的 Sonnet 后续](https://x.com/letdarky/status/2108992110598697376) | Sonnet 5.5 / Haiku 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [作者指出翅膀缺陷的蜜蜂](https://x.com/letdarky/status/2108936071409000539) | Haiku 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [西湖素材剪辑宣传片](https://x.com/shengtang135754/status/2108934243636408790) | Haiku 5.5 + Pixabay footage + Volcengine narration | [九帧取样](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [作者的 Haiku 剪辑示例](https://x.com/pruthvithinks/status/2108594104133423276) | Haiku 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [Three.js 雪景球对照](https://x.com/buildwithrajath/status/2108571974222197055) | Haiku 5.5 / GPT-6 Luna | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [限定素材与配音的北京宣传片](https://x.com/shengtang135754/status/2108549555528872041) | Haiku 5.5 + MiniMax narration + sourced footage | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
+| [Haiku 跑酷游戏首次结果不佳](https://x.com/nabendu82/status/2108523368701993395) | Haiku 5.5 / Sonnet 5.5 / Opus 5.5 comparison | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [金门桥场景的任务费用对照](https://x.com/Solomonrojie/status/2108322280094728219) | Haiku 5.5 / Opus 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [F1 进站的规划与执行模型对照](https://x.com/rubenssoto_ai/status/2108289170871582851) | Opus 5.5 + Haiku 5.5 / GPT models | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [三维鹈鹕骑自行车](https://x.com/xueyu1125/status/2108156768023118268) | Haiku 5.5 | [九帧取样](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
@@ -375,18 +408,22 @@
 | [围绕五七五节奏的自我介绍](https://x.com/lemomo_ai/status/2107985954648867292) | Haiku 5.5 | [九帧取样](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [夜间列车反向案例](https://x.com/EnvolDev/status/2107973447230091623) | Haiku 5.5 / GPT-6 Luna | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [CSS 折纸动画对照](https://x.com/UgoBit_/status/2107953568993141074) | Haiku 5.5 / Sonnet 5.5 / GPT models | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
+| [摩托车材质对照](https://x.com/ziwenxu_/status/2107943956709339177) | Haiku 5.5 / Sonnet 5.5 / GPT-6 Luna + Blender | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [电机原理动画对照](https://x.com/rubenssoto_ai/status/2107919226728050775) | Haiku 5.5 / Sonnet 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 
 <a id="fable"></a>
 
-## Fable (65)
+## Fable (68)
 
 | 原帖 | 模型／角色标签 | 证据 | 收录日期 |
 |---|---|---|---|
+| [Low Tide Shuffle 节奏游戏](https://x.com/blueemi99/status/2108912164253602187) | Opus / creator-reported Fable 5.5 | [九帧取样](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
+| [清明上河图虹桥场景](https://x.com/AISuperDomain/status/2108878175531110875) | creator-reported Fable 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [零零年代 Flash 风格动画](https://x.com/YanqingCheng/status/2108296567166042404) | Reported Fable 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
 | [用涂鸦讲述人类史](https://x.com/oalanicolas/status/2107958931230241037) | Reported Fable 5.5 | [九帧取样](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [提供参考与 skill 的重建](https://x.com/notdwd/status/2107816799840690589) | Reported Fable 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [随风响应的 JavaScript 骨架动画](https://x.com/adam_fresko/status/2107637770873417894) | Reported Fable 5.5 | [仅来源](maintenance-2026-10-10.zh-CN.md) | 2026-10-10 |
+| [带费用披露的脑腐剪辑](https://x.com/blueemi99/status/2107459553369760024) | creator-reported Fable 5.5 | [仅来源](maintenance-2026-10-11.zh-CN.md) | 2026-10-11 |
 | [Balatro 与英雄联盟结合的游戏](https://x.com/Vince__Russell/status/2107315127292952696) | Reported Fable 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [经典火柴人打斗](https://x.com/AndrewOnXYZ/status/2107262468502544435) | Reported Fable 5.5 | [仅来源](maintenance-2026-10-10-followup.zh-CN.md) | 2026-10-10 |
 | [光明会恐怖风短片](https://x.com/badboyfoxy/status/2106241189976387799) | Fable 5.5 (creator report) | [仅来源](claude55-update-2026-10-03.zh-CN.md) | 2026-10-03 |
