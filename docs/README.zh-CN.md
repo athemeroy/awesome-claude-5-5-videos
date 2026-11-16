@@ -6,6 +6,7 @@
 
 | 我想…… | 从这里开始 | 继续深入 |
 |---|---|---|
+| 看 Fable 5.2 最新动态 | [Fable 5.2 专题报告](fable-5-2.zh-CN.md) | [Fable 5.2 完整目录](library.zh-CN.md#fable-5-2)、[17 个公开 Prompt](fable-5-2.zh-CN.md#17-个作者公开的-prompt-索引) |
 | 按模型找视频 | [完整来源目录](library.zh-CN.md) | [截图案例目录](cases-index.zh-CN.md)、[内容 × 画风图谱](domain-style-atlas.zh-CN.md) |
 | 了解研究结论 | [研究导读](research-guide.zh-CN.md) | [收录与取样覆盖](collection-analysis.zh-CN.md)、[冻结快照分析](snapshot-analysis.zh-CN.md) |
 | 选择制作方法 | [制作适配指南](visual-effects-fit.zh-CN.md) | [路径图文与开源工程](production-resources.zh-CN.md)、[成对证据案例](evidence-examples.zh-CN.md) |
@@ -25,6 +26,7 @@
 
 | 复核日期 | 更新 | 公开来源账本 |
 |---|---|---|
+| 2026-11-16 | [Fable 5.2 专题更新与流水线重构](fable-5-2.zh-CN.md) | [CSV](../data/source-review-2026-11-16-fable52.csv) |
 | 2026-10-11 | [补搜与项目重构](maintenance-2026-10-11.zh-CN.md) | [CSV](../data/claude55-source-review-2026-10-11.csv) |
 | 2026-10-10 | [补搜与工作流分析](maintenance-2026-10-10-followup.zh-CN.md) | [CSV](../data/claude55-source-review-2026-10-10-followup.csv) |
 | 2026-10-10 | [Haiku 与收藏维护](maintenance-2026-10-10.zh-CN.md) | [CSV](../data/claude55-source-review-2026-10-10.csv) |

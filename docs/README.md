@@ -6,6 +6,7 @@ Start with the question you want to answer. The homepage highlights the findings
 
 | I want to… | Start here | Go deeper |
 |---|---|---|
+| Explore Fable 5.2 works | [Fable 5.2 Report](fable-5-2.md) | [Fable 5.2 directory](library.md#fable-5-2), [17 published prompts](fable-5-2.md#index-of-17-creator-published-prompts) |
 | Find a video by model | [Complete source directory](library.md) | [Visual case directory](cases-index.zh-CN.md), [domain × style atlas](domain-style-atlas.md) |
 | Understand the main findings | [Research guide](research-guide.md) | [Collection coverage](collection-analysis.md), [frozen snapshot](snapshot-analysis.md) |
 | Choose a production method | [Production guide](visual-effects-fit.md) | [Pictured paths and reusable projects](production-resources.md), [paired evidence cases](evidence-examples.md) |
@@ -27,6 +28,7 @@ Some original research pages are available only in Chinese. English guides summa
 
 | Review date | Update | Public source ledger |
 |---|---|---|
+| 2026-11-16 | [Fable 5.2 update and pipeline refactor](fable-5-2.md) | [CSV](../data/source-review-2026-11-16-fable52.csv) |
 | 2026-10-11 | [Collection refresh and project restructuring](maintenance-2026-10-11.md) | [CSV](../data/claude55-source-review-2026-10-11.csv) |
 | 2026-10-10 | [Follow-up search and workflow analysis](maintenance-2026-10-10-followup.md) | [CSV](../data/claude55-source-review-2026-10-10-followup.csv) |
 | 2026-10-10 | [Haiku and collection maintenance](maintenance-2026-10-10.md) | [CSV](../data/claude55-source-review-2026-10-10.csv) |

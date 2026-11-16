@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-10-11",
+  "as_of": "2026-11-16",
   "unit": "source post ID; includes replies, comparisons and variants",
-  "unique_source_posts": 424,
+  "unique_source_posts": 597,
   "sampled_source_posts": 199,
   "routing_context_posts": 6,
   "batches": [
@@ -59,6 +59,14 @@
       "source": "data/claude55-source-review-2026-10-11.csv",
       "unique_source_posts": 30,
       "newly_listed_source_posts": 30,
+      "overlaps_earlier_batches": 0
+    },
+    {
+      "date": "2026-11-16",
+      "label": "2026-11-16 (Fable 5.2)",
+      "source": "data/source-review-2026-11-16-fable52.csv",
+      "unique_source_posts": 173,
+      "newly_listed_source_posts": 173,
       "overlaps_earlier_batches": 0
     }
   ],
